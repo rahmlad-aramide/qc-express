@@ -3,13 +3,14 @@ import { FC, InputHTMLAttributes } from "react";
 interface InputProps extends InputHTMLAttributes<HTMLInputElement> {
   label: string;
   type: string;
+  emailError?: string;
   firstNameError?: string;
   lastNameError?: string;
-  userNameError?: string;
-  emailError?: string;
+  websiteError?: string;
   phoneError?: string;
-  cityError?: string;
-  houseError?: string;
+  companyNameError?: string;
+  companyDescriptionError?: string;
+  intentError?: string;
   passwordError?: string;
   confirmPasswordError?: string;
 }
@@ -17,13 +18,14 @@ interface InputProps extends InputHTMLAttributes<HTMLInputElement> {
 const InputField: FC<InputProps> = ({
   label,
   type,
+  emailError,
   firstNameError,
   lastNameError,
-  userNameError,
-  emailError,
+  websiteError,
   phoneError,
-  cityError,
-  houseError,
+  companyNameError,
+  companyDescriptionError,
+  intentError,
   passwordError,
   confirmPasswordError,
   ...props
@@ -35,13 +37,14 @@ const InputField: FC<InputProps> = ({
         type={type}
         className={
           `
+          ${emailError && "border border-red-500"}
           ${firstNameError && "border border-red-500"}
           ${lastNameError && "border border-red-500"}
-          ${userNameError && "border border-red-500"}
-          ${emailError && "border border-red-500"}
+          ${websiteError && "border border-red-500"}
           ${phoneError && "border border-red-500"}
-          ${cityError && "border border-red-500"}
-          ${houseError && "border border-red-500"}
+          ${companyNameError && "border border-red-500"}
+          ${companyDescriptionError && "border border-red-500"}
+          ${intentError && "border border-red-500"}
           ${passwordError && "border border-red-500"}
           ${confirmPasswordError && "border border-red-500"}
           border border-[#333] outline-none py-2 px-4 w-[100%]
@@ -55,13 +58,14 @@ const InputField: FC<InputProps> = ({
       {lastNameError && (
         <p className="text-red-500 text-[12px]">{lastNameError}</p>
       )}
-      {userNameError && (
-        <p className="text-red-500 text-[12px]">{userNameError}</p>
+      {websiteError && (
+        <p className="text-red-500 text-[12px]">{websiteError}</p>
       )}
       {emailError && <p className="text-red-500 text-[12px]">{emailError}</p>}
       {phoneError && <p className="text-red-500 text-[12px]">{phoneError}</p>}
-      {cityError && <p className="text-red-500 text-[12px]">{cityError}</p>}
-      {houseError && <p className="text-red-500 text-[12px]">{houseError}</p>}
+      {companyNameError && <p className="text-red-500 text-[12px]">{companyNameError}</p>}
+      {companyDescriptionError && <p className="text-red-500 text-[12px]">{companyDescriptionError}</p>}
+      {intentError && <p className="text-red-500 text-[12px]">{intentError}</p>}
       {passwordError && (
         <p className="text-red-500 text-[12px]">{passwordError}</p>
       )}

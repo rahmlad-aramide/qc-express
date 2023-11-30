@@ -1,39 +1,77 @@
+import axios from "axios";
 import { useState } from "react";
+import { useNavigate } from "react-router-dom";
 import AuthContainer from "../components/containers/AuthContainer";
 import InputField from "../components/default/InputField";
-import { States } from "../components/miscellanous/states";
+import { notify, warn } from "../App";
+import { Loader } from "../components";
+import { ToastContainer } from "react-toastify";
 
-const Signup = () => {
-  const [user, setUser] = useState({
+type FrontendData = {
+  email: string;
+  firstname: string;
+  lastname: string;
+  website: string;
+  phone: string;
+  companyDescription: string;
+  intent: string;
+  companyName: string;
+};
+
+type BackendData = {
+  email: string;
+  firstname: string;
+  lastname: string;
+  website: string;
+  phonenumber: string;
+  company_description: string;
+  intent: string;
+  company_name: string;
+};
+const mapBackendToFrontend = (frontendData: FrontendData) => {
+  const backendData: BackendData = {
+    email: frontendData.email || "",
+    firstname: frontendData.firstname || "",
+    lastname: frontendData.lastname || "",
+    website: frontendData.website || "",
+    phonenumber: frontendData.phone || "",
+    company_description: frontendData.companyDescription || "",
+    intent: frontendData.intent || "",
+    company_name: frontendData.companyName || "",
+  };
+
+  return backendData;
+};
+
+const defaultState = {
+    email: "",
     firstname: "",
     lastname: "",
-    username: "",
-    country: "",
-    email: "",
+    website: "",
     phone: "",
-    city: "",
-    state: "",
-    house: "",
-    password: "",
-    confirmPassword: "",
-  });
+    companyDescription: "",
+    intent: "",
+    companyName: "",
+}
+
+const Signup = () => {
+  const navigateTo = useNavigate();
+  const [loading, setLoading] = useState(false);
+  const url = String(import.meta.env.VITE_APP_API_URL);
+
+  const [user, setUser] = useState(defaultState);
   const [error, setError] = useState({
     firstname: "",
     lastname: "",
-    username: "",
-    country: "",
+    website: "",
     email: "",
     phone: "",
-    city: "",
-    state: "",
-    house: "",
-    password: "",
-    confirmPassword: "",
+    companyName: "",
+    companyDescription: "",
+    intent: "",
   });
 
-  // const [loading, setLoading] = useState(false);
-
-  const validateField = ( value: string) => {
+  const validateField = (value: string) => {
     if (value === "") {
       return false;
     } else {
@@ -41,66 +79,80 @@ const Signup = () => {
     }
   };
 
-  const validatePassword = (password: string) => {
-    const passwordRegex =
-      /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[@#$%^&+=]).{6,}$/;
-    return passwordRegex.test(password);
+  const capitalizeFirstLetter = (string: string) => {
+    return string.charAt(0).toUpperCase() + string.slice(1);
   };
 
-  const handleSubmit = async () => {
+  const handleSubmit: (
+    e: React.FormEvent<HTMLFormElement>
+  ) => Promise<void> = async (e) => {
+    e.preventDefault();
+    setLoading(true)
     const isFirstnameValid = validateField(user.firstname);
     const isLastnameValid = validateField(user.lastname);
-    const isUsernameValid = validateField(user.username);
-    const isCountryValid = validateField(user.country);
+    const iswebsiteValid = validateField(user.website);
     const isEmailValid = validateField(user.email);
     const isPhoneValid = validateField(user.phone);
-    const isCityValid = validateField(user.city);
-    const isStateValid = validateField(user.state);
-    const isHouseValid = validateField(user.house);
-    const isPasswordValid = validatePassword(user.password);
-    const isConfirmPasswordValid = validatePassword(user.confirmPassword);
+    const isCompanyNameValid = validateField(user.companyName);
+    const isCompanyDescriptionValid = validateField(user.companyDescription);
+    const isIntentValid = validateField(user.intent);
 
     setError({
       firstname: !isFirstnameValid ? "Firstname is required" : "",
       lastname: !isLastnameValid ? "Lastname is required" : "",
-      username: !isUsernameValid ? "Username is required" : "",
-      country: !isCountryValid ? "Country is required" : "",
+      website: !iswebsiteValid ? "website is required" : "",
       email: !isEmailValid ? "Email is required" : "",
       phone: !isPhoneValid ? "Phone number is required" : "",
-      city: !isCityValid ? "City is required" : "",
-      state: !isStateValid ? "State is required" : "",
-      house: !isHouseValid ? "House number is required" : "",
-      password: !isPasswordValid ? "Password must be at least 6 character with at least 1 lowercase, 1 uppercase, 1 digit and 1 special case" : "",
-      confirmPassword: !isConfirmPasswordValid ? "passwords do not match" : "",
+      companyName: !isCompanyNameValid ? "Company name is required" : "",
+      companyDescription: !isCompanyDescriptionValid
+        ? "Company description is required"
+        : "",
+      intent: !isIntentValid ? "Intent is required" : "",
     });
     setTimeout(() => {
-      setError({
-        firstname: "",
-        lastname: "",
-        username: "",
-        country: "",
-        email: "",
-        phone: "",
-        city: "",
-        state: "",
-        house: "",
-        password: "",
-        confirmPassword: "",
-      });
-    }, 2000);
+      setError(defaultState);
+      setLoading(false);
+      return
+    }, 2500);
 
-    if (user.password !== user.confirmPassword) {
-      setError({ ...error, confirmPassword: "passwords do not match" });
-    }
+
+    axios
+      .post(`${url}/onboarding-requests/create`, mapBackendToFrontend(user), {
+        headers: {
+          "Content-Type": "application/json",
+        },
+      })
+      .then((response) => {
+        setLoading(false);
+        console.log(response)
+        notify("Submitted successfully, redirecting you.");
+        setTimeout(() => {
+          navigateTo("/awaiting");
+        }, 2500);
+      })
+      .catch((error) => {
+        setLoading(false);
+        console.log(capitalizeFirstLetter(error.response.data.message));
+        warn(capitalizeFirstLetter(error.response.data.message));
+      });
   };
   return (
     <AuthContainer>
-      <h2 className="text-[#4169e2] font-bold text-[34px]">
-        Input account details
-      </h2>
-      <div className="space-y-6">
-        <div className="flex justify-between mt-10 w-[100%]">
-          <div className="w-[50%]">
+      <ToastContainer />
+      <form onSubmit={handleSubmit}>
+        <h2 className="text-[#4169e2] font-bold text-[34px]">Onboarding</h2>
+        <p className="text-gray-900 font-medium text-lg">
+          Fill in your details to continue
+        </p>
+        <div className="space-y-6 mt-10">
+          <InputField
+            type="email"
+            label="Email"
+            value={user.email}
+            onChange={(e) => setUser({ ...user, email: e.target.value })}
+            emailError={error.email}
+          />
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-5 mt-10 w-[100%]">
             <InputField
               type="text"
               label="First name"
@@ -108,8 +160,6 @@ const Signup = () => {
               onChange={(e) => setUser({ ...user, firstname: e.target.value })}
               firstNameError={error.firstname}
             />
-          </div>
-          <div className="w-[45%]">
             <InputField
               type="text"
               label="Last name"
@@ -118,110 +168,63 @@ const Signup = () => {
               lastNameError={error.lastname}
             />
           </div>
-        </div>
-        <InputField
-          type="text"
-          label="Username"
-          value={user.username}
-          onChange={(e) => setUser({ ...user, username: e.target.value })}
-          userNameError={error.username}
-        />
-        <div>
-          <h2 className="font-semibold text-[18px] text-[#6c8073] pb-2">
-            Country
-          </h2>
-          <select
-            name="country"
-            value={user.country}
-            onChange={(e) => setUser({ ...user, country: e.target.value })}
-            className="w-[100%] px-4 outline-none bg-[#fff] border border-[#333] py-3"
-          >
-            <option value="select">Select</option>
-            <option value="Nigeria(default)">Nigeria(default)</option>
-          </select>
-        </div>
-
-        <InputField
-          type="email"
-          label="Email"
-          value={user.email}
-          onChange={(e) => setUser({ ...user, email: e.target.value })}
-          emailError={error.email}
-        />
-        <InputField
-          type="text"
-          label="Phone Number"
-          value={user.phone}
-          onChange={(e) => setUser({ ...user, phone: e.target.value })}
-          phoneError={error.phone}
-        />
-        <div className="flex justify-between w-[100%]">
-          <div className="w-[45%]">
-            <InputField
-              type="text"
-              label="City"
-              value={user.city}
-              onChange={(e) => setUser({ ...user, city: e.target.value })}
-              cityError={error.city}
-            />
-          </div>
-          <div className="w-[50%]">
-            <h2 className="font-semibold text-[18px] text-[#6c8073] pb-2">
-              Select State
-            </h2>
-            <select
-              name="state"
-              value={user.state}
-              onChange={(e) => setUser({ ...user, state: e.target.value })}
-              className="px-4 w-[100%] outline-none bg-[#fff] border border-[#333] py-2.5"
-            >
-              <option value="select">Select</option>
-              {States.map((state) => (
-                <option key={state.id} value={state.state}>
-                  {state.state}
-                </option>
-              ))}
-            </select>
-          </div>
+          <InputField
+            type="text"
+            label="Website"
+            value={user.website}
+            onChange={(e) => setUser({ ...user, website: e.target.value })}
+            websiteError={error.website}
+          />
+          <InputField
+            type="text"
+            label="Phone Number"
+            value={user.phone}
+            onChange={(e) => setUser({ ...user, phone: e.target.value })}
+            phoneError={error.phone}
+          />
+          <InputField
+            type="text"
+            label="Company Name"
+            value={user.companyName}
+            onChange={(e) => setUser({ ...user, companyName: e.target.value })}
+            companyNameError={error.companyName}
+          />
+          <InputField
+            type="text"
+            label="Company Description"
+            value={user.companyDescription}
+            onChange={(e) =>
+              setUser({ ...user, companyDescription: e.target.value })
+            }
+            companyDescriptionError={error.companyDescription}
+          />
+          <InputField
+            type="text"
+            label="Intent"
+            value={user.intent}
+            onChange={(e) => setUser({ ...user, intent: e.target.value })}
+            intentError={error.intent}
+          />
         </div>
 
-        <InputField
-          type="text"
-          label="House/APT/Flat Number"
-          value={user.house}
-          onChange={(e) => setUser({ ...user, house: e.target.value })}
-          houseError={error.house}
-        />
-        <InputField
-          type="password"
-          label="Password"
-          value={user.password}
-          onChange={(e) => setUser({ ...user, password: e.target.value })}
-          passwordError={error.password}
-        />
-        <InputField
-          type="password"
-          label="Confirm Password"
-          value={user.confirmPassword}
-          onChange={(e) =>
-            setUser({ ...user, confirmPassword: e.target.value })
+        <p className="text-[14px] text-[#333] pt-6">
+          By continuing, I represent that I have read, understand, and fully
+          agree to the QC Express{" "}
+          <span className="text-[#4169e2]">terms of service</span> and{" "}
+          <span className="text-[#4169e2]">privacy policy</span>.
+        </p>
+        <button
+          disabled={loading}
+          type="submit"
+          className={
+            loading
+              ? `py-1.5 mt-4 w-[100%] flex justify-center bg-[#000] cursor-not-allowed`
+              : "text-[#fff] py-3 mt-4 w-[100%] flex justify-center bg-[#000]"
           }
-          confirmPasswordError={error.confirmPassword}
-        />
-      </div>
-
-      <p className="text-[14px] text-[#333] pt-6">
-        By continuing, I represent that I have read, understand, and fully agree
-        to the QC Express{" "}
-        <span className="text-[#4169e2]">terms of service</span> and{" "}
-        <span className="text-[#4169e2]">privacy policy</span>.
-      </p>
-      <button
-        onClick={handleSubmit}
-        className="text-[#fff] py-3 mt-4 w-[100%] flex justify-center bg-[#000]"
-      >
-        Continue
-      </button>
+        >
+          {loading ? <Loader /> : "Continue"}
+        </button>
+      </form>
     </AuthContainer>
   );
 };
