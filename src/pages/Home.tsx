@@ -1,7 +1,13 @@
+import MainContainer from "../components/containers/MainContainer";
+
 const Home = () => {
   return (
-    <div>Home</div>
-  )
-}
+    <MainContainer activeTab="Dashboard">
+      <div className="mt-10">
+        <h2>Home</h2>
+      </div>
+    </MainContainer>
+  );
+};
 
-export default Home
+export default Home;
