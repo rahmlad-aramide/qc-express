@@ -2,6 +2,7 @@ import { FaClipboard } from "react-icons/fa";
 import MainContainer from "../../components/containers/MainContainer";
 import { useEffect } from "react";
 import { useState } from "react";
+import { ToastContainer, toast } from "react-toastify";
 
 const RevealTokens = () => {
   const [tokens, setTokens] = useState({
@@ -17,8 +18,7 @@ const RevealTokens = () => {
     staging: false,
   });
   const access_token =
-  "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6InJhaG1sYWRhcmFtaWRlQGdtYWlsLmNvbSIsInVzZXJJZCI6IjY1NjhmODI5YmY4NTc3MDAzZTVhYmMzZiIsInVzZXJuYW1lIjoiUmFobWxhZCBBcmFtaWRlIiwiZmlyc3RuYW1lIjoiNjU2OGY4MjhiZjg1NzcwMDNlNWFiYzNkIiwidHlwZSI6IkFDQ0VTU19UT0tFTiIsImlhdCI6MTcwMTY3MjA5OSwiZXhwIjoxNzAxNjc1Njk5fQ.H5e1daGwjfWvliIzoDQv_XuNxPNJCSdUOB9EjEaPZso"
-
+    "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImF5YW5mZW9sdXdhYWtpbmRlbGUyNEBnbWFpbC5jb20iLCJ1c2VySWQiOiI2NTZkODk3ZTVhMjBlYzAwM2VlYzU4NGUiLCJ1c2VybmFtZSI6IkF5YW5mZW9sdXdhIEFraW5kZWxlIiwiZmlyc3RuYW1lIjoiNjU2ZDg5N2U1YTIwZWMwMDNlZWM1ODRjIiwidHlwZSI6IkFDQ0VTU19UT0tFTiIsImlhdCI6MTcwMTY5MjcwMSwiZXhwIjoxNzAxNjk2MzAxfQ.gmJvdCIloGIIuu5QJueeyaauk7K-975dIanCZg8QQwo";
   const revealToken = (token: string) => {
     if (token === "staging") {
       setShowToken({
@@ -61,9 +61,39 @@ const RevealTokens = () => {
     }
   };
 
+  const handleRefresh = () => {
+    fetch(
+      "https://qcbackend.onrender.com/api/v1/business_admin/tokens/refresh",
+      {
+        method: "GET",
+        headers: {
+          "Content-Type": "application/json",
+          Authorization: `Bearer ${access_token}`,
+        },
+      }
+    )
+      .then((res) => res.json())
+      .then((data) => {
+        if (data.success) {
+          toast.success("Tokens refreshed successfully", {
+            position: "top-center",
+            autoClose: 500,
+            hideProgressBar: true,
+            closeOnClick: true,
+            pauseOnHover: false,
+            draggable: true,
+            progress: undefined,
+          });
+          setTimeout(() => {
+            window.location.reload();
+          }, 1000);
+        }
+      });
+  };
+
   const backToSettings = () => {
     window.history.back();
-  }
+  };
   useEffect(() => {
     fetch(
       "https://qcbackend.onrender.com/api/v1/business_admin/tokens/expose",
@@ -86,8 +116,11 @@ const RevealTokens = () => {
 
   return (
     <MainContainer activeTab="Settings">
+      <ToastContainer />
       <div>
-        <span onClick={backToSettings} className="cursor-pointer">{"<< "}back</span>
+        <span onClick={backToSettings} className="cursor-pointer">
+          {"<< "}back
+        </span>
         <h2 className="text-[32px] font-semibold">Reveal Tokens</h2>
         <div className="w-[70%] mt-8 space-y-8">
           <div className="flex flex-col space-y-2">
@@ -121,6 +154,12 @@ const RevealTokens = () => {
               )}
             </div>
           </div>
+          <p
+            onClick={handleRefresh}
+            className="text-[#4169e2] text-[15px] cursor-pointer"
+          >
+            Refresh tokens
+          </p>
         </div>
       </div>
     </MainContainer>

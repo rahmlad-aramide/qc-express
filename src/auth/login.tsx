@@ -8,7 +8,6 @@ const Login = () => {
   });
   const [error, setError] = useState({
     email: "",
-    password: "",
   });
   const validateField = (value: string) => {
     if (value === "") {
@@ -17,25 +16,16 @@ const Login = () => {
       return true;
     }
   };
-  const validatePassword = (password: string) => {
-    const passwordRegex =
-      /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[@#$%^&+=]).{6,}$/;
-    return passwordRegex.test(password);
-  };
   const handleLogin = async () => {
     const isEmailValid = validateField(user.email);
-    const isPasswordValid = validatePassword(user.password);
+
     setError({
       email: !isEmailValid ? "Email is required" : "",
-      password: !isPasswordValid
-        ? "Password must be at least 6 character with at least 1 lowercase, 1 uppercase, 1 digit and 1 special case"
-        : "",
     });
 
     setTimeout(() => {
       setError({
         email: "",
-        password: "",
       });
     }, 2000);
   };
@@ -57,7 +47,6 @@ const Login = () => {
           label="Password"
           value={user.password}
           onChange={(e) => setUser({ ...user, password: e.target.value })}
-          passwordError={error.password}
         />
       </div>
       <p className="text-[14px] text-[#333] pt-6">

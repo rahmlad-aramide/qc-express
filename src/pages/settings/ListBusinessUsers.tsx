@@ -19,8 +19,7 @@ type Users = {
 const ListBusinessUsers = () => {
   const [users, setUsers] = useState<Users[]>([]);
   const access_token =
-    "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6InJhaG1sYWRhcmFtaWRlQGdtYWlsLmNvbSIsInVzZXJJZCI6IjY1NjhmODI5YmY4NTc3MDAzZTVhYmMzZiIsInVzZXJuYW1lIjoiUmFobWxhZCBBcmFtaWRlIiwiZmlyc3RuYW1lIjoiNjU2OGY4MjhiZjg1NzcwMDNlNWFiYzNkIiwidHlwZSI6IkFDQ0VTU19UT0tFTiIsImlhdCI6MTcwMTY3MjA5OSwiZXhwIjoxNzAxNjc1Njk5fQ.H5e1daGwjfWvliIzoDQv_XuNxPNJCSdUOB9EjEaPZso";
-
+    "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImF5YW5mZW9sdXdhYWtpbmRlbGUyNEBnbWFpbC5jb20iLCJ1c2VySWQiOiI2NTZkODk3ZTVhMjBlYzAwM2VlYzU4NGUiLCJ1c2VybmFtZSI6IkF5YW5mZW9sdXdhIEFraW5kZWxlIiwiZmlyc3RuYW1lIjoiNjU2ZDg5N2U1YTIwZWMwMDNlZWM1ODRjIiwidHlwZSI6IkFDQ0VTU19UT0tFTiIsImlhdCI6MTcwMTY5MjcwMSwiZXhwIjoxNzAxNjk2MzAxfQ.gmJvdCIloGIIuu5QJueeyaauk7K-975dIanCZg8QQwo";
   const deleteUser = (id: string) => {
     fetch(
       `https://qcbackend.onrender.com/api/v1/business_admin/user/delete/?id=${id}`,
@@ -34,7 +33,8 @@ const ListBusinessUsers = () => {
     )
       .then((res) => res.json())
       .then((data) => {
-        if (data.status === "success") {
+        console.log(data)
+        if (data.success) {
           toast.success("User deleted successfully", {
             position: "top-center",
             autoClose: 500,
@@ -44,7 +44,9 @@ const ListBusinessUsers = () => {
             draggable: true,
             progress: undefined,
           });
-          window.location.reload();
+          setTimeout(() => {
+            window.location.reload();
+          }, 1000)
         } else {
           toast.error("Something went wrong", {
             position: "top-center",

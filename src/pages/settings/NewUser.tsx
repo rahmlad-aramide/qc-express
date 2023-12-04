@@ -14,8 +14,7 @@ const NewUser = () => {
   };
 
   const access_token =
-    "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6InJhaG1sYWRhcmFtaWRlQGdtYWlsLmNvbSIsInVzZXJJZCI6IjY1NjhmODI5YmY4NTc3MDAzZTVhYmMzZiIsInVzZXJuYW1lIjoiUmFobWxhZCBBcmFtaWRlIiwiZmlyc3RuYW1lIjoiNjU2OGY4MjhiZjg1NzcwMDNlNWFiYzNkIiwidHlwZSI6IkFDQ0VTU19UT0tFTiIsImlhdCI6MTcwMTY3MjA5OSwiZXhwIjoxNzAxNjc1Njk5fQ.H5e1daGwjfWvliIzoDQv_XuNxPNJCSdUOB9EjEaPZso";
-
+    "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImF5YW5mZW9sdXdhYWtpbmRlbGUyNEBnbWFpbC5jb20iLCJ1c2VySWQiOiI2NTZkODk3ZTVhMjBlYzAwM2VlYzU4NGUiLCJ1c2VybmFtZSI6IkF5YW5mZW9sdXdhIEFraW5kZWxlIiwiZmlyc3RuYW1lIjoiNjU2ZDg5N2U1YTIwZWMwMDNlZWM1ODRjIiwidHlwZSI6IkFDQ0VTU19UT0tFTiIsImlhdCI6MTcwMTY5MjcwMSwiZXhwIjoxNzAxNjk2MzAxfQ.gmJvdCIloGIIuu5QJueeyaauk7K-975dIanCZg8QQwo";
   const createUser = () => {
     fetch(
       "https://qcbackendtest.onrender.com/api/v1/business_admin/user/create/",
@@ -58,13 +57,13 @@ const NewUser = () => {
 
   return (
     <MainContainer activeTab="Settings">
-        <ToastContainer />
-        <span onClick={backToSettings} className="cursor-pointer">
-            {"<< "}back
-        </span>
+      <ToastContainer />
+      <span onClick={backToSettings} className="cursor-pointer">
+        {"<< "}back
+      </span>
 
-        <h2 className="text-[32px] font-semibold mt-3">Create New User</h2>
-        <div className="mt-10 w-[50%] space-y-8">
+      <h2 className="text-[32px] font-semibold mt-3">Create New User</h2>
+      <div className="mt-10 w-[50%] space-y-8">
         <div className="space-y-2">
           <label className="text-[#333] px-1 font-semibold">Firstname</label>
           <input
