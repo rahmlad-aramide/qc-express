@@ -60,6 +60,10 @@ const RevealTokens = () => {
       }, 1000);
     }
   };
+
+  const backToSettings = () => {
+    window.history.back();
+  }
   useEffect(() => {
     fetch(
       "https://qcbackend.onrender.com/api/v1/business_admin/tokens/expose",
@@ -83,6 +87,7 @@ const RevealTokens = () => {
   return (
     <MainContainer activeTab="Settings">
       <div>
+        <span onClick={backToSettings} className="cursor-pointer">{"<< "}back</span>
         <h2 className="text-[32px] font-semibold">Reveal Tokens</h2>
         <div className="w-[70%] mt-8 space-y-8">
           <div className="flex flex-col space-y-2">

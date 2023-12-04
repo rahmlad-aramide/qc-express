@@ -8,6 +8,7 @@ import { toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import Settings from "./pages/settings";
 import RevealTokens from "./pages/settings/RevealTokens";
+import DeleteUser from "./pages/settings/DeleteUser";
 
 type ToastParams = {
   position: string;
@@ -31,14 +32,14 @@ const toastParams: ToastParams = {
   theme: "light",
 };
 
-type LoadingParams = Omit<ToastParams, "autoClose" | 'position' | 'theme'> & {
+type LoadingParams = Omit<ToastParams, "autoClose" | "position" | "theme"> & {
   autoClose: boolean;
 };
 
 const loadingParams: LoadingParams = {
-  ...toastParams, 
-  autoClose: false
-}
+  ...toastParams,
+  autoClose: false,
+};
 
 //@ts-expect-error as progess is undefined
 export const notify = (val: string) => toast.success(`${val}`, toastParams);
@@ -47,7 +48,7 @@ export const warn = (val: string) => toast.error(`${val}`, toastParams);
 //@ts-expect-error as progess is undefined
 export const inform = (val: string) => toast.info(`${val}`, toastParams);
 export const loadingToast = (val: string) =>
-//@ts-expect-error as progess is undefined
+  //@ts-expect-error as progess is undefined
   toast.info(`${val}`, loadingParams);
 
 function App() {
@@ -62,6 +63,7 @@ function App() {
         </Route>
         <Route path="/settings" element={<Settings />} />
         <Route path="/settings/reveal-tokens" element={<RevealTokens />} />
+        <Route path="/settings/delete-user" element={<DeleteUser />} />
       </Routes>
     </>
   );

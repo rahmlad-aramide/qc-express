@@ -11,7 +11,7 @@ const MainContainer: FC<MainContainerProps> = ({ children, activeTab }) => {
   return (
     <div>
       <TopNav />
-      <div className="flex h-[100vh]">
+      <div className="flex h-[92vh]">
         <div className="w-[15%] border-r-4 border-[#808080]">
           <SideNav activeTab={activeTab} />
         </div>
