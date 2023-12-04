@@ -6,6 +6,7 @@ import Omit from "react";
 import { toast } from "react-toastify";
 
 import "react-toastify/dist/ReactToastify.css";
+import Settings from "./pages/settings";
 
 type ToastParams = {
   position: string;
@@ -58,6 +59,7 @@ function App() {
         <Route element={<ProtectedRoute />}>
           <Route path="/home" element={<Home />} />
         </Route>
+        <Route path="/settings" element={<Settings />} />
       </Routes>
     </>
   );

@@ -15,7 +15,7 @@ const MainContainer: FC<MainContainerProps> = ({ children, activeTab }) => {
         <div className="w-[15%] border-r-4 border-[#808080]">
           <SideNav activeTab={activeTab} />
         </div>
-        <div className="w-[85%] px-10 h-[92vh] overflow-auto">{children}</div>
+        <div className="w-[85%] px-10 h-[92vh] mt-10 overflow-auto">{children}</div>
       </div>
     </div>
   );
