@@ -3,11 +3,9 @@ import MainContainer from "../../components/containers/MainContainer";
 import { FaChevronRight } from "react-icons/fa";
 const Settings = () => {
   const items = [
-    { id: 1, name: "Reveal Tokens", path: "/settings/reveal-tokens" },
+    { id: 1, name: "Tokens", path: "/settings/reveal-tokens" },
+    { id: 4, name: "Users", path: "/settings/list-business-users" },
     { id: 2, name: "Clear Sandbox Data", path: "/settings/clear-sandbox" },
-    { id: 3, name: "Create New User", path: "/settings/new-user" },
-    { id: 4, name: "List Business Users", path: "/settings/list-business-users" },
-    { id: 5, name: "Delete User", path: "/settings/delete-user" },
     { id: 6, name: "Refresh API Keys", path: "/settings/refresh-keys" },
   ];
   return (
