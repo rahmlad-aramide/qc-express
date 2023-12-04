@@ -3,6 +3,7 @@ import MainContainer from "../../components/containers/MainContainer";
 import { useEffect } from "react";
 import { useState } from "react";
 import { ToastContainer, toast } from "react-toastify";
+import { IoChevronBackOutline } from "react-icons/io5";
 
 const RevealTokens = () => {
   const [tokens, setTokens] = useState({
@@ -118,8 +119,12 @@ const RevealTokens = () => {
     <MainContainer activeTab="Settings">
       <ToastContainer />
       <div>
-        <span onClick={backToSettings} className="cursor-pointer">
-          {"<< "}back
+        <span
+          onClick={backToSettings}
+          className="cursor-pointer flex items-center text-lg font-semibold"
+        >
+          <IoChevronBackOutline size={25} className="mr-2" />
+          Back
         </span>
         <h2 className="text-[32px] font-semibold">Reveal Tokens</h2>
         <div className="w-[70%] mt-8 space-y-8">

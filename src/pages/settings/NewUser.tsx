@@ -1,6 +1,7 @@
 import { useState } from "react";
 import MainContainer from "../../components/containers/MainContainer";
 import { toast, ToastContainer } from "react-toastify";
+import { IoChevronBackOutline } from "react-icons/io5";
 
 const NewUser = () => {
   const [user, setUser] = useState({
@@ -58,8 +59,12 @@ const NewUser = () => {
   return (
     <MainContainer activeTab="Settings">
       <ToastContainer />
-      <span onClick={backToSettings} className="cursor-pointer">
-        {"<< "}back
+      <span
+        onClick={backToSettings}
+        className="cursor-pointer flex items-center text-lg font-semibold"
+      >
+        <IoChevronBackOutline size={25} className="mr-2" />
+        Back
       </span>
 
       <h2 className="text-[32px] font-semibold mt-3">Create New User</h2>

@@ -3,6 +3,7 @@ import MainContainer from "../../components/containers/MainContainer";
 import { NavLink } from "react-router-dom";
 import { useEffect, useState } from "react";
 import { toast, ToastContainer } from "react-toastify";
+import { IoChevronBackOutline } from "react-icons/io5";
 
 type Users = {
   _id: string;
@@ -33,7 +34,7 @@ const ListBusinessUsers = () => {
     )
       .then((res) => res.json())
       .then((data) => {
-        console.log(data)
+        console.log(data);
         if (data.success) {
           toast.success("User deleted successfully", {
             position: "top-center",
@@ -46,7 +47,7 @@ const ListBusinessUsers = () => {
           });
           setTimeout(() => {
             window.location.reload();
-          }, 1000)
+          }, 1000);
         } else {
           toast.error("Something went wrong", {
             position: "top-center",
@@ -84,8 +85,12 @@ const ListBusinessUsers = () => {
   return (
     <MainContainer activeTab="Settings">
       <ToastContainer />
-      <span onClick={backToSettings} className="cursor-pointer">
-        {"<< "}back
+      <span
+        onClick={backToSettings}
+        className="cursor-pointer flex items-center text-lg font-semibold"
+      >
+        <IoChevronBackOutline size={25} className="mr-2" />
+        Back
       </span>
 
       <div className="flex justify-between w-[100%] mt-4">
