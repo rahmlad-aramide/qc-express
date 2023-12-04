@@ -1,7 +1,22 @@
 import { useState } from "react";
 import AuthContainer from "../components/containers/AuthContainer";
 import InputField from "../components/default/InputField";
+import axios from "axios";
+import { useNavigate } from "react-router-dom";
+import { notify, warn } from "../App";
+import { Loader } from "../components";
+import { ToastContainer } from "react-toastify";
+
+// const defaultState = {
+//   email: "",
+//   password: ""
+// };
+
+const url = String(import.meta.env.VITE_APP_API_URL);
+
 const Login = () => {
+  const navigateTo = useNavigate()
+  const [loading, setLoading] = useState(false);
   const [user, setUser] = useState({
     email: "",
     password: "",
@@ -16,7 +31,19 @@ const Login = () => {
       return true;
     }
   };
-  const handleLogin = async () => {
+  // const validatePassword = (password: string) => {
+  //   const passwordRegex =
+  //     /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[@#$%^&+=]).{6,}$/;
+  //   return passwordRegex.test(password);
+  // };
+  const capitalizeFirstLetter = (string: string) => {
+    return string.charAt(0).toUpperCase() + string.slice(1);
+  };
+  const handleLogin: (
+    e: React.FormEvent<HTMLFormElement>
+  ) => Promise<void> = async (e) => {
+    e.preventDefault();
+    setLoading(true)
     const isEmailValid = validateField(user.email);
 
     setError({
@@ -28,9 +55,32 @@ const Login = () => {
         email: "",
       });
     }, 2000);
+
+    axios
+    .post(`${url}/business_admin/login`, user, {
+      headers: {
+        "Content-Type": "application/json",
+      },
+    })
+    .then((response) => {
+      setLoading(false);
+      console.log(response)
+      sessionStorage.setItem('userData', JSON.stringify(response.data))
+      notify("Login successfully, redirecting you.");
+      setTimeout(() => {
+        navigateTo("/home");
+      }, 2500);
+    })
+    .catch((error) => {
+      setLoading(false);
+      console.log(capitalizeFirstLetter(error.response.data.message));
+      warn(capitalizeFirstLetter(error.response.data.message));
+    });    
   };
   return (
     <AuthContainer>
+      <ToastContainer />
+      <form onSubmit={handleLogin}>
       <h2 className="text-[#4169e2] font-bold text-[34px]">Sign In</h2>
       <p>To continue, please provide a valid Email.</p>
 
@@ -57,11 +107,16 @@ const Login = () => {
       </p>
 
       <button
-        onClick={handleLogin}
-        className="text-[#fff] py-3 mt-4 w-[100%] flex justify-center bg-[#000]"
-      >
-        Continue
-      </button>
+          disabled={loading}
+          type="submit"
+          className={
+            loading
+              ? `py-1.5 mt-4 w-[100%] flex justify-center bg-[#000] cursor-not-allowed`
+              : "text-[#fff] py-3 mt-4 w-[100%] flex justify-center bg-[#000]"
+          }
+        >
+          {loading ? <Loader /> : "Continue"}
+        </button>
       <p className="text-[15px] text-[#4169e2] font-semibold my-4">
         Forgot Password?
       </p>
@@ -72,6 +127,7 @@ const Login = () => {
       <button className="text-[#fff] py-3 mt-4 w-[100%] flex justify-center bg-[#4169e2]">
         Create your QC Express account
       </button>
+      </form>
     </AuthContainer>
   );
 };

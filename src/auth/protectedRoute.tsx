@@ -7,7 +7,7 @@ const ProtectedRoute = () => {
   const [isLoading, setIsLoading] = useState(true);
 
   useEffect(()=> {
-    const userData = sessionStorage.getItem('authUser');
+    const userData = sessionStorage.getItem('userData');
     if(userData){
       const parsedUser = JSON.parse(userData);
       setUser(parsedUser);
