@@ -8,7 +8,6 @@ import { toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import Settings from "./pages/settings";
 import RevealTokens from "./pages/settings/RevealTokens";
-import DeleteUser from "./pages/settings/DeleteUser";
 import NewUser from "./pages/settings/NewUser";
 import ListBusinessUsers from "./pages/settings/ListBusinessUsers";
 
@@ -65,7 +64,6 @@ function App() {
         </Route>
         <Route path="/settings" element={<Settings />} />
         <Route path="/settings/reveal-tokens" element={<RevealTokens />} />
-        <Route path="/settings/delete-user" element={<DeleteUser />} />
         <Route path="/settings/new-user" element={<NewUser />} />
         <Route path="/settings/list-business-users" element={<ListBusinessUsers />} />
       </Routes>

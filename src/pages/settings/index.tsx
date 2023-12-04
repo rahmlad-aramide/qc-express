@@ -6,7 +6,6 @@ const Settings = () => {
     { id: 1, name: "Tokens", path: "/settings/reveal-tokens" },
     { id: 4, name: "Users", path: "/settings/list-business-users" },
     { id: 2, name: "Clear Sandbox Data", path: "/settings/clear-sandbox" },
-    { id: 6, name: "Refresh API Keys", path: "/settings/refresh-keys" },
   ];
   return (
     <MainContainer activeTab="Settings">
