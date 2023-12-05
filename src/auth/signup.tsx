@@ -127,7 +127,7 @@ const Signup = () => {
         console.log(response)
         notify("Submitted successfully, redirecting you.");
         setTimeout(() => {
-          navigateTo("/awaiting");
+          navigateTo("/request-success");
         }, 2500);
       })
       .catch((error) => {

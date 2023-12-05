@@ -116,7 +116,7 @@ const RevealTokens = () => {
   }, []);
 
   return (
-    <MainContainer activeTab="Settings">
+    <MainContainer>
       <ToastContainer />
       <div>
         <span

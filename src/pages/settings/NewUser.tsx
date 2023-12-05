@@ -57,7 +57,7 @@ const NewUser = () => {
   };
 
   return (
-    <MainContainer activeTab="Settings">
+    <MainContainer>
       <ToastContainer />
       <span
         onClick={backToSettings}

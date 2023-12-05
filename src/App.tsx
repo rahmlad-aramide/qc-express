@@ -61,7 +61,7 @@ function App() {
         <Route path="/" element={<Dashboard />} />
         <Route path="/login" element={<Login />} />
         <Route path="/onboarding" element={<Signup />} />
-        <Route path="/awaiting" element={<AwaitingApproval />} />
+        <Route path="/request-success" element={<AwaitingApproval />} />
         {/* <Route path="/home" element={<Home />} /> */}
         <Route element={<ProtectedRoute />}>
           <Route path="/home" element={<Home />} />

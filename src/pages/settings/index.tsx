@@ -8,7 +8,7 @@ const Settings = () => {
     { id: 2, name: "Clear Sandbox Data", path: "/settings/clear-sandbox" },
   ];
   return (
-    <MainContainer activeTab="Settings">
+    <MainContainer>
       <div>
         <h2 className="text-[32px] font-semibold">Settings</h2>
         <div className="w-[60%] mt-8">

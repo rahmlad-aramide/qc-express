@@ -83,7 +83,7 @@ const ListBusinessUsers = () => {
       });
   }, []);
   return (
-    <MainContainer activeTab="Settings">
+    <MainContainer>
       <ToastContainer />
       <span
         onClick={backToSettings}

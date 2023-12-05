@@ -4,18 +4,17 @@ import TopNav from "../navs/TopNav";
 
 interface MainContainerProps {
   children: ReactNode;
-  activeTab: string;
 }
 
-const MainContainer: FC<MainContainerProps> = ({ children, activeTab }) => {
+const MainContainer: FC<MainContainerProps> = ({ children }) => {
   return (
     <div>
       <TopNav />
       <div className="flex h-[92vh]">
         <div className="w-[15%] min-w-[160px] border-r">
-          <SideNav activeTab={activeTab} />
+          <SideNav />
         </div>
-        <div className="w-[85%] px-10 h-[92vh] pt-10 overflow-auto">{children}</div>
+        <div className="w-[85%] px-5 h-[92vh] pt-4 overflow-auto">{children}</div>
       </div>
     </div>
   );

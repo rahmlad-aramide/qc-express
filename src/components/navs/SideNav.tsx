@@ -4,11 +4,7 @@ import { RiHome5Line } from "react-icons/ri";
 import { IoSettingsOutline } from "react-icons/io5";
 import { MdOutlinePowerSettingsNew } from "react-icons/md";
 
-interface SideNavProps {
-  activeTab: string;
-}
-
-const SideNav: FC<SideNavProps> = ({ activeTab }) => {
+const SideNav: FC = () => {
   return (
     <ul className="pt-10 h-[100%] px-2 space-y-4">
       <li>
