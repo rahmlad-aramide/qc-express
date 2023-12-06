@@ -65,10 +65,10 @@ const Login = () => {
     .then((response) => {
       setLoading(false);
       console.log(response)
-      sessionStorage.setItem('userData', JSON.stringify(response.data))
+      sessionStorage.setItem('accessToken', JSON.stringify(response.data.data.access_token))
       notify("Login successfully, redirecting you.");
       setTimeout(() => {
-        navigateTo("/home");
+        navigateTo("/");
       }, 2500);
     })
     .catch((error) => {

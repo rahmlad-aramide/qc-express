@@ -59,15 +59,15 @@ const NewUser = () => {
   return (
     <MainContainer>
       <ToastContainer />
-      <span
-        onClick={backToSettings}
-        className="cursor-pointer flex items-center text-lg font-semibold"
-      >
-        <IoChevronBackOutline size={25} className="mr-2" />
-        Back
-      </span>
+      <button
+          onClick={backToSettings}
+          className="cursor-pointer flex items-center text-sm font-semibold"
+        >
+          <IoChevronBackOutline size={18} className="mr-1" />
+          Back
+        </button>
 
-      <h2 className="text-[32px] font-semibold mt-3">Create New User</h2>
+      <h2 className="text-lg font-semibold mt-2">Create New User</h2>
       <div className="mt-10 w-[50%] space-y-8">
         <div className="space-y-2">
           <label className="text-[#333] px-1 font-semibold">Firstname</label>

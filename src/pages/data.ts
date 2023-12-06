@@ -446,7 +446,4567 @@ export const dashboardData = {
                 "updatedAt": "2023-11-30T21:22:56.010Z",
                 "__v": 0,
                 "id": "6568fd2fbf8577003e5abc4d"
-            }
+            },
+            {
+                "shipmentMeta": {
+                    "trackingId": "1494896465",
+                    "trackingUrl": "https://express.api.dhl.com/mydhlapi/test/shipments/1494896465/tracking",
+                    "packages": [
+                        {
+                            "_id": "6568fd9dbf8577003e5abc6e",
+                            "referenceNumber": 1,
+                            "trackingNumber": "JD014600004790042206",
+                            "trackingUrl": "https://express.api.dhl.com/mydhlapi/test/shipments/1494896465/tracking?pieceTrackingNumber=JD014600004790042206",
+                            "id": "6568fd9dbf8577003e5abc6e"
+                        },
+                        {
+                            "_id": "6568fd9dbf8577003e5abc6f",
+                            "referenceNumber": 2,
+                            "trackingNumber": "JD014600004790042207",
+                            "trackingUrl": "https://express.api.dhl.com/mydhlapi/test/shipments/1494896465/tracking?pieceTrackingNumber=JD014600004790042207",
+                            "id": "6568fd9dbf8577003e5abc6f"
+                        }
+                    ]
+                },
+                "document": "PACKAGE",
+                "_id": "6568fd9dbf8577003e5abc69",
+                "packages": [
+                    {
+                        "dimensions": {
+                            "length": 1,
+                            "width": 1,
+                            "height": 1
+                        },
+                        "_id": "6568fd9dbf8577003e5abc6a",
+                        "weight": 0.5,
+                        "description": "Piece content description",
+                        "id": "6568fd9dbf8577003e5abc6a"
+                    },
+                    {
+                        "dimensions": {
+                            "length": 1,
+                            "width": 1,
+                            "height": 1
+                        },
+                        "_id": "6568fd9dbf8577003e5abc6b",
+                        "weight": 5,
+                        "description": "2 Piece content description",
+                        "id": "6568fd9dbf8577003e5abc6b"
+                    }
+                ],
+                "description": "description goes here",
+                "number_items": 2,
+                "delivery_info": [
+                    {
+                        "postalAddress": {
+                            "postalCode": "100001",
+                            "cityName": "Akure",
+                            "countryCode": "NG",
+                            "addressLine1": "yaba, lagos",
+                            "countyName": "Ondo"
+                        },
+                        "contactInformation": {
+                            "email": "shipper_create_shipmentapi@dhltestmail.com",
+                            "phone": "18211309039",
+                            "companyName": "Cider BookStore",
+                            "fullName": "Anyanwu Chinedu"
+                        },
+                        "_id": "6568fd9dbf8577003e5abc6c",
+                        "type": "CUSTOMER",
+                        "id": "6568fd9dbf8577003e5abc6c"
+                    },
+                    {
+                        "postalAddress": {
+                            "postalCode": "GA015",
+                            "cityName": "Accra",
+                            "countryCode": "GH",
+                            "addressLine1": "Some random place in Accra"
+                        },
+                        "contactInformation": {
+                            "email": "recipient_create_shipmentapi@dhltestmail.com",
+                            "phone": "9402825665",
+                            "companyName": "Baylee Marshall",
+                            "fullName": "Baylee Marshall"
+                        },
+                        "_id": "6568fd9dbf8577003e5abc6d",
+                        "type": "RECIEVER",
+                        "id": "6568fd9dbf8577003e5abc6d"
+                    }
+                ],
+                "customerId": "6568f828bf8577003e5abc3d",
+                "declaredValue": 5000,
+                "channel": "api",
+                "environment": "sandbox",
+                "createdAt": "2023-11-30T21:24:45.536Z",
+                "updatedAt": "2023-11-30T21:24:45.536Z",
+                "__v": 0,
+                "id": "6568fd9dbf8577003e5abc69"
+            },
+            {
+                "shipmentMeta": {
+                    "trackingId": "1494896443",
+                    "trackingUrl": "https://express.api.dhl.com/mydhlapi/test/shipments/1494896443/tracking",
+                    "packages": [
+                        {
+                            "_id": "6568fd67bf8577003e5abc61",
+                            "referenceNumber": 1,
+                            "trackingNumber": "JD014600004790042203",
+                            "trackingUrl": "https://express.api.dhl.com/mydhlapi/test/shipments/1494896443/tracking?pieceTrackingNumber=JD014600004790042203",
+                            "id": "6568fd67bf8577003e5abc61"
+                        },
+                        {
+                            "_id": "6568fd67bf8577003e5abc62",
+                            "referenceNumber": 2,
+                            "trackingNumber": "JD014600004790042204",
+                            "trackingUrl": "https://express.api.dhl.com/mydhlapi/test/shipments/1494896443/tracking?pieceTrackingNumber=JD014600004790042204",
+                            "id": "6568fd67bf8577003e5abc62"
+                        }
+                    ]
+                },
+                "document": "PACKAGE",
+                "_id": "6568fd67bf8577003e5abc5c",
+                "packages": [
+                    {
+                        "dimensions": {
+                            "length": 1,
+                            "width": 1,
+                            "height": 1
+                        },
+                        "_id": "6568fd67bf8577003e5abc5d",
+                        "weight": 0.5,
+                        "description": "Piece content description",
+                        "id": "6568fd67bf8577003e5abc5d"
+                    },
+                    {
+                        "dimensions": {
+                            "length": 1,
+                            "width": 1,
+                            "height": 1
+                        },
+                        "_id": "6568fd67bf8577003e5abc5e",
+                        "weight": 5,
+                        "description": "2 Piece content description",
+                        "id": "6568fd67bf8577003e5abc5e"
+                    }
+                ],
+                "description": "description goes here",
+                "number_items": 2,
+                "delivery_info": [
+                    {
+                        "postalAddress": {
+                            "postalCode": "100001",
+                            "cityName": "Yaba",
+                            "countryCode": "NG",
+                            "addressLine1": "yaba, lagos",
+                            "countyName": "Lagos"
+                        },
+                        "contactInformation": {
+                            "email": "shipper_create_shipmentapi@dhltestmail.com",
+                            "phone": "18211309039",
+                            "companyName": "Cider BookStore",
+                            "fullName": "Anyanwu Chinedu"
+                        },
+                        "_id": "6568fd67bf8577003e5abc5f",
+                        "type": "CUSTOMER",
+                        "id": "6568fd67bf8577003e5abc5f"
+                    },
+                    {
+                        "postalAddress": {
+                            "postalCode": "GA015",
+                            "cityName": "Accra",
+                            "countryCode": "GH",
+                            "addressLine1": "Some random place in Accra"
+                        },
+                        "contactInformation": {
+                            "email": "recipient_create_shipmentapi@dhltestmail.com",
+                            "phone": "9402825665",
+                            "companyName": "Baylee Marshall",
+                            "fullName": "Baylee Marshall"
+                        },
+                        "_id": "6568fd67bf8577003e5abc60",
+                        "type": "RECIEVER",
+                        "id": "6568fd67bf8577003e5abc60"
+                    }
+                ],
+                "customerId": "6568f828bf8577003e5abc3d",
+                "declaredValue": 5000,
+                "channel": "api",
+                "environment": "sandbox",
+                "createdAt": "2023-11-30T21:23:51.925Z",
+                "updatedAt": "2023-11-30T21:23:51.925Z",
+                "__v": 0,
+                "id": "6568fd67bf8577003e5abc5c"
+            },
+            {
+                "shipmentMeta": {
+                    "trackingId": "1494896373",
+                    "trackingUrl": "https://express.api.dhl.com/mydhlapi/test/shipments/1494896373/tracking",
+                    "packages": [
+                        {
+                            "_id": "6568fd30bf8577003e5abc52",
+                            "referenceNumber": 1,
+                            "trackingNumber": "JD014600004790042195",
+                            "trackingUrl": "https://express.api.dhl.com/mydhlapi/test/shipments/1494896373/tracking?pieceTrackingNumber=JD014600004790042195",
+                            "id": "6568fd30bf8577003e5abc52"
+                        },
+                        {
+                            "_id": "6568fd30bf8577003e5abc53",
+                            "referenceNumber": 2,
+                            "trackingNumber": "JD014600004790042196",
+                            "trackingUrl": "https://express.api.dhl.com/mydhlapi/test/shipments/1494896373/tracking?pieceTrackingNumber=JD014600004790042196",
+                            "id": "6568fd30bf8577003e5abc53"
+                        }
+                    ]
+                },
+                "document": "PACKAGE",
+                "_id": "6568fd2fbf8577003e5abc4d",
+                "packages": [
+                    {
+                        "dimensions": {
+                            "length": 1,
+                            "width": 1,
+                            "height": 1
+                        },
+                        "_id": "6568fd30bf8577003e5abc4e",
+                        "weight": 0.5,
+                        "description": "Piece content description",
+                        "id": "6568fd30bf8577003e5abc4e"
+                    },
+                    {
+                        "dimensions": {
+                            "length": 1,
+                            "width": 1,
+                            "height": 1
+                        },
+                        "_id": "6568fd30bf8577003e5abc4f",
+                        "weight": 5,
+                        "description": "2 Piece content description",
+                        "id": "6568fd30bf8577003e5abc4f"
+                    }
+                ],
+                "description": "description goes here",
+                "number_items": 2,
+                "delivery_info": [
+                    {
+                        "postalAddress": {
+                            "postalCode": "100001",
+                            "cityName": "Imo",
+                            "countryCode": "NG",
+                            "addressLine1": "yaba, lagos",
+                            "countyName": "Owerri"
+                        },
+                        "contactInformation": {
+                            "email": "shipper_create_shipmentapi@dhltestmail.com",
+                            "phone": "18211309039",
+                            "companyName": "Cider BookStore",
+                            "fullName": "Anyanwu Chinedu"
+                        },
+                        "_id": "6568fd30bf8577003e5abc50",
+                        "type": "CUSTOMER",
+                        "id": "6568fd30bf8577003e5abc50"
+                    },
+                    {
+                        "postalAddress": {
+                            "postalCode": "GA015",
+                            "cityName": "Accra",
+                            "countryCode": "GH",
+                            "addressLine1": "Some random place in Accra"
+                        },
+                        "contactInformation": {
+                            "email": "recipient_create_shipmentapi@dhltestmail.com",
+                            "phone": "9402825665",
+                            "companyName": "Baylee Marshall",
+                            "fullName": "Baylee Marshall"
+                        },
+                        "_id": "6568fd30bf8577003e5abc51",
+                        "type": "RECIEVER",
+                        "id": "6568fd30bf8577003e5abc51"
+                    }
+                ],
+                "customerId": "6568f828bf8577003e5abc3d",
+                "declaredValue": 5000,
+                "channel": "api",
+                "environment": "sandbox",
+                "createdAt": "2023-11-30T21:22:56.010Z",
+                "updatedAt": "2023-11-30T21:22:56.010Z",
+                "__v": 0,
+                "id": "6568fd2fbf8577003e5abc4d"
+            },
+            {
+                "shipmentMeta": {
+                    "trackingId": "1494896465",
+                    "trackingUrl": "https://express.api.dhl.com/mydhlapi/test/shipments/1494896465/tracking",
+                    "packages": [
+                        {
+                            "_id": "6568fd9dbf8577003e5abc6e",
+                            "referenceNumber": 1,
+                            "trackingNumber": "JD014600004790042206",
+                            "trackingUrl": "https://express.api.dhl.com/mydhlapi/test/shipments/1494896465/tracking?pieceTrackingNumber=JD014600004790042206",
+                            "id": "6568fd9dbf8577003e5abc6e"
+                        },
+                        {
+                            "_id": "6568fd9dbf8577003e5abc6f",
+                            "referenceNumber": 2,
+                            "trackingNumber": "JD014600004790042207",
+                            "trackingUrl": "https://express.api.dhl.com/mydhlapi/test/shipments/1494896465/tracking?pieceTrackingNumber=JD014600004790042207",
+                            "id": "6568fd9dbf8577003e5abc6f"
+                        }
+                    ]
+                },
+                "document": "PACKAGE",
+                "_id": "6568fd9dbf8577003e5abc69",
+                "packages": [
+                    {
+                        "dimensions": {
+                            "length": 1,
+                            "width": 1,
+                            "height": 1
+                        },
+                        "_id": "6568fd9dbf8577003e5abc6a",
+                        "weight": 0.5,
+                        "description": "Piece content description",
+                        "id": "6568fd9dbf8577003e5abc6a"
+                    },
+                    {
+                        "dimensions": {
+                            "length": 1,
+                            "width": 1,
+                            "height": 1
+                        },
+                        "_id": "6568fd9dbf8577003e5abc6b",
+                        "weight": 5,
+                        "description": "2 Piece content description",
+                        "id": "6568fd9dbf8577003e5abc6b"
+                    }
+                ],
+                "description": "description goes here",
+                "number_items": 2,
+                "delivery_info": [
+                    {
+                        "postalAddress": {
+                            "postalCode": "100001",
+                            "cityName": "Akure",
+                            "countryCode": "NG",
+                            "addressLine1": "yaba, lagos",
+                            "countyName": "Ondo"
+                        },
+                        "contactInformation": {
+                            "email": "shipper_create_shipmentapi@dhltestmail.com",
+                            "phone": "18211309039",
+                            "companyName": "Cider BookStore",
+                            "fullName": "Anyanwu Chinedu"
+                        },
+                        "_id": "6568fd9dbf8577003e5abc6c",
+                        "type": "CUSTOMER",
+                        "id": "6568fd9dbf8577003e5abc6c"
+                    },
+                    {
+                        "postalAddress": {
+                            "postalCode": "GA015",
+                            "cityName": "Accra",
+                            "countryCode": "GH",
+                            "addressLine1": "Some random place in Accra"
+                        },
+                        "contactInformation": {
+                            "email": "recipient_create_shipmentapi@dhltestmail.com",
+                            "phone": "9402825665",
+                            "companyName": "Baylee Marshall",
+                            "fullName": "Baylee Marshall"
+                        },
+                        "_id": "6568fd9dbf8577003e5abc6d",
+                        "type": "RECIEVER",
+                        "id": "6568fd9dbf8577003e5abc6d"
+                    }
+                ],
+                "customerId": "6568f828bf8577003e5abc3d",
+                "declaredValue": 5000,
+                "channel": "api",
+                "environment": "sandbox",
+                "createdAt": "2023-11-30T21:24:45.536Z",
+                "updatedAt": "2023-11-30T21:24:45.536Z",
+                "__v": 0,
+                "id": "6568fd9dbf8577003e5abc69"
+            },
+            {
+                "shipmentMeta": {
+                    "trackingId": "1494896443",
+                    "trackingUrl": "https://express.api.dhl.com/mydhlapi/test/shipments/1494896443/tracking",
+                    "packages": [
+                        {
+                            "_id": "6568fd67bf8577003e5abc61",
+                            "referenceNumber": 1,
+                            "trackingNumber": "JD014600004790042203",
+                            "trackingUrl": "https://express.api.dhl.com/mydhlapi/test/shipments/1494896443/tracking?pieceTrackingNumber=JD014600004790042203",
+                            "id": "6568fd67bf8577003e5abc61"
+                        },
+                        {
+                            "_id": "6568fd67bf8577003e5abc62",
+                            "referenceNumber": 2,
+                            "trackingNumber": "JD014600004790042204",
+                            "trackingUrl": "https://express.api.dhl.com/mydhlapi/test/shipments/1494896443/tracking?pieceTrackingNumber=JD014600004790042204",
+                            "id": "6568fd67bf8577003e5abc62"
+                        }
+                    ]
+                },
+                "document": "PACKAGE",
+                "_id": "6568fd67bf8577003e5abc5c",
+                "packages": [
+                    {
+                        "dimensions": {
+                            "length": 1,
+                            "width": 1,
+                            "height": 1
+                        },
+                        "_id": "6568fd67bf8577003e5abc5d",
+                        "weight": 0.5,
+                        "description": "Piece content description",
+                        "id": "6568fd67bf8577003e5abc5d"
+                    },
+                    {
+                        "dimensions": {
+                            "length": 1,
+                            "width": 1,
+                            "height": 1
+                        },
+                        "_id": "6568fd67bf8577003e5abc5e",
+                        "weight": 5,
+                        "description": "2 Piece content description",
+                        "id": "6568fd67bf8577003e5abc5e"
+                    }
+                ],
+                "description": "description goes here",
+                "number_items": 2,
+                "delivery_info": [
+                    {
+                        "postalAddress": {
+                            "postalCode": "100001",
+                            "cityName": "Yaba",
+                            "countryCode": "NG",
+                            "addressLine1": "yaba, lagos",
+                            "countyName": "Lagos"
+                        },
+                        "contactInformation": {
+                            "email": "shipper_create_shipmentapi@dhltestmail.com",
+                            "phone": "18211309039",
+                            "companyName": "Cider BookStore",
+                            "fullName": "Anyanwu Chinedu"
+                        },
+                        "_id": "6568fd67bf8577003e5abc5f",
+                        "type": "CUSTOMER",
+                        "id": "6568fd67bf8577003e5abc5f"
+                    },
+                    {
+                        "postalAddress": {
+                            "postalCode": "GA015",
+                            "cityName": "Accra",
+                            "countryCode": "GH",
+                            "addressLine1": "Some random place in Accra"
+                        },
+                        "contactInformation": {
+                            "email": "recipient_create_shipmentapi@dhltestmail.com",
+                            "phone": "9402825665",
+                            "companyName": "Baylee Marshall",
+                            "fullName": "Baylee Marshall"
+                        },
+                        "_id": "6568fd67bf8577003e5abc60",
+                        "type": "RECIEVER",
+                        "id": "6568fd67bf8577003e5abc60"
+                    }
+                ],
+                "customerId": "6568f828bf8577003e5abc3d",
+                "declaredValue": 5000,
+                "channel": "api",
+                "environment": "sandbox",
+                "createdAt": "2023-11-30T21:23:51.925Z",
+                "updatedAt": "2023-11-30T21:23:51.925Z",
+                "__v": 0,
+                "id": "6568fd67bf8577003e5abc5c"
+            },
+            {
+                "shipmentMeta": {
+                    "trackingId": "1494896373",
+                    "trackingUrl": "https://express.api.dhl.com/mydhlapi/test/shipments/1494896373/tracking",
+                    "packages": [
+                        {
+                            "_id": "6568fd30bf8577003e5abc52",
+                            "referenceNumber": 1,
+                            "trackingNumber": "JD014600004790042195",
+                            "trackingUrl": "https://express.api.dhl.com/mydhlapi/test/shipments/1494896373/tracking?pieceTrackingNumber=JD014600004790042195",
+                            "id": "6568fd30bf8577003e5abc52"
+                        },
+                        {
+                            "_id": "6568fd30bf8577003e5abc53",
+                            "referenceNumber": 2,
+                            "trackingNumber": "JD014600004790042196",
+                            "trackingUrl": "https://express.api.dhl.com/mydhlapi/test/shipments/1494896373/tracking?pieceTrackingNumber=JD014600004790042196",
+                            "id": "6568fd30bf8577003e5abc53"
+                        }
+                    ]
+                },
+                "document": "PACKAGE",
+                "_id": "6568fd2fbf8577003e5abc4d",
+                "packages": [
+                    {
+                        "dimensions": {
+                            "length": 1,
+                            "width": 1,
+                            "height": 1
+                        },
+                        "_id": "6568fd30bf8577003e5abc4e",
+                        "weight": 0.5,
+                        "description": "Piece content description",
+                        "id": "6568fd30bf8577003e5abc4e"
+                    },
+                    {
+                        "dimensions": {
+                            "length": 1,
+                            "width": 1,
+                            "height": 1
+                        },
+                        "_id": "6568fd30bf8577003e5abc4f",
+                        "weight": 5,
+                        "description": "2 Piece content description",
+                        "id": "6568fd30bf8577003e5abc4f"
+                    }
+                ],
+                "description": "description goes here",
+                "number_items": 2,
+                "delivery_info": [
+                    {
+                        "postalAddress": {
+                            "postalCode": "100001",
+                            "cityName": "Imo",
+                            "countryCode": "NG",
+                            "addressLine1": "yaba, lagos",
+                            "countyName": "Owerri"
+                        },
+                        "contactInformation": {
+                            "email": "shipper_create_shipmentapi@dhltestmail.com",
+                            "phone": "18211309039",
+                            "companyName": "Cider BookStore",
+                            "fullName": "Anyanwu Chinedu"
+                        },
+                        "_id": "6568fd30bf8577003e5abc50",
+                        "type": "CUSTOMER",
+                        "id": "6568fd30bf8577003e5abc50"
+                    },
+                    {
+                        "postalAddress": {
+                            "postalCode": "GA015",
+                            "cityName": "Accra",
+                            "countryCode": "GH",
+                            "addressLine1": "Some random place in Accra"
+                        },
+                        "contactInformation": {
+                            "email": "recipient_create_shipmentapi@dhltestmail.com",
+                            "phone": "9402825665",
+                            "companyName": "Baylee Marshall",
+                            "fullName": "Baylee Marshall"
+                        },
+                        "_id": "6568fd30bf8577003e5abc51",
+                        "type": "RECIEVER",
+                        "id": "6568fd30bf8577003e5abc51"
+                    }
+                ],
+                "customerId": "6568f828bf8577003e5abc3d",
+                "declaredValue": 5000,
+                "channel": "api",
+                "environment": "sandbox",
+                "createdAt": "2023-11-30T21:22:56.010Z",
+                "updatedAt": "2023-11-30T21:22:56.010Z",
+                "__v": 0,
+                "id": "6568fd2fbf8577003e5abc4d"
+            },
+            {
+                "shipmentMeta": {
+                    "trackingId": "1494896465",
+                    "trackingUrl": "https://express.api.dhl.com/mydhlapi/test/shipments/1494896465/tracking",
+                    "packages": [
+                        {
+                            "_id": "6568fd9dbf8577003e5abc6e",
+                            "referenceNumber": 1,
+                            "trackingNumber": "JD014600004790042206",
+                            "trackingUrl": "https://express.api.dhl.com/mydhlapi/test/shipments/1494896465/tracking?pieceTrackingNumber=JD014600004790042206",
+                            "id": "6568fd9dbf8577003e5abc6e"
+                        },
+                        {
+                            "_id": "6568fd9dbf8577003e5abc6f",
+                            "referenceNumber": 2,
+                            "trackingNumber": "JD014600004790042207",
+                            "trackingUrl": "https://express.api.dhl.com/mydhlapi/test/shipments/1494896465/tracking?pieceTrackingNumber=JD014600004790042207",
+                            "id": "6568fd9dbf8577003e5abc6f"
+                        }
+                    ]
+                },
+                "document": "PACKAGE",
+                "_id": "6568fd9dbf8577003e5abc69",
+                "packages": [
+                    {
+                        "dimensions": {
+                            "length": 1,
+                            "width": 1,
+                            "height": 1
+                        },
+                        "_id": "6568fd9dbf8577003e5abc6a",
+                        "weight": 0.5,
+                        "description": "Piece content description",
+                        "id": "6568fd9dbf8577003e5abc6a"
+                    },
+                    {
+                        "dimensions": {
+                            "length": 1,
+                            "width": 1,
+                            "height": 1
+                        },
+                        "_id": "6568fd9dbf8577003e5abc6b",
+                        "weight": 5,
+                        "description": "2 Piece content description",
+                        "id": "6568fd9dbf8577003e5abc6b"
+                    }
+                ],
+                "description": "description goes here",
+                "number_items": 2,
+                "delivery_info": [
+                    {
+                        "postalAddress": {
+                            "postalCode": "100001",
+                            "cityName": "Akure",
+                            "countryCode": "NG",
+                            "addressLine1": "yaba, lagos",
+                            "countyName": "Ondo"
+                        },
+                        "contactInformation": {
+                            "email": "shipper_create_shipmentapi@dhltestmail.com",
+                            "phone": "18211309039",
+                            "companyName": "Cider BookStore",
+                            "fullName": "Anyanwu Chinedu"
+                        },
+                        "_id": "6568fd9dbf8577003e5abc6c",
+                        "type": "CUSTOMER",
+                        "id": "6568fd9dbf8577003e5abc6c"
+                    },
+                    {
+                        "postalAddress": {
+                            "postalCode": "GA015",
+                            "cityName": "Accra",
+                            "countryCode": "GH",
+                            "addressLine1": "Some random place in Accra"
+                        },
+                        "contactInformation": {
+                            "email": "recipient_create_shipmentapi@dhltestmail.com",
+                            "phone": "9402825665",
+                            "companyName": "Baylee Marshall",
+                            "fullName": "Baylee Marshall"
+                        },
+                        "_id": "6568fd9dbf8577003e5abc6d",
+                        "type": "RECIEVER",
+                        "id": "6568fd9dbf8577003e5abc6d"
+                    }
+                ],
+                "customerId": "6568f828bf8577003e5abc3d",
+                "declaredValue": 5000,
+                "channel": "api",
+                "environment": "sandbox",
+                "createdAt": "2023-11-30T21:24:45.536Z",
+                "updatedAt": "2023-11-30T21:24:45.536Z",
+                "__v": 0,
+                "id": "6568fd9dbf8577003e5abc69"
+            },
+            {
+                "shipmentMeta": {
+                    "trackingId": "1494896443",
+                    "trackingUrl": "https://express.api.dhl.com/mydhlapi/test/shipments/1494896443/tracking",
+                    "packages": [
+                        {
+                            "_id": "6568fd67bf8577003e5abc61",
+                            "referenceNumber": 1,
+                            "trackingNumber": "JD014600004790042203",
+                            "trackingUrl": "https://express.api.dhl.com/mydhlapi/test/shipments/1494896443/tracking?pieceTrackingNumber=JD014600004790042203",
+                            "id": "6568fd67bf8577003e5abc61"
+                        },
+                        {
+                            "_id": "6568fd67bf8577003e5abc62",
+                            "referenceNumber": 2,
+                            "trackingNumber": "JD014600004790042204",
+                            "trackingUrl": "https://express.api.dhl.com/mydhlapi/test/shipments/1494896443/tracking?pieceTrackingNumber=JD014600004790042204",
+                            "id": "6568fd67bf8577003e5abc62"
+                        }
+                    ]
+                },
+                "document": "PACKAGE",
+                "_id": "6568fd67bf8577003e5abc5c",
+                "packages": [
+                    {
+                        "dimensions": {
+                            "length": 1,
+                            "width": 1,
+                            "height": 1
+                        },
+                        "_id": "6568fd67bf8577003e5abc5d",
+                        "weight": 0.5,
+                        "description": "Piece content description",
+                        "id": "6568fd67bf8577003e5abc5d"
+                    },
+                    {
+                        "dimensions": {
+                            "length": 1,
+                            "width": 1,
+                            "height": 1
+                        },
+                        "_id": "6568fd67bf8577003e5abc5e",
+                        "weight": 5,
+                        "description": "2 Piece content description",
+                        "id": "6568fd67bf8577003e5abc5e"
+                    }
+                ],
+                "description": "description goes here",
+                "number_items": 2,
+                "delivery_info": [
+                    {
+                        "postalAddress": {
+                            "postalCode": "100001",
+                            "cityName": "Yaba",
+                            "countryCode": "NG",
+                            "addressLine1": "yaba, lagos",
+                            "countyName": "Lagos"
+                        },
+                        "contactInformation": {
+                            "email": "shipper_create_shipmentapi@dhltestmail.com",
+                            "phone": "18211309039",
+                            "companyName": "Cider BookStore",
+                            "fullName": "Anyanwu Chinedu"
+                        },
+                        "_id": "6568fd67bf8577003e5abc5f",
+                        "type": "CUSTOMER",
+                        "id": "6568fd67bf8577003e5abc5f"
+                    },
+                    {
+                        "postalAddress": {
+                            "postalCode": "GA015",
+                            "cityName": "Accra",
+                            "countryCode": "GH",
+                            "addressLine1": "Some random place in Accra"
+                        },
+                        "contactInformation": {
+                            "email": "recipient_create_shipmentapi@dhltestmail.com",
+                            "phone": "9402825665",
+                            "companyName": "Baylee Marshall",
+                            "fullName": "Baylee Marshall"
+                        },
+                        "_id": "6568fd67bf8577003e5abc60",
+                        "type": "RECIEVER",
+                        "id": "6568fd67bf8577003e5abc60"
+                    }
+                ],
+                "customerId": "6568f828bf8577003e5abc3d",
+                "declaredValue": 5000,
+                "channel": "api",
+                "environment": "sandbox",
+                "createdAt": "2023-11-30T21:23:51.925Z",
+                "updatedAt": "2023-11-30T21:23:51.925Z",
+                "__v": 0,
+                "id": "6568fd67bf8577003e5abc5c"
+            },
+            {
+                "shipmentMeta": {
+                    "trackingId": "1494896373",
+                    "trackingUrl": "https://express.api.dhl.com/mydhlapi/test/shipments/1494896373/tracking",
+                    "packages": [
+                        {
+                            "_id": "6568fd30bf8577003e5abc52",
+                            "referenceNumber": 1,
+                            "trackingNumber": "JD014600004790042195",
+                            "trackingUrl": "https://express.api.dhl.com/mydhlapi/test/shipments/1494896373/tracking?pieceTrackingNumber=JD014600004790042195",
+                            "id": "6568fd30bf8577003e5abc52"
+                        },
+                        {
+                            "_id": "6568fd30bf8577003e5abc53",
+                            "referenceNumber": 2,
+                            "trackingNumber": "JD014600004790042196",
+                            "trackingUrl": "https://express.api.dhl.com/mydhlapi/test/shipments/1494896373/tracking?pieceTrackingNumber=JD014600004790042196",
+                            "id": "6568fd30bf8577003e5abc53"
+                        }
+                    ]
+                },
+                "document": "PACKAGE",
+                "_id": "6568fd2fbf8577003e5abc4d",
+                "packages": [
+                    {
+                        "dimensions": {
+                            "length": 1,
+                            "width": 1,
+                            "height": 1
+                        },
+                        "_id": "6568fd30bf8577003e5abc4e",
+                        "weight": 0.5,
+                        "description": "Piece content description",
+                        "id": "6568fd30bf8577003e5abc4e"
+                    },
+                    {
+                        "dimensions": {
+                            "length": 1,
+                            "width": 1,
+                            "height": 1
+                        },
+                        "_id": "6568fd30bf8577003e5abc4f",
+                        "weight": 5,
+                        "description": "2 Piece content description",
+                        "id": "6568fd30bf8577003e5abc4f"
+                    }
+                ],
+                "description": "description goes here",
+                "number_items": 2,
+                "delivery_info": [
+                    {
+                        "postalAddress": {
+                            "postalCode": "100001",
+                            "cityName": "Imo",
+                            "countryCode": "NG",
+                            "addressLine1": "yaba, lagos",
+                            "countyName": "Owerri"
+                        },
+                        "contactInformation": {
+                            "email": "shipper_create_shipmentapi@dhltestmail.com",
+                            "phone": "18211309039",
+                            "companyName": "Cider BookStore",
+                            "fullName": "Anyanwu Chinedu"
+                        },
+                        "_id": "6568fd30bf8577003e5abc50",
+                        "type": "CUSTOMER",
+                        "id": "6568fd30bf8577003e5abc50"
+                    },
+                    {
+                        "postalAddress": {
+                            "postalCode": "GA015",
+                            "cityName": "Accra",
+                            "countryCode": "GH",
+                            "addressLine1": "Some random place in Accra"
+                        },
+                        "contactInformation": {
+                            "email": "recipient_create_shipmentapi@dhltestmail.com",
+                            "phone": "9402825665",
+                            "companyName": "Baylee Marshall",
+                            "fullName": "Baylee Marshall"
+                        },
+                        "_id": "6568fd30bf8577003e5abc51",
+                        "type": "RECIEVER",
+                        "id": "6568fd30bf8577003e5abc51"
+                    }
+                ],
+                "customerId": "6568f828bf8577003e5abc3d",
+                "declaredValue": 5000,
+                "channel": "api",
+                "environment": "sandbox",
+                "createdAt": "2023-11-30T21:22:56.010Z",
+                "updatedAt": "2023-11-30T21:22:56.010Z",
+                "__v": 0,
+                "id": "6568fd2fbf8577003e5abc4d"
+            },
+            {
+                "shipmentMeta": {
+                    "trackingId": "1494896465",
+                    "trackingUrl": "https://express.api.dhl.com/mydhlapi/test/shipments/1494896465/tracking",
+                    "packages": [
+                        {
+                            "_id": "6568fd9dbf8577003e5abc6e",
+                            "referenceNumber": 1,
+                            "trackingNumber": "JD014600004790042206",
+                            "trackingUrl": "https://express.api.dhl.com/mydhlapi/test/shipments/1494896465/tracking?pieceTrackingNumber=JD014600004790042206",
+                            "id": "6568fd9dbf8577003e5abc6e"
+                        },
+                        {
+                            "_id": "6568fd9dbf8577003e5abc6f",
+                            "referenceNumber": 2,
+                            "trackingNumber": "JD014600004790042207",
+                            "trackingUrl": "https://express.api.dhl.com/mydhlapi/test/shipments/1494896465/tracking?pieceTrackingNumber=JD014600004790042207",
+                            "id": "6568fd9dbf8577003e5abc6f"
+                        }
+                    ]
+                },
+                "document": "PACKAGE",
+                "_id": "6568fd9dbf8577003e5abc69",
+                "packages": [
+                    {
+                        "dimensions": {
+                            "length": 1,
+                            "width": 1,
+                            "height": 1
+                        },
+                        "_id": "6568fd9dbf8577003e5abc6a",
+                        "weight": 0.5,
+                        "description": "Piece content description",
+                        "id": "6568fd9dbf8577003e5abc6a"
+                    },
+                    {
+                        "dimensions": {
+                            "length": 1,
+                            "width": 1,
+                            "height": 1
+                        },
+                        "_id": "6568fd9dbf8577003e5abc6b",
+                        "weight": 5,
+                        "description": "2 Piece content description",
+                        "id": "6568fd9dbf8577003e5abc6b"
+                    }
+                ],
+                "description": "description goes here",
+                "number_items": 2,
+                "delivery_info": [
+                    {
+                        "postalAddress": {
+                            "postalCode": "100001",
+                            "cityName": "Akure",
+                            "countryCode": "NG",
+                            "addressLine1": "yaba, lagos",
+                            "countyName": "Ondo"
+                        },
+                        "contactInformation": {
+                            "email": "shipper_create_shipmentapi@dhltestmail.com",
+                            "phone": "18211309039",
+                            "companyName": "Cider BookStore",
+                            "fullName": "Anyanwu Chinedu"
+                        },
+                        "_id": "6568fd9dbf8577003e5abc6c",
+                        "type": "CUSTOMER",
+                        "id": "6568fd9dbf8577003e5abc6c"
+                    },
+                    {
+                        "postalAddress": {
+                            "postalCode": "GA015",
+                            "cityName": "Accra",
+                            "countryCode": "GH",
+                            "addressLine1": "Some random place in Accra"
+                        },
+                        "contactInformation": {
+                            "email": "recipient_create_shipmentapi@dhltestmail.com",
+                            "phone": "9402825665",
+                            "companyName": "Baylee Marshall",
+                            "fullName": "Baylee Marshall"
+                        },
+                        "_id": "6568fd9dbf8577003e5abc6d",
+                        "type": "RECIEVER",
+                        "id": "6568fd9dbf8577003e5abc6d"
+                    }
+                ],
+                "customerId": "6568f828bf8577003e5abc3d",
+                "declaredValue": 5000,
+                "channel": "api",
+                "environment": "sandbox",
+                "createdAt": "2023-11-30T21:24:45.536Z",
+                "updatedAt": "2023-11-30T21:24:45.536Z",
+                "__v": 0,
+                "id": "6568fd9dbf8577003e5abc69"
+            },
+            {
+                "shipmentMeta": {
+                    "trackingId": "1494896443",
+                    "trackingUrl": "https://express.api.dhl.com/mydhlapi/test/shipments/1494896443/tracking",
+                    "packages": [
+                        {
+                            "_id": "6568fd67bf8577003e5abc61",
+                            "referenceNumber": 1,
+                            "trackingNumber": "JD014600004790042203",
+                            "trackingUrl": "https://express.api.dhl.com/mydhlapi/test/shipments/1494896443/tracking?pieceTrackingNumber=JD014600004790042203",
+                            "id": "6568fd67bf8577003e5abc61"
+                        },
+                        {
+                            "_id": "6568fd67bf8577003e5abc62",
+                            "referenceNumber": 2,
+                            "trackingNumber": "JD014600004790042204",
+                            "trackingUrl": "https://express.api.dhl.com/mydhlapi/test/shipments/1494896443/tracking?pieceTrackingNumber=JD014600004790042204",
+                            "id": "6568fd67bf8577003e5abc62"
+                        }
+                    ]
+                },
+                "document": "PACKAGE",
+                "_id": "6568fd67bf8577003e5abc5c",
+                "packages": [
+                    {
+                        "dimensions": {
+                            "length": 1,
+                            "width": 1,
+                            "height": 1
+                        },
+                        "_id": "6568fd67bf8577003e5abc5d",
+                        "weight": 0.5,
+                        "description": "Piece content description",
+                        "id": "6568fd67bf8577003e5abc5d"
+                    },
+                    {
+                        "dimensions": {
+                            "length": 1,
+                            "width": 1,
+                            "height": 1
+                        },
+                        "_id": "6568fd67bf8577003e5abc5e",
+                        "weight": 5,
+                        "description": "2 Piece content description",
+                        "id": "6568fd67bf8577003e5abc5e"
+                    }
+                ],
+                "description": "description goes here",
+                "number_items": 2,
+                "delivery_info": [
+                    {
+                        "postalAddress": {
+                            "postalCode": "100001",
+                            "cityName": "Yaba",
+                            "countryCode": "NG",
+                            "addressLine1": "yaba, lagos",
+                            "countyName": "Lagos"
+                        },
+                        "contactInformation": {
+                            "email": "shipper_create_shipmentapi@dhltestmail.com",
+                            "phone": "18211309039",
+                            "companyName": "Cider BookStore",
+                            "fullName": "Anyanwu Chinedu"
+                        },
+                        "_id": "6568fd67bf8577003e5abc5f",
+                        "type": "CUSTOMER",
+                        "id": "6568fd67bf8577003e5abc5f"
+                    },
+                    {
+                        "postalAddress": {
+                            "postalCode": "GA015",
+                            "cityName": "Accra",
+                            "countryCode": "GH",
+                            "addressLine1": "Some random place in Accra"
+                        },
+                        "contactInformation": {
+                            "email": "recipient_create_shipmentapi@dhltestmail.com",
+                            "phone": "9402825665",
+                            "companyName": "Baylee Marshall",
+                            "fullName": "Baylee Marshall"
+                        },
+                        "_id": "6568fd67bf8577003e5abc60",
+                        "type": "RECIEVER",
+                        "id": "6568fd67bf8577003e5abc60"
+                    }
+                ],
+                "customerId": "6568f828bf8577003e5abc3d",
+                "declaredValue": 5000,
+                "channel": "api",
+                "environment": "sandbox",
+                "createdAt": "2023-11-30T21:23:51.925Z",
+                "updatedAt": "2023-11-30T21:23:51.925Z",
+                "__v": 0,
+                "id": "6568fd67bf8577003e5abc5c"
+            },
+            {
+                "shipmentMeta": {
+                    "trackingId": "1494896373",
+                    "trackingUrl": "https://express.api.dhl.com/mydhlapi/test/shipments/1494896373/tracking",
+                    "packages": [
+                        {
+                            "_id": "6568fd30bf8577003e5abc52",
+                            "referenceNumber": 1,
+                            "trackingNumber": "JD014600004790042195",
+                            "trackingUrl": "https://express.api.dhl.com/mydhlapi/test/shipments/1494896373/tracking?pieceTrackingNumber=JD014600004790042195",
+                            "id": "6568fd30bf8577003e5abc52"
+                        },
+                        {
+                            "_id": "6568fd30bf8577003e5abc53",
+                            "referenceNumber": 2,
+                            "trackingNumber": "JD014600004790042196",
+                            "trackingUrl": "https://express.api.dhl.com/mydhlapi/test/shipments/1494896373/tracking?pieceTrackingNumber=JD014600004790042196",
+                            "id": "6568fd30bf8577003e5abc53"
+                        }
+                    ]
+                },
+                "document": "PACKAGE",
+                "_id": "6568fd2fbf8577003e5abc4d",
+                "packages": [
+                    {
+                        "dimensions": {
+                            "length": 1,
+                            "width": 1,
+                            "height": 1
+                        },
+                        "_id": "6568fd30bf8577003e5abc4e",
+                        "weight": 0.5,
+                        "description": "Piece content description",
+                        "id": "6568fd30bf8577003e5abc4e"
+                    },
+                    {
+                        "dimensions": {
+                            "length": 1,
+                            "width": 1,
+                            "height": 1
+                        },
+                        "_id": "6568fd30bf8577003e5abc4f",
+                        "weight": 5,
+                        "description": "2 Piece content description",
+                        "id": "6568fd30bf8577003e5abc4f"
+                    }
+                ],
+                "description": "description goes here",
+                "number_items": 2,
+                "delivery_info": [
+                    {
+                        "postalAddress": {
+                            "postalCode": "100001",
+                            "cityName": "Imo",
+                            "countryCode": "NG",
+                            "addressLine1": "yaba, lagos",
+                            "countyName": "Owerri"
+                        },
+                        "contactInformation": {
+                            "email": "shipper_create_shipmentapi@dhltestmail.com",
+                            "phone": "18211309039",
+                            "companyName": "Cider BookStore",
+                            "fullName": "Anyanwu Chinedu"
+                        },
+                        "_id": "6568fd30bf8577003e5abc50",
+                        "type": "CUSTOMER",
+                        "id": "6568fd30bf8577003e5abc50"
+                    },
+                    {
+                        "postalAddress": {
+                            "postalCode": "GA015",
+                            "cityName": "Accra",
+                            "countryCode": "GH",
+                            "addressLine1": "Some random place in Accra"
+                        },
+                        "contactInformation": {
+                            "email": "recipient_create_shipmentapi@dhltestmail.com",
+                            "phone": "9402825665",
+                            "companyName": "Baylee Marshall",
+                            "fullName": "Baylee Marshall"
+                        },
+                        "_id": "6568fd30bf8577003e5abc51",
+                        "type": "RECIEVER",
+                        "id": "6568fd30bf8577003e5abc51"
+                    }
+                ],
+                "customerId": "6568f828bf8577003e5abc3d",
+                "declaredValue": 5000,
+                "channel": "api",
+                "environment": "sandbox",
+                "createdAt": "2023-11-30T21:22:56.010Z",
+                "updatedAt": "2023-11-30T21:22:56.010Z",
+                "__v": 0,
+                "id": "6568fd2fbf8577003e5abc4d"
+            },
+            {
+                "shipmentMeta": {
+                    "trackingId": "1494896465",
+                    "trackingUrl": "https://express.api.dhl.com/mydhlapi/test/shipments/1494896465/tracking",
+                    "packages": [
+                        {
+                            "_id": "6568fd9dbf8577003e5abc6e",
+                            "referenceNumber": 1,
+                            "trackingNumber": "JD014600004790042206",
+                            "trackingUrl": "https://express.api.dhl.com/mydhlapi/test/shipments/1494896465/tracking?pieceTrackingNumber=JD014600004790042206",
+                            "id": "6568fd9dbf8577003e5abc6e"
+                        },
+                        {
+                            "_id": "6568fd9dbf8577003e5abc6f",
+                            "referenceNumber": 2,
+                            "trackingNumber": "JD014600004790042207",
+                            "trackingUrl": "https://express.api.dhl.com/mydhlapi/test/shipments/1494896465/tracking?pieceTrackingNumber=JD014600004790042207",
+                            "id": "6568fd9dbf8577003e5abc6f"
+                        }
+                    ]
+                },
+                "document": "PACKAGE",
+                "_id": "6568fd9dbf8577003e5abc69",
+                "packages": [
+                    {
+                        "dimensions": {
+                            "length": 1,
+                            "width": 1,
+                            "height": 1
+                        },
+                        "_id": "6568fd9dbf8577003e5abc6a",
+                        "weight": 0.5,
+                        "description": "Piece content description",
+                        "id": "6568fd9dbf8577003e5abc6a"
+                    },
+                    {
+                        "dimensions": {
+                            "length": 1,
+                            "width": 1,
+                            "height": 1
+                        },
+                        "_id": "6568fd9dbf8577003e5abc6b",
+                        "weight": 5,
+                        "description": "2 Piece content description",
+                        "id": "6568fd9dbf8577003e5abc6b"
+                    }
+                ],
+                "description": "description goes here",
+                "number_items": 2,
+                "delivery_info": [
+                    {
+                        "postalAddress": {
+                            "postalCode": "100001",
+                            "cityName": "Akure",
+                            "countryCode": "NG",
+                            "addressLine1": "yaba, lagos",
+                            "countyName": "Ondo"
+                        },
+                        "contactInformation": {
+                            "email": "shipper_create_shipmentapi@dhltestmail.com",
+                            "phone": "18211309039",
+                            "companyName": "Cider BookStore",
+                            "fullName": "Anyanwu Chinedu"
+                        },
+                        "_id": "6568fd9dbf8577003e5abc6c",
+                        "type": "CUSTOMER",
+                        "id": "6568fd9dbf8577003e5abc6c"
+                    },
+                    {
+                        "postalAddress": {
+                            "postalCode": "GA015",
+                            "cityName": "Accra",
+                            "countryCode": "GH",
+                            "addressLine1": "Some random place in Accra"
+                        },
+                        "contactInformation": {
+                            "email": "recipient_create_shipmentapi@dhltestmail.com",
+                            "phone": "9402825665",
+                            "companyName": "Baylee Marshall",
+                            "fullName": "Baylee Marshall"
+                        },
+                        "_id": "6568fd9dbf8577003e5abc6d",
+                        "type": "RECIEVER",
+                        "id": "6568fd9dbf8577003e5abc6d"
+                    }
+                ],
+                "customerId": "6568f828bf8577003e5abc3d",
+                "declaredValue": 5000,
+                "channel": "api",
+                "environment": "sandbox",
+                "createdAt": "2023-11-30T21:24:45.536Z",
+                "updatedAt": "2023-11-30T21:24:45.536Z",
+                "__v": 0,
+                "id": "6568fd9dbf8577003e5abc69"
+            },
+            {
+                "shipmentMeta": {
+                    "trackingId": "1494896443",
+                    "trackingUrl": "https://express.api.dhl.com/mydhlapi/test/shipments/1494896443/tracking",
+                    "packages": [
+                        {
+                            "_id": "6568fd67bf8577003e5abc61",
+                            "referenceNumber": 1,
+                            "trackingNumber": "JD014600004790042203",
+                            "trackingUrl": "https://express.api.dhl.com/mydhlapi/test/shipments/1494896443/tracking?pieceTrackingNumber=JD014600004790042203",
+                            "id": "6568fd67bf8577003e5abc61"
+                        },
+                        {
+                            "_id": "6568fd67bf8577003e5abc62",
+                            "referenceNumber": 2,
+                            "trackingNumber": "JD014600004790042204",
+                            "trackingUrl": "https://express.api.dhl.com/mydhlapi/test/shipments/1494896443/tracking?pieceTrackingNumber=JD014600004790042204",
+                            "id": "6568fd67bf8577003e5abc62"
+                        }
+                    ]
+                },
+                "document": "PACKAGE",
+                "_id": "6568fd67bf8577003e5abc5c",
+                "packages": [
+                    {
+                        "dimensions": {
+                            "length": 1,
+                            "width": 1,
+                            "height": 1
+                        },
+                        "_id": "6568fd67bf8577003e5abc5d",
+                        "weight": 0.5,
+                        "description": "Piece content description",
+                        "id": "6568fd67bf8577003e5abc5d"
+                    },
+                    {
+                        "dimensions": {
+                            "length": 1,
+                            "width": 1,
+                            "height": 1
+                        },
+                        "_id": "6568fd67bf8577003e5abc5e",
+                        "weight": 5,
+                        "description": "2 Piece content description",
+                        "id": "6568fd67bf8577003e5abc5e"
+                    }
+                ],
+                "description": "description goes here",
+                "number_items": 2,
+                "delivery_info": [
+                    {
+                        "postalAddress": {
+                            "postalCode": "100001",
+                            "cityName": "Yaba",
+                            "countryCode": "NG",
+                            "addressLine1": "yaba, lagos",
+                            "countyName": "Lagos"
+                        },
+                        "contactInformation": {
+                            "email": "shipper_create_shipmentapi@dhltestmail.com",
+                            "phone": "18211309039",
+                            "companyName": "Cider BookStore",
+                            "fullName": "Anyanwu Chinedu"
+                        },
+                        "_id": "6568fd67bf8577003e5abc5f",
+                        "type": "CUSTOMER",
+                        "id": "6568fd67bf8577003e5abc5f"
+                    },
+                    {
+                        "postalAddress": {
+                            "postalCode": "GA015",
+                            "cityName": "Accra",
+                            "countryCode": "GH",
+                            "addressLine1": "Some random place in Accra"
+                        },
+                        "contactInformation": {
+                            "email": "recipient_create_shipmentapi@dhltestmail.com",
+                            "phone": "9402825665",
+                            "companyName": "Baylee Marshall",
+                            "fullName": "Baylee Marshall"
+                        },
+                        "_id": "6568fd67bf8577003e5abc60",
+                        "type": "RECIEVER",
+                        "id": "6568fd67bf8577003e5abc60"
+                    }
+                ],
+                "customerId": "6568f828bf8577003e5abc3d",
+                "declaredValue": 5000,
+                "channel": "api",
+                "environment": "sandbox",
+                "createdAt": "2023-11-30T21:23:51.925Z",
+                "updatedAt": "2023-11-30T21:23:51.925Z",
+                "__v": 0,
+                "id": "6568fd67bf8577003e5abc5c"
+            },
+            {
+                "shipmentMeta": {
+                    "trackingId": "1494896373",
+                    "trackingUrl": "https://express.api.dhl.com/mydhlapi/test/shipments/1494896373/tracking",
+                    "packages": [
+                        {
+                            "_id": "6568fd30bf8577003e5abc52",
+                            "referenceNumber": 1,
+                            "trackingNumber": "JD014600004790042195",
+                            "trackingUrl": "https://express.api.dhl.com/mydhlapi/test/shipments/1494896373/tracking?pieceTrackingNumber=JD014600004790042195",
+                            "id": "6568fd30bf8577003e5abc52"
+                        },
+                        {
+                            "_id": "6568fd30bf8577003e5abc53",
+                            "referenceNumber": 2,
+                            "trackingNumber": "JD014600004790042196",
+                            "trackingUrl": "https://express.api.dhl.com/mydhlapi/test/shipments/1494896373/tracking?pieceTrackingNumber=JD014600004790042196",
+                            "id": "6568fd30bf8577003e5abc53"
+                        }
+                    ]
+                },
+                "document": "PACKAGE",
+                "_id": "6568fd2fbf8577003e5abc4d",
+                "packages": [
+                    {
+                        "dimensions": {
+                            "length": 1,
+                            "width": 1,
+                            "height": 1
+                        },
+                        "_id": "6568fd30bf8577003e5abc4e",
+                        "weight": 0.5,
+                        "description": "Piece content description",
+                        "id": "6568fd30bf8577003e5abc4e"
+                    },
+                    {
+                        "dimensions": {
+                            "length": 1,
+                            "width": 1,
+                            "height": 1
+                        },
+                        "_id": "6568fd30bf8577003e5abc4f",
+                        "weight": 5,
+                        "description": "2 Piece content description",
+                        "id": "6568fd30bf8577003e5abc4f"
+                    }
+                ],
+                "description": "description goes here",
+                "number_items": 2,
+                "delivery_info": [
+                    {
+                        "postalAddress": {
+                            "postalCode": "100001",
+                            "cityName": "Imo",
+                            "countryCode": "NG",
+                            "addressLine1": "yaba, lagos",
+                            "countyName": "Owerri"
+                        },
+                        "contactInformation": {
+                            "email": "shipper_create_shipmentapi@dhltestmail.com",
+                            "phone": "18211309039",
+                            "companyName": "Cider BookStore",
+                            "fullName": "Anyanwu Chinedu"
+                        },
+                        "_id": "6568fd30bf8577003e5abc50",
+                        "type": "CUSTOMER",
+                        "id": "6568fd30bf8577003e5abc50"
+                    },
+                    {
+                        "postalAddress": {
+                            "postalCode": "GA015",
+                            "cityName": "Accra",
+                            "countryCode": "GH",
+                            "addressLine1": "Some random place in Accra"
+                        },
+                        "contactInformation": {
+                            "email": "recipient_create_shipmentapi@dhltestmail.com",
+                            "phone": "9402825665",
+                            "companyName": "Baylee Marshall",
+                            "fullName": "Baylee Marshall"
+                        },
+                        "_id": "6568fd30bf8577003e5abc51",
+                        "type": "RECIEVER",
+                        "id": "6568fd30bf8577003e5abc51"
+                    }
+                ],
+                "customerId": "6568f828bf8577003e5abc3d",
+                "declaredValue": 5000,
+                "channel": "api",
+                "environment": "sandbox",
+                "createdAt": "2023-11-30T21:22:56.010Z",
+                "updatedAt": "2023-11-30T21:22:56.010Z",
+                "__v": 0,
+                "id": "6568fd2fbf8577003e5abc4d"
+            },
+            {
+                "shipmentMeta": {
+                    "trackingId": "1494896465",
+                    "trackingUrl": "https://express.api.dhl.com/mydhlapi/test/shipments/1494896465/tracking",
+                    "packages": [
+                        {
+                            "_id": "6568fd9dbf8577003e5abc6e",
+                            "referenceNumber": 1,
+                            "trackingNumber": "JD014600004790042206",
+                            "trackingUrl": "https://express.api.dhl.com/mydhlapi/test/shipments/1494896465/tracking?pieceTrackingNumber=JD014600004790042206",
+                            "id": "6568fd9dbf8577003e5abc6e"
+                        },
+                        {
+                            "_id": "6568fd9dbf8577003e5abc6f",
+                            "referenceNumber": 2,
+                            "trackingNumber": "JD014600004790042207",
+                            "trackingUrl": "https://express.api.dhl.com/mydhlapi/test/shipments/1494896465/tracking?pieceTrackingNumber=JD014600004790042207",
+                            "id": "6568fd9dbf8577003e5abc6f"
+                        }
+                    ]
+                },
+                "document": "PACKAGE",
+                "_id": "6568fd9dbf8577003e5abc69",
+                "packages": [
+                    {
+                        "dimensions": {
+                            "length": 1,
+                            "width": 1,
+                            "height": 1
+                        },
+                        "_id": "6568fd9dbf8577003e5abc6a",
+                        "weight": 0.5,
+                        "description": "Piece content description",
+                        "id": "6568fd9dbf8577003e5abc6a"
+                    },
+                    {
+                        "dimensions": {
+                            "length": 1,
+                            "width": 1,
+                            "height": 1
+                        },
+                        "_id": "6568fd9dbf8577003e5abc6b",
+                        "weight": 5,
+                        "description": "2 Piece content description",
+                        "id": "6568fd9dbf8577003e5abc6b"
+                    }
+                ],
+                "description": "description goes here",
+                "number_items": 2,
+                "delivery_info": [
+                    {
+                        "postalAddress": {
+                            "postalCode": "100001",
+                            "cityName": "Akure",
+                            "countryCode": "NG",
+                            "addressLine1": "yaba, lagos",
+                            "countyName": "Ondo"
+                        },
+                        "contactInformation": {
+                            "email": "shipper_create_shipmentapi@dhltestmail.com",
+                            "phone": "18211309039",
+                            "companyName": "Cider BookStore",
+                            "fullName": "Anyanwu Chinedu"
+                        },
+                        "_id": "6568fd9dbf8577003e5abc6c",
+                        "type": "CUSTOMER",
+                        "id": "6568fd9dbf8577003e5abc6c"
+                    },
+                    {
+                        "postalAddress": {
+                            "postalCode": "GA015",
+                            "cityName": "Accra",
+                            "countryCode": "GH",
+                            "addressLine1": "Some random place in Accra"
+                        },
+                        "contactInformation": {
+                            "email": "recipient_create_shipmentapi@dhltestmail.com",
+                            "phone": "9402825665",
+                            "companyName": "Baylee Marshall",
+                            "fullName": "Baylee Marshall"
+                        },
+                        "_id": "6568fd9dbf8577003e5abc6d",
+                        "type": "RECIEVER",
+                        "id": "6568fd9dbf8577003e5abc6d"
+                    }
+                ],
+                "customerId": "6568f828bf8577003e5abc3d",
+                "declaredValue": 5000,
+                "channel": "api",
+                "environment": "sandbox",
+                "createdAt": "2023-11-30T21:24:45.536Z",
+                "updatedAt": "2023-11-30T21:24:45.536Z",
+                "__v": 0,
+                "id": "6568fd9dbf8577003e5abc69"
+            },
+            {
+                "shipmentMeta": {
+                    "trackingId": "1494896443",
+                    "trackingUrl": "https://express.api.dhl.com/mydhlapi/test/shipments/1494896443/tracking",
+                    "packages": [
+                        {
+                            "_id": "6568fd67bf8577003e5abc61",
+                            "referenceNumber": 1,
+                            "trackingNumber": "JD014600004790042203",
+                            "trackingUrl": "https://express.api.dhl.com/mydhlapi/test/shipments/1494896443/tracking?pieceTrackingNumber=JD014600004790042203",
+                            "id": "6568fd67bf8577003e5abc61"
+                        },
+                        {
+                            "_id": "6568fd67bf8577003e5abc62",
+                            "referenceNumber": 2,
+                            "trackingNumber": "JD014600004790042204",
+                            "trackingUrl": "https://express.api.dhl.com/mydhlapi/test/shipments/1494896443/tracking?pieceTrackingNumber=JD014600004790042204",
+                            "id": "6568fd67bf8577003e5abc62"
+                        }
+                    ]
+                },
+                "document": "PACKAGE",
+                "_id": "6568fd67bf8577003e5abc5c",
+                "packages": [
+                    {
+                        "dimensions": {
+                            "length": 1,
+                            "width": 1,
+                            "height": 1
+                        },
+                        "_id": "6568fd67bf8577003e5abc5d",
+                        "weight": 0.5,
+                        "description": "Piece content description",
+                        "id": "6568fd67bf8577003e5abc5d"
+                    },
+                    {
+                        "dimensions": {
+                            "length": 1,
+                            "width": 1,
+                            "height": 1
+                        },
+                        "_id": "6568fd67bf8577003e5abc5e",
+                        "weight": 5,
+                        "description": "2 Piece content description",
+                        "id": "6568fd67bf8577003e5abc5e"
+                    }
+                ],
+                "description": "description goes here",
+                "number_items": 2,
+                "delivery_info": [
+                    {
+                        "postalAddress": {
+                            "postalCode": "100001",
+                            "cityName": "Yaba",
+                            "countryCode": "NG",
+                            "addressLine1": "yaba, lagos",
+                            "countyName": "Lagos"
+                        },
+                        "contactInformation": {
+                            "email": "shipper_create_shipmentapi@dhltestmail.com",
+                            "phone": "18211309039",
+                            "companyName": "Cider BookStore",
+                            "fullName": "Anyanwu Chinedu"
+                        },
+                        "_id": "6568fd67bf8577003e5abc5f",
+                        "type": "CUSTOMER",
+                        "id": "6568fd67bf8577003e5abc5f"
+                    },
+                    {
+                        "postalAddress": {
+                            "postalCode": "GA015",
+                            "cityName": "Accra",
+                            "countryCode": "GH",
+                            "addressLine1": "Some random place in Accra"
+                        },
+                        "contactInformation": {
+                            "email": "recipient_create_shipmentapi@dhltestmail.com",
+                            "phone": "9402825665",
+                            "companyName": "Baylee Marshall",
+                            "fullName": "Baylee Marshall"
+                        },
+                        "_id": "6568fd67bf8577003e5abc60",
+                        "type": "RECIEVER",
+                        "id": "6568fd67bf8577003e5abc60"
+                    }
+                ],
+                "customerId": "6568f828bf8577003e5abc3d",
+                "declaredValue": 5000,
+                "channel": "api",
+                "environment": "sandbox",
+                "createdAt": "2023-11-30T21:23:51.925Z",
+                "updatedAt": "2023-11-30T21:23:51.925Z",
+                "__v": 0,
+                "id": "6568fd67bf8577003e5abc5c"
+            },
+            {
+                "shipmentMeta": {
+                    "trackingId": "1494896373",
+                    "trackingUrl": "https://express.api.dhl.com/mydhlapi/test/shipments/1494896373/tracking",
+                    "packages": [
+                        {
+                            "_id": "6568fd30bf8577003e5abc52",
+                            "referenceNumber": 1,
+                            "trackingNumber": "JD014600004790042195",
+                            "trackingUrl": "https://express.api.dhl.com/mydhlapi/test/shipments/1494896373/tracking?pieceTrackingNumber=JD014600004790042195",
+                            "id": "6568fd30bf8577003e5abc52"
+                        },
+                        {
+                            "_id": "6568fd30bf8577003e5abc53",
+                            "referenceNumber": 2,
+                            "trackingNumber": "JD014600004790042196",
+                            "trackingUrl": "https://express.api.dhl.com/mydhlapi/test/shipments/1494896373/tracking?pieceTrackingNumber=JD014600004790042196",
+                            "id": "6568fd30bf8577003e5abc53"
+                        }
+                    ]
+                },
+                "document": "PACKAGE",
+                "_id": "6568fd2fbf8577003e5abc4d",
+                "packages": [
+                    {
+                        "dimensions": {
+                            "length": 1,
+                            "width": 1,
+                            "height": 1
+                        },
+                        "_id": "6568fd30bf8577003e5abc4e",
+                        "weight": 0.5,
+                        "description": "Piece content description",
+                        "id": "6568fd30bf8577003e5abc4e"
+                    },
+                    {
+                        "dimensions": {
+                            "length": 1,
+                            "width": 1,
+                            "height": 1
+                        },
+                        "_id": "6568fd30bf8577003e5abc4f",
+                        "weight": 5,
+                        "description": "2 Piece content description",
+                        "id": "6568fd30bf8577003e5abc4f"
+                    }
+                ],
+                "description": "description goes here",
+                "number_items": 2,
+                "delivery_info": [
+                    {
+                        "postalAddress": {
+                            "postalCode": "100001",
+                            "cityName": "Imo",
+                            "countryCode": "NG",
+                            "addressLine1": "yaba, lagos",
+                            "countyName": "Owerri"
+                        },
+                        "contactInformation": {
+                            "email": "shipper_create_shipmentapi@dhltestmail.com",
+                            "phone": "18211309039",
+                            "companyName": "Cider BookStore",
+                            "fullName": "Anyanwu Chinedu"
+                        },
+                        "_id": "6568fd30bf8577003e5abc50",
+                        "type": "CUSTOMER",
+                        "id": "6568fd30bf8577003e5abc50"
+                    },
+                    {
+                        "postalAddress": {
+                            "postalCode": "GA015",
+                            "cityName": "Accra",
+                            "countryCode": "GH",
+                            "addressLine1": "Some random place in Accra"
+                        },
+                        "contactInformation": {
+                            "email": "recipient_create_shipmentapi@dhltestmail.com",
+                            "phone": "9402825665",
+                            "companyName": "Baylee Marshall",
+                            "fullName": "Baylee Marshall"
+                        },
+                        "_id": "6568fd30bf8577003e5abc51",
+                        "type": "RECIEVER",
+                        "id": "6568fd30bf8577003e5abc51"
+                    }
+                ],
+                "customerId": "6568f828bf8577003e5abc3d",
+                "declaredValue": 5000,
+                "channel": "api",
+                "environment": "sandbox",
+                "createdAt": "2023-11-30T21:22:56.010Z",
+                "updatedAt": "2023-11-30T21:22:56.010Z",
+                "__v": 0,
+                "id": "6568fd2fbf8577003e5abc4d"
+            },
+            {
+                "shipmentMeta": {
+                    "trackingId": "1494896465",
+                    "trackingUrl": "https://express.api.dhl.com/mydhlapi/test/shipments/1494896465/tracking",
+                    "packages": [
+                        {
+                            "_id": "6568fd9dbf8577003e5abc6e",
+                            "referenceNumber": 1,
+                            "trackingNumber": "JD014600004790042206",
+                            "trackingUrl": "https://express.api.dhl.com/mydhlapi/test/shipments/1494896465/tracking?pieceTrackingNumber=JD014600004790042206",
+                            "id": "6568fd9dbf8577003e5abc6e"
+                        },
+                        {
+                            "_id": "6568fd9dbf8577003e5abc6f",
+                            "referenceNumber": 2,
+                            "trackingNumber": "JD014600004790042207",
+                            "trackingUrl": "https://express.api.dhl.com/mydhlapi/test/shipments/1494896465/tracking?pieceTrackingNumber=JD014600004790042207",
+                            "id": "6568fd9dbf8577003e5abc6f"
+                        }
+                    ]
+                },
+                "document": "PACKAGE",
+                "_id": "6568fd9dbf8577003e5abc69",
+                "packages": [
+                    {
+                        "dimensions": {
+                            "length": 1,
+                            "width": 1,
+                            "height": 1
+                        },
+                        "_id": "6568fd9dbf8577003e5abc6a",
+                        "weight": 0.5,
+                        "description": "Piece content description",
+                        "id": "6568fd9dbf8577003e5abc6a"
+                    },
+                    {
+                        "dimensions": {
+                            "length": 1,
+                            "width": 1,
+                            "height": 1
+                        },
+                        "_id": "6568fd9dbf8577003e5abc6b",
+                        "weight": 5,
+                        "description": "2 Piece content description",
+                        "id": "6568fd9dbf8577003e5abc6b"
+                    }
+                ],
+                "description": "description goes here",
+                "number_items": 2,
+                "delivery_info": [
+                    {
+                        "postalAddress": {
+                            "postalCode": "100001",
+                            "cityName": "Akure",
+                            "countryCode": "NG",
+                            "addressLine1": "yaba, lagos",
+                            "countyName": "Ondo"
+                        },
+                        "contactInformation": {
+                            "email": "shipper_create_shipmentapi@dhltestmail.com",
+                            "phone": "18211309039",
+                            "companyName": "Cider BookStore",
+                            "fullName": "Anyanwu Chinedu"
+                        },
+                        "_id": "6568fd9dbf8577003e5abc6c",
+                        "type": "CUSTOMER",
+                        "id": "6568fd9dbf8577003e5abc6c"
+                    },
+                    {
+                        "postalAddress": {
+                            "postalCode": "GA015",
+                            "cityName": "Accra",
+                            "countryCode": "GH",
+                            "addressLine1": "Some random place in Accra"
+                        },
+                        "contactInformation": {
+                            "email": "recipient_create_shipmentapi@dhltestmail.com",
+                            "phone": "9402825665",
+                            "companyName": "Baylee Marshall",
+                            "fullName": "Baylee Marshall"
+                        },
+                        "_id": "6568fd9dbf8577003e5abc6d",
+                        "type": "RECIEVER",
+                        "id": "6568fd9dbf8577003e5abc6d"
+                    }
+                ],
+                "customerId": "6568f828bf8577003e5abc3d",
+                "declaredValue": 5000,
+                "channel": "api",
+                "environment": "sandbox",
+                "createdAt": "2023-11-30T21:24:45.536Z",
+                "updatedAt": "2023-11-30T21:24:45.536Z",
+                "__v": 0,
+                "id": "6568fd9dbf8577003e5abc69"
+            },
+            {
+                "shipmentMeta": {
+                    "trackingId": "1494896443",
+                    "trackingUrl": "https://express.api.dhl.com/mydhlapi/test/shipments/1494896443/tracking",
+                    "packages": [
+                        {
+                            "_id": "6568fd67bf8577003e5abc61",
+                            "referenceNumber": 1,
+                            "trackingNumber": "JD014600004790042203",
+                            "trackingUrl": "https://express.api.dhl.com/mydhlapi/test/shipments/1494896443/tracking?pieceTrackingNumber=JD014600004790042203",
+                            "id": "6568fd67bf8577003e5abc61"
+                        },
+                        {
+                            "_id": "6568fd67bf8577003e5abc62",
+                            "referenceNumber": 2,
+                            "trackingNumber": "JD014600004790042204",
+                            "trackingUrl": "https://express.api.dhl.com/mydhlapi/test/shipments/1494896443/tracking?pieceTrackingNumber=JD014600004790042204",
+                            "id": "6568fd67bf8577003e5abc62"
+                        }
+                    ]
+                },
+                "document": "PACKAGE",
+                "_id": "6568fd67bf8577003e5abc5c",
+                "packages": [
+                    {
+                        "dimensions": {
+                            "length": 1,
+                            "width": 1,
+                            "height": 1
+                        },
+                        "_id": "6568fd67bf8577003e5abc5d",
+                        "weight": 0.5,
+                        "description": "Piece content description",
+                        "id": "6568fd67bf8577003e5abc5d"
+                    },
+                    {
+                        "dimensions": {
+                            "length": 1,
+                            "width": 1,
+                            "height": 1
+                        },
+                        "_id": "6568fd67bf8577003e5abc5e",
+                        "weight": 5,
+                        "description": "2 Piece content description",
+                        "id": "6568fd67bf8577003e5abc5e"
+                    }
+                ],
+                "description": "description goes here",
+                "number_items": 2,
+                "delivery_info": [
+                    {
+                        "postalAddress": {
+                            "postalCode": "100001",
+                            "cityName": "Yaba",
+                            "countryCode": "NG",
+                            "addressLine1": "yaba, lagos",
+                            "countyName": "Lagos"
+                        },
+                        "contactInformation": {
+                            "email": "shipper_create_shipmentapi@dhltestmail.com",
+                            "phone": "18211309039",
+                            "companyName": "Cider BookStore",
+                            "fullName": "Anyanwu Chinedu"
+                        },
+                        "_id": "6568fd67bf8577003e5abc5f",
+                        "type": "CUSTOMER",
+                        "id": "6568fd67bf8577003e5abc5f"
+                    },
+                    {
+                        "postalAddress": {
+                            "postalCode": "GA015",
+                            "cityName": "Accra",
+                            "countryCode": "GH",
+                            "addressLine1": "Some random place in Accra"
+                        },
+                        "contactInformation": {
+                            "email": "recipient_create_shipmentapi@dhltestmail.com",
+                            "phone": "9402825665",
+                            "companyName": "Baylee Marshall",
+                            "fullName": "Baylee Marshall"
+                        },
+                        "_id": "6568fd67bf8577003e5abc60",
+                        "type": "RECIEVER",
+                        "id": "6568fd67bf8577003e5abc60"
+                    }
+                ],
+                "customerId": "6568f828bf8577003e5abc3d",
+                "declaredValue": 5000,
+                "channel": "api",
+                "environment": "sandbox",
+                "createdAt": "2023-11-30T21:23:51.925Z",
+                "updatedAt": "2023-11-30T21:23:51.925Z",
+                "__v": 0,
+                "id": "6568fd67bf8577003e5abc5c"
+            },
+            {
+                "shipmentMeta": {
+                    "trackingId": "1494896373",
+                    "trackingUrl": "https://express.api.dhl.com/mydhlapi/test/shipments/1494896373/tracking",
+                    "packages": [
+                        {
+                            "_id": "6568fd30bf8577003e5abc52",
+                            "referenceNumber": 1,
+                            "trackingNumber": "JD014600004790042195",
+                            "trackingUrl": "https://express.api.dhl.com/mydhlapi/test/shipments/1494896373/tracking?pieceTrackingNumber=JD014600004790042195",
+                            "id": "6568fd30bf8577003e5abc52"
+                        },
+                        {
+                            "_id": "6568fd30bf8577003e5abc53",
+                            "referenceNumber": 2,
+                            "trackingNumber": "JD014600004790042196",
+                            "trackingUrl": "https://express.api.dhl.com/mydhlapi/test/shipments/1494896373/tracking?pieceTrackingNumber=JD014600004790042196",
+                            "id": "6568fd30bf8577003e5abc53"
+                        }
+                    ]
+                },
+                "document": "PACKAGE",
+                "_id": "6568fd2fbf8577003e5abc4d",
+                "packages": [
+                    {
+                        "dimensions": {
+                            "length": 1,
+                            "width": 1,
+                            "height": 1
+                        },
+                        "_id": "6568fd30bf8577003e5abc4e",
+                        "weight": 0.5,
+                        "description": "Piece content description",
+                        "id": "6568fd30bf8577003e5abc4e"
+                    },
+                    {
+                        "dimensions": {
+                            "length": 1,
+                            "width": 1,
+                            "height": 1
+                        },
+                        "_id": "6568fd30bf8577003e5abc4f",
+                        "weight": 5,
+                        "description": "2 Piece content description",
+                        "id": "6568fd30bf8577003e5abc4f"
+                    }
+                ],
+                "description": "description goes here",
+                "number_items": 2,
+                "delivery_info": [
+                    {
+                        "postalAddress": {
+                            "postalCode": "100001",
+                            "cityName": "Imo",
+                            "countryCode": "NG",
+                            "addressLine1": "yaba, lagos",
+                            "countyName": "Owerri"
+                        },
+                        "contactInformation": {
+                            "email": "shipper_create_shipmentapi@dhltestmail.com",
+                            "phone": "18211309039",
+                            "companyName": "Cider BookStore",
+                            "fullName": "Anyanwu Chinedu"
+                        },
+                        "_id": "6568fd30bf8577003e5abc50",
+                        "type": "CUSTOMER",
+                        "id": "6568fd30bf8577003e5abc50"
+                    },
+                    {
+                        "postalAddress": {
+                            "postalCode": "GA015",
+                            "cityName": "Accra",
+                            "countryCode": "GH",
+                            "addressLine1": "Some random place in Accra"
+                        },
+                        "contactInformation": {
+                            "email": "recipient_create_shipmentapi@dhltestmail.com",
+                            "phone": "9402825665",
+                            "companyName": "Baylee Marshall",
+                            "fullName": "Baylee Marshall"
+                        },
+                        "_id": "6568fd30bf8577003e5abc51",
+                        "type": "RECIEVER",
+                        "id": "6568fd30bf8577003e5abc51"
+                    }
+                ],
+                "customerId": "6568f828bf8577003e5abc3d",
+                "declaredValue": 5000,
+                "channel": "api",
+                "environment": "sandbox",
+                "createdAt": "2023-11-30T21:22:56.010Z",
+                "updatedAt": "2023-11-30T21:22:56.010Z",
+                "__v": 0,
+                "id": "6568fd2fbf8577003e5abc4d"
+            },
+            {
+                "shipmentMeta": {
+                    "trackingId": "1494896465",
+                    "trackingUrl": "https://express.api.dhl.com/mydhlapi/test/shipments/1494896465/tracking",
+                    "packages": [
+                        {
+                            "_id": "6568fd9dbf8577003e5abc6e",
+                            "referenceNumber": 1,
+                            "trackingNumber": "JD014600004790042206",
+                            "trackingUrl": "https://express.api.dhl.com/mydhlapi/test/shipments/1494896465/tracking?pieceTrackingNumber=JD014600004790042206",
+                            "id": "6568fd9dbf8577003e5abc6e"
+                        },
+                        {
+                            "_id": "6568fd9dbf8577003e5abc6f",
+                            "referenceNumber": 2,
+                            "trackingNumber": "JD014600004790042207",
+                            "trackingUrl": "https://express.api.dhl.com/mydhlapi/test/shipments/1494896465/tracking?pieceTrackingNumber=JD014600004790042207",
+                            "id": "6568fd9dbf8577003e5abc6f"
+                        }
+                    ]
+                },
+                "document": "PACKAGE",
+                "_id": "6568fd9dbf8577003e5abc69",
+                "packages": [
+                    {
+                        "dimensions": {
+                            "length": 1,
+                            "width": 1,
+                            "height": 1
+                        },
+                        "_id": "6568fd9dbf8577003e5abc6a",
+                        "weight": 0.5,
+                        "description": "Piece content description",
+                        "id": "6568fd9dbf8577003e5abc6a"
+                    },
+                    {
+                        "dimensions": {
+                            "length": 1,
+                            "width": 1,
+                            "height": 1
+                        },
+                        "_id": "6568fd9dbf8577003e5abc6b",
+                        "weight": 5,
+                        "description": "2 Piece content description",
+                        "id": "6568fd9dbf8577003e5abc6b"
+                    }
+                ],
+                "description": "description goes here",
+                "number_items": 2,
+                "delivery_info": [
+                    {
+                        "postalAddress": {
+                            "postalCode": "100001",
+                            "cityName": "Akure",
+                            "countryCode": "NG",
+                            "addressLine1": "yaba, lagos",
+                            "countyName": "Ondo"
+                        },
+                        "contactInformation": {
+                            "email": "shipper_create_shipmentapi@dhltestmail.com",
+                            "phone": "18211309039",
+                            "companyName": "Cider BookStore",
+                            "fullName": "Anyanwu Chinedu"
+                        },
+                        "_id": "6568fd9dbf8577003e5abc6c",
+                        "type": "CUSTOMER",
+                        "id": "6568fd9dbf8577003e5abc6c"
+                    },
+                    {
+                        "postalAddress": {
+                            "postalCode": "GA015",
+                            "cityName": "Accra",
+                            "countryCode": "GH",
+                            "addressLine1": "Some random place in Accra"
+                        },
+                        "contactInformation": {
+                            "email": "recipient_create_shipmentapi@dhltestmail.com",
+                            "phone": "9402825665",
+                            "companyName": "Baylee Marshall",
+                            "fullName": "Baylee Marshall"
+                        },
+                        "_id": "6568fd9dbf8577003e5abc6d",
+                        "type": "RECIEVER",
+                        "id": "6568fd9dbf8577003e5abc6d"
+                    }
+                ],
+                "customerId": "6568f828bf8577003e5abc3d",
+                "declaredValue": 5000,
+                "channel": "api",
+                "environment": "sandbox",
+                "createdAt": "2023-11-30T21:24:45.536Z",
+                "updatedAt": "2023-11-30T21:24:45.536Z",
+                "__v": 0,
+                "id": "6568fd9dbf8577003e5abc69"
+            },
+            {
+                "shipmentMeta": {
+                    "trackingId": "1494896443",
+                    "trackingUrl": "https://express.api.dhl.com/mydhlapi/test/shipments/1494896443/tracking",
+                    "packages": [
+                        {
+                            "_id": "6568fd67bf8577003e5abc61",
+                            "referenceNumber": 1,
+                            "trackingNumber": "JD014600004790042203",
+                            "trackingUrl": "https://express.api.dhl.com/mydhlapi/test/shipments/1494896443/tracking?pieceTrackingNumber=JD014600004790042203",
+                            "id": "6568fd67bf8577003e5abc61"
+                        },
+                        {
+                            "_id": "6568fd67bf8577003e5abc62",
+                            "referenceNumber": 2,
+                            "trackingNumber": "JD014600004790042204",
+                            "trackingUrl": "https://express.api.dhl.com/mydhlapi/test/shipments/1494896443/tracking?pieceTrackingNumber=JD014600004790042204",
+                            "id": "6568fd67bf8577003e5abc62"
+                        }
+                    ]
+                },
+                "document": "PACKAGE",
+                "_id": "6568fd67bf8577003e5abc5c",
+                "packages": [
+                    {
+                        "dimensions": {
+                            "length": 1,
+                            "width": 1,
+                            "height": 1
+                        },
+                        "_id": "6568fd67bf8577003e5abc5d",
+                        "weight": 0.5,
+                        "description": "Piece content description",
+                        "id": "6568fd67bf8577003e5abc5d"
+                    },
+                    {
+                        "dimensions": {
+                            "length": 1,
+                            "width": 1,
+                            "height": 1
+                        },
+                        "_id": "6568fd67bf8577003e5abc5e",
+                        "weight": 5,
+                        "description": "2 Piece content description",
+                        "id": "6568fd67bf8577003e5abc5e"
+                    }
+                ],
+                "description": "description goes here",
+                "number_items": 2,
+                "delivery_info": [
+                    {
+                        "postalAddress": {
+                            "postalCode": "100001",
+                            "cityName": "Yaba",
+                            "countryCode": "NG",
+                            "addressLine1": "yaba, lagos",
+                            "countyName": "Lagos"
+                        },
+                        "contactInformation": {
+                            "email": "shipper_create_shipmentapi@dhltestmail.com",
+                            "phone": "18211309039",
+                            "companyName": "Cider BookStore",
+                            "fullName": "Anyanwu Chinedu"
+                        },
+                        "_id": "6568fd67bf8577003e5abc5f",
+                        "type": "CUSTOMER",
+                        "id": "6568fd67bf8577003e5abc5f"
+                    },
+                    {
+                        "postalAddress": {
+                            "postalCode": "GA015",
+                            "cityName": "Accra",
+                            "countryCode": "GH",
+                            "addressLine1": "Some random place in Accra"
+                        },
+                        "contactInformation": {
+                            "email": "recipient_create_shipmentapi@dhltestmail.com",
+                            "phone": "9402825665",
+                            "companyName": "Baylee Marshall",
+                            "fullName": "Baylee Marshall"
+                        },
+                        "_id": "6568fd67bf8577003e5abc60",
+                        "type": "RECIEVER",
+                        "id": "6568fd67bf8577003e5abc60"
+                    }
+                ],
+                "customerId": "6568f828bf8577003e5abc3d",
+                "declaredValue": 5000,
+                "channel": "api",
+                "environment": "sandbox",
+                "createdAt": "2023-11-30T21:23:51.925Z",
+                "updatedAt": "2023-11-30T21:23:51.925Z",
+                "__v": 0,
+                "id": "6568fd67bf8577003e5abc5c"
+            },
+            {
+                "shipmentMeta": {
+                    "trackingId": "1494896373",
+                    "trackingUrl": "https://express.api.dhl.com/mydhlapi/test/shipments/1494896373/tracking",
+                    "packages": [
+                        {
+                            "_id": "6568fd30bf8577003e5abc52",
+                            "referenceNumber": 1,
+                            "trackingNumber": "JD014600004790042195",
+                            "trackingUrl": "https://express.api.dhl.com/mydhlapi/test/shipments/1494896373/tracking?pieceTrackingNumber=JD014600004790042195",
+                            "id": "6568fd30bf8577003e5abc52"
+                        },
+                        {
+                            "_id": "6568fd30bf8577003e5abc53",
+                            "referenceNumber": 2,
+                            "trackingNumber": "JD014600004790042196",
+                            "trackingUrl": "https://express.api.dhl.com/mydhlapi/test/shipments/1494896373/tracking?pieceTrackingNumber=JD014600004790042196",
+                            "id": "6568fd30bf8577003e5abc53"
+                        }
+                    ]
+                },
+                "document": "PACKAGE",
+                "_id": "6568fd2fbf8577003e5abc4d",
+                "packages": [
+                    {
+                        "dimensions": {
+                            "length": 1,
+                            "width": 1,
+                            "height": 1
+                        },
+                        "_id": "6568fd30bf8577003e5abc4e",
+                        "weight": 0.5,
+                        "description": "Piece content description",
+                        "id": "6568fd30bf8577003e5abc4e"
+                    },
+                    {
+                        "dimensions": {
+                            "length": 1,
+                            "width": 1,
+                            "height": 1
+                        },
+                        "_id": "6568fd30bf8577003e5abc4f",
+                        "weight": 5,
+                        "description": "2 Piece content description",
+                        "id": "6568fd30bf8577003e5abc4f"
+                    }
+                ],
+                "description": "description goes here",
+                "number_items": 2,
+                "delivery_info": [
+                    {
+                        "postalAddress": {
+                            "postalCode": "100001",
+                            "cityName": "Imo",
+                            "countryCode": "NG",
+                            "addressLine1": "yaba, lagos",
+                            "countyName": "Owerri"
+                        },
+                        "contactInformation": {
+                            "email": "shipper_create_shipmentapi@dhltestmail.com",
+                            "phone": "18211309039",
+                            "companyName": "Cider BookStore",
+                            "fullName": "Anyanwu Chinedu"
+                        },
+                        "_id": "6568fd30bf8577003e5abc50",
+                        "type": "CUSTOMER",
+                        "id": "6568fd30bf8577003e5abc50"
+                    },
+                    {
+                        "postalAddress": {
+                            "postalCode": "GA015",
+                            "cityName": "Accra",
+                            "countryCode": "GH",
+                            "addressLine1": "Some random place in Accra"
+                        },
+                        "contactInformation": {
+                            "email": "recipient_create_shipmentapi@dhltestmail.com",
+                            "phone": "9402825665",
+                            "companyName": "Baylee Marshall",
+                            "fullName": "Baylee Marshall"
+                        },
+                        "_id": "6568fd30bf8577003e5abc51",
+                        "type": "RECIEVER",
+                        "id": "6568fd30bf8577003e5abc51"
+                    }
+                ],
+                "customerId": "6568f828bf8577003e5abc3d",
+                "declaredValue": 5000,
+                "channel": "api",
+                "environment": "sandbox",
+                "createdAt": "2023-11-30T21:22:56.010Z",
+                "updatedAt": "2023-11-30T21:22:56.010Z",
+                "__v": 0,
+                "id": "6568fd2fbf8577003e5abc4d"
+            },
+            {
+                "shipmentMeta": {
+                    "trackingId": "1494896465",
+                    "trackingUrl": "https://express.api.dhl.com/mydhlapi/test/shipments/1494896465/tracking",
+                    "packages": [
+                        {
+                            "_id": "6568fd9dbf8577003e5abc6e",
+                            "referenceNumber": 1,
+                            "trackingNumber": "JD014600004790042206",
+                            "trackingUrl": "https://express.api.dhl.com/mydhlapi/test/shipments/1494896465/tracking?pieceTrackingNumber=JD014600004790042206",
+                            "id": "6568fd9dbf8577003e5abc6e"
+                        },
+                        {
+                            "_id": "6568fd9dbf8577003e5abc6f",
+                            "referenceNumber": 2,
+                            "trackingNumber": "JD014600004790042207",
+                            "trackingUrl": "https://express.api.dhl.com/mydhlapi/test/shipments/1494896465/tracking?pieceTrackingNumber=JD014600004790042207",
+                            "id": "6568fd9dbf8577003e5abc6f"
+                        }
+                    ]
+                },
+                "document": "PACKAGE",
+                "_id": "6568fd9dbf8577003e5abc69",
+                "packages": [
+                    {
+                        "dimensions": {
+                            "length": 1,
+                            "width": 1,
+                            "height": 1
+                        },
+                        "_id": "6568fd9dbf8577003e5abc6a",
+                        "weight": 0.5,
+                        "description": "Piece content description",
+                        "id": "6568fd9dbf8577003e5abc6a"
+                    },
+                    {
+                        "dimensions": {
+                            "length": 1,
+                            "width": 1,
+                            "height": 1
+                        },
+                        "_id": "6568fd9dbf8577003e5abc6b",
+                        "weight": 5,
+                        "description": "2 Piece content description",
+                        "id": "6568fd9dbf8577003e5abc6b"
+                    }
+                ],
+                "description": "description goes here",
+                "number_items": 2,
+                "delivery_info": [
+                    {
+                        "postalAddress": {
+                            "postalCode": "100001",
+                            "cityName": "Akure",
+                            "countryCode": "NG",
+                            "addressLine1": "yaba, lagos",
+                            "countyName": "Ondo"
+                        },
+                        "contactInformation": {
+                            "email": "shipper_create_shipmentapi@dhltestmail.com",
+                            "phone": "18211309039",
+                            "companyName": "Cider BookStore",
+                            "fullName": "Anyanwu Chinedu"
+                        },
+                        "_id": "6568fd9dbf8577003e5abc6c",
+                        "type": "CUSTOMER",
+                        "id": "6568fd9dbf8577003e5abc6c"
+                    },
+                    {
+                        "postalAddress": {
+                            "postalCode": "GA015",
+                            "cityName": "Accra",
+                            "countryCode": "GH",
+                            "addressLine1": "Some random place in Accra"
+                        },
+                        "contactInformation": {
+                            "email": "recipient_create_shipmentapi@dhltestmail.com",
+                            "phone": "9402825665",
+                            "companyName": "Baylee Marshall",
+                            "fullName": "Baylee Marshall"
+                        },
+                        "_id": "6568fd9dbf8577003e5abc6d",
+                        "type": "RECIEVER",
+                        "id": "6568fd9dbf8577003e5abc6d"
+                    }
+                ],
+                "customerId": "6568f828bf8577003e5abc3d",
+                "declaredValue": 5000,
+                "channel": "api",
+                "environment": "sandbox",
+                "createdAt": "2023-11-30T21:24:45.536Z",
+                "updatedAt": "2023-11-30T21:24:45.536Z",
+                "__v": 0,
+                "id": "6568fd9dbf8577003e5abc69"
+            },
+            {
+                "shipmentMeta": {
+                    "trackingId": "1494896443",
+                    "trackingUrl": "https://express.api.dhl.com/mydhlapi/test/shipments/1494896443/tracking",
+                    "packages": [
+                        {
+                            "_id": "6568fd67bf8577003e5abc61",
+                            "referenceNumber": 1,
+                            "trackingNumber": "JD014600004790042203",
+                            "trackingUrl": "https://express.api.dhl.com/mydhlapi/test/shipments/1494896443/tracking?pieceTrackingNumber=JD014600004790042203",
+                            "id": "6568fd67bf8577003e5abc61"
+                        },
+                        {
+                            "_id": "6568fd67bf8577003e5abc62",
+                            "referenceNumber": 2,
+                            "trackingNumber": "JD014600004790042204",
+                            "trackingUrl": "https://express.api.dhl.com/mydhlapi/test/shipments/1494896443/tracking?pieceTrackingNumber=JD014600004790042204",
+                            "id": "6568fd67bf8577003e5abc62"
+                        }
+                    ]
+                },
+                "document": "PACKAGE",
+                "_id": "6568fd67bf8577003e5abc5c",
+                "packages": [
+                    {
+                        "dimensions": {
+                            "length": 1,
+                            "width": 1,
+                            "height": 1
+                        },
+                        "_id": "6568fd67bf8577003e5abc5d",
+                        "weight": 0.5,
+                        "description": "Piece content description",
+                        "id": "6568fd67bf8577003e5abc5d"
+                    },
+                    {
+                        "dimensions": {
+                            "length": 1,
+                            "width": 1,
+                            "height": 1
+                        },
+                        "_id": "6568fd67bf8577003e5abc5e",
+                        "weight": 5,
+                        "description": "2 Piece content description",
+                        "id": "6568fd67bf8577003e5abc5e"
+                    }
+                ],
+                "description": "description goes here",
+                "number_items": 2,
+                "delivery_info": [
+                    {
+                        "postalAddress": {
+                            "postalCode": "100001",
+                            "cityName": "Yaba",
+                            "countryCode": "NG",
+                            "addressLine1": "yaba, lagos",
+                            "countyName": "Lagos"
+                        },
+                        "contactInformation": {
+                            "email": "shipper_create_shipmentapi@dhltestmail.com",
+                            "phone": "18211309039",
+                            "companyName": "Cider BookStore",
+                            "fullName": "Anyanwu Chinedu"
+                        },
+                        "_id": "6568fd67bf8577003e5abc5f",
+                        "type": "CUSTOMER",
+                        "id": "6568fd67bf8577003e5abc5f"
+                    },
+                    {
+                        "postalAddress": {
+                            "postalCode": "GA015",
+                            "cityName": "Accra",
+                            "countryCode": "GH",
+                            "addressLine1": "Some random place in Accra"
+                        },
+                        "contactInformation": {
+                            "email": "recipient_create_shipmentapi@dhltestmail.com",
+                            "phone": "9402825665",
+                            "companyName": "Baylee Marshall",
+                            "fullName": "Baylee Marshall"
+                        },
+                        "_id": "6568fd67bf8577003e5abc60",
+                        "type": "RECIEVER",
+                        "id": "6568fd67bf8577003e5abc60"
+                    }
+                ],
+                "customerId": "6568f828bf8577003e5abc3d",
+                "declaredValue": 5000,
+                "channel": "api",
+                "environment": "sandbox",
+                "createdAt": "2023-11-30T21:23:51.925Z",
+                "updatedAt": "2023-11-30T21:23:51.925Z",
+                "__v": 0,
+                "id": "6568fd67bf8577003e5abc5c"
+            },
+            {
+                "shipmentMeta": {
+                    "trackingId": "1494896373",
+                    "trackingUrl": "https://express.api.dhl.com/mydhlapi/test/shipments/1494896373/tracking",
+                    "packages": [
+                        {
+                            "_id": "6568fd30bf8577003e5abc52",
+                            "referenceNumber": 1,
+                            "trackingNumber": "JD014600004790042195",
+                            "trackingUrl": "https://express.api.dhl.com/mydhlapi/test/shipments/1494896373/tracking?pieceTrackingNumber=JD014600004790042195",
+                            "id": "6568fd30bf8577003e5abc52"
+                        },
+                        {
+                            "_id": "6568fd30bf8577003e5abc53",
+                            "referenceNumber": 2,
+                            "trackingNumber": "JD014600004790042196",
+                            "trackingUrl": "https://express.api.dhl.com/mydhlapi/test/shipments/1494896373/tracking?pieceTrackingNumber=JD014600004790042196",
+                            "id": "6568fd30bf8577003e5abc53"
+                        }
+                    ]
+                },
+                "document": "PACKAGE",
+                "_id": "6568fd2fbf8577003e5abc4d",
+                "packages": [
+                    {
+                        "dimensions": {
+                            "length": 1,
+                            "width": 1,
+                            "height": 1
+                        },
+                        "_id": "6568fd30bf8577003e5abc4e",
+                        "weight": 0.5,
+                        "description": "Piece content description",
+                        "id": "6568fd30bf8577003e5abc4e"
+                    },
+                    {
+                        "dimensions": {
+                            "length": 1,
+                            "width": 1,
+                            "height": 1
+                        },
+                        "_id": "6568fd30bf8577003e5abc4f",
+                        "weight": 5,
+                        "description": "2 Piece content description",
+                        "id": "6568fd30bf8577003e5abc4f"
+                    }
+                ],
+                "description": "description goes here",
+                "number_items": 2,
+                "delivery_info": [
+                    {
+                        "postalAddress": {
+                            "postalCode": "100001",
+                            "cityName": "Imo",
+                            "countryCode": "NG",
+                            "addressLine1": "yaba, lagos",
+                            "countyName": "Owerri"
+                        },
+                        "contactInformation": {
+                            "email": "shipper_create_shipmentapi@dhltestmail.com",
+                            "phone": "18211309039",
+                            "companyName": "Cider BookStore",
+                            "fullName": "Anyanwu Chinedu"
+                        },
+                        "_id": "6568fd30bf8577003e5abc50",
+                        "type": "CUSTOMER",
+                        "id": "6568fd30bf8577003e5abc50"
+                    },
+                    {
+                        "postalAddress": {
+                            "postalCode": "GA015",
+                            "cityName": "Accra",
+                            "countryCode": "GH",
+                            "addressLine1": "Some random place in Accra"
+                        },
+                        "contactInformation": {
+                            "email": "recipient_create_shipmentapi@dhltestmail.com",
+                            "phone": "9402825665",
+                            "companyName": "Baylee Marshall",
+                            "fullName": "Baylee Marshall"
+                        },
+                        "_id": "6568fd30bf8577003e5abc51",
+                        "type": "RECIEVER",
+                        "id": "6568fd30bf8577003e5abc51"
+                    }
+                ],
+                "customerId": "6568f828bf8577003e5abc3d",
+                "declaredValue": 5000,
+                "channel": "api",
+                "environment": "sandbox",
+                "createdAt": "2023-11-30T21:22:56.010Z",
+                "updatedAt": "2023-11-30T21:22:56.010Z",
+                "__v": 0,
+                "id": "6568fd2fbf8577003e5abc4d"
+            },
+            {
+                "shipmentMeta": {
+                    "trackingId": "1494896465",
+                    "trackingUrl": "https://express.api.dhl.com/mydhlapi/test/shipments/1494896465/tracking",
+                    "packages": [
+                        {
+                            "_id": "6568fd9dbf8577003e5abc6e",
+                            "referenceNumber": 1,
+                            "trackingNumber": "JD014600004790042206",
+                            "trackingUrl": "https://express.api.dhl.com/mydhlapi/test/shipments/1494896465/tracking?pieceTrackingNumber=JD014600004790042206",
+                            "id": "6568fd9dbf8577003e5abc6e"
+                        },
+                        {
+                            "_id": "6568fd9dbf8577003e5abc6f",
+                            "referenceNumber": 2,
+                            "trackingNumber": "JD014600004790042207",
+                            "trackingUrl": "https://express.api.dhl.com/mydhlapi/test/shipments/1494896465/tracking?pieceTrackingNumber=JD014600004790042207",
+                            "id": "6568fd9dbf8577003e5abc6f"
+                        }
+                    ]
+                },
+                "document": "PACKAGE",
+                "_id": "6568fd9dbf8577003e5abc69",
+                "packages": [
+                    {
+                        "dimensions": {
+                            "length": 1,
+                            "width": 1,
+                            "height": 1
+                        },
+                        "_id": "6568fd9dbf8577003e5abc6a",
+                        "weight": 0.5,
+                        "description": "Piece content description",
+                        "id": "6568fd9dbf8577003e5abc6a"
+                    },
+                    {
+                        "dimensions": {
+                            "length": 1,
+                            "width": 1,
+                            "height": 1
+                        },
+                        "_id": "6568fd9dbf8577003e5abc6b",
+                        "weight": 5,
+                        "description": "2 Piece content description",
+                        "id": "6568fd9dbf8577003e5abc6b"
+                    }
+                ],
+                "description": "description goes here",
+                "number_items": 2,
+                "delivery_info": [
+                    {
+                        "postalAddress": {
+                            "postalCode": "100001",
+                            "cityName": "Akure",
+                            "countryCode": "NG",
+                            "addressLine1": "yaba, lagos",
+                            "countyName": "Ondo"
+                        },
+                        "contactInformation": {
+                            "email": "shipper_create_shipmentapi@dhltestmail.com",
+                            "phone": "18211309039",
+                            "companyName": "Cider BookStore",
+                            "fullName": "Anyanwu Chinedu"
+                        },
+                        "_id": "6568fd9dbf8577003e5abc6c",
+                        "type": "CUSTOMER",
+                        "id": "6568fd9dbf8577003e5abc6c"
+                    },
+                    {
+                        "postalAddress": {
+                            "postalCode": "GA015",
+                            "cityName": "Accra",
+                            "countryCode": "GH",
+                            "addressLine1": "Some random place in Accra"
+                        },
+                        "contactInformation": {
+                            "email": "recipient_create_shipmentapi@dhltestmail.com",
+                            "phone": "9402825665",
+                            "companyName": "Baylee Marshall",
+                            "fullName": "Baylee Marshall"
+                        },
+                        "_id": "6568fd9dbf8577003e5abc6d",
+                        "type": "RECIEVER",
+                        "id": "6568fd9dbf8577003e5abc6d"
+                    }
+                ],
+                "customerId": "6568f828bf8577003e5abc3d",
+                "declaredValue": 5000,
+                "channel": "api",
+                "environment": "sandbox",
+                "createdAt": "2023-11-30T21:24:45.536Z",
+                "updatedAt": "2023-11-30T21:24:45.536Z",
+                "__v": 0,
+                "id": "6568fd9dbf8577003e5abc69"
+            },
+            {
+                "shipmentMeta": {
+                    "trackingId": "1494896443",
+                    "trackingUrl": "https://express.api.dhl.com/mydhlapi/test/shipments/1494896443/tracking",
+                    "packages": [
+                        {
+                            "_id": "6568fd67bf8577003e5abc61",
+                            "referenceNumber": 1,
+                            "trackingNumber": "JD014600004790042203",
+                            "trackingUrl": "https://express.api.dhl.com/mydhlapi/test/shipments/1494896443/tracking?pieceTrackingNumber=JD014600004790042203",
+                            "id": "6568fd67bf8577003e5abc61"
+                        },
+                        {
+                            "_id": "6568fd67bf8577003e5abc62",
+                            "referenceNumber": 2,
+                            "trackingNumber": "JD014600004790042204",
+                            "trackingUrl": "https://express.api.dhl.com/mydhlapi/test/shipments/1494896443/tracking?pieceTrackingNumber=JD014600004790042204",
+                            "id": "6568fd67bf8577003e5abc62"
+                        }
+                    ]
+                },
+                "document": "PACKAGE",
+                "_id": "6568fd67bf8577003e5abc5c",
+                "packages": [
+                    {
+                        "dimensions": {
+                            "length": 1,
+                            "width": 1,
+                            "height": 1
+                        },
+                        "_id": "6568fd67bf8577003e5abc5d",
+                        "weight": 0.5,
+                        "description": "Piece content description",
+                        "id": "6568fd67bf8577003e5abc5d"
+                    },
+                    {
+                        "dimensions": {
+                            "length": 1,
+                            "width": 1,
+                            "height": 1
+                        },
+                        "_id": "6568fd67bf8577003e5abc5e",
+                        "weight": 5,
+                        "description": "2 Piece content description",
+                        "id": "6568fd67bf8577003e5abc5e"
+                    }
+                ],
+                "description": "description goes here",
+                "number_items": 2,
+                "delivery_info": [
+                    {
+                        "postalAddress": {
+                            "postalCode": "100001",
+                            "cityName": "Yaba",
+                            "countryCode": "NG",
+                            "addressLine1": "yaba, lagos",
+                            "countyName": "Lagos"
+                        },
+                        "contactInformation": {
+                            "email": "shipper_create_shipmentapi@dhltestmail.com",
+                            "phone": "18211309039",
+                            "companyName": "Cider BookStore",
+                            "fullName": "Anyanwu Chinedu"
+                        },
+                        "_id": "6568fd67bf8577003e5abc5f",
+                        "type": "CUSTOMER",
+                        "id": "6568fd67bf8577003e5abc5f"
+                    },
+                    {
+                        "postalAddress": {
+                            "postalCode": "GA015",
+                            "cityName": "Accra",
+                            "countryCode": "GH",
+                            "addressLine1": "Some random place in Accra"
+                        },
+                        "contactInformation": {
+                            "email": "recipient_create_shipmentapi@dhltestmail.com",
+                            "phone": "9402825665",
+                            "companyName": "Baylee Marshall",
+                            "fullName": "Baylee Marshall"
+                        },
+                        "_id": "6568fd67bf8577003e5abc60",
+                        "type": "RECIEVER",
+                        "id": "6568fd67bf8577003e5abc60"
+                    }
+                ],
+                "customerId": "6568f828bf8577003e5abc3d",
+                "declaredValue": 5000,
+                "channel": "api",
+                "environment": "sandbox",
+                "createdAt": "2023-11-30T21:23:51.925Z",
+                "updatedAt": "2023-11-30T21:23:51.925Z",
+                "__v": 0,
+                "id": "6568fd67bf8577003e5abc5c"
+            },
+            {
+                "shipmentMeta": {
+                    "trackingId": "1494896373",
+                    "trackingUrl": "https://express.api.dhl.com/mydhlapi/test/shipments/1494896373/tracking",
+                    "packages": [
+                        {
+                            "_id": "6568fd30bf8577003e5abc52",
+                            "referenceNumber": 1,
+                            "trackingNumber": "JD014600004790042195",
+                            "trackingUrl": "https://express.api.dhl.com/mydhlapi/test/shipments/1494896373/tracking?pieceTrackingNumber=JD014600004790042195",
+                            "id": "6568fd30bf8577003e5abc52"
+                        },
+                        {
+                            "_id": "6568fd30bf8577003e5abc53",
+                            "referenceNumber": 2,
+                            "trackingNumber": "JD014600004790042196",
+                            "trackingUrl": "https://express.api.dhl.com/mydhlapi/test/shipments/1494896373/tracking?pieceTrackingNumber=JD014600004790042196",
+                            "id": "6568fd30bf8577003e5abc53"
+                        }
+                    ]
+                },
+                "document": "PACKAGE",
+                "_id": "6568fd2fbf8577003e5abc4d",
+                "packages": [
+                    {
+                        "dimensions": {
+                            "length": 1,
+                            "width": 1,
+                            "height": 1
+                        },
+                        "_id": "6568fd30bf8577003e5abc4e",
+                        "weight": 0.5,
+                        "description": "Piece content description",
+                        "id": "6568fd30bf8577003e5abc4e"
+                    },
+                    {
+                        "dimensions": {
+                            "length": 1,
+                            "width": 1,
+                            "height": 1
+                        },
+                        "_id": "6568fd30bf8577003e5abc4f",
+                        "weight": 5,
+                        "description": "2 Piece content description",
+                        "id": "6568fd30bf8577003e5abc4f"
+                    }
+                ],
+                "description": "description goes here",
+                "number_items": 2,
+                "delivery_info": [
+                    {
+                        "postalAddress": {
+                            "postalCode": "100001",
+                            "cityName": "Imo",
+                            "countryCode": "NG",
+                            "addressLine1": "yaba, lagos",
+                            "countyName": "Owerri"
+                        },
+                        "contactInformation": {
+                            "email": "shipper_create_shipmentapi@dhltestmail.com",
+                            "phone": "18211309039",
+                            "companyName": "Cider BookStore",
+                            "fullName": "Anyanwu Chinedu"
+                        },
+                        "_id": "6568fd30bf8577003e5abc50",
+                        "type": "CUSTOMER",
+                        "id": "6568fd30bf8577003e5abc50"
+                    },
+                    {
+                        "postalAddress": {
+                            "postalCode": "GA015",
+                            "cityName": "Accra",
+                            "countryCode": "GH",
+                            "addressLine1": "Some random place in Accra"
+                        },
+                        "contactInformation": {
+                            "email": "recipient_create_shipmentapi@dhltestmail.com",
+                            "phone": "9402825665",
+                            "companyName": "Baylee Marshall",
+                            "fullName": "Baylee Marshall"
+                        },
+                        "_id": "6568fd30bf8577003e5abc51",
+                        "type": "RECIEVER",
+                        "id": "6568fd30bf8577003e5abc51"
+                    }
+                ],
+                "customerId": "6568f828bf8577003e5abc3d",
+                "declaredValue": 5000,
+                "channel": "api",
+                "environment": "sandbox",
+                "createdAt": "2023-11-30T21:22:56.010Z",
+                "updatedAt": "2023-11-30T21:22:56.010Z",
+                "__v": 0,
+                "id": "6568fd2fbf8577003e5abc4d"
+            },
+            {
+                "shipmentMeta": {
+                    "trackingId": "1494896465",
+                    "trackingUrl": "https://express.api.dhl.com/mydhlapi/test/shipments/1494896465/tracking",
+                    "packages": [
+                        {
+                            "_id": "6568fd9dbf8577003e5abc6e",
+                            "referenceNumber": 1,
+                            "trackingNumber": "JD014600004790042206",
+                            "trackingUrl": "https://express.api.dhl.com/mydhlapi/test/shipments/1494896465/tracking?pieceTrackingNumber=JD014600004790042206",
+                            "id": "6568fd9dbf8577003e5abc6e"
+                        },
+                        {
+                            "_id": "6568fd9dbf8577003e5abc6f",
+                            "referenceNumber": 2,
+                            "trackingNumber": "JD014600004790042207",
+                            "trackingUrl": "https://express.api.dhl.com/mydhlapi/test/shipments/1494896465/tracking?pieceTrackingNumber=JD014600004790042207",
+                            "id": "6568fd9dbf8577003e5abc6f"
+                        }
+                    ]
+                },
+                "document": "PACKAGE",
+                "_id": "6568fd9dbf8577003e5abc69",
+                "packages": [
+                    {
+                        "dimensions": {
+                            "length": 1,
+                            "width": 1,
+                            "height": 1
+                        },
+                        "_id": "6568fd9dbf8577003e5abc6a",
+                        "weight": 0.5,
+                        "description": "Piece content description",
+                        "id": "6568fd9dbf8577003e5abc6a"
+                    },
+                    {
+                        "dimensions": {
+                            "length": 1,
+                            "width": 1,
+                            "height": 1
+                        },
+                        "_id": "6568fd9dbf8577003e5abc6b",
+                        "weight": 5,
+                        "description": "2 Piece content description",
+                        "id": "6568fd9dbf8577003e5abc6b"
+                    }
+                ],
+                "description": "description goes here",
+                "number_items": 2,
+                "delivery_info": [
+                    {
+                        "postalAddress": {
+                            "postalCode": "100001",
+                            "cityName": "Akure",
+                            "countryCode": "NG",
+                            "addressLine1": "yaba, lagos",
+                            "countyName": "Ondo"
+                        },
+                        "contactInformation": {
+                            "email": "shipper_create_shipmentapi@dhltestmail.com",
+                            "phone": "18211309039",
+                            "companyName": "Cider BookStore",
+                            "fullName": "Anyanwu Chinedu"
+                        },
+                        "_id": "6568fd9dbf8577003e5abc6c",
+                        "type": "CUSTOMER",
+                        "id": "6568fd9dbf8577003e5abc6c"
+                    },
+                    {
+                        "postalAddress": {
+                            "postalCode": "GA015",
+                            "cityName": "Accra",
+                            "countryCode": "GH",
+                            "addressLine1": "Some random place in Accra"
+                        },
+                        "contactInformation": {
+                            "email": "recipient_create_shipmentapi@dhltestmail.com",
+                            "phone": "9402825665",
+                            "companyName": "Baylee Marshall",
+                            "fullName": "Baylee Marshall"
+                        },
+                        "_id": "6568fd9dbf8577003e5abc6d",
+                        "type": "RECIEVER",
+                        "id": "6568fd9dbf8577003e5abc6d"
+                    }
+                ],
+                "customerId": "6568f828bf8577003e5abc3d",
+                "declaredValue": 5000,
+                "channel": "api",
+                "environment": "sandbox",
+                "createdAt": "2023-11-30T21:24:45.536Z",
+                "updatedAt": "2023-11-30T21:24:45.536Z",
+                "__v": 0,
+                "id": "6568fd9dbf8577003e5abc69"
+            },
+            {
+                "shipmentMeta": {
+                    "trackingId": "1494896443",
+                    "trackingUrl": "https://express.api.dhl.com/mydhlapi/test/shipments/1494896443/tracking",
+                    "packages": [
+                        {
+                            "_id": "6568fd67bf8577003e5abc61",
+                            "referenceNumber": 1,
+                            "trackingNumber": "JD014600004790042203",
+                            "trackingUrl": "https://express.api.dhl.com/mydhlapi/test/shipments/1494896443/tracking?pieceTrackingNumber=JD014600004790042203",
+                            "id": "6568fd67bf8577003e5abc61"
+                        },
+                        {
+                            "_id": "6568fd67bf8577003e5abc62",
+                            "referenceNumber": 2,
+                            "trackingNumber": "JD014600004790042204",
+                            "trackingUrl": "https://express.api.dhl.com/mydhlapi/test/shipments/1494896443/tracking?pieceTrackingNumber=JD014600004790042204",
+                            "id": "6568fd67bf8577003e5abc62"
+                        }
+                    ]
+                },
+                "document": "PACKAGE",
+                "_id": "6568fd67bf8577003e5abc5c",
+                "packages": [
+                    {
+                        "dimensions": {
+                            "length": 1,
+                            "width": 1,
+                            "height": 1
+                        },
+                        "_id": "6568fd67bf8577003e5abc5d",
+                        "weight": 0.5,
+                        "description": "Piece content description",
+                        "id": "6568fd67bf8577003e5abc5d"
+                    },
+                    {
+                        "dimensions": {
+                            "length": 1,
+                            "width": 1,
+                            "height": 1
+                        },
+                        "_id": "6568fd67bf8577003e5abc5e",
+                        "weight": 5,
+                        "description": "2 Piece content description",
+                        "id": "6568fd67bf8577003e5abc5e"
+                    }
+                ],
+                "description": "description goes here",
+                "number_items": 2,
+                "delivery_info": [
+                    {
+                        "postalAddress": {
+                            "postalCode": "100001",
+                            "cityName": "Yaba",
+                            "countryCode": "NG",
+                            "addressLine1": "yaba, lagos",
+                            "countyName": "Lagos"
+                        },
+                        "contactInformation": {
+                            "email": "shipper_create_shipmentapi@dhltestmail.com",
+                            "phone": "18211309039",
+                            "companyName": "Cider BookStore",
+                            "fullName": "Anyanwu Chinedu"
+                        },
+                        "_id": "6568fd67bf8577003e5abc5f",
+                        "type": "CUSTOMER",
+                        "id": "6568fd67bf8577003e5abc5f"
+                    },
+                    {
+                        "postalAddress": {
+                            "postalCode": "GA015",
+                            "cityName": "Accra",
+                            "countryCode": "GH",
+                            "addressLine1": "Some random place in Accra"
+                        },
+                        "contactInformation": {
+                            "email": "recipient_create_shipmentapi@dhltestmail.com",
+                            "phone": "9402825665",
+                            "companyName": "Baylee Marshall",
+                            "fullName": "Baylee Marshall"
+                        },
+                        "_id": "6568fd67bf8577003e5abc60",
+                        "type": "RECIEVER",
+                        "id": "6568fd67bf8577003e5abc60"
+                    }
+                ],
+                "customerId": "6568f828bf8577003e5abc3d",
+                "declaredValue": 5000,
+                "channel": "api",
+                "environment": "sandbox",
+                "createdAt": "2023-11-30T21:23:51.925Z",
+                "updatedAt": "2023-11-30T21:23:51.925Z",
+                "__v": 0,
+                "id": "6568fd67bf8577003e5abc5c"
+            },
+            {
+                "shipmentMeta": {
+                    "trackingId": "1494896373",
+                    "trackingUrl": "https://express.api.dhl.com/mydhlapi/test/shipments/1494896373/tracking",
+                    "packages": [
+                        {
+                            "_id": "6568fd30bf8577003e5abc52",
+                            "referenceNumber": 1,
+                            "trackingNumber": "JD014600004790042195",
+                            "trackingUrl": "https://express.api.dhl.com/mydhlapi/test/shipments/1494896373/tracking?pieceTrackingNumber=JD014600004790042195",
+                            "id": "6568fd30bf8577003e5abc52"
+                        },
+                        {
+                            "_id": "6568fd30bf8577003e5abc53",
+                            "referenceNumber": 2,
+                            "trackingNumber": "JD014600004790042196",
+                            "trackingUrl": "https://express.api.dhl.com/mydhlapi/test/shipments/1494896373/tracking?pieceTrackingNumber=JD014600004790042196",
+                            "id": "6568fd30bf8577003e5abc53"
+                        }
+                    ]
+                },
+                "document": "PACKAGE",
+                "_id": "6568fd2fbf8577003e5abc4d",
+                "packages": [
+                    {
+                        "dimensions": {
+                            "length": 1,
+                            "width": 1,
+                            "height": 1
+                        },
+                        "_id": "6568fd30bf8577003e5abc4e",
+                        "weight": 0.5,
+                        "description": "Piece content description",
+                        "id": "6568fd30bf8577003e5abc4e"
+                    },
+                    {
+                        "dimensions": {
+                            "length": 1,
+                            "width": 1,
+                            "height": 1
+                        },
+                        "_id": "6568fd30bf8577003e5abc4f",
+                        "weight": 5,
+                        "description": "2 Piece content description",
+                        "id": "6568fd30bf8577003e5abc4f"
+                    }
+                ],
+                "description": "description goes here",
+                "number_items": 2,
+                "delivery_info": [
+                    {
+                        "postalAddress": {
+                            "postalCode": "100001",
+                            "cityName": "Imo",
+                            "countryCode": "NG",
+                            "addressLine1": "yaba, lagos",
+                            "countyName": "Owerri"
+                        },
+                        "contactInformation": {
+                            "email": "shipper_create_shipmentapi@dhltestmail.com",
+                            "phone": "18211309039",
+                            "companyName": "Cider BookStore",
+                            "fullName": "Anyanwu Chinedu"
+                        },
+                        "_id": "6568fd30bf8577003e5abc50",
+                        "type": "CUSTOMER",
+                        "id": "6568fd30bf8577003e5abc50"
+                    },
+                    {
+                        "postalAddress": {
+                            "postalCode": "GA015",
+                            "cityName": "Accra",
+                            "countryCode": "GH",
+                            "addressLine1": "Some random place in Accra"
+                        },
+                        "contactInformation": {
+                            "email": "recipient_create_shipmentapi@dhltestmail.com",
+                            "phone": "9402825665",
+                            "companyName": "Baylee Marshall",
+                            "fullName": "Baylee Marshall"
+                        },
+                        "_id": "6568fd30bf8577003e5abc51",
+                        "type": "RECIEVER",
+                        "id": "6568fd30bf8577003e5abc51"
+                    }
+                ],
+                "customerId": "6568f828bf8577003e5abc3d",
+                "declaredValue": 5000,
+                "channel": "api",
+                "environment": "sandbox",
+                "createdAt": "2023-11-30T21:22:56.010Z",
+                "updatedAt": "2023-11-30T21:22:56.010Z",
+                "__v": 0,
+                "id": "6568fd2fbf8577003e5abc4d"
+            },
+            {
+                "shipmentMeta": {
+                    "trackingId": "1494896465",
+                    "trackingUrl": "https://express.api.dhl.com/mydhlapi/test/shipments/1494896465/tracking",
+                    "packages": [
+                        {
+                            "_id": "6568fd9dbf8577003e5abc6e",
+                            "referenceNumber": 1,
+                            "trackingNumber": "JD014600004790042206",
+                            "trackingUrl": "https://express.api.dhl.com/mydhlapi/test/shipments/1494896465/tracking?pieceTrackingNumber=JD014600004790042206",
+                            "id": "6568fd9dbf8577003e5abc6e"
+                        },
+                        {
+                            "_id": "6568fd9dbf8577003e5abc6f",
+                            "referenceNumber": 2,
+                            "trackingNumber": "JD014600004790042207",
+                            "trackingUrl": "https://express.api.dhl.com/mydhlapi/test/shipments/1494896465/tracking?pieceTrackingNumber=JD014600004790042207",
+                            "id": "6568fd9dbf8577003e5abc6f"
+                        }
+                    ]
+                },
+                "document": "PACKAGE",
+                "_id": "6568fd9dbf8577003e5abc69",
+                "packages": [
+                    {
+                        "dimensions": {
+                            "length": 1,
+                            "width": 1,
+                            "height": 1
+                        },
+                        "_id": "6568fd9dbf8577003e5abc6a",
+                        "weight": 0.5,
+                        "description": "Piece content description",
+                        "id": "6568fd9dbf8577003e5abc6a"
+                    },
+                    {
+                        "dimensions": {
+                            "length": 1,
+                            "width": 1,
+                            "height": 1
+                        },
+                        "_id": "6568fd9dbf8577003e5abc6b",
+                        "weight": 5,
+                        "description": "2 Piece content description",
+                        "id": "6568fd9dbf8577003e5abc6b"
+                    }
+                ],
+                "description": "description goes here",
+                "number_items": 2,
+                "delivery_info": [
+                    {
+                        "postalAddress": {
+                            "postalCode": "100001",
+                            "cityName": "Akure",
+                            "countryCode": "NG",
+                            "addressLine1": "yaba, lagos",
+                            "countyName": "Ondo"
+                        },
+                        "contactInformation": {
+                            "email": "shipper_create_shipmentapi@dhltestmail.com",
+                            "phone": "18211309039",
+                            "companyName": "Cider BookStore",
+                            "fullName": "Anyanwu Chinedu"
+                        },
+                        "_id": "6568fd9dbf8577003e5abc6c",
+                        "type": "CUSTOMER",
+                        "id": "6568fd9dbf8577003e5abc6c"
+                    },
+                    {
+                        "postalAddress": {
+                            "postalCode": "GA015",
+                            "cityName": "Accra",
+                            "countryCode": "GH",
+                            "addressLine1": "Some random place in Accra"
+                        },
+                        "contactInformation": {
+                            "email": "recipient_create_shipmentapi@dhltestmail.com",
+                            "phone": "9402825665",
+                            "companyName": "Baylee Marshall",
+                            "fullName": "Baylee Marshall"
+                        },
+                        "_id": "6568fd9dbf8577003e5abc6d",
+                        "type": "RECIEVER",
+                        "id": "6568fd9dbf8577003e5abc6d"
+                    }
+                ],
+                "customerId": "6568f828bf8577003e5abc3d",
+                "declaredValue": 5000,
+                "channel": "api",
+                "environment": "sandbox",
+                "createdAt": "2023-11-30T21:24:45.536Z",
+                "updatedAt": "2023-11-30T21:24:45.536Z",
+                "__v": 0,
+                "id": "6568fd9dbf8577003e5abc69"
+            },
+            {
+                "shipmentMeta": {
+                    "trackingId": "1494896443",
+                    "trackingUrl": "https://express.api.dhl.com/mydhlapi/test/shipments/1494896443/tracking",
+                    "packages": [
+                        {
+                            "_id": "6568fd67bf8577003e5abc61",
+                            "referenceNumber": 1,
+                            "trackingNumber": "JD014600004790042203",
+                            "trackingUrl": "https://express.api.dhl.com/mydhlapi/test/shipments/1494896443/tracking?pieceTrackingNumber=JD014600004790042203",
+                            "id": "6568fd67bf8577003e5abc61"
+                        },
+                        {
+                            "_id": "6568fd67bf8577003e5abc62",
+                            "referenceNumber": 2,
+                            "trackingNumber": "JD014600004790042204",
+                            "trackingUrl": "https://express.api.dhl.com/mydhlapi/test/shipments/1494896443/tracking?pieceTrackingNumber=JD014600004790042204",
+                            "id": "6568fd67bf8577003e5abc62"
+                        }
+                    ]
+                },
+                "document": "PACKAGE",
+                "_id": "6568fd67bf8577003e5abc5c",
+                "packages": [
+                    {
+                        "dimensions": {
+                            "length": 1,
+                            "width": 1,
+                            "height": 1
+                        },
+                        "_id": "6568fd67bf8577003e5abc5d",
+                        "weight": 0.5,
+                        "description": "Piece content description",
+                        "id": "6568fd67bf8577003e5abc5d"
+                    },
+                    {
+                        "dimensions": {
+                            "length": 1,
+                            "width": 1,
+                            "height": 1
+                        },
+                        "_id": "6568fd67bf8577003e5abc5e",
+                        "weight": 5,
+                        "description": "2 Piece content description",
+                        "id": "6568fd67bf8577003e5abc5e"
+                    }
+                ],
+                "description": "description goes here",
+                "number_items": 2,
+                "delivery_info": [
+                    {
+                        "postalAddress": {
+                            "postalCode": "100001",
+                            "cityName": "Yaba",
+                            "countryCode": "NG",
+                            "addressLine1": "yaba, lagos",
+                            "countyName": "Lagos"
+                        },
+                        "contactInformation": {
+                            "email": "shipper_create_shipmentapi@dhltestmail.com",
+                            "phone": "18211309039",
+                            "companyName": "Cider BookStore",
+                            "fullName": "Anyanwu Chinedu"
+                        },
+                        "_id": "6568fd67bf8577003e5abc5f",
+                        "type": "CUSTOMER",
+                        "id": "6568fd67bf8577003e5abc5f"
+                    },
+                    {
+                        "postalAddress": {
+                            "postalCode": "GA015",
+                            "cityName": "Accra",
+                            "countryCode": "GH",
+                            "addressLine1": "Some random place in Accra"
+                        },
+                        "contactInformation": {
+                            "email": "recipient_create_shipmentapi@dhltestmail.com",
+                            "phone": "9402825665",
+                            "companyName": "Baylee Marshall",
+                            "fullName": "Baylee Marshall"
+                        },
+                        "_id": "6568fd67bf8577003e5abc60",
+                        "type": "RECIEVER",
+                        "id": "6568fd67bf8577003e5abc60"
+                    }
+                ],
+                "customerId": "6568f828bf8577003e5abc3d",
+                "declaredValue": 5000,
+                "channel": "api",
+                "environment": "sandbox",
+                "createdAt": "2023-11-30T21:23:51.925Z",
+                "updatedAt": "2023-11-30T21:23:51.925Z",
+                "__v": 0,
+                "id": "6568fd67bf8577003e5abc5c"
+            },
+            {
+                "shipmentMeta": {
+                    "trackingId": "1494896373",
+                    "trackingUrl": "https://express.api.dhl.com/mydhlapi/test/shipments/1494896373/tracking",
+                    "packages": [
+                        {
+                            "_id": "6568fd30bf8577003e5abc52",
+                            "referenceNumber": 1,
+                            "trackingNumber": "JD014600004790042195",
+                            "trackingUrl": "https://express.api.dhl.com/mydhlapi/test/shipments/1494896373/tracking?pieceTrackingNumber=JD014600004790042195",
+                            "id": "6568fd30bf8577003e5abc52"
+                        },
+                        {
+                            "_id": "6568fd30bf8577003e5abc53",
+                            "referenceNumber": 2,
+                            "trackingNumber": "JD014600004790042196",
+                            "trackingUrl": "https://express.api.dhl.com/mydhlapi/test/shipments/1494896373/tracking?pieceTrackingNumber=JD014600004790042196",
+                            "id": "6568fd30bf8577003e5abc53"
+                        }
+                    ]
+                },
+                "document": "PACKAGE",
+                "_id": "6568fd2fbf8577003e5abc4d",
+                "packages": [
+                    {
+                        "dimensions": {
+                            "length": 1,
+                            "width": 1,
+                            "height": 1
+                        },
+                        "_id": "6568fd30bf8577003e5abc4e",
+                        "weight": 0.5,
+                        "description": "Piece content description",
+                        "id": "6568fd30bf8577003e5abc4e"
+                    },
+                    {
+                        "dimensions": {
+                            "length": 1,
+                            "width": 1,
+                            "height": 1
+                        },
+                        "_id": "6568fd30bf8577003e5abc4f",
+                        "weight": 5,
+                        "description": "2 Piece content description",
+                        "id": "6568fd30bf8577003e5abc4f"
+                    }
+                ],
+                "description": "description goes here",
+                "number_items": 2,
+                "delivery_info": [
+                    {
+                        "postalAddress": {
+                            "postalCode": "100001",
+                            "cityName": "Imo",
+                            "countryCode": "NG",
+                            "addressLine1": "yaba, lagos",
+                            "countyName": "Owerri"
+                        },
+                        "contactInformation": {
+                            "email": "shipper_create_shipmentapi@dhltestmail.com",
+                            "phone": "18211309039",
+                            "companyName": "Cider BookStore",
+                            "fullName": "Anyanwu Chinedu"
+                        },
+                        "_id": "6568fd30bf8577003e5abc50",
+                        "type": "CUSTOMER",
+                        "id": "6568fd30bf8577003e5abc50"
+                    },
+                    {
+                        "postalAddress": {
+                            "postalCode": "GA015",
+                            "cityName": "Accra",
+                            "countryCode": "GH",
+                            "addressLine1": "Some random place in Accra"
+                        },
+                        "contactInformation": {
+                            "email": "recipient_create_shipmentapi@dhltestmail.com",
+                            "phone": "9402825665",
+                            "companyName": "Baylee Marshall",
+                            "fullName": "Baylee Marshall"
+                        },
+                        "_id": "6568fd30bf8577003e5abc51",
+                        "type": "RECIEVER",
+                        "id": "6568fd30bf8577003e5abc51"
+                    }
+                ],
+                "customerId": "6568f828bf8577003e5abc3d",
+                "declaredValue": 5000,
+                "channel": "api",
+                "environment": "sandbox",
+                "createdAt": "2023-11-30T21:22:56.010Z",
+                "updatedAt": "2023-11-30T21:22:56.010Z",
+                "__v": 0,
+                "id": "6568fd2fbf8577003e5abc4d"
+            },
+            {
+                "shipmentMeta": {
+                    "trackingId": "1494896465",
+                    "trackingUrl": "https://express.api.dhl.com/mydhlapi/test/shipments/1494896465/tracking",
+                    "packages": [
+                        {
+                            "_id": "6568fd9dbf8577003e5abc6e",
+                            "referenceNumber": 1,
+                            "trackingNumber": "JD014600004790042206",
+                            "trackingUrl": "https://express.api.dhl.com/mydhlapi/test/shipments/1494896465/tracking?pieceTrackingNumber=JD014600004790042206",
+                            "id": "6568fd9dbf8577003e5abc6e"
+                        },
+                        {
+                            "_id": "6568fd9dbf8577003e5abc6f",
+                            "referenceNumber": 2,
+                            "trackingNumber": "JD014600004790042207",
+                            "trackingUrl": "https://express.api.dhl.com/mydhlapi/test/shipments/1494896465/tracking?pieceTrackingNumber=JD014600004790042207",
+                            "id": "6568fd9dbf8577003e5abc6f"
+                        }
+                    ]
+                },
+                "document": "PACKAGE",
+                "_id": "6568fd9dbf8577003e5abc69",
+                "packages": [
+                    {
+                        "dimensions": {
+                            "length": 1,
+                            "width": 1,
+                            "height": 1
+                        },
+                        "_id": "6568fd9dbf8577003e5abc6a",
+                        "weight": 0.5,
+                        "description": "Piece content description",
+                        "id": "6568fd9dbf8577003e5abc6a"
+                    },
+                    {
+                        "dimensions": {
+                            "length": 1,
+                            "width": 1,
+                            "height": 1
+                        },
+                        "_id": "6568fd9dbf8577003e5abc6b",
+                        "weight": 5,
+                        "description": "2 Piece content description",
+                        "id": "6568fd9dbf8577003e5abc6b"
+                    }
+                ],
+                "description": "description goes here",
+                "number_items": 2,
+                "delivery_info": [
+                    {
+                        "postalAddress": {
+                            "postalCode": "100001",
+                            "cityName": "Akure",
+                            "countryCode": "NG",
+                            "addressLine1": "yaba, lagos",
+                            "countyName": "Ondo"
+                        },
+                        "contactInformation": {
+                            "email": "shipper_create_shipmentapi@dhltestmail.com",
+                            "phone": "18211309039",
+                            "companyName": "Cider BookStore",
+                            "fullName": "Anyanwu Chinedu"
+                        },
+                        "_id": "6568fd9dbf8577003e5abc6c",
+                        "type": "CUSTOMER",
+                        "id": "6568fd9dbf8577003e5abc6c"
+                    },
+                    {
+                        "postalAddress": {
+                            "postalCode": "GA015",
+                            "cityName": "Accra",
+                            "countryCode": "GH",
+                            "addressLine1": "Some random place in Accra"
+                        },
+                        "contactInformation": {
+                            "email": "recipient_create_shipmentapi@dhltestmail.com",
+                            "phone": "9402825665",
+                            "companyName": "Baylee Marshall",
+                            "fullName": "Baylee Marshall"
+                        },
+                        "_id": "6568fd9dbf8577003e5abc6d",
+                        "type": "RECIEVER",
+                        "id": "6568fd9dbf8577003e5abc6d"
+                    }
+                ],
+                "customerId": "6568f828bf8577003e5abc3d",
+                "declaredValue": 5000,
+                "channel": "api",
+                "environment": "sandbox",
+                "createdAt": "2023-11-30T21:24:45.536Z",
+                "updatedAt": "2023-11-30T21:24:45.536Z",
+                "__v": 0,
+                "id": "6568fd9dbf8577003e5abc69"
+            },
+            {
+                "shipmentMeta": {
+                    "trackingId": "1494896443",
+                    "trackingUrl": "https://express.api.dhl.com/mydhlapi/test/shipments/1494896443/tracking",
+                    "packages": [
+                        {
+                            "_id": "6568fd67bf8577003e5abc61",
+                            "referenceNumber": 1,
+                            "trackingNumber": "JD014600004790042203",
+                            "trackingUrl": "https://express.api.dhl.com/mydhlapi/test/shipments/1494896443/tracking?pieceTrackingNumber=JD014600004790042203",
+                            "id": "6568fd67bf8577003e5abc61"
+                        },
+                        {
+                            "_id": "6568fd67bf8577003e5abc62",
+                            "referenceNumber": 2,
+                            "trackingNumber": "JD014600004790042204",
+                            "trackingUrl": "https://express.api.dhl.com/mydhlapi/test/shipments/1494896443/tracking?pieceTrackingNumber=JD014600004790042204",
+                            "id": "6568fd67bf8577003e5abc62"
+                        }
+                    ]
+                },
+                "document": "PACKAGE",
+                "_id": "6568fd67bf8577003e5abc5c",
+                "packages": [
+                    {
+                        "dimensions": {
+                            "length": 1,
+                            "width": 1,
+                            "height": 1
+                        },
+                        "_id": "6568fd67bf8577003e5abc5d",
+                        "weight": 0.5,
+                        "description": "Piece content description",
+                        "id": "6568fd67bf8577003e5abc5d"
+                    },
+                    {
+                        "dimensions": {
+                            "length": 1,
+                            "width": 1,
+                            "height": 1
+                        },
+                        "_id": "6568fd67bf8577003e5abc5e",
+                        "weight": 5,
+                        "description": "2 Piece content description",
+                        "id": "6568fd67bf8577003e5abc5e"
+                    }
+                ],
+                "description": "description goes here",
+                "number_items": 2,
+                "delivery_info": [
+                    {
+                        "postalAddress": {
+                            "postalCode": "100001",
+                            "cityName": "Yaba",
+                            "countryCode": "NG",
+                            "addressLine1": "yaba, lagos",
+                            "countyName": "Lagos"
+                        },
+                        "contactInformation": {
+                            "email": "shipper_create_shipmentapi@dhltestmail.com",
+                            "phone": "18211309039",
+                            "companyName": "Cider BookStore",
+                            "fullName": "Anyanwu Chinedu"
+                        },
+                        "_id": "6568fd67bf8577003e5abc5f",
+                        "type": "CUSTOMER",
+                        "id": "6568fd67bf8577003e5abc5f"
+                    },
+                    {
+                        "postalAddress": {
+                            "postalCode": "GA015",
+                            "cityName": "Accra",
+                            "countryCode": "GH",
+                            "addressLine1": "Some random place in Accra"
+                        },
+                        "contactInformation": {
+                            "email": "recipient_create_shipmentapi@dhltestmail.com",
+                            "phone": "9402825665",
+                            "companyName": "Baylee Marshall",
+                            "fullName": "Baylee Marshall"
+                        },
+                        "_id": "6568fd67bf8577003e5abc60",
+                        "type": "RECIEVER",
+                        "id": "6568fd67bf8577003e5abc60"
+                    }
+                ],
+                "customerId": "6568f828bf8577003e5abc3d",
+                "declaredValue": 5000,
+                "channel": "api",
+                "environment": "sandbox",
+                "createdAt": "2023-11-30T21:23:51.925Z",
+                "updatedAt": "2023-11-30T21:23:51.925Z",
+                "__v": 0,
+                "id": "6568fd67bf8577003e5abc5c"
+            },
+            {
+                "shipmentMeta": {
+                    "trackingId": "1494896373",
+                    "trackingUrl": "https://express.api.dhl.com/mydhlapi/test/shipments/1494896373/tracking",
+                    "packages": [
+                        {
+                            "_id": "6568fd30bf8577003e5abc52",
+                            "referenceNumber": 1,
+                            "trackingNumber": "JD014600004790042195",
+                            "trackingUrl": "https://express.api.dhl.com/mydhlapi/test/shipments/1494896373/tracking?pieceTrackingNumber=JD014600004790042195",
+                            "id": "6568fd30bf8577003e5abc52"
+                        },
+                        {
+                            "_id": "6568fd30bf8577003e5abc53",
+                            "referenceNumber": 2,
+                            "trackingNumber": "JD014600004790042196",
+                            "trackingUrl": "https://express.api.dhl.com/mydhlapi/test/shipments/1494896373/tracking?pieceTrackingNumber=JD014600004790042196",
+                            "id": "6568fd30bf8577003e5abc53"
+                        }
+                    ]
+                },
+                "document": "PACKAGE",
+                "_id": "6568fd2fbf8577003e5abc4d",
+                "packages": [
+                    {
+                        "dimensions": {
+                            "length": 1,
+                            "width": 1,
+                            "height": 1
+                        },
+                        "_id": "6568fd30bf8577003e5abc4e",
+                        "weight": 0.5,
+                        "description": "Piece content description",
+                        "id": "6568fd30bf8577003e5abc4e"
+                    },
+                    {
+                        "dimensions": {
+                            "length": 1,
+                            "width": 1,
+                            "height": 1
+                        },
+                        "_id": "6568fd30bf8577003e5abc4f",
+                        "weight": 5,
+                        "description": "2 Piece content description",
+                        "id": "6568fd30bf8577003e5abc4f"
+                    }
+                ],
+                "description": "description goes here",
+                "number_items": 2,
+                "delivery_info": [
+                    {
+                        "postalAddress": {
+                            "postalCode": "100001",
+                            "cityName": "Imo",
+                            "countryCode": "NG",
+                            "addressLine1": "yaba, lagos",
+                            "countyName": "Owerri"
+                        },
+                        "contactInformation": {
+                            "email": "shipper_create_shipmentapi@dhltestmail.com",
+                            "phone": "18211309039",
+                            "companyName": "Cider BookStore",
+                            "fullName": "Anyanwu Chinedu"
+                        },
+                        "_id": "6568fd30bf8577003e5abc50",
+                        "type": "CUSTOMER",
+                        "id": "6568fd30bf8577003e5abc50"
+                    },
+                    {
+                        "postalAddress": {
+                            "postalCode": "GA015",
+                            "cityName": "Accra",
+                            "countryCode": "GH",
+                            "addressLine1": "Some random place in Accra"
+                        },
+                        "contactInformation": {
+                            "email": "recipient_create_shipmentapi@dhltestmail.com",
+                            "phone": "9402825665",
+                            "companyName": "Baylee Marshall",
+                            "fullName": "Baylee Marshall"
+                        },
+                        "_id": "6568fd30bf8577003e5abc51",
+                        "type": "RECIEVER",
+                        "id": "6568fd30bf8577003e5abc51"
+                    }
+                ],
+                "customerId": "6568f828bf8577003e5abc3d",
+                "declaredValue": 5000,
+                "channel": "api",
+                "environment": "sandbox",
+                "createdAt": "2023-11-30T21:22:56.010Z",
+                "updatedAt": "2023-11-30T21:22:56.010Z",
+                "__v": 0,
+                "id": "6568fd2fbf8577003e5abc4d"
+            },
+            {
+                "shipmentMeta": {
+                    "trackingId": "1494896465",
+                    "trackingUrl": "https://express.api.dhl.com/mydhlapi/test/shipments/1494896465/tracking",
+                    "packages": [
+                        {
+                            "_id": "6568fd9dbf8577003e5abc6e",
+                            "referenceNumber": 1,
+                            "trackingNumber": "JD014600004790042206",
+                            "trackingUrl": "https://express.api.dhl.com/mydhlapi/test/shipments/1494896465/tracking?pieceTrackingNumber=JD014600004790042206",
+                            "id": "6568fd9dbf8577003e5abc6e"
+                        },
+                        {
+                            "_id": "6568fd9dbf8577003e5abc6f",
+                            "referenceNumber": 2,
+                            "trackingNumber": "JD014600004790042207",
+                            "trackingUrl": "https://express.api.dhl.com/mydhlapi/test/shipments/1494896465/tracking?pieceTrackingNumber=JD014600004790042207",
+                            "id": "6568fd9dbf8577003e5abc6f"
+                        }
+                    ]
+                },
+                "document": "PACKAGE",
+                "_id": "6568fd9dbf8577003e5abc69",
+                "packages": [
+                    {
+                        "dimensions": {
+                            "length": 1,
+                            "width": 1,
+                            "height": 1
+                        },
+                        "_id": "6568fd9dbf8577003e5abc6a",
+                        "weight": 0.5,
+                        "description": "Piece content description",
+                        "id": "6568fd9dbf8577003e5abc6a"
+                    },
+                    {
+                        "dimensions": {
+                            "length": 1,
+                            "width": 1,
+                            "height": 1
+                        },
+                        "_id": "6568fd9dbf8577003e5abc6b",
+                        "weight": 5,
+                        "description": "2 Piece content description",
+                        "id": "6568fd9dbf8577003e5abc6b"
+                    }
+                ],
+                "description": "description goes here",
+                "number_items": 2,
+                "delivery_info": [
+                    {
+                        "postalAddress": {
+                            "postalCode": "100001",
+                            "cityName": "Akure",
+                            "countryCode": "NG",
+                            "addressLine1": "yaba, lagos",
+                            "countyName": "Ondo"
+                        },
+                        "contactInformation": {
+                            "email": "shipper_create_shipmentapi@dhltestmail.com",
+                            "phone": "18211309039",
+                            "companyName": "Cider BookStore",
+                            "fullName": "Anyanwu Chinedu"
+                        },
+                        "_id": "6568fd9dbf8577003e5abc6c",
+                        "type": "CUSTOMER",
+                        "id": "6568fd9dbf8577003e5abc6c"
+                    },
+                    {
+                        "postalAddress": {
+                            "postalCode": "GA015",
+                            "cityName": "Accra",
+                            "countryCode": "GH",
+                            "addressLine1": "Some random place in Accra"
+                        },
+                        "contactInformation": {
+                            "email": "recipient_create_shipmentapi@dhltestmail.com",
+                            "phone": "9402825665",
+                            "companyName": "Baylee Marshall",
+                            "fullName": "Baylee Marshall"
+                        },
+                        "_id": "6568fd9dbf8577003e5abc6d",
+                        "type": "RECIEVER",
+                        "id": "6568fd9dbf8577003e5abc6d"
+                    }
+                ],
+                "customerId": "6568f828bf8577003e5abc3d",
+                "declaredValue": 5000,
+                "channel": "api",
+                "environment": "sandbox",
+                "createdAt": "2023-11-30T21:24:45.536Z",
+                "updatedAt": "2023-11-30T21:24:45.536Z",
+                "__v": 0,
+                "id": "6568fd9dbf8577003e5abc69"
+            },
+            {
+                "shipmentMeta": {
+                    "trackingId": "1494896443",
+                    "trackingUrl": "https://express.api.dhl.com/mydhlapi/test/shipments/1494896443/tracking",
+                    "packages": [
+                        {
+                            "_id": "6568fd67bf8577003e5abc61",
+                            "referenceNumber": 1,
+                            "trackingNumber": "JD014600004790042203",
+                            "trackingUrl": "https://express.api.dhl.com/mydhlapi/test/shipments/1494896443/tracking?pieceTrackingNumber=JD014600004790042203",
+                            "id": "6568fd67bf8577003e5abc61"
+                        },
+                        {
+                            "_id": "6568fd67bf8577003e5abc62",
+                            "referenceNumber": 2,
+                            "trackingNumber": "JD014600004790042204",
+                            "trackingUrl": "https://express.api.dhl.com/mydhlapi/test/shipments/1494896443/tracking?pieceTrackingNumber=JD014600004790042204",
+                            "id": "6568fd67bf8577003e5abc62"
+                        }
+                    ]
+                },
+                "document": "PACKAGE",
+                "_id": "6568fd67bf8577003e5abc5c",
+                "packages": [
+                    {
+                        "dimensions": {
+                            "length": 1,
+                            "width": 1,
+                            "height": 1
+                        },
+                        "_id": "6568fd67bf8577003e5abc5d",
+                        "weight": 0.5,
+                        "description": "Piece content description",
+                        "id": "6568fd67bf8577003e5abc5d"
+                    },
+                    {
+                        "dimensions": {
+                            "length": 1,
+                            "width": 1,
+                            "height": 1
+                        },
+                        "_id": "6568fd67bf8577003e5abc5e",
+                        "weight": 5,
+                        "description": "2 Piece content description",
+                        "id": "6568fd67bf8577003e5abc5e"
+                    }
+                ],
+                "description": "description goes here",
+                "number_items": 2,
+                "delivery_info": [
+                    {
+                        "postalAddress": {
+                            "postalCode": "100001",
+                            "cityName": "Yaba",
+                            "countryCode": "NG",
+                            "addressLine1": "yaba, lagos",
+                            "countyName": "Lagos"
+                        },
+                        "contactInformation": {
+                            "email": "shipper_create_shipmentapi@dhltestmail.com",
+                            "phone": "18211309039",
+                            "companyName": "Cider BookStore",
+                            "fullName": "Anyanwu Chinedu"
+                        },
+                        "_id": "6568fd67bf8577003e5abc5f",
+                        "type": "CUSTOMER",
+                        "id": "6568fd67bf8577003e5abc5f"
+                    },
+                    {
+                        "postalAddress": {
+                            "postalCode": "GA015",
+                            "cityName": "Accra",
+                            "countryCode": "GH",
+                            "addressLine1": "Some random place in Accra"
+                        },
+                        "contactInformation": {
+                            "email": "recipient_create_shipmentapi@dhltestmail.com",
+                            "phone": "9402825665",
+                            "companyName": "Baylee Marshall",
+                            "fullName": "Baylee Marshall"
+                        },
+                        "_id": "6568fd67bf8577003e5abc60",
+                        "type": "RECIEVER",
+                        "id": "6568fd67bf8577003e5abc60"
+                    }
+                ],
+                "customerId": "6568f828bf8577003e5abc3d",
+                "declaredValue": 5000,
+                "channel": "api",
+                "environment": "sandbox",
+                "createdAt": "2023-11-30T21:23:51.925Z",
+                "updatedAt": "2023-11-30T21:23:51.925Z",
+                "__v": 0,
+                "id": "6568fd67bf8577003e5abc5c"
+            },
+            {
+                "shipmentMeta": {
+                    "trackingId": "1494896373",
+                    "trackingUrl": "https://express.api.dhl.com/mydhlapi/test/shipments/1494896373/tracking",
+                    "packages": [
+                        {
+                            "_id": "6568fd30bf8577003e5abc52",
+                            "referenceNumber": 1,
+                            "trackingNumber": "JD014600004790042195",
+                            "trackingUrl": "https://express.api.dhl.com/mydhlapi/test/shipments/1494896373/tracking?pieceTrackingNumber=JD014600004790042195",
+                            "id": "6568fd30bf8577003e5abc52"
+                        },
+                        {
+                            "_id": "6568fd30bf8577003e5abc53",
+                            "referenceNumber": 2,
+                            "trackingNumber": "JD014600004790042196",
+                            "trackingUrl": "https://express.api.dhl.com/mydhlapi/test/shipments/1494896373/tracking?pieceTrackingNumber=JD014600004790042196",
+                            "id": "6568fd30bf8577003e5abc53"
+                        }
+                    ]
+                },
+                "document": "PACKAGE",
+                "_id": "6568fd2fbf8577003e5abc4d",
+                "packages": [
+                    {
+                        "dimensions": {
+                            "length": 1,
+                            "width": 1,
+                            "height": 1
+                        },
+                        "_id": "6568fd30bf8577003e5abc4e",
+                        "weight": 0.5,
+                        "description": "Piece content description",
+                        "id": "6568fd30bf8577003e5abc4e"
+                    },
+                    {
+                        "dimensions": {
+                            "length": 1,
+                            "width": 1,
+                            "height": 1
+                        },
+                        "_id": "6568fd30bf8577003e5abc4f",
+                        "weight": 5,
+                        "description": "2 Piece content description",
+                        "id": "6568fd30bf8577003e5abc4f"
+                    }
+                ],
+                "description": "description goes here",
+                "number_items": 2,
+                "delivery_info": [
+                    {
+                        "postalAddress": {
+                            "postalCode": "100001",
+                            "cityName": "Imo",
+                            "countryCode": "NG",
+                            "addressLine1": "yaba, lagos",
+                            "countyName": "Owerri"
+                        },
+                        "contactInformation": {
+                            "email": "shipper_create_shipmentapi@dhltestmail.com",
+                            "phone": "18211309039",
+                            "companyName": "Cider BookStore",
+                            "fullName": "Anyanwu Chinedu"
+                        },
+                        "_id": "6568fd30bf8577003e5abc50",
+                        "type": "CUSTOMER",
+                        "id": "6568fd30bf8577003e5abc50"
+                    },
+                    {
+                        "postalAddress": {
+                            "postalCode": "GA015",
+                            "cityName": "Accra",
+                            "countryCode": "GH",
+                            "addressLine1": "Some random place in Accra"
+                        },
+                        "contactInformation": {
+                            "email": "recipient_create_shipmentapi@dhltestmail.com",
+                            "phone": "9402825665",
+                            "companyName": "Baylee Marshall",
+                            "fullName": "Baylee Marshall"
+                        },
+                        "_id": "6568fd30bf8577003e5abc51",
+                        "type": "RECIEVER",
+                        "id": "6568fd30bf8577003e5abc51"
+                    }
+                ],
+                "customerId": "6568f828bf8577003e5abc3d",
+                "declaredValue": 5000,
+                "channel": "api",
+                "environment": "sandbox",
+                "createdAt": "2023-11-30T21:22:56.010Z",
+                "updatedAt": "2023-11-30T21:22:56.010Z",
+                "__v": 0,
+                "id": "6568fd2fbf8577003e5abc4d"
+            },
+            {
+                "shipmentMeta": {
+                    "trackingId": "1494896465",
+                    "trackingUrl": "https://express.api.dhl.com/mydhlapi/test/shipments/1494896465/tracking",
+                    "packages": [
+                        {
+                            "_id": "6568fd9dbf8577003e5abc6e",
+                            "referenceNumber": 1,
+                            "trackingNumber": "JD014600004790042206",
+                            "trackingUrl": "https://express.api.dhl.com/mydhlapi/test/shipments/1494896465/tracking?pieceTrackingNumber=JD014600004790042206",
+                            "id": "6568fd9dbf8577003e5abc6e"
+                        },
+                        {
+                            "_id": "6568fd9dbf8577003e5abc6f",
+                            "referenceNumber": 2,
+                            "trackingNumber": "JD014600004790042207",
+                            "trackingUrl": "https://express.api.dhl.com/mydhlapi/test/shipments/1494896465/tracking?pieceTrackingNumber=JD014600004790042207",
+                            "id": "6568fd9dbf8577003e5abc6f"
+                        }
+                    ]
+                },
+                "document": "PACKAGE",
+                "_id": "6568fd9dbf8577003e5abc69",
+                "packages": [
+                    {
+                        "dimensions": {
+                            "length": 1,
+                            "width": 1,
+                            "height": 1
+                        },
+                        "_id": "6568fd9dbf8577003e5abc6a",
+                        "weight": 0.5,
+                        "description": "Piece content description",
+                        "id": "6568fd9dbf8577003e5abc6a"
+                    },
+                    {
+                        "dimensions": {
+                            "length": 1,
+                            "width": 1,
+                            "height": 1
+                        },
+                        "_id": "6568fd9dbf8577003e5abc6b",
+                        "weight": 5,
+                        "description": "2 Piece content description",
+                        "id": "6568fd9dbf8577003e5abc6b"
+                    }
+                ],
+                "description": "description goes here",
+                "number_items": 2,
+                "delivery_info": [
+                    {
+                        "postalAddress": {
+                            "postalCode": "100001",
+                            "cityName": "Akure",
+                            "countryCode": "NG",
+                            "addressLine1": "yaba, lagos",
+                            "countyName": "Ondo"
+                        },
+                        "contactInformation": {
+                            "email": "shipper_create_shipmentapi@dhltestmail.com",
+                            "phone": "18211309039",
+                            "companyName": "Cider BookStore",
+                            "fullName": "Anyanwu Chinedu"
+                        },
+                        "_id": "6568fd9dbf8577003e5abc6c",
+                        "type": "CUSTOMER",
+                        "id": "6568fd9dbf8577003e5abc6c"
+                    },
+                    {
+                        "postalAddress": {
+                            "postalCode": "GA015",
+                            "cityName": "Accra",
+                            "countryCode": "GH",
+                            "addressLine1": "Some random place in Accra"
+                        },
+                        "contactInformation": {
+                            "email": "recipient_create_shipmentapi@dhltestmail.com",
+                            "phone": "9402825665",
+                            "companyName": "Baylee Marshall",
+                            "fullName": "Baylee Marshall"
+                        },
+                        "_id": "6568fd9dbf8577003e5abc6d",
+                        "type": "RECIEVER",
+                        "id": "6568fd9dbf8577003e5abc6d"
+                    }
+                ],
+                "customerId": "6568f828bf8577003e5abc3d",
+                "declaredValue": 5000,
+                "channel": "api",
+                "environment": "sandbox",
+                "createdAt": "2023-11-30T21:24:45.536Z",
+                "updatedAt": "2023-11-30T21:24:45.536Z",
+                "__v": 0,
+                "id": "6568fd9dbf8577003e5abc69"
+            },
+            {
+                "shipmentMeta": {
+                    "trackingId": "1494896443",
+                    "trackingUrl": "https://express.api.dhl.com/mydhlapi/test/shipments/1494896443/tracking",
+                    "packages": [
+                        {
+                            "_id": "6568fd67bf8577003e5abc61",
+                            "referenceNumber": 1,
+                            "trackingNumber": "JD014600004790042203",
+                            "trackingUrl": "https://express.api.dhl.com/mydhlapi/test/shipments/1494896443/tracking?pieceTrackingNumber=JD014600004790042203",
+                            "id": "6568fd67bf8577003e5abc61"
+                        },
+                        {
+                            "_id": "6568fd67bf8577003e5abc62",
+                            "referenceNumber": 2,
+                            "trackingNumber": "JD014600004790042204",
+                            "trackingUrl": "https://express.api.dhl.com/mydhlapi/test/shipments/1494896443/tracking?pieceTrackingNumber=JD014600004790042204",
+                            "id": "6568fd67bf8577003e5abc62"
+                        }
+                    ]
+                },
+                "document": "PACKAGE",
+                "_id": "6568fd67bf8577003e5abc5c",
+                "packages": [
+                    {
+                        "dimensions": {
+                            "length": 1,
+                            "width": 1,
+                            "height": 1
+                        },
+                        "_id": "6568fd67bf8577003e5abc5d",
+                        "weight": 0.5,
+                        "description": "Piece content description",
+                        "id": "6568fd67bf8577003e5abc5d"
+                    },
+                    {
+                        "dimensions": {
+                            "length": 1,
+                            "width": 1,
+                            "height": 1
+                        },
+                        "_id": "6568fd67bf8577003e5abc5e",
+                        "weight": 5,
+                        "description": "2 Piece content description",
+                        "id": "6568fd67bf8577003e5abc5e"
+                    }
+                ],
+                "description": "description goes here",
+                "number_items": 2,
+                "delivery_info": [
+                    {
+                        "postalAddress": {
+                            "postalCode": "100001",
+                            "cityName": "Yaba",
+                            "countryCode": "NG",
+                            "addressLine1": "yaba, lagos",
+                            "countyName": "Lagos"
+                        },
+                        "contactInformation": {
+                            "email": "shipper_create_shipmentapi@dhltestmail.com",
+                            "phone": "18211309039",
+                            "companyName": "Cider BookStore",
+                            "fullName": "Anyanwu Chinedu"
+                        },
+                        "_id": "6568fd67bf8577003e5abc5f",
+                        "type": "CUSTOMER",
+                        "id": "6568fd67bf8577003e5abc5f"
+                    },
+                    {
+                        "postalAddress": {
+                            "postalCode": "GA015",
+                            "cityName": "Accra",
+                            "countryCode": "GH",
+                            "addressLine1": "Some random place in Accra"
+                        },
+                        "contactInformation": {
+                            "email": "recipient_create_shipmentapi@dhltestmail.com",
+                            "phone": "9402825665",
+                            "companyName": "Baylee Marshall",
+                            "fullName": "Baylee Marshall"
+                        },
+                        "_id": "6568fd67bf8577003e5abc60",
+                        "type": "RECIEVER",
+                        "id": "6568fd67bf8577003e5abc60"
+                    }
+                ],
+                "customerId": "6568f828bf8577003e5abc3d",
+                "declaredValue": 5000,
+                "channel": "api",
+                "environment": "sandbox",
+                "createdAt": "2023-11-30T21:23:51.925Z",
+                "updatedAt": "2023-11-30T21:23:51.925Z",
+                "__v": 0,
+                "id": "6568fd67bf8577003e5abc5c"
+            },
+            {
+                "shipmentMeta": {
+                    "trackingId": "1494896373",
+                    "trackingUrl": "https://express.api.dhl.com/mydhlapi/test/shipments/1494896373/tracking",
+                    "packages": [
+                        {
+                            "_id": "6568fd30bf8577003e5abc52",
+                            "referenceNumber": 1,
+                            "trackingNumber": "JD014600004790042195",
+                            "trackingUrl": "https://express.api.dhl.com/mydhlapi/test/shipments/1494896373/tracking?pieceTrackingNumber=JD014600004790042195",
+                            "id": "6568fd30bf8577003e5abc52"
+                        },
+                        {
+                            "_id": "6568fd30bf8577003e5abc53",
+                            "referenceNumber": 2,
+                            "trackingNumber": "JD014600004790042196",
+                            "trackingUrl": "https://express.api.dhl.com/mydhlapi/test/shipments/1494896373/tracking?pieceTrackingNumber=JD014600004790042196",
+                            "id": "6568fd30bf8577003e5abc53"
+                        }
+                    ]
+                },
+                "document": "PACKAGE",
+                "_id": "6568fd2fbf8577003e5abc4d",
+                "packages": [
+                    {
+                        "dimensions": {
+                            "length": 1,
+                            "width": 1,
+                            "height": 1
+                        },
+                        "_id": "6568fd30bf8577003e5abc4e",
+                        "weight": 0.5,
+                        "description": "Piece content description",
+                        "id": "6568fd30bf8577003e5abc4e"
+                    },
+                    {
+                        "dimensions": {
+                            "length": 1,
+                            "width": 1,
+                            "height": 1
+                        },
+                        "_id": "6568fd30bf8577003e5abc4f",
+                        "weight": 5,
+                        "description": "2 Piece content description",
+                        "id": "6568fd30bf8577003e5abc4f"
+                    }
+                ],
+                "description": "description goes here",
+                "number_items": 2,
+                "delivery_info": [
+                    {
+                        "postalAddress": {
+                            "postalCode": "100001",
+                            "cityName": "Imo",
+                            "countryCode": "NG",
+                            "addressLine1": "yaba, lagos",
+                            "countyName": "Owerri"
+                        },
+                        "contactInformation": {
+                            "email": "shipper_create_shipmentapi@dhltestmail.com",
+                            "phone": "18211309039",
+                            "companyName": "Cider BookStore",
+                            "fullName": "Anyanwu Chinedu"
+                        },
+                        "_id": "6568fd30bf8577003e5abc50",
+                        "type": "CUSTOMER",
+                        "id": "6568fd30bf8577003e5abc50"
+                    },
+                    {
+                        "postalAddress": {
+                            "postalCode": "GA015",
+                            "cityName": "Accra",
+                            "countryCode": "GH",
+                            "addressLine1": "Some random place in Accra"
+                        },
+                        "contactInformation": {
+                            "email": "recipient_create_shipmentapi@dhltestmail.com",
+                            "phone": "9402825665",
+                            "companyName": "Baylee Marshall",
+                            "fullName": "Baylee Marshall"
+                        },
+                        "_id": "6568fd30bf8577003e5abc51",
+                        "type": "RECIEVER",
+                        "id": "6568fd30bf8577003e5abc51"
+                    }
+                ],
+                "customerId": "6568f828bf8577003e5abc3d",
+                "declaredValue": 5000,
+                "channel": "api",
+                "environment": "sandbox",
+                "createdAt": "2023-11-30T21:22:56.010Z",
+                "updatedAt": "2023-11-30T21:22:56.010Z",
+                "__v": 0,
+                "id": "6568fd2fbf8577003e5abc4d"
+            },
+            {
+                "shipmentMeta": {
+                    "trackingId": "1494896373",
+                    "trackingUrl": "https://express.api.dhl.com/mydhlapi/test/shipments/1494896373/tracking",
+                    "packages": [
+                        {
+                            "_id": "6568fd30bf8577003e5abc52",
+                            "referenceNumber": 1,
+                            "trackingNumber": "JD014600004790042195",
+                            "trackingUrl": "https://express.api.dhl.com/mydhlapi/test/shipments/1494896373/tracking?pieceTrackingNumber=JD014600004790042195",
+                            "id": "6568fd30bf8577003e5abc52"
+                        },
+                        {
+                            "_id": "6568fd30bf8577003e5abc53",
+                            "referenceNumber": 2,
+                            "trackingNumber": "JD014600004790042196",
+                            "trackingUrl": "https://express.api.dhl.com/mydhlapi/test/shipments/1494896373/tracking?pieceTrackingNumber=JD014600004790042196",
+                            "id": "6568fd30bf8577003e5abc53"
+                        }
+                    ]
+                },
+                "document": "PACKAGE",
+                "_id": "6568fd2fbf8577003e5abc4d",
+                "packages": [
+                    {
+                        "dimensions": {
+                            "length": 1,
+                            "width": 1,
+                            "height": 1
+                        },
+                        "_id": "6568fd30bf8577003e5abc4e",
+                        "weight": 0.5,
+                        "description": "Piece content description",
+                        "id": "6568fd30bf8577003e5abc4e"
+                    },
+                    {
+                        "dimensions": {
+                            "length": 1,
+                            "width": 1,
+                            "height": 1
+                        },
+                        "_id": "6568fd30bf8577003e5abc4f",
+                        "weight": 5,
+                        "description": "2 Piece content description",
+                        "id": "6568fd30bf8577003e5abc4f"
+                    }
+                ],
+                "description": "description goes here",
+                "number_items": 2,
+                "delivery_info": [
+                    {
+                        "postalAddress": {
+                            "postalCode": "100001",
+                            "cityName": "Imo",
+                            "countryCode": "NG",
+                            "addressLine1": "yaba, lagos",
+                            "countyName": "Owerri"
+                        },
+                        "contactInformation": {
+                            "email": "shipper_create_shipmentapi@dhltestmail.com",
+                            "phone": "18211309039",
+                            "companyName": "Cider BookStore",
+                            "fullName": "Anyanwu Chinedu"
+                        },
+                        "_id": "6568fd30bf8577003e5abc50",
+                        "type": "CUSTOMER",
+                        "id": "6568fd30bf8577003e5abc50"
+                    },
+                    {
+                        "postalAddress": {
+                            "postalCode": "GA015",
+                            "cityName": "Accra",
+                            "countryCode": "GH",
+                            "addressLine1": "Some random place in Accra"
+                        },
+                        "contactInformation": {
+                            "email": "recipient_create_shipmentapi@dhltestmail.com",
+                            "phone": "9402825665",
+                            "companyName": "Baylee Marshall",
+                            "fullName": "Baylee Marshall"
+                        },
+                        "_id": "6568fd30bf8577003e5abc51",
+                        "type": "RECIEVER",
+                        "id": "6568fd30bf8577003e5abc51"
+                    }
+                ],
+                "customerId": "6568f828bf8577003e5abc3d",
+                "declaredValue": 5000,
+                "channel": "api",
+                "environment": "sandbox",
+                "createdAt": "2023-11-30T21:22:56.010Z",
+                "updatedAt": "2023-11-30T21:22:56.010Z",
+                "__v": 0,
+                "id": "6568fd2fbf8577003e5abc4d"
+            },
+            {
+                "shipmentMeta": {
+                    "trackingId": "1494896373",
+                    "trackingUrl": "https://express.api.dhl.com/mydhlapi/test/shipments/1494896373/tracking",
+                    "packages": [
+                        {
+                            "_id": "6568fd30bf8577003e5abc52",
+                            "referenceNumber": 1,
+                            "trackingNumber": "JD014600004790042195",
+                            "trackingUrl": "https://express.api.dhl.com/mydhlapi/test/shipments/1494896373/tracking?pieceTrackingNumber=JD014600004790042195",
+                            "id": "6568fd30bf8577003e5abc52"
+                        },
+                        {
+                            "_id": "6568fd30bf8577003e5abc53",
+                            "referenceNumber": 2,
+                            "trackingNumber": "JD014600004790042196",
+                            "trackingUrl": "https://express.api.dhl.com/mydhlapi/test/shipments/1494896373/tracking?pieceTrackingNumber=JD014600004790042196",
+                            "id": "6568fd30bf8577003e5abc53"
+                        }
+                    ]
+                },
+                "document": "PACKAGE",
+                "_id": "6568fd2fbf8577003e5abc4d",
+                "packages": [
+                    {
+                        "dimensions": {
+                            "length": 1,
+                            "width": 1,
+                            "height": 1
+                        },
+                        "_id": "6568fd30bf8577003e5abc4e",
+                        "weight": 0.5,
+                        "description": "Piece content description",
+                        "id": "6568fd30bf8577003e5abc4e"
+                    },
+                    {
+                        "dimensions": {
+                            "length": 1,
+                            "width": 1,
+                            "height": 1
+                        },
+                        "_id": "6568fd30bf8577003e5abc4f",
+                        "weight": 5,
+                        "description": "2 Piece content description",
+                        "id": "6568fd30bf8577003e5abc4f"
+                    }
+                ],
+                "description": "description goes here",
+                "number_items": 2,
+                "delivery_info": [
+                    {
+                        "postalAddress": {
+                            "postalCode": "100001",
+                            "cityName": "Imo",
+                            "countryCode": "NG",
+                            "addressLine1": "yaba, lagos",
+                            "countyName": "Owerri"
+                        },
+                        "contactInformation": {
+                            "email": "shipper_create_shipmentapi@dhltestmail.com",
+                            "phone": "18211309039",
+                            "companyName": "Cider BookStore",
+                            "fullName": "Anyanwu Chinedu"
+                        },
+                        "_id": "6568fd30bf8577003e5abc50",
+                        "type": "CUSTOMER",
+                        "id": "6568fd30bf8577003e5abc50"
+                    },
+                    {
+                        "postalAddress": {
+                            "postalCode": "GA015",
+                            "cityName": "Accra",
+                            "countryCode": "GH",
+                            "addressLine1": "Some random place in Accra"
+                        },
+                        "contactInformation": {
+                            "email": "recipient_create_shipmentapi@dhltestmail.com",
+                            "phone": "9402825665",
+                            "companyName": "Baylee Marshall",
+                            "fullName": "Baylee Marshall"
+                        },
+                        "_id": "6568fd30bf8577003e5abc51",
+                        "type": "RECIEVER",
+                        "id": "6568fd30bf8577003e5abc51"
+                    }
+                ],
+                "customerId": "6568f828bf8577003e5abc3d",
+                "declaredValue": 5000,
+                "channel": "api",
+                "environment": "sandbox",
+                "createdAt": "2023-11-30T21:22:56.010Z",
+                "updatedAt": "2023-11-30T21:22:56.010Z",
+                "__v": 0,
+                "id": "6568fd2fbf8577003e5abc4d"
+            },
+            {
+                "shipmentMeta": {
+                    "trackingId": "1494896373",
+                    "trackingUrl": "https://express.api.dhl.com/mydhlapi/test/shipments/1494896373/tracking",
+                    "packages": [
+                        {
+                            "_id": "6568fd30bf8577003e5abc52",
+                            "referenceNumber": 1,
+                            "trackingNumber": "JD014600004790042195",
+                            "trackingUrl": "https://express.api.dhl.com/mydhlapi/test/shipments/1494896373/tracking?pieceTrackingNumber=JD014600004790042195",
+                            "id": "6568fd30bf8577003e5abc52"
+                        },
+                        {
+                            "_id": "6568fd30bf8577003e5abc53",
+                            "referenceNumber": 2,
+                            "trackingNumber": "JD014600004790042196",
+                            "trackingUrl": "https://express.api.dhl.com/mydhlapi/test/shipments/1494896373/tracking?pieceTrackingNumber=JD014600004790042196",
+                            "id": "6568fd30bf8577003e5abc53"
+                        }
+                    ]
+                },
+                "document": "PACKAGE",
+                "_id": "6568fd2fbf8577003e5abc4d",
+                "packages": [
+                    {
+                        "dimensions": {
+                            "length": 1,
+                            "width": 1,
+                            "height": 1
+                        },
+                        "_id": "6568fd30bf8577003e5abc4e",
+                        "weight": 0.5,
+                        "description": "Piece content description",
+                        "id": "6568fd30bf8577003e5abc4e"
+                    },
+                    {
+                        "dimensions": {
+                            "length": 1,
+                            "width": 1,
+                            "height": 1
+                        },
+                        "_id": "6568fd30bf8577003e5abc4f",
+                        "weight": 5,
+                        "description": "2 Piece content description",
+                        "id": "6568fd30bf8577003e5abc4f"
+                    }
+                ],
+                "description": "description goes here",
+                "number_items": 2,
+                "delivery_info": [
+                    {
+                        "postalAddress": {
+                            "postalCode": "100001",
+                            "cityName": "Imo",
+                            "countryCode": "NG",
+                            "addressLine1": "yaba, lagos",
+                            "countyName": "Owerri"
+                        },
+                        "contactInformation": {
+                            "email": "shipper_create_shipmentapi@dhltestmail.com",
+                            "phone": "18211309039",
+                            "companyName": "Cider BookStore",
+                            "fullName": "Anyanwu Chinedu"
+                        },
+                        "_id": "6568fd30bf8577003e5abc50",
+                        "type": "CUSTOMER",
+                        "id": "6568fd30bf8577003e5abc50"
+                    },
+                    {
+                        "postalAddress": {
+                            "postalCode": "GA015",
+                            "cityName": "Accra",
+                            "countryCode": "GH",
+                            "addressLine1": "Some random place in Accra"
+                        },
+                        "contactInformation": {
+                            "email": "recipient_create_shipmentapi@dhltestmail.com",
+                            "phone": "9402825665",
+                            "companyName": "Baylee Marshall",
+                            "fullName": "Baylee Marshall"
+                        },
+                        "_id": "6568fd30bf8577003e5abc51",
+                        "type": "RECIEVER",
+                        "id": "6568fd30bf8577003e5abc51"
+                    }
+                ],
+                "customerId": "6568f828bf8577003e5abc3d",
+                "declaredValue": 5000,
+                "channel": "api",
+                "environment": "sandbox",
+                "createdAt": "2023-11-30T21:22:56.010Z",
+                "updatedAt": "2023-11-30T21:22:56.010Z",
+                "__v": 0,
+                "id": "6568fd2fbf8577003e5abc4d"
+            },
         ],
         "trackingResult": [
             {
@@ -588,8 +5148,30 @@ export const dashboardData = {
                 ]
             }
         ],
-        "stateCount": [],
-        "totalValue": []
+        "stateCount": [
+            {
+                "_id": "Akure",
+                "count": 1
+            },
+            {
+                "_id": "Lagos",
+                "count": 4
+            },
+            {
+                "_id": "Ibadan",
+                "count": 2
+            },
+            {
+                "_id": "Yaba",
+                "count": 3
+            }
+        ],
+        "totalValue": [
+            {
+                "_id": null,
+                "declaredValue": 5000
+            }
+        ]
     },
     "success": true
 }

@@ -1,7 +1,7 @@
 import { Route, Routes } from "react-router-dom";
 // import { AwaitingApproval, Login, Signup } from "./auth";
 import { AwaitingApproval, Login, ProtectedRoute, Signup } from "./auth";
-import { Dashboard, Error, Home } from "./pages";
+import { Dashboard, Error, Home, TopBooking } from "./pages";
 import Omit from "react";
 
 import { toast } from "react-toastify";
@@ -58,18 +58,19 @@ function App() {
     <>
       <Routes>
         <Route path="*" element={<Error />} />
-        <Route path="/" element={<Dashboard />} />
         <Route path="/login" element={<Login />} />
         <Route path="/onboarding" element={<Signup />} />
         <Route path="/request-success" element={<AwaitingApproval />} />
         {/* <Route path="/home" element={<Home />} /> */}
         <Route element={<ProtectedRoute />}>
+          <Route path="/" element={<Dashboard />} />
+          <Route path="/dashboard/:id" element={<TopBooking />} />
           <Route path="/home" element={<Home />} />
+          <Route path="/settings" element={<Settings />} />
+          <Route path="/settings/reveal-tokens" element={<RevealTokens />} />
+          <Route path="/settings/new-user" element={<NewUser />} />
+          <Route path="/settings/list-business-users" element={<ListBusinessUsers />} />
         </Route>
-        <Route path="/settings" element={<Settings />} />
-        <Route path="/settings/reveal-tokens" element={<RevealTokens />} />
-        <Route path="/settings/new-user" element={<NewUser />} />
-        <Route path="/settings/list-business-users" element={<ListBusinessUsers />} />
       </Routes>
     </>
   );

@@ -10,7 +10,7 @@ const Settings = () => {
   return (
     <MainContainer>
       <div>
-        <h2 className="text-[32px] font-semibold">Settings</h2>
+        <h2 className="text-xl font-semibold">Settings</h2>
         <div className="w-[60%] mt-8">
           {items.map((item) => (
             <div
