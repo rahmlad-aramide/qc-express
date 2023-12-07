@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import { MainContainer } from "../../components";
 import { ToastContainer, toast } from "react-toastify";
+import Modal from "../../components/default/Modal";
 
 type Feedbacks = {
   _id: string;
@@ -17,6 +18,10 @@ type Feedbacks = {
 
 const Feedback = () => {
   const [feedbacks, setFeedbacks] = useState<Feedbacks[]>([]);
+  const [showModal, setShowModal] = useState(false);
+
+  const closeModal = () => setShowModal(false);
+
 
   const access_token = sessionStorage
     .getItem("access_token")
@@ -85,7 +90,12 @@ const Feedback = () => {
           <div className="flex justify-end mb-6 text-[14px] space-x-6">
             <span className="text-primary">0 items selected</span>
             <span className="text-[#ee3300]">Resolve all feedbacks</span>
-            <span className="text-[#276e59]">Add new feedback</span>
+            <span
+              onClick={() => setShowModal(true)}
+              className="text-[#276e59] cursor-pointer"
+            >
+              Add new feedback
+            </span>
           </div>
           <table className="w-[100%]">
             <thead>
@@ -124,6 +134,7 @@ const Feedback = () => {
                     >
                       Resolve feedback
                     </p>
+                    {showModal && <Modal closeModal={closeModal} name={feedback.admin_name} email={feedback.email} />}
                   </td>
                 </tr>
               ))}

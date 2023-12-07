@@ -63,7 +63,7 @@ const Login = () => {
       sessionStorage.setItem('access_token', JSON.stringify(response.data.data.access_token))
       notify("Login successfully, redirecting you.");
       setTimeout(() => {
-        navigateTo("/home");
+        navigateTo("/");
       }, 2500);
     })
     .catch((error) => {
