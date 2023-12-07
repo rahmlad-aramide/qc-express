@@ -22,7 +22,6 @@ const Feedback = () => {
 
   const closeModal = () => setShowModal(false);
 
-
   const access_token = sessionStorage
     .getItem("access_token")
     ?.replace(/["']/g, "");
@@ -134,13 +133,17 @@ const Feedback = () => {
                     >
                       Resolve feedback
                     </p>
-                    {showModal && <Modal closeModal={closeModal} name={feedback.admin_name} email={feedback.email} />}
                   </td>
                 </tr>
               ))}
             </tbody>
           </table>
         </div>
+        {showModal && (
+          <Modal
+            closeModal={closeModal}
+          />
+        )}
       </div>
     </MainContainer>
   );

@@ -3,6 +3,7 @@ import MainContainer from "../../components/containers/MainContainer";
 import { useEffect } from "react";
 import { useState } from "react";
 import { ToastContainer, toast } from "react-toastify";
+import { IoChevronBackOutline } from "react-icons/io5";
 
 const RevealTokens = () => {
   const [tokens, setTokens] = useState({
@@ -19,9 +20,8 @@ const RevealTokens = () => {
   });
 
   const access_token = sessionStorage
-  .getItem("access_token")
-  ?.replace(/["']/g, "");
-
+    .getItem("access_token")
+    ?.replace(/["']/g, "");
 
   const revealToken = (token: string) => {
     if (token === "staging") {
@@ -126,7 +126,8 @@ const RevealTokens = () => {
           onClick={backToSettings}
           className="cursor-pointer flex items-center text-lg font-semibold"
         >
-          {"<< "} back
+          <IoChevronBackOutline size={25} className="mr-2" />
+          Back
         </span>
         <h2 className="text-[32px] font-semibold">Reveal Tokens</h2>
         <div className="w-[70%] mt-8 space-y-8">
