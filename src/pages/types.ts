@@ -1,8 +1,8 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
 
-export type Ticons = {
-  [key: string]: React.ElementType;
-};
+// export type Ticons = {
+//   [key: string]: <ImgHTMLAttributes<HTMLImageElement>, HTMLImageElement>;
+// };
 
 export type TCard = {
   name: string;

@@ -1,25 +1,39 @@
 import { FC } from "react";
-import { NavLink } from "react-router-dom";
-import { RiHome5Line } from "react-icons/ri";
+import { NavLink, useNavigate } from "react-router-dom";
+import { RiHome5Line, RiFeedbackLine } from "react-icons/ri";
 import { IoSettingsOutline } from "react-icons/io5";
-import { RiFeedbackLine } from "react-icons/ri";
+import { MdOutlinePowerSettingsNew } from "react-icons/md";
+import { notify } from "../../App";
+import { ToastContainer } from "react-toastify";
 
 interface SideNavProps {
   activeTab: string;
 }
 
 const SideNav: FC<SideNavProps> = ({ activeTab }) => {
+  const navigate = useNavigate();
+  const handleLogout = () => {
+    const token = sessionStorage.getItem("accessToken");
+    if (token) {
+      sessionStorage.removeItem("accessToken");
+    }
+    notify("Loging you out...")
+    setTimeout(()=> {
+      navigate('/login');
+    }, 2500)
+  };
   return (
-    <ul className="pt-10 h-[100%] px-2 space-y-4">
+    <ul className="flex flex-col py-10 h-[100%] gap-8 px-2">
+      <ToastContainer />
       <li>
         <NavLink
           to="/"
           className={`
-          flex items-center font-semibold text-[18px] space-x-3
+          flex items-center font-semibold text-[18px] space-x-3 transition duration-300 hover:scale-105
            ${
              activeTab === "Home"
-               ? "text-primary py-2 px-2 rounded-lg"
-               : "text-[#333] bg-white py-2 px-2"
+               ? "text-primary px-2"
+               : "text-[#333] px-2"
            }
           `}
         >
@@ -31,11 +45,11 @@ const SideNav: FC<SideNavProps> = ({ activeTab }) => {
         <NavLink
           to="/feedback"
           className={`
-          flex items-center font-semibold text-[18px] space-x-3
+          flex items-center font-semibold text-[18px] space-x-3 transition duration-300 hover:scale-105
            ${
              activeTab === "Feedback"
-               ? "text-primary py-2 px-2 rounded-lg"
-               : "text-[#333] bg-white py-2 px-2"
+               ? "text-primary px-2"
+               : "text-[#333] px-2"
            }
           `}
         >
@@ -47,17 +61,28 @@ const SideNav: FC<SideNavProps> = ({ activeTab }) => {
         <NavLink
           to="/settings"
           className={`
-          flex items-center font-semibold text-[18px] space-x-3
+          flex items-center font-semibold text-[18px] space-x-3 transition duration-300 hover:scale-105
            ${
              activeTab === "Settings"
-               ? "text-primary py-2 px-2 rounded-lg"
-               : "text-[#333] bg-white py-2 px-2"
+               ? "text-primary px-2"
+               : "text-[#333] px-2"
            }
           `}
         >
           <IoSettingsOutline size={25} className="mr-2" />
           Settings
         </NavLink>
+      </li>
+      <li className="mt-auto">
+        <button
+          onClick={handleLogout}
+          className={`
+          flex items-center font-semibold text-[18px] space-x-3 text-red-500 px-2 transition duration-300 hover:scale-105
+          `}
+        >
+          <MdOutlinePowerSettingsNew size={25} className="mr-2" />
+          Logout
+        </button>
       </li>
     </ul>
   );

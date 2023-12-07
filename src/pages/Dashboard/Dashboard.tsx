@@ -3,9 +3,13 @@ import { BallLoader, MainContainer, Pagination } from "../../components";
 // import { dashboardData } from "../data";
 import vector from "./spinning-bg.svg";
 
-import { FaClipboardList, FaClipboard, FaClipboardCheck } from "react-icons/fa";
+import bookingCount from './booking-count.png'
+import statesCount from './states-count.png'
+import totalValue from './total-value.png'
+
+// import { FaClipboardList, FaClipboard, FaClipboardCheck } from "react-icons/fa";
 import { IoMdMore } from "react-icons/io";
-import { Ticons, TCard, TopBooking, Data } from "../types";
+import { TCard, TopBooking, Data } from "../types";
 import {
   LineChart,
   Line,
@@ -18,25 +22,32 @@ import {
 } from "recharts";
 import { axiosCalls } from "../../utils/_api";
 
-const icons: Ticons = {
-  "Booking Count": FaClipboard,
-  "State Count": FaClipboardList,
-  "Total Value": FaClipboardCheck,
-};
+const cardData = [
+  { name: "Booking Count", icon: bookingCount },
+  { name: "States Count", icon: statesCount },
+  { name: "Total Value", icon: totalValue },
+];
 
 const Card = ({ name, value = 0 }: TCard) => {
-  const Icon: React.ElementType = icons[name];
+
+  const cardInfo = cardData.find((card) => card.name === name);
+
+  if (!cardInfo) {
+    return null;
+  }
+
+  const { icon, name: cardName } = cardInfo;
 
   return (
     <div className="bg-primary relative text-white p-4 rounded-lg shadow-md">
       <img src={vector} alt="" className="absolute spinning-bg" />
       <div className="flex flex-col items-start">
-        <div className="flex gap-4 items-center mb-4">
-          {Icon && <Icon size={40} className="text-2xl mr-2 mt-1" />}
+        <div className="flex gap-3 items-center mb-4">
+          <img src={icon} alt={cardName} className="w-10 h-10 mt-1" />
           <h2 className="font-bold text-4xl">{value}</h2>
         </div>
         <div>
-          <p className="font-bold text-lg">{name}</p>
+          <p className="font-bold text-lg">{cardName}</p>
         </div>
       </div>
     </div>
@@ -52,6 +63,7 @@ const Table = ({
   startIndex: number;
   endIndex: number;
 }) => {
+  console.log(data[0])
   return (
     <div className="overflow-x-auto">
       <table className="min-w-full bg-white border-spacing-y-2 border-separate">
@@ -64,10 +76,7 @@ const Table = ({
               Description
             </th>
             <th className="py-2 px-4 text-left text-grayish-400 text-sm font-medium">
-              Value
-            </th>
-            <th className="py-2 px-4 text-left text-grayish-400 text-sm font-medium">
-              Items No.
+              Items
             </th>
             <th className="py-2 px-4 text-left text-grayish-400 text-sm font-medium">
               Tracking ID
@@ -99,10 +108,7 @@ const Table = ({
               <td className="border-b py-4 px-4 text-sm font-medium text-grayish-600">
                 {item.description}
               </td>
-              <td className="border-b py-4 px-4 text-sm font-medium text-grayish-600">
-                {item.declaredValue}
-              </td>
-              <td className="border-b py-4 px-4 text-sm font-medium text-grayish-600">
+              <td className="border-b py-4 px-4 text-sm text-center font-medium text-grayish-600">
                 {item.number_items}
               </td>
               <td className="border-b py-4 px-4 text-sm font-medium text-grayish-600">
@@ -155,14 +161,10 @@ const Dashboard = () => {
 
   const fetchData = async () => {
     const response = await axiosCalls('/business_admin/kpis', 'GET')
-    // console.log(response)
-    console.log("axios call response", response)
-    // setResData(tData)
     setResData(response?.data)
   }
   useEffect(() => {
     fetchData()
-    // setResData(tData);
   // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
   
