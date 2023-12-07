@@ -38,7 +38,7 @@ const Pagination: React.FC<PaginationProps> = ({
   };
   
   // @ts-expect-error pagination is possibly undefind
-  const lastPage = paginationRange[paginationRange?.length - 1 ?? 1];
+  const lastPage = paginationRange[paginationRange?.length - 1];
 
   return (
     <div className="flex justify-center mt-2 mb-4 gap-x-2">
