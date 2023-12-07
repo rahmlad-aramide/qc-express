@@ -86,16 +86,16 @@ const ListBusinessUsers = () => {
   return (
     <MainContainer activeTab="Settings">
       <ToastContainer />
-      <span
-        onClick={backToSettings}
-        className="cursor-pointer flex items-center text-lg font-semibold"
-      >
-        <IoChevronBackOutline size={25} className="mr-2" />
-        Back
-      </span>
+      <button
+          onClick={backToSettings}
+          className="cursor-pointer flex items-center text-sm font-semibold"
+        >
+          <IoChevronBackOutline size={18} className="mr-1" />
+          Back
+        </button>
 
-      <div className="flex justify-between w-[100%] mt-4">
-        <h2 className="text-[32px] font-semibold">Business Users</h2>
+      <div className="flex justify-between w-[100%] mt-2">
+        <h2 className="text-lg font-semibold">Business Users</h2>
         <div>
           <NavLink to="/settings/new-user">
             <button className="bg-[#4169e2] py-2 px-4 text-[#fff] font-semibold rounded-lg">

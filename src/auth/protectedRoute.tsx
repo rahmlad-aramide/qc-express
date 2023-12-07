@@ -1,32 +1,29 @@
 import { useEffect, useState } from "react";
 import { Navigate, Outlet } from "react-router-dom";
-import { Loader } from "../components";
+import { BallLoader } from "../components";
 
 const ProtectedRoute = () => {
-  const [user, setUser] = useState(false);
+  const [token, setToken] = useState('');
   const [isLoading, setIsLoading] = useState(true);
 
   useEffect(()=> {
-    const userData = sessionStorage.getItem('userData');
-    if(userData){
-      const parsedUser = JSON.parse(userData);
-      setUser(parsedUser);
-      setIsLoading(false);
-    } else {
-      setIsLoading(false);
+    const access_token = sessionStorage.getItem('access_token');
+    if(access_token){
+      setToken(access_token);
     }
+    setIsLoading(false);
   }, []);
 
   if(isLoading){
     return (
       <div className="bg-gray-200 h-full md:h-[calc(100vh_-_60px)] overflow-y-auto">
         <div className="flex mt-8 h-[50vh] bg-white m-10 rounded-lg justify-center items-center">
-          <Loader />
+          <BallLoader />
         </div>
       </div>
     )
   }
 
-  return user ? <Outlet /> : <Navigate to="/" />
+  return token ? <Outlet /> : <Navigate to="/login" />
 }
 export default ProtectedRoute;

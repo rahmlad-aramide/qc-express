@@ -2,9 +2,12 @@ import MainContainer from "../components/containers/MainContainer";
 
 const Home = () => {
   return (
-    <MainContainer activeTab="Dashboard">
+    <MainContainer activeTab="Home">
       <div className="mt-10">
-        <h2>Home</h2>
+        <h2 className="text-[32px] font-semibold">Home</h2>
+        <div>
+
+        </div>
       </div>
     </MainContainer>
   );

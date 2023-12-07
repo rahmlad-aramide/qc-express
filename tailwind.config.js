@@ -7,7 +7,10 @@ export default {
         extend: {
             colors: {
                 primary: '#4169e2',
-                dark: '#333'
+                dark: '#333',
+                grayish: '#F0F0F0',
+                'grayish-400': '#8F8E91',
+                'grayish-600': '#49474D',
             }
         },
     },

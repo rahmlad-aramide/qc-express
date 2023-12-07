@@ -2,9 +2,24 @@
 @tailwind components;
 @tailwind utilities;
 
-/* .overflow-auto::-webkit-scrollbar {
+
+.spinning-bg {
+  animation: spin 10s linear infinite;
+}
+
+@keyframes spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+
+.overflow-auto::-webkit-scrollbar {
     display: none;
-} */
+}
 
 /* width */
 ::-webkit-scrollbar {
@@ -29,4 +44,5 @@
   ::-webkit-scrollbar-thumb:hover {
     background: #a0aec0;
   }
+  
   

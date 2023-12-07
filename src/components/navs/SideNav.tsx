@@ -17,7 +17,7 @@ const SideNav: FC<SideNavProps> = ({ activeTab }) => {
           className={`
           flex items-center font-semibold text-[18px] space-x-3
            ${
-             activeTab === "Dashboard"
+             activeTab === "Home"
                ? "text-primary py-2 px-2 rounded-lg"
                : "text-[#333] bg-white py-2 px-2"
            }

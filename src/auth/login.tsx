@@ -7,10 +7,6 @@ import { notify, warn } from "../App";
 import { Loader } from "../components";
 import { ToastContainer } from "react-toastify";
 
-// const defaultState = {
-//   email: "",
-//   password: ""
-// };
 
 const url = String(import.meta.env.VITE_APP_API_URL);
 
@@ -60,7 +56,7 @@ const Login = () => {
     })
     .then((response) => {
       setLoading(false);
-      sessionStorage.setItem('access_token', JSON.stringify(response.data.data.access_token))
+      sessionStorage.setItem('access_token', response.data.data.access_token)
       notify("Login successfully, redirecting you.");
       setTimeout(() => {
         navigateTo("/");

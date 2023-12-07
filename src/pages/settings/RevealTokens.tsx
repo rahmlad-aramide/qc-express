@@ -122,17 +122,17 @@ const RevealTokens = () => {
     <MainContainer activeTab="Settings">
       <ToastContainer />
       <div>
-        <span
+        <button
           onClick={backToSettings}
-          className="cursor-pointer flex items-center text-lg font-semibold"
+          className="cursor-pointer flex items-center text-sm font-semibold"
         >
-          <IoChevronBackOutline size={25} className="mr-2" />
+          <IoChevronBackOutline size={18} className="mr-1" />
           Back
-        </span>
-        <h2 className="text-[32px] font-semibold">Reveal Tokens</h2>
+        </button>
+        <h2 className="text-lg font-semibold mt-2">Reveal Tokens</h2>
         <div className="w-[70%] mt-8 space-y-8">
           <div className="flex flex-col space-y-2">
-            <h2 className="font-semibold">Production API Key</h2>
+            <h2 className="font-medium">Production API Key</h2>
             <div className="flex items-center justify-between cursor-pointer bg-[#f1f1f1] text-[#808080] py-2 px-4 rounded-lg">
               <p onClick={() => revealToken("production")} className="italic">
                 {showToken.production ? tokens.production : "click to reveal"}
@@ -148,7 +148,7 @@ const RevealTokens = () => {
           </div>
 
           <div className="flex flex-col space-y-2">
-            <h2 className="font-semibold">Staging API Key</h2>
+            <h2 className="font-medium">Staging API Key</h2>
             <div className="flex items-center justify-between cursor-pointer bg-[#f1f1f1] text-[#808080] py-2 px-4 rounded-lg">
               <p onClick={() => revealToken("staging")} className="italic">
                 {showToken.staging ? tokens.staging : "click to reveal"}
