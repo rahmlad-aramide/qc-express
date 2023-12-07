@@ -37,7 +37,7 @@ const Feedback = () => {
       .then((res) => res.json())
       .then((data) => {
         if (data.success) {
-          toast.success("Feedback resolved!", {
+          toast.success("Feedback deleted!", {
             position: "top-center",
             autoClose: 500,
             hideProgressBar: true,
@@ -84,23 +84,22 @@ const Feedback = () => {
     <MainContainer activeTab="Feedback">
       <ToastContainer />
       <div className="mt-10">
-        <h2 className="text-[32px] font-semibold mt-3">Feedbacks</h2>
-        <div className="mt-10 w-[100%]">
-          <div className="flex justify-end mb-6 text-[14px] space-x-6">
-            <span className="text-primary">0 items selected</span>
-            <span className="text-[#ee3300]">Resolve all feedbacks</span>
+        <div className="flex justify-between items-center">
+          <h2 className="text-[32px] font-semibold mt-3">Feedbacks</h2>
+          <div className="flex text-[14px] space-x-6">
             <span
               onClick={() => setShowModal(true)}
-              className="text-[#276e59] cursor-pointer"
+              className="text-[#4169e2] font-semibold cursor-pointer"
             >
               Add new feedback
             </span>
           </div>
+        </div>
+        <div className="mt-10 w-[100%]">
           <table className="w-[100%]">
             <thead>
               <tr className="border-b border-[#ccc] uppercase text-[15px] text-[#6c8073]">
-                <th className="font-bold py-1"></th>
-                <th className="font-bold text-left">Admin details</th>
+                <th className="font-bold text-center">Admin details</th>
                 <th className="font-bold text-center">Message</th>
                 <th className="font-bold">Action</th>
               </tr>
@@ -112,15 +111,10 @@ const Feedback = () => {
                   key={feedback._id}
                   className="border-b border-[#ccc] hover:bg-[#f1f1f1]"
                 >
-                  <td className="py-3 px-4">
-                    <input type="checkbox" />
-                  </td>
-                  <td className="py-3 ">
-                    <div className="flex items-center space-x-2">
-                      <div>
-                        <p className="font-semibold">{feedback.admin_name}</p>
-                        <p className="text-[12px]">{feedback.email}</p>
-                      </div>
+                  <td className="py-3">
+                    <div className="flex flex-col space-x-2 text-center">
+                      <p className="font-semibold">{feedback.admin_name}</p>
+                      <p className="text-[12px]">{feedback.email}</p>
                     </div>
                   </td>
                   <td className="py-3 px-4 text-center">
@@ -131,7 +125,7 @@ const Feedback = () => {
                       className="text-[14px] text-[#ee2020] font-semibold cursor-pointer"
                       onClick={() => deleteFeedback(feedback._id)}
                     >
-                      Resolve feedback
+                      delete feedback
                     </p>
                   </td>
                 </tr>
@@ -139,11 +133,7 @@ const Feedback = () => {
             </tbody>
           </table>
         </div>
-        {showModal && (
-          <Modal
-            closeModal={closeModal}
-          />
-        )}
+        {showModal && <Modal closeModal={closeModal} />}
       </div>
     </MainContainer>
   );
