@@ -32,7 +32,6 @@ const ListBusinessUsers = () => {
     )
       .then((res) => res.json())
       .then((data) => {
-        console.log(data);
         if (data.success) {
           toast.success("User deleted successfully", {
             position: "top-center",
