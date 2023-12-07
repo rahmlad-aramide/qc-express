@@ -19,8 +19,6 @@ type Users = {
 
 const ListBusinessUsers = () => {
   const [users, setUsers] = useState<Users[]>([]);
-  const access_token =
-    "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImF5YW5mZW9sdXdhYWtpbmRlbGUyNEBnbWFpbC5jb20iLCJ1c2VySWQiOiI2NTZkODk3ZTVhMjBlYzAwM2VlYzU4NGUiLCJ1c2VybmFtZSI6IkF5YW5mZW9sdXdhIEFraW5kZWxlIiwiZmlyc3RuYW1lIjoiNjU2ZDg5N2U1YTIwZWMwMDNlZWM1ODRjIiwidHlwZSI6IkFDQ0VTU19UT0tFTiIsImlhdCI6MTcwMTY5MjcwMSwiZXhwIjoxNzAxNjk2MzAxfQ.gmJvdCIloGIIuu5QJueeyaauk7K-975dIanCZg8QQwo";
   const deleteUser = (id: string) => {
     fetch(
       `https://qcbackend.onrender.com/api/v1/business_admin/user/delete/?id=${id}`,
@@ -28,7 +26,7 @@ const ListBusinessUsers = () => {
         method: "DELETE",
         headers: {
           "Content-Type": "application/json",
-          Authorization: `Bearer ${access_token}`,
+          Authorization: `Bearer ${sessionStorage.getItem("access_token")}`,
         },
       }
     )
@@ -66,6 +64,10 @@ const ListBusinessUsers = () => {
     window.history.back();
   };
 
+  const access_token = sessionStorage
+    .getItem("access_token")
+    ?.replace(/["']/g, "");
+
   useEffect(() => {
     fetch(
       "https://qcbackend.onrender.com/api/v1/business_admin/user/fetch?tier=2&page=1&limit=10",
@@ -81,7 +83,7 @@ const ListBusinessUsers = () => {
       .then((data) => {
         setUsers(data.data.docs);
       });
-  }, []);
+  }, [access_token]);
   return (
     <MainContainer activeTab="Settings">
       <ToastContainer />

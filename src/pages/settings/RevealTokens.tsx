@@ -3,7 +3,6 @@ import MainContainer from "../../components/containers/MainContainer";
 import { useEffect } from "react";
 import { useState } from "react";
 import { ToastContainer, toast } from "react-toastify";
-import { IoChevronBackOutline } from "react-icons/io5";
 
 const RevealTokens = () => {
   const [tokens, setTokens] = useState({
@@ -18,8 +17,12 @@ const RevealTokens = () => {
     production: false,
     staging: false,
   });
-  const access_token =
-    "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImF5YW5mZW9sdXdhYWtpbmRlbGUyNEBnbWFpbC5jb20iLCJ1c2VySWQiOiI2NTZkODk3ZTVhMjBlYzAwM2VlYzU4NGUiLCJ1c2VybmFtZSI6IkF5YW5mZW9sdXdhIEFraW5kZWxlIiwiZmlyc3RuYW1lIjoiNjU2ZDg5N2U1YTIwZWMwMDNlZWM1ODRjIiwidHlwZSI6IkFDQ0VTU19UT0tFTiIsImlhdCI6MTcwMTY5MjcwMSwiZXhwIjoxNzAxNjk2MzAxfQ.gmJvdCIloGIIuu5QJueeyaauk7K-975dIanCZg8QQwo";
+
+  const access_token = sessionStorage
+  .getItem("access_token")
+  ?.replace(/["']/g, "");
+
+
   const revealToken = (token: string) => {
     if (token === "staging") {
       setShowToken({
@@ -113,7 +116,7 @@ const RevealTokens = () => {
           staging: data.data.staging_api_key,
         });
       });
-  }, []);
+  }, [access_token]);
 
   return (
     <MainContainer activeTab="Settings">
@@ -123,8 +126,7 @@ const RevealTokens = () => {
           onClick={backToSettings}
           className="cursor-pointer flex items-center text-lg font-semibold"
         >
-          <IoChevronBackOutline size={25} className="mr-2" />
-          Back
+          {"<< "} back
         </span>
         <h2 className="text-[32px] font-semibold">Reveal Tokens</h2>
         <div className="w-[70%] mt-8 space-y-8">

@@ -31,11 +31,7 @@ const Login = () => {
       return true;
     }
   };
-  // const validatePassword = (password: string) => {
-  //   const passwordRegex =
-  //     /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[@#$%^&+=]).{6,}$/;
-  //   return passwordRegex.test(password);
-  // };
+
   const capitalizeFirstLetter = (string: string) => {
     return string.charAt(0).toUpperCase() + string.slice(1);
   };
@@ -64,8 +60,7 @@ const Login = () => {
     })
     .then((response) => {
       setLoading(false);
-      console.log(response)
-      sessionStorage.setItem('userData', JSON.stringify(response.data))
+      sessionStorage.setItem('access_token', JSON.stringify(response.data.data.access_token))
       notify("Login successfully, redirecting you.");
       setTimeout(() => {
         navigateTo("/home");

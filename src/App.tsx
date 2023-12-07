@@ -11,6 +11,7 @@ import Settings from "./pages/settings";
 import RevealTokens from "./pages/settings/RevealTokens";
 import NewUser from "./pages/settings/NewUser";
 import ListBusinessUsers from "./pages/settings/ListBusinessUsers";
+import Feedback from "./pages/feedback";
 
 type ToastParams = {
   position: string;
@@ -70,6 +71,7 @@ function App() {
         <Route path="/settings/reveal-tokens" element={<RevealTokens />} />
         <Route path="/settings/new-user" element={<NewUser />} />
         <Route path="/settings/list-business-users" element={<ListBusinessUsers />} />
+        <Route path="/feedback" element={<Feedback />} />
       </Routes>
     </>
   );

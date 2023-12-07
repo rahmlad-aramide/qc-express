@@ -2,7 +2,7 @@ import { FC } from "react";
 import { NavLink } from "react-router-dom";
 import { RiHome5Line } from "react-icons/ri";
 import { IoSettingsOutline } from "react-icons/io5";
-import { MdOutlinePowerSettingsNew } from "react-icons/md";
+import { RiFeedbackLine } from "react-icons/ri";
 
 interface SideNavProps {
   activeTab: string;
@@ -14,11 +14,14 @@ const SideNav: FC<SideNavProps> = ({ activeTab }) => {
       <li>
         <NavLink
           to="/"
-          className={({ isActive }) =>
-            isActive
-              ? "flex items-center font-semibold w-full bg-primary text-white py-2 px-2 rounded-lg text-lg"
-              : "flex items-center text-dark font-semibold w-full bg-white hover:bg-primary hover:text-white py-2 px-2 rounded-lg text-lg"
-          }
+          className={`
+          flex items-center font-semibold text-[18px] space-x-3
+           ${
+             activeTab === "Dashboard"
+               ? "text-primary py-2 px-2 rounded-lg"
+               : "text-[#333] bg-white py-2 px-2"
+           }
+          `}
         >
           <RiHome5Line size={25} className="mr-2" />
           Dashboard
@@ -26,22 +29,35 @@ const SideNav: FC<SideNavProps> = ({ activeTab }) => {
       </li>
       <li>
         <NavLink
+          to="/feedback"
+          className={`
+          flex items-center font-semibold text-[18px] space-x-3
+           ${
+             activeTab === "Feedback"
+               ? "text-primary py-2 px-2 rounded-lg"
+               : "text-[#333] bg-white py-2 px-2"
+           }
+          `}
+        >
+          <RiFeedbackLine size={25} />
+          <span>Feedback</span>
+        </NavLink>
+      </li>
+      <li>
+        <NavLink
           to="/settings"
-          className={({ isActive }) =>
-            isActive
-              ? "flex items-center text-white font-semibold w-full bg-primary py-2 px-2 rounded-lg text-lg"
-              : "flex items-center text-dark font-semibold w-full bg-white hover:bg-primary hover:text-white py-2 px-2 rounded-lg text-lg"
-          }
+          className={`
+          flex items-center font-semibold text-[18px] space-x-3
+           ${
+             activeTab === "Settings"
+               ? "text-primary py-2 px-2 rounded-lg"
+               : "text-[#333] bg-white py-2 px-2"
+           }
+          `}
         >
           <IoSettingsOutline size={25} className="mr-2" />
           Settings
         </NavLink>
-      </li>
-      <li>
-        <button className="border-none rounded-lg w-full flex items-center py-2 px-2 text-dark hover:text-white hover:bg-primary active:scale-90 font-semibold text-lg">
-          <MdOutlinePowerSettingsNew size={25} className="mr-2" />
-          Logout
-        </button>
       </li>
     </ul>
   );
