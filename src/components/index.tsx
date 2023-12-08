@@ -1,3 +1,4 @@
+export {default as ShipmentTracker} from "./tracker/shipment-tracker"
 export {default as Pagination} from "./pagination/pagination"
 export {default as Loader} from "./miscellanous/loader"
 export {default as BallLoader} from "./miscellanous/ball-loader"
