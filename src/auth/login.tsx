@@ -2,16 +2,15 @@ import { useState } from "react";
 import AuthContainer from "../components/containers/AuthContainer";
 import InputField from "../components/default/InputField";
 import axios from "axios";
-import { useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { notify, warn } from "../App";
 import { Loader } from "../components";
 import { ToastContainer } from "react-toastify";
 
-
 const url = String(import.meta.env.VITE_APP_API_URL);
 
 const Login = () => {
-  const navigateTo = useNavigate()
+  const navigateTo = useNavigate();
   const [loading, setLoading] = useState(false);
   const [user, setUser] = useState({
     email: "",
@@ -35,7 +34,7 @@ const Login = () => {
     e: React.FormEvent<HTMLFormElement>
   ) => Promise<void> = async (e) => {
     e.preventDefault();
-    setLoading(true)
+    setLoading(true);
     const isEmailValid = validateField(user.email);
 
     setError({
@@ -49,55 +48,55 @@ const Login = () => {
     }, 2000);
 
     axios
-    .post(`${url}/business_admin/login`, user, {
-      headers: {
-        "Content-Type": "application/json",
-      },
-    })
-    .then((response) => {
-      setLoading(false);
-      sessionStorage.setItem('access_token', response.data.data.access_token)
-      notify("Login successfully, redirecting you.");
-      setTimeout(() => {
-        navigateTo("/");
-      }, 2500);
-    })
-    .catch((error) => {
-      setLoading(false);
-      console.log(capitalizeFirstLetter(error.response.data.message));
-      warn(capitalizeFirstLetter(error.response.data.message));
-    });    
+      .post(`${url}/business_admin/login`, user, {
+        headers: {
+          "Content-Type": "application/json",
+        },
+      })
+      .then((response) => {
+        setLoading(false);
+        sessionStorage.setItem("access_token", response.data.data.access_token);
+        notify("Login successful, you're being redirected.");
+        setTimeout(() => {
+          navigateTo("/dashboard");
+        }, 2500);
+      })
+      .catch((error) => {
+        setLoading(false);
+        console.log(capitalizeFirstLetter(error.response.data.message));
+        warn(capitalizeFirstLetter(error.response.data.message));
+      });
   };
   return (
     <AuthContainer>
       <ToastContainer />
       <form onSubmit={handleLogin}>
-      <h2 className="text-[#4169e2] font-bold text-[34px]">Sign In</h2>
-      <p>To continue, please provide a valid Email.</p>
+        <h2 className="text-[#4169e2] font-bold text-[34px]">Sign In</h2>
+        <p>To continue, please provide a valid Email.</p>
 
-      <div className="mt-[5vh] space-y-6">
-        <InputField
-          type="email"
-          label="Email"
-          value={user.email}
-          onChange={(e) => setUser({ ...user, email: e.target.value })}
-          emailError={error.email}
-        />
-        <InputField
-          type="password"
-          label="Password"
-          value={user.password}
-          onChange={(e) => setUser({ ...user, password: e.target.value })}
-        />
-      </div>
-      <p className="text-[14px] text-[#333] pt-6">
-        By continuing, I represent that I have read, understand, and fully agree
-        to the QC Express{" "}
-        <span className="text-[#4169e2]">terms of service</span> and{" "}
-        <span className="text-[#4169e2]">privacy policy</span>.
-      </p>
+        <div className="mt-[5vh] space-y-6">
+          <InputField
+            type="email"
+            label="Email"
+            value={user.email}
+            onChange={(e) => setUser({ ...user, email: e.target.value })}
+            emailError={error.email}
+          />
+          <InputField
+            type="password"
+            label="Password"
+            value={user.password}
+            onChange={(e) => setUser({ ...user, password: e.target.value })}
+          />
+        </div>
+        <p className="text-[14px] text-[#333] pt-6">
+          By continuing, I represent that I have read, understand, and fully
+          agree to the QC Express{" "}
+          <span className="text-[#4169e2]">terms of service</span> and{" "}
+          <span className="text-[#4169e2]">privacy policy</span>.
+        </p>
 
-      <button
+        <button
           disabled={loading}
           type="submit"
           className={
@@ -108,16 +107,21 @@ const Login = () => {
         >
           {loading ? <Loader /> : "Continue"}
         </button>
-      <p className="text-[15px] text-[#4169e2] font-semibold my-4">
-        Forgot Password?
-      </p>
-      <hr />
-      <p className="mt-4 text-center lg:text-[24px] text-[18px] text-[#333]">
-        New to QC Express?
-      </p>
-      <button className="text-[#fff] py-3 mt-4 w-[100%] flex justify-center bg-[#4169e2]">
-        Create your QC Express account
-      </button>
+        <p className="text-[15px] text-[#4169e2] font-semibold my-4">
+          Forgot Password?
+        </p>
+        <hr />
+        <p className="mt-4 text-center lg:text-[24px] text-[18px] text-[#333]">
+          New to QC Express?
+        </p>
+        <Link to="/onboarding">
+          <button
+            type="button"
+            className="text-[#fff] py-3 mt-4 w-[100%] flex justify-center bg-[#4169e2]"
+          >
+            Make an Onboarding Request
+          </button>
+        </Link>
       </form>
     </AuthContainer>
   );

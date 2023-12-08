@@ -1,6 +1,6 @@
 import axios from "axios";
 import { useState } from "react";
-import { useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import AuthContainer from "../components/containers/AuthContainer";
 import InputField from "../components/default/InputField";
 import { notify, warn } from "../App";
@@ -224,6 +224,15 @@ const Signup = () => {
         >
           {loading ? <Loader /> : "Continue"}
         </button>
+        <hr />
+      <p className="mt-4 text-center lg:text-[24px] text-[18px] text-[#333]">
+        Already Onboarded to QC Express?
+      </p>
+      <Link to="/login">
+      <button className="text-[#fff] py-3 mt-4 w-[100%] flex justify-center bg-[#4169e2]">
+        Login to your account
+      </button>
+      </Link>
       </form>
     </AuthContainer>
   );

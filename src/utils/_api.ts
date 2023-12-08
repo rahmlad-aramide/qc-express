@@ -10,7 +10,6 @@ export const axiosCalls = async (
 ): Promise<any> => {
 
   const token: string | null = sessionStorage.getItem("access_token");
-
   try {
     const config: AxiosRequestConfig = {
       method,
@@ -28,9 +27,9 @@ export const axiosCalls = async (
       return response.data;
     }
   } catch (error: any) {
-    if (error.message === "timeout of 100ms exceeded") {
-      return { er: "slowNetwork" };
+    if (error.response.data.message === "access denied") {
+      return { err: "Access denied, kindly logout and login again" };
     }
-    return { er: error.response.data };
+    return { err: `An error has occured, ${error.response.data.message}`, success: error.response.data.success };
   }
 };
