@@ -2,7 +2,7 @@ import { useParams } from "react-router-dom"
 import { MainContainer } from "../../components"
 import { IoChevronBackOutline } from "react-icons/io5"
 
-const TopBooking = () => {
+const ShipmentDetails = () => {
     const {id} = useParams()
     console.log(id)
 
@@ -23,4 +23,4 @@ const TopBooking = () => {
   )
 }
 
-export default TopBooking
+export default ShipmentDetails

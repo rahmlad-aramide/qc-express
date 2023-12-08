@@ -168,7 +168,7 @@ const sampleData = {
   },
   success: true,
 };
-const Shipment = () => {
+const ShipmentTracking = () => {
     const {trackingId} = useParams()
     console.log(trackingId)
   const [shipmentData, setShipmentData] = useState<IShipment[] | null>(null);
@@ -201,11 +201,11 @@ const Shipment = () => {
         <h1 className="text-lg text-center my-4">
           Track your shipment from the timeline below
         </h1>
-        <div className="text-xl uppercase font-medium text-center bg-primary text-white py-2 mx-auto max-w-[768px]">{shipmentData[0].status}</div>
+        <div className="text-xl uppercase font-medium text-center bg-primary text-white py-2 mx-auto max-w-[768px]">{shipmentData[0].status === 'Success'? 'Delivered Successfully': 'Delivery In Progress'}</div>
         <ShipmentTracker events={shipmentData[0].events} />
       </div>
     </MainContainer>
   );
 };
 
-export default Shipment;
+export default ShipmentTracking;
