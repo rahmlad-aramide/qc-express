@@ -55,6 +55,8 @@ const Login = () => {
       })
       .then((response) => {
         setLoading(false);
+        if(sessionStorage.getItem('access_token')) sessionStorage.removeItem
+        console.log(response)
         sessionStorage.setItem("access_token", response.data.data.access_token);
         notify("Login successful, you're being redirected.");
         setTimeout(() => {
@@ -63,8 +65,7 @@ const Login = () => {
       })
       .catch((error) => {
         setLoading(false);
-        console.log(capitalizeFirstLetter(error.response.data.message));
-        warn(capitalizeFirstLetter(error.response.data.message));
+        warn(capitalizeFirstLetter(error?.message || error?.response.data.message));
       });
   };
   return (

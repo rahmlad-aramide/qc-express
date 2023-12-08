@@ -19,16 +19,16 @@ import {
   ResponsiveContainer,
 } from "recharts";
 import { axiosCalls } from "../../utils/_api";
+import { warn } from "../../App";
 
 const Dashboard = () => {
   // const tData = dashboardData?.data;
 
+  const [isLoading, setIsLoading] = useState(true);
   const [resData, setResData] = useState<Data | null>(null);
   const [errMessage, setErrMessage] = useState("");
-  const [success, setSuccess] = useState(null);
   const [currentPage, setCurrentPage] = useState(1);
   const pageSize = 10;
-  // const perpage = 1;
   const startIndex = (currentPage - 1) * pageSize;
   const endIndex = startIndex + pageSize;
 
@@ -43,38 +43,16 @@ const Dashboard = () => {
 
   const fetchData = async () => {
     const response = await axiosCalls("/business_admin/kpis", "GET");
-    setSuccess(response?.success);
     setResData(response?.data);
     setErrMessage(response?.err);
+    setIsLoading(false)
   };
   useEffect(() => {
     fetchData();
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
-
-  /*  To be removed later on
-        ==================================================== */
-  // eslint-disable-next-line @typescript-eslint/no-explicit-any
-  const repeatItem = (item: any, times: number) => {
-    return Array.from({ length: times }, () => ({ ...item }));
-  };
-
-  // Repeat each item in the "topBooking" array 11 times
-  const repeatedTopBooking = resData?.topBooking.flatMap((item) =>
-    repeatItem(item, 21)
-  );
-
-  // Update the resData with the repeated "topBooking" array
-  const updatedResData = {
-    ...resData,
-    topBooking: repeatedTopBooking,
-  };
-
-  /*  To be removed later on
-        ==================================================== */
-
   
-  if (!resData) {
+  if (isLoading) {
     return (
       <MainContainer activeTab="Home">
         <div className="flex justify-center items-center h-full w-full -mt-4">
@@ -84,11 +62,21 @@ const Dashboard = () => {
     );
   }
 
-  if (success === false) {
+  if (errMessage) {
+    warn(errMessage)
     return (
       <MainContainer activeTab="Home">
         <div className="flex justify-center items-center h-full w-full -mt-4 text-lg mx-2">
           {errMessage}
+        </div>
+      </MainContainer>
+    );
+  }
+  if (resData=== null || undefined) {
+    return (
+      <MainContainer activeTab="Home">
+        <div className="flex justify-center items-center h-full w-full -mt-4 text-lg mx-2">
+          Something went wrong, try again later. If the error persists, kindly re-login.
         </div>
       </MainContainer>
     );
@@ -98,7 +86,7 @@ const Dashboard = () => {
     <MainContainer activeTab="Home">
       <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-10 pt-4 pb-8">
         {cardData.map((item, index) => (
-          <Card key={index} name={item.name} value={Number(item.value)} />
+          <Card key={index} name={item?.name} value={Number(item?.value)} />
         ))}
       </div>
 
@@ -125,13 +113,13 @@ const Dashboard = () => {
       <div className="mb-4">
         <h2 className="text-dark font-medium text-xl mb-3">Top Booking</h2>
         <TopBookingTable
-          data={updatedResData?.topBooking as TopBooking[]}
+          data={resData?.topBooking as TopBooking[]}
           startIndex={startIndex}
           endIndex={endIndex}
         />
         <Pagination
           totalCount={Math.ceil(
-            (updatedResData as Data)?.topBooking?.length / pageSize
+            (resData as Data)?.topBooking?.length / pageSize
           )}
           currentPage={currentPage}
           onPageChange={setCurrentPage}

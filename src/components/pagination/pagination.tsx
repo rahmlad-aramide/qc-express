@@ -24,8 +24,7 @@ const Pagination: React.FC<PaginationProps> = ({
     siblingCount,
   });
 
-  // @ts-expect-error pagination is possibly undefind
-  if (currentPage === 0 || paginationRange?.length < 2) {
+  if (currentPage === 0 || paginationRange && paginationRange?.length < 2) {
     return null;
   }
 
@@ -37,8 +36,7 @@ const Pagination: React.FC<PaginationProps> = ({
     onPageChange(currentPage - 1);
   };
   
-  // @ts-expect-error pagination is possibly undefind
-  const lastPage = paginationRange[paginationRange?.length - 1];
+  const lastPage = paginationRange && paginationRange[paginationRange?.length - 1];
 
   return (
     <div className="flex justify-center mt-2 mb-4 gap-x-2">
@@ -53,8 +51,7 @@ const Pagination: React.FC<PaginationProps> = ({
       >
         <IoIosArrowBack />
       </button>
-      {/* @ts-expect-error pagination is possibly undefind */}
-      {paginationRange.map((pageNumber, index) => {
+      {paginationRange?.map((pageNumber, index) => {
         if (pageNumber === DOTS) {
           return (
             <button
