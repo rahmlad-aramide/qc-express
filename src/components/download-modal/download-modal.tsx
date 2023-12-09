@@ -4,7 +4,7 @@ import { useModal } from "../../contexts/ModalContext";
 import { axiosCalls } from "../../utils/_api";
 import { inform, notify } from "../../App";
 // eslint-disable-next-line @typescript-eslint/no-unused-vars
-import { downloadPDF, downloadPDFFromBuffer } from "../../utils/_pdf";
+// import { downloadPDF, downloadPDFFromBuffer } from "../../utils/_pdf";
 
 const DownloadModal: FC = () => {
   const { _id, isOpen, setIsOpen } = useModal();
