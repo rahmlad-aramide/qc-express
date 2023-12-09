@@ -6,7 +6,7 @@ export const baseUrl: string = import.meta.env.VITE_APP_API_URL;
 export const axiosCalls = async (
   path: string,
   method: AxiosRequestConfig["method"],
-  data: any = null
+  data: any = null,
 ): Promise<any> => {
 
   const token: string | null = sessionStorage.getItem("access_token");
@@ -27,9 +27,9 @@ export const axiosCalls = async (
       return response.data;
     }
   } catch (error: any) {
-    if (error.response.data.message === "access denied") {
+    if (error?.response?.data?.message === "access denied") {
       return { err: "Access denied, kindly logout and login again" };
     }
-    return { err: `An error has occured, ${error.response.data.message}`, success: error.response.data.success };
+    return { err: `An error has occured, ${error?.response?.data?.message}`, success: error.response.data.success };
   }
 };

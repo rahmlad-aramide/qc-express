@@ -3,7 +3,7 @@ import { NavLink, useNavigate } from "react-router-dom";
 import { RiHome5Line, RiFeedbackLine } from "react-icons/ri";
 import { IoSettingsOutline } from "react-icons/io5";
 import { MdOutlinePowerSettingsNew } from "react-icons/md";
-import { notify } from "../../App";
+import { inform } from "../../App";
 import { ToastContainer } from "react-toastify";
 
 interface SideNavProps {
@@ -17,7 +17,7 @@ const SideNav: FC<SideNavProps> = ({ activeTab }) => {
     if (token) {
       sessionStorage.removeItem("accessToken");
     }
-    notify("Loging you out...")
+    inform("Loging you out...")
     setTimeout(()=> {
       navigate('/login');
     }, 2500)
@@ -27,7 +27,7 @@ const SideNav: FC<SideNavProps> = ({ activeTab }) => {
       <ToastContainer />
       <li>
         <NavLink
-          to="/"
+          to="/dashboard"
           className={`
           flex items-center font-semibold text-[18px] space-x-3 transition duration-300 hover:scale-105
            ${

@@ -23,6 +23,13 @@ const CheckmarkIcon: React.FC = () => (
 );
 
 const ShipmentTracker: React.FC<{ events: Event[] }> = ({ events }) => {
+  if(events.length === 0){
+    return (
+      <div className="w-full max-w-[800px] mx-auto my-10 flex justify-center items-center text-black/50">
+        No activity has been recorded for this shipment yet.
+      </div>
+    )
+  }
   return (
     <div className="w-full max-w-[800px] mx-auto my-4">
       <div className="grid grid-cols-1 ml-4">

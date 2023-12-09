@@ -1,12 +1,18 @@
 /* eslint-disable react-refresh/only-export-components */
 import { Route, Routes } from "react-router-dom";
 import { AwaitingApproval, Login, ProtectedRoute, Signup } from "./auth";
-import { Dashboard, Error, Home, ShipmentDetails, ShipmentTracking } from "./pages";
+import {
+  Dashboard,
+  Error,
+  Home,
+  ShipmentDetails,
+  ShipmentTracking,
+} from "./pages";
 import Omit from "react";
 
 import { toast } from "react-toastify";
-
 import "react-toastify/dist/ReactToastify.css";
+
 import Settings from "./pages/settings";
 import RevealTokens from "./pages/settings/RevealTokens";
 import NewUser from "./pages/settings/NewUser";
@@ -57,25 +63,27 @@ export const loadingToast = (val: string) =>
 function App() {
   return (
     <>
-      <Routes>
-        <Route path="*" element={<Error />} />
-        <Route path="/" element={<Login />} />
-        <Route path="/login" element={<Login />} />
-        <Route path="/onboarding" element={<Signup />} />
-        <Route path="/request-success" element={<AwaitingApproval />} />
-        <Route path="/track" element={<ShipmentTracking />} />
-        <Route element={<ProtectedRoute />}>
-          <Route path="/dashboard" element={<Dashboard />} />
-          <Route path="/dashboard/:id" element={<ShipmentDetails />} />
-          <Route path="/home" element={<Home />} />
-          <Route path="/track/:trackingId" element={<ShipmentTracking />} />
-          <Route path="/settings" element={<Settings />} />
-          <Route path="/settings/reveal-tokens" element={<RevealTokens />} />
-          <Route path="/settings/new-user" element={<NewUser />} />
-          <Route path="/settings/list-business-users" element={<ListBusinessUsers />} />
-          <Route path="/feedback" element={<Feedback />} />
-        </Route>
-      </Routes>
+        <Routes>
+          <Route path="*" element={<Error />} />
+          <Route path="/" element={<Login />} />
+          <Route path="/login" element={<Login />} />
+          <Route path="/onboarding" element={<Signup />} />
+          <Route path="/request-success" element={<AwaitingApproval />} />
+          <Route element={<ProtectedRoute />}>
+            <Route path="/home" element={<Home />} />
+            <Route path="/dashboard" element={<Dashboard />} />
+            <Route path="/shipment/:trackingId" element={<ShipmentDetails />} />
+            <Route path="/tracking/:trackingId" element={<ShipmentTracking />} />
+            <Route path="/settings" element={<Settings />} />
+            <Route path="/settings/reveal-tokens" element={<RevealTokens />} />
+            <Route path="/settings/new-user" element={<NewUser />} />
+            <Route
+              path="/settings/list-business-users"
+              element={<ListBusinessUsers />}
+            />
+            <Route path="/feedback" element={<Feedback />} />
+          </Route>
+        </Routes>
     </>
   );
 }

@@ -7,9 +7,10 @@ type isPopoverOpen = boolean
 interface InfoPopverProps {
     isPopoverOpen: isPopoverOpen
     setIsPopoverOpen: (boolean: isPopoverOpen)=>void
+    trackingId: string
 }
 // eslint-disable-next-line @typescript-eslint/no-unused-vars
-const InfoPopver = ({ isPopoverOpen=false, setIsPopoverOpen }: InfoPopverProps) => {
+const InfoPopver = ({ isPopoverOpen=false, setIsPopoverOpen, trackingId }: InfoPopverProps) => {
   return (
     <Popover
       isOpen={isPopoverOpen}
@@ -32,12 +33,14 @@ const InfoPopver = ({ isPopoverOpen=false, setIsPopoverOpen }: InfoPopverProps) 
             style={{ backgroundColor: "white", opacity: 1 }}
             onClick={() => setIsPopoverOpen(!isPopoverOpen)}
           >
+            <Link to={`/shipment/${trackingId}`}>
             <button
               className="border text-[#49474D] bg-[#FFFFFF]/50 hover:bg-[#f5f5f6] rounded-lg w-full h-[48px] mb-4"
             >
               View Details
             </button>
-            <Link to="/track">
+            </Link>
+            <Link to={`/tracking/${trackingId}`}>
                 <button
                 className="border text-[#49474D] bg-[#FFFFFF]/50 hover:bg-[#f5f5f6] rounded-lg w-full h-[48px] mb-4"
                 >

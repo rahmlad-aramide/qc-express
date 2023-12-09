@@ -2,10 +2,10 @@ import { TopBooking } from "../../pages/types";
 import { InfoPopver } from "..";
 import { useState } from "react";
 
-const MoreTD = () => {
+const MoreTD = ({trackingId}: {trackingId: string}) => {
     const [isPopoverOpen, setIsPopoverOpen] = useState<boolean>(false)
   return (
-      <InfoPopver isPopoverOpen={isPopoverOpen} setIsPopoverOpen={()=>setIsPopoverOpen(!isPopoverOpen)} />
+      <InfoPopver trackingId={trackingId} isPopoverOpen={isPopoverOpen} setIsPopoverOpen={()=>setIsPopoverOpen(!isPopoverOpen)} />
   );
 };
 
@@ -18,7 +18,7 @@ const TopBookingTable = ({
   startIndex: number;
   endIndex: number;
 }) => {
-    console.log(data.slice(startIndex, endIndex).map((item)=>item))
+
   return (
     <div className="overflow-x-auto">
       <table className="min-w-full bg-white border-spacing-y-2 border-separate">
@@ -82,9 +82,8 @@ const TopBookingTable = ({
                 {item.delivery_info[1].postalAddress.cityName}
               </td>
               <td className="group-hover:rounded-r-lg border-b px-2 text-sm font-medium text-grayish-600">
-                <MoreTD />
+                <MoreTD trackingId={item.shipmentMeta.trackingId} />
               </td>
-              {/* <MoreTD />  */}
             </tr>
           ))}
         </tbody>
