@@ -1,6 +1,6 @@
 // import { document } from "../../buffer";
-import { documentArray } from "../../buffer";
-import { downloadPDF } from "../../utils/_pdf";
+// import { buffer } from "../../buffer";
+// import { downloadPDF } from "../../utils/_pdf";
 
 const Home = () => {
 
@@ -13,7 +13,7 @@ const Home = () => {
       <div className="text-center">
         <h1 className="text-4xl font-bold mb-4">Welcome to Our Developer Dashboard</h1>
         <p className="text-gray-600">Explore and enjoy the content we have to offer.</p>
-        <button className="mt-4 border border-gray-300 p-2 rounded" onClick={()=>downloadPDF(documentArray[0].content, 'document.pdf')}>Download PDF</button>
+        {/* <button className="mt-4 border border-gray-300 p-2 rounded" onClick={()=>downloadPDF(buffer?.data.data.toString(), 'document.pdf')}>Download PDF</button> */}
       </div>
     </div>
   )

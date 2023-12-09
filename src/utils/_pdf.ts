@@ -36,6 +36,7 @@ function base64toBlob(base64: string): Blob {
 
 
 // Function to download PDF from Buffer 
+// export function downloadPDF(pdfBuffer: ArrayBuffer, filename: string): void {
 export function downloadPDF(pdfBuffer: ArrayBuffer, filename: string): void {
   try {
     // Convert the ArrayBuffer to a Blob
