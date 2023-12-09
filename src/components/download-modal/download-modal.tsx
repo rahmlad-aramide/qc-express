@@ -1,15 +1,14 @@
 import { FC } from 'react';
 import ReactModal from 'react-modal';
 
-interface TrackModalProps {
+interface DownloadModalProps {
   isOpen: boolean;
   onRequestClose: () => void;
   download: () => void;
   isLoading: boolean;
-  close: () => void;
 }
 
-const TrackModal: FC<TrackModalProps> = ({
+const DownloadModal: FC<DownloadModalProps> = ({
   isOpen,
   onRequestClose,
   download,
@@ -42,10 +41,10 @@ const TrackModal: FC<TrackModalProps> = ({
             </svg>
           </div>
           <div className="mb-2 text-xl font-semibold text-center text-[#242128]">
-            Assign Admin
+            Download Document
           </div>
           <div className="text-sm text-center text-[#49474D]">
-            Are you sure you want to assign admin to this user(s)?
+            Are you sure you want to download the document for this shipment?
           </div>
         </div>
         <div className="flex justify-between gap-12 w-full">
@@ -76,4 +75,4 @@ const TrackModal: FC<TrackModalProps> = ({
   );
 };
 
-export default TrackModal;
+export default DownloadModal;

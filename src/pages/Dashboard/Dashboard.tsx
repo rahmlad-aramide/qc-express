@@ -6,7 +6,6 @@ import {
   Pagination,
   TopBookingTable,
 } from "../../components";
-// import { dashboardData } from "../data";
 import { TopBooking, Data } from "../types";
 import {
   LineChart,
@@ -20,12 +19,11 @@ import {
 } from "recharts";
 import { axiosCalls } from "../../utils/_api";
 import { warn } from "../../App";
+import { useData } from "../../contexts/DataContext";
 
 const Dashboard = () => {
-  // const tData = dashboardData?.data;
-
+  const {resData, setResData} = useData();
   const [isLoading, setIsLoading] = useState(true);
-  const [resData, setResData] = useState<Data | null>(null);
   const [errMessage, setErrMessage] = useState("");
   const [currentPage, setCurrentPage] = useState(1);
   const pageSize = 10;

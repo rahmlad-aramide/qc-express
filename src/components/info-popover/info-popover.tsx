@@ -9,8 +9,8 @@ interface InfoPopverProps {
     setIsPopoverOpen: (boolean: isPopoverOpen)=>void
     trackingId: string
 }
-// eslint-disable-next-line @typescript-eslint/no-unused-vars
-const InfoPopver = ({ isPopoverOpen=false, setIsPopoverOpen, trackingId }: InfoPopverProps) => {
+
+const InfoPopver:React.FC<InfoPopverProps> = ({ isPopoverOpen=false, setIsPopoverOpen, trackingId }) => {
   return (
     <Popover
       isOpen={isPopoverOpen}

@@ -1,11 +1,11 @@
 import { useState, useEffect } from "react";
 import { Link, useNavigate, useParams } from "react-router-dom";
-import { BallLoader, MainContainer } from "../../components";
+import { MainContainer } from "../../components";
 import { IoChevronBackOutline } from "react-icons/io5";
 
-import { ShipmentMeta, Package2, DeliveryInfo, Data } from "../types"; // Adjust the path based on your project structure
-import { axiosCalls } from "../../utils/_api";
+import { ShipmentMeta, Package2, DeliveryInfo } from "../types";
 import { warn } from "../../App";
+import { useData } from "../../contexts/DataContext";
 // import { useData } from "../../contexts/DataContext";
 
 interface ShipmentDetailsProps {
@@ -36,9 +36,7 @@ function formatToLocalDateTime(dateTimeString: string): string {
 
 const ShipmentDetails = () => {
   const navigate = useNavigate();
-  const [isLoading, setIsLoading] = useState(true);
-  const [resData, setResData] = useState<Data | null>(null);
-  const [errMessage, setErrMessage] = useState("");
+  const {resData} = useData();
   const [shipmentData, setShipmentData] = useState<ShipmentDetailsProps | null>(
     null
   );
@@ -48,18 +46,6 @@ const ShipmentDetails = () => {
     navigate('/dashboard');
   };
 
-
-  const fetchData = async () => {
-    const response = await axiosCalls("/business_admin/kpis", "GET");
-    setResData(response?.data);
-    setErrMessage(response?.err);
-    setIsLoading(false);
-  };
-  useEffect(() => {
-    fetchData();
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, []);
-
   const finalData = resData?.topBooking.filter(booking=> (
     booking.shipmentMeta.trackingId === trackingId
   ))
@@ -68,27 +54,9 @@ const ShipmentDetails = () => {
     finalData && setShipmentData(finalData[0]);
   }, [finalData]);
 
-  if (isLoading) {
-    return (
-      <MainContainer activeTab="">
-        <div className="flex justify-center items-center h-full w-full -mt-4">
-          <BallLoader />
-        </div>
-      </MainContainer>
-    );
-  }
 
-  if (errMessage) {
-    warn(errMessage);
-    return (
-      <MainContainer activeTab="">
-        <div className="flex justify-center items-center h-full w-full -mt-4 text-lg mx-2">
-          {errMessage}
-        </div>
-      </MainContainer>
-    );
-  }
   if (resData === null || undefined) {
+    warn("An error has occurred, pls re-login")
     return (
       <MainContainer activeTab="">
         <div className="flex justify-center items-center h-full w-full -mt-4 text-lg mx-2">
@@ -100,6 +68,7 @@ const ShipmentDetails = () => {
   }
   return (
     <MainContainer activeTab="">
+      
       <button
         onClick={backToDashboard}
         className="cursor-pointer flex items-center text-sm font-semibold"
@@ -160,7 +129,6 @@ const ShipmentDetails = () => {
                         cm
                       </p>
                     </div>
-                    {/* Add other package details as needed */}
                   </div>
                 ))}
               </div>

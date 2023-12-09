@@ -18,6 +18,7 @@ import RevealTokens from "./pages/settings/RevealTokens";
 import NewUser from "./pages/settings/NewUser";
 import ListBusinessUsers from "./pages/settings/ListBusinessUsers";
 import Feedback from "./pages/feedback";
+import { DataProvider, ModalProvider } from "./contexts";
 
 type ToastParams = {
   position: string;
@@ -63,6 +64,8 @@ export const loadingToast = (val: string) =>
 function App() {
   return (
     <>
+    <DataProvider>
+      <ModalProvider>
         <Routes>
           <Route path="*" element={<Error />} />
           <Route path="/" element={<Login />} />
@@ -84,6 +87,8 @@ function App() {
             <Route path="/feedback" element={<Feedback />} />
           </Route>
         </Routes>
+      </ModalProvider>
+    </DataProvider>
     </>
   );
 }
