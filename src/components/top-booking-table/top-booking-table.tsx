@@ -1,9 +1,14 @@
 import { TopBooking } from "../../pages/types";
 import { InfoPopver } from "..";
-import { useState } from "react";
+import { useEffect, useState } from "react";
+import { useModal } from "../../contexts/ModalContext";
 
-const MoreTD = ({trackingId}: {trackingId: string}) => {
+const MoreTD = ({trackingId, _id}: {trackingId: string, _id: string}) => {
     const [isPopoverOpen, setIsPopoverOpen] = useState<boolean>(false)
+    const {setId} = useModal();
+    useEffect(()=> {
+      setId(_id)
+    }, [_id, setId])
   return (
       <InfoPopver trackingId={trackingId} isPopoverOpen={isPopoverOpen} setIsPopoverOpen={()=>setIsPopoverOpen(!isPopoverOpen)} />
   );
@@ -82,7 +87,7 @@ const TopBookingTable = ({
                 {item.delivery_info[1].postalAddress.cityName}
               </td>
               <td className="group-hover:rounded-r-lg border-b px-2 text-sm font-medium text-grayish-600">
-                <MoreTD trackingId={item.shipmentMeta.trackingId} />
+                <MoreTD trackingId={item.shipmentMeta.trackingId} _id={item._id} />
               </td>
             </tr>
           ))}

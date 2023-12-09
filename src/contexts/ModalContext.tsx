@@ -1,32 +1,28 @@
-import { createContext, useState } from "react";
+import { createContext, useContext, useState } from "react";
 
 interface DownloadModalProps {
     isOpen: boolean;
-    // onRequestClose: () => void;
-    // isLoading: boolean;
-    // download: () => void;
+    _id: string;
     setIsOpen: React.Dispatch<React.SetStateAction<boolean>>;
-    // setIsOpen: (isOpen: boolean) => void;
-    // children: React.ReactNode
+    setId: React.Dispatch<React.SetStateAction<string>>;
   }
 const initialValues:DownloadModalProps = {
     isOpen: false,
-    // onRequestClose: ()=>{},
-    // isLoading: false,
-    // download: ()=>{},
+    _id: '',
     setIsOpen: ()=> {},
-    // children: null
+    setId: ()=> {},
   }
 export const ModalContext = createContext(initialValues);
 
 const ModalProvider = ({children}:React.PropsWithChildren) => {
-    // const [isLoading, setIsLoading] = useState(false)
     const [isOpen, setIsOpen] = useState(false)
-    // const download = () => {}
+    const [_id, setId] = useState('')
     return (
-        <ModalContext.Provider value={{ isOpen, setIsOpen }}>
+        <ModalContext.Provider value={{ isOpen, setIsOpen, _id, setId }}>
             {children}
         </ModalContext.Provider>
     )
 }
+// eslint-disable-next-line react-refresh/only-export-components
+export const useModal = () => useContext(ModalContext);
 export default ModalProvider;

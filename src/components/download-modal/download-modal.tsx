@@ -1,77 +1,83 @@
-import { FC } from 'react';
-import ReactModal from 'react-modal';
+import { FC, useState } from "react";
+import { Loader } from "..";
+import { useModal } from "../../contexts/ModalContext";
+import { axiosCalls } from "../../utils/_api";
+import { inform, notify } from "../../App";
+// eslint-disable-next-line @typescript-eslint/no-unused-vars
+import { downloadPDF, downloadPDFFromBuffer } from "../../utils/_pdf";
 
-interface DownloadModalProps {
-  isOpen: boolean;
-  onRequestClose: () => void;
-  download: () => void;
-  isLoading: boolean;
-}
-
-const DownloadModal: FC<DownloadModalProps> = ({
-  isOpen,
-  onRequestClose,
-  download,
-  isLoading,
-}) => {
+const DownloadModal: FC = () => {
+  const { _id, isOpen, setIsOpen } = useModal();
+  const [isLoading, setIsLoading] = useState(false);
+  const handleDownload = async () => {
+    inform("Downloading document...")
+    setIsLoading(true);
+    const response = await axiosCalls(
+      `/booking/download-docs?id=${_id}`,
+      "GET"
+    );
+    console.log("from download modal", response);
+    // downloadPDF(response.data.base64String, 'document.pdf')
+    // downloadPDFFromBuffer(response.data.data, 'document.pdf')
+    setIsLoading(false);
+    setTimeout(()=> {
+      setIsOpen(!isOpen);
+      notify("Downloaded successfully");
+    }, 1000)
+  };
+  if (!isOpen) return;
   return (
-    <ReactModal
-      isOpen={isOpen}
-      onRequestClose={onRequestClose}
-      className="modal-content"
-      overlayClassName="modal-overlay"
-    >
-      <div className="flex flex-col py-12 px-8 gap-8">
-        <div className="flex flex-col justify-between items-center w-full">
-          <div className="flex justify-center bg-[#D1FADF] rounded-full p-3 mb-8 border-[8px] border-[#ECFDF3]">
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              width="24"
-              height="24"
-              viewBox="0 0 24 24"
-              fill="none"
-            >
-              <path
-                d="M22 11.08V12C21.9988 14.1564 21.3005 16.2547 20.0093 17.9818C18.7182 19.709 16.9033 20.9725 14.8354 21.5839C12.7674 22.1953 10.5573 22.1219 8.53447 21.3746C6.51168 20.6273 4.78465 19.2461 3.61096 17.4371C2.43727 15.628 1.87979 13.4881 2.02168 11.3363C2.16356 9.18455 2.99721 7.13631 4.39828 5.49706C5.79935 3.85781 7.69279 2.71537 9.79619 2.24013C11.8996 1.7649 14.1003 1.98232 16.07 2.85999M22 3.99999L12 14.01L9.00001 11.01"
-                stroke="#039855"
-                strokeWidth="2"
-                strokeLinecap="round"
-                strokeLinejoin="round"
-              />
-            </svg>
+    <div className="fixed top-0 left-0 w-full h-full flex items-center justify-center bg-black bg-opacity-50 z-50">
+      <div className="bg-[#fff] w-[90%] max-w-[500px] lg:w-[50vw] mx-auto rounded-lg shadow-2xl p-10 flex flex-col items-start">
+        <div className="space-y-4 w-[100%]">
+          <div className="flex flex-col py-12 px-8 gap-8">
+            <div className="flex flex-col justify-between items-center w-full">
+              <div className="flex justify-center bg-[#D1FADF] rounded-full p-3 mb-8 border-[8px] border-[#ECFDF3]">
+                <svg
+                  width="48"
+                  height="48"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M17 17H17.01M17.4 14H18C18.9319 14 19.3978 14 19.7654 14.1522C20.2554 14.3552 20.6448 14.7446 20.8478 15.2346C21 15.6022 21 16.0681 21 17C21 17.9319 21 18.3978 20.8478 18.7654C20.6448 19.2554 20.2554 19.6448 19.7654 19.8478C19.3978 20 18.9319 20 18 20H6C5.06812 20 4.60218 20 4.23463 19.8478C3.74458 19.6448 3.35523 19.2554 3.15224 18.7654C3 18.3978 3 17.9319 3 17C3 16.0681 3 15.6022 3.15224 15.2346C3.35523 14.7446 3.74458 14.3552 4.23463 14.1522C4.60218 14 5.06812 14 6 14H6.6M12 15V4M12 15L9 12M12 15L15 12"
+                    stroke="#039855"
+                    strokeWidth="2"
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                  />
+                </svg>
+              </div>
+              <div className="mb-2 text-xl font-semibold text-center text-[#242128]">
+                Download Document
+              </div>
+              <div className="text-sm text-center text-[#49474D]">
+                Are you sure you want to download the document for this
+                shipment?
+              </div>
+            </div>
           </div>
-          <div className="mb-2 text-xl font-semibold text-center text-[#242128]">
-            Download Document
-          </div>
-          <div className="text-sm text-center text-[#49474D]">
-            Are you sure you want to download the document for this shipment?
-          </div>
-        </div>
-        <div className="flex justify-between gap-12 w-full">
-          <div className="w-full">
+          <div className="flex justify-end items-center space-x-4">
             <button
               onClick={() => {
-                onRequestClose();
+                setIsOpen(!isOpen);
               }}
-              type="submit"
-              className="border-[#49474D] bg-[#FFFFFF]/50 hover:bg-[#f5f5f6] rounded-lg w-full h-[48px]"
+              className="bg-[#ee3300] py-2 px-4 text-[#fff] font-semibold rounded-lg"
             >
-              <span className="text-[#49474D]">Cancel</span>
+              Cancel
             </button>
-          </div>
-          <div className="justify-end flex gap-18 w-full">
             <button
-              onClick={() => download()}
               disabled={isLoading}
-              type="submit"
-              className="text-white bg-[#6530BC] hover:bg-[#44207E] border-[#6530BC] hover:border-[#44207E] rounded-lg w-full h-[48px]"
+              onClick={handleDownload}
+              className="bg-[#4169e2] py-2 px-4 text-[#fff] font-semibold rounded-lg"
             >
-              <span>Yes, Download</span>
+              {isLoading ? <Loader /> : "Yes, Download"}
             </button>
           </div>
         </div>
       </div>
-    </ReactModal>
+    </div>
   );
 };
 
