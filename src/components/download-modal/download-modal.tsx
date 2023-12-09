@@ -4,7 +4,7 @@ import ReactModal from 'react-modal';
 interface TrackModalProps {
   isOpen: boolean;
   onRequestClose: () => void;
-  track: () => void;
+  download: () => void;
   isLoading: boolean;
   close: () => void;
 }
@@ -12,7 +12,7 @@ interface TrackModalProps {
 const TrackModal: FC<TrackModalProps> = ({
   isOpen,
   onRequestClose,
-  track,
+  download,
   isLoading,
 }) => {
   return (
@@ -62,12 +62,12 @@ const TrackModal: FC<TrackModalProps> = ({
           </div>
           <div className="justify-end flex gap-18 w-full">
             <button
-              onClick={() => track()}
+              onClick={() => download()}
               disabled={isLoading}
               type="submit"
               className="text-white bg-[#6530BC] hover:bg-[#44207E] border-[#6530BC] hover:border-[#44207E] rounded-lg w-full h-[48px]"
             >
-              <span>Yes, Track</span>
+              <span>Yes, Download</span>
             </button>
           </div>
         </div>
