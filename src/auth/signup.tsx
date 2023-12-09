@@ -114,8 +114,10 @@ const Signup = () => {
       setLoading(false);
       return
     }, 2500);
-
-
+    if(!isFirstnameValid || !isLastnameValid || !isCompanyDescriptionValid || !isCompanyNameValid || !isEmailValid || !isIntentValid || !isPhoneValid || !iswebsiteValid){
+      setLoading(false);
+      return
+    }
     axios
       .post(`${url}/onboarding-requests/create`, mapBackendToFrontend(user), {
         headers: {
