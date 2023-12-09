@@ -1,6 +1,7 @@
 import { IoMdMore } from "react-icons/io";
 import { Link } from "react-router-dom";
 import { Popover, ArrowContainer } from "react-tiny-popover";
+import { useModal } from "../../contexts/ModalContext";
 
 type isPopoverOpen = boolean
 
@@ -9,8 +10,10 @@ interface InfoPopverProps {
     setIsPopoverOpen: (boolean: isPopoverOpen)=>void
     trackingId: string
 }
-// eslint-disable-next-line @typescript-eslint/no-unused-vars
-const InfoPopver = ({ isPopoverOpen=false, setIsPopoverOpen, trackingId }: InfoPopverProps) => {
+
+const InfoPopver:React.FC<InfoPopverProps> = ({ isPopoverOpen=false, setIsPopoverOpen, trackingId }) => {
+  const {setIsOpen} = useModal();
+  
   return (
     <Popover
       isOpen={isPopoverOpen}
@@ -48,6 +51,7 @@ const InfoPopver = ({ isPopoverOpen=false, setIsPopoverOpen, trackingId }: InfoP
                 </button>
             </Link>
             <button
+              onClick={()=>setIsOpen(true)}
               className="border text-[#49474D] bg-[#FFFFFF]/50 hover:bg-[#f5f5f6] rounded-lg w-full h-[48px]"
             >
               Download Document

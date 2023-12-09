@@ -16,8 +16,11 @@ const Login = () => {
     email: "",
     password: "",
   });
-  const [error, setError] = useState({
+  const [errorEmail, setErrorEmail] = useState({
     email: "",
+  });
+  const [errorPassword, setErrorPassword] = useState({
+    password: ""
   });
   const validateField = (value: string) => {
     if (value === "") {
@@ -26,6 +29,13 @@ const Login = () => {
       return true;
     }
   };
+  const validatePassword = (value: string) => {
+    if(value === "" || value.length < 4){
+      return false;
+    } else {
+      return true;
+    }
+  }
 
   const capitalizeFirstLetter = (string: string) => {
     return string.charAt(0).toUpperCase() + string.slice(1);
@@ -36,17 +46,32 @@ const Login = () => {
     e.preventDefault();
     setLoading(true);
     const isEmailValid = validateField(user.email);
+    const isPasswordValid = validatePassword(user.password);
 
-    setError({
+    setErrorEmail({
       email: !isEmailValid ? "Email is required" : "",
+    });
+    setErrorPassword({
+      password: !isPasswordValid ? "Password is required and must be a minimum of 4 characters": ""
     });
 
     setTimeout(() => {
-      setError({
-        email: "",
-      });
+      if(!isEmailValid){
+        setErrorEmail({
+          email: "",
+        });
+      }
+      if(!isPasswordValid){
+        setErrorPassword({
+          password: "",
+        });
+      }
     }, 2000);
 
+    if(!isEmailValid || !isPasswordValid) {
+      setLoading(false)
+      return
+    }
     axios
       .post(`${url}/business_admin/login`, user, {
         headers: {
@@ -56,7 +81,6 @@ const Login = () => {
       .then((response) => {
         setLoading(false);
         if(sessionStorage.getItem('access_token')) sessionStorage.removeItem
-        console.log(response)
         sessionStorage.setItem("access_token", response.data.data.access_token);
         notify("Login successful, you're being redirected.");
         setTimeout(() => {
@@ -81,13 +105,14 @@ const Login = () => {
             label="Email"
             value={user.email}
             onChange={(e) => setUser({ ...user, email: e.target.value })}
-            emailError={error.email}
+            emailError={errorEmail.email}
           />
           <InputField
             type="password"
             label="Password"
             value={user.password}
             onChange={(e) => setUser({ ...user, password: e.target.value })}
+            passwordError={errorPassword.password}
           />
         </div>
         <p className="text-[14px] text-[#333] pt-6">

@@ -1,3 +1,5 @@
+import { warn } from "../App";
+
 // Decode Base64 string and create a Blob
 function base64toBlob(base64: string): Blob {
     const binaryString = atob(base64);
@@ -10,7 +12,7 @@ function base64toBlob(base64: string): Blob {
     return new Blob([byteArray], { type: 'application/pdf' });
   }
   
-  // Create a download link and trigger the download
+  // Function to download PDF from Base64 String
  export function downloadPDF(base64String: string, filename: string): void {
     const blob = base64toBlob(base64String);
     const url = URL.createObjectURL(blob);
@@ -31,15 +33,11 @@ function base64toBlob(base64: string): Blob {
     // Revoke the Blob URL to free up resources
     URL.revokeObjectURL(url);
   }
-  
-  // Example usage
-  const base64String = "your_base64_string_here";
-  const filename = "example.pdf";
-  downloadPDF(base64String, filename);
 
 
-// Function to download PDF from Buffer in a React component
-function downloadPDFFromBuffer(pdfBuffer: ArrayBuffer, filename: string): void {
+// Function to download PDF from Buffer 
+// export function downloadPDF(pdfBuffer: ArrayBuffer, filename: string): void {
+export function downloadPDFFromBuffer(pdfBuffer: ArrayBuffer, filename: string): void {
   try {
     // Convert the ArrayBuffer to a Blob
     const blob = new Blob([pdfBuffer], { type: 'application/pdf' });
@@ -58,24 +56,9 @@ function downloadPDFFromBuffer(pdfBuffer: ArrayBuffer, filename: string): void {
     // Remove the link from the document
     document.body.removeChild(link);
   } catch (error) {
+    warn(`Error creating PDF download link: ${error}`)
     console.error('Error creating PDF download link:', error);
   }
 }
-
-// Example usage in a React component
-const YourComponent: React.FC = () => {
-  const handleDownload = () => {
-    // Assuming pdfBuffer is your ArrayBuffer containing the PDF file
-    const pdfBuffer = /* Your PDF Buffer here */;
-    const filename = 'example.pdf';
-    downloadPDFFromBuffer(pdfBuffer, filename);
-  };
-
-  return (
-    <div>
-      <button onClick={handleDownload}>Download PDF</button>
-    </div>
-  );
-};
-      
+  
   
