@@ -9,13 +9,14 @@ import { ToastContainer } from "react-toastify";
 
 const url = String(import.meta.env.VITE_APP_API_URL);
 
+const defaultState = {
+  email: "",
+  password: "",
+}
 const Login = () => {
   const navigateTo = useNavigate();
   const [loading, setLoading] = useState(false);
-  const [user, setUser] = useState({
-    email: "",
-    password: "",
-  });
+  const [user, setUser] = useState(defaultState);
   const [errorEmail, setErrorEmail] = useState({
     email: "",
   });
@@ -80,6 +81,7 @@ const Login = () => {
       })
       .then((response) => {
         setLoading(false);
+        setUser(defaultState)
         if(sessionStorage.getItem('access_token')) sessionStorage.removeItem
         sessionStorage.setItem("access_token", response.data.data.access_token);
         notify("Login successful, you're being redirected.");

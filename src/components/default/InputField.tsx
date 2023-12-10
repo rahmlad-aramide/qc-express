@@ -32,9 +32,10 @@ const InputField: FC<InputProps> = ({
 }) => {
   return (
     <div className="space-y-2">
-      <h2 className="font-semibold text-[18px] text-[#6c8073]">{label}</h2>
+      <h2 className="font-semibold text-lg text-[#333]">{label}</h2>
       <input
         type={type}
+        placeholder={props.placeholder? props.placeholder : `Enter ${label.toLowerCase()} here`}
         className={
           `
           ${emailError && "border border-red-500"}
@@ -47,7 +48,7 @@ const InputField: FC<InputProps> = ({
           ${intentError && "border border-red-500"}
           ${passwordError && "border border-red-500"}
           ${confirmPasswordError && "border border-red-500"}
-          border border-[#333] outline-none py-2 px-4 w-[100%]
+          border border-[#333] outline-none py-2 px-4 w-[100%] rounded-lg
           `
         }
         {...props}

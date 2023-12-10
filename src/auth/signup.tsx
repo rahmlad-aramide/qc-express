@@ -126,6 +126,7 @@ const Signup = () => {
       })
       .then((response) => {
         setLoading(false);
+        setUser(defaultState)
         console.log(response)
         notify("Submitted successfully, redirecting you.");
         setTimeout(() => {

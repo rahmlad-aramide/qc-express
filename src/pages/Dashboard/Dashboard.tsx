@@ -21,9 +21,13 @@ import {
 import { axiosCalls } from "../../utils/_api";
 import { warn } from "../../App";
 import { useData } from "../../contexts/DataContext";
+import { useModal } from "../../contexts/ModalContext";
+import { dashboardData } from "../data";
 
 const Dashboard = () => {
-  const {resData, setResData} = useData();
+  // const {resData, setResData} = useData();
+  const resData = dashboardData.data;
+  const {isOpenFilter, setIsOpenFilter} = useModal();
   const [isLoading, setIsLoading] = useState(true);
   const [errMessage, setErrMessage] = useState("");
   const [currentPage, setCurrentPage] = useState(1);
@@ -41,9 +45,9 @@ const Dashboard = () => {
   ];
 
   const fetchData = async () => {
-    const response = await axiosCalls("/business_admin/kpis", "GET");
-    setResData(response?.data);
-    setErrMessage(response?.err);
+    // const response = await axiosCalls("/business_admin/kpis", "GET");
+    // setResData(response?.data);
+    // setErrMessage(response?.err);
     setIsLoading(false)
   };
   useEffect(() => {
@@ -110,7 +114,10 @@ const Dashboard = () => {
         </div>
       </div>
       <div className="mb-4">
-        <h2 className="text-dark font-medium text-xl mb-3">Top Booking</h2>
+        <div className="flex justify-between">
+          <h2 className="text-dark font-medium text-xl mb-3">Booking(s)</h2>
+          <button onClick={()=>setIsOpenFilter(!isOpenFilter)}>Filter</button>
+        </div>
         <TopBookingTable
           data={resData?.topBooking as TopBooking[]}
           startIndex={startIndex}

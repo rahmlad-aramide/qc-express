@@ -180,28 +180,69 @@ export interface Event {
   signedBy?: string;
 }
 
-// TO remove this later on
-export interface ShipmentEventDetails extends Event {}
-
-/* 
-
-{
-    "postalAddress": {
-        "postalCode": "100001",
-        "cityName": "Akure",
-        "countryCode": "NG",
-        "addressLine1": "yaba, lagos",
-        "countyName": "Ondo"
-    },
-    "contactInformation": {
-        "email": "example@example.com",
-        "phone": "18211309039",
-        "companyName": "Cider BookStore",
-        "fullName": "Anyanwu Chinedu"
-    },
-    "_id": "6572ae311797ef003c64ae79",
-    "type": "CUSTOMER",
-    "id": "6572ae311797ef003c64ae79"
+export interface RootFilter {
+  message: string
+  data: DataFilter
+  success: boolean
 }
 
-*/
+export interface DataFilter {
+  docs: Doc[]
+  totalDocs: number
+  limit: number
+  totalPages: number
+  page: number
+  pagingCounter: number
+  hasPrevPage: boolean
+  hasNextPage: boolean
+  prevPage: any
+  nextPage: any
+}
+
+export interface Doc {
+  shipmentMeta: ShipmentMeta
+  _id: string
+  document: string
+  packages: PackageFilter[]
+  description: string
+  number_items: number
+  delivery_info: DeliveryInfo[]
+  customerId: string
+  declaredValue: number
+  channel: string
+  environment: string
+  createdAt: string
+  updatedAt: string
+  __v: number
+  id: string
+}
+
+export interface ShipmentMeta {
+  trackingId: string
+  trackingUrl: string
+  packages: Package[]
+  documents: Document[]
+}
+
+export interface Package {
+  _id: string
+  referenceNumber?: number;
+  trackingNumber?: string;
+  trackingUrl?: string;
+  id: string
+}
+
+export interface Document {
+  _id: string
+  imageFormat: string
+  content: string
+  id: string
+}
+
+export interface PackageFilter {
+  dimensions: Dimensions
+  _id: string
+  weight: number
+  description: string
+  id: string
+}
