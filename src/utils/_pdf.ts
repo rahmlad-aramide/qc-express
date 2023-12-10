@@ -14,6 +14,7 @@ function base64toBlob(base64: string): Blob {
   
   // Function to download PDF from Base64 String
  export function downloadPDF(base64String: string, filename: string): void {
+    
     const blob = base64toBlob(base64String);
     const url = URL.createObjectURL(blob);
   
@@ -37,10 +38,11 @@ function base64toBlob(base64: string): Blob {
 
 // Function to download PDF from Buffer 
 // export function downloadPDF(pdfBuffer: ArrayBuffer, filename: string): void {
-export function downloadPDFFromBuffer(pdfBuffer: ArrayBuffer, filename: string): void {
+export function downloadPDFFromBuffer(pdfBufferData: [], filename: string): void {
   try {
     // Convert the ArrayBuffer to a Blob
-    const blob = new Blob([pdfBuffer], { type: 'application/pdf' });
+    const uint8Array = new Uint8Array(pdfBufferData);
+    const blob = new Blob([uint8Array], { type: 'application/pdf' });
 
     // Create a download link
     const link = document.createElement('a');

@@ -9,11 +9,16 @@ interface InfoPopverProps {
     isPopoverOpen: isPopoverOpen
     setIsPopoverOpen: (boolean: isPopoverOpen)=>void
     trackingId: string
+    _id: string
 }
 
-const InfoPopver:React.FC<InfoPopverProps> = ({ isPopoverOpen=false, setIsPopoverOpen, trackingId }) => {
-  const {setIsOpen} = useModal();
-  
+const InfoPopver:React.FC<InfoPopverProps> = ({ isPopoverOpen=false, setIsPopoverOpen, trackingId, _id }) => {
+  const {setId, setIsOpen} = useModal();
+  const handleClick = ()=> {
+    setIsPopoverOpen(!isPopoverOpen); 
+    setId(_id)
+  }
+  // console.log("from popover", _id)
   return (
     <Popover
       isOpen={isPopoverOpen}
@@ -61,7 +66,7 @@ const InfoPopver:React.FC<InfoPopverProps> = ({ isPopoverOpen=false, setIsPopove
       )}
     >
       <button
-        onClick={() => setIsPopoverOpen(!isPopoverOpen)}
+        onClick={handleClick}
         className="rounded mx-auto text-grayish-600 bg-grayish-600/10 hover:bg-grayish-600/20 p-1.5"
       >
         <IoMdMore />

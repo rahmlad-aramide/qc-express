@@ -2,13 +2,15 @@ import { FC, useState } from "react";
 import { Loader } from "..";
 import { useModal } from "../../contexts/ModalContext";
 import { axiosCalls } from "../../utils/_api";
-import { inform, notify } from "../../App";
+import { inform, notify, warn } from "../../App";
+import { downloadPDFFromBuffer } from "../../utils/_pdf";
 // eslint-disable-next-line @typescript-eslint/no-unused-vars
-// import { downloadPDF, downloadPDFFromBuffer } from "../../utils/_pdf";
+// import { downloadPDF } from "../../utils/_pdf";
 
 const DownloadModal: FC = () => {
   const { _id, isOpen, setIsOpen } = useModal();
   const [isLoading, setIsLoading] = useState(false);
+  const [errMessage, setErrMessage] = useState("");
   const handleDownload = async () => {
     inform("Downloading document...")
     setIsLoading(true);
@@ -16,19 +18,23 @@ const DownloadModal: FC = () => {
       `/booking/download-docs?id=${_id}`,
       "GET"
     );
-    console.log("from download modal", response);
+    setErrMessage(response?.err)
     // downloadPDF(response.data.base64String, 'document.pdf')
-    // downloadPDFFromBuffer(response.data.data, 'document.pdf')
+    downloadPDFFromBuffer(response.data.data, 'document.pdf')
     setIsLoading(false);
     setTimeout(()=> {
-      setIsOpen(!isOpen);
       notify("Downloaded successfully");
+      setIsOpen(!isOpen);
     }, 1000)
   };
+  if(errMessage){
+    warn(errMessage)
+    setIsOpen(!isOpen)
+  }
   if (!isOpen) return;
   return (
     <div className="fixed top-0 left-0 w-full h-full flex items-center justify-center bg-black bg-opacity-50 z-50">
-      <div className="bg-[#fff] w-[90%] max-w-[500px] lg:w-[50vw] mx-auto rounded-lg shadow-2xl p-10 flex flex-col items-start">
+      <div className="bg-[#fff] w-[90%] max-w-[500px] lg:max-w-[600px] mx-auto rounded-lg shadow-2xl p-10 flex flex-col items-start">
         <div className="space-y-4 w-[100%]">
           <div className="flex flex-col py-12 px-8 gap-8">
             <div className="flex flex-col justify-between items-center w-full">
@@ -63,16 +69,16 @@ const DownloadModal: FC = () => {
               onClick={() => {
                 setIsOpen(!isOpen);
               }}
-              className="bg-[#ee3300] py-2 px-4 text-[#fff] font-semibold rounded-lg"
+              className="bg-[#ee3300] h-10 py-2 px-6 text-[#fff] font-semibold rounded-lg"
             >
               Cancel
             </button>
             <button
               disabled={isLoading}
               onClick={handleDownload}
-              className="bg-[#4169e2] py-2 px-4 text-[#fff] font-semibold rounded-lg"
+              className="bg-[#4169e2] h-10 py-2 px-6 text-[#fff] font-semibold rounded-lg"
             >
-              {isLoading ? <Loader /> : "Yes, Download"}
+              {isLoading ? <Loader h={20} w={20} /> : "Yes, Download"}
             </button>
           </div>
         </div>

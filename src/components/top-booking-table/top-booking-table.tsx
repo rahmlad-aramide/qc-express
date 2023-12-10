@@ -1,16 +1,11 @@
 import { TopBooking } from "../../pages/types";
 import { InfoPopver } from "..";
-import { useEffect, useState } from "react";
-import { useModal } from "../../contexts/ModalContext";
+import { useState } from "react";
 
 const MoreTD = ({trackingId, _id}: {trackingId: string, _id: string}) => {
     const [isPopoverOpen, setIsPopoverOpen] = useState<boolean>(false)
-    const {setId} = useModal();
-    useEffect(()=> {
-      setId(_id)
-    }, [_id, setId])
   return (
-      <InfoPopver trackingId={trackingId} isPopoverOpen={isPopoverOpen} setIsPopoverOpen={()=>setIsPopoverOpen(!isPopoverOpen)} />
+      <InfoPopver _id={_id} trackingId={trackingId} isPopoverOpen={isPopoverOpen} setIsPopoverOpen={()=>setIsPopoverOpen(!isPopoverOpen)} />
   );
 };
 
