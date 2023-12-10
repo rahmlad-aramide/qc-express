@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import {
   BallLoader,
   Card,
-  DownloadModal,
+  // DownloadModal,
   MainContainer,
   Pagination,
   TopBookingTable,
@@ -124,7 +124,6 @@ const Dashboard = () => {
           onPageChange={setCurrentPage}
         />
       </div>
-      <DownloadModal />
     </MainContainer>
   );
 };

@@ -1,10 +1,10 @@
 import { Oval } from "react-loader-spinner";
 
-const Loader = () => {
+const Loader = ({h=30, w=30}) => {
   return (
     <Oval
-      height={30}
-      width={30}
+      height={h}
+      width={w}
       color="white"
       wrapperStyle={{}}
       wrapperClass=""
