@@ -3,7 +3,7 @@ import { Loader } from "..";
 import { useModal } from "../../contexts/ModalContext";
 import { axiosCalls } from "../../utils/_api";
 import { inform, notify, warn } from "../../App";
-import { downloadPDFFromBuffer } from "../../utils/_pdf";
+import { downloadPDF } from "../../utils/_pdf";
 
 const DownloadModal: FC = () => {
   const { _id, isOpen, setIsOpen } = useModal();
@@ -17,8 +17,8 @@ const DownloadModal: FC = () => {
       "GET"
     );
     setErrMessage(response?.err)
-    // downloadPDF(response.data.base64String, 'document.pdf')
-    downloadPDFFromBuffer(response.data.data, 'document.pdf')
+    downloadPDF(response.data[0].content, 'document.pdf')
+    // downloadPDFFromBuffer(response.data.data, 'document.pdf')
     setIsLoading(false);
     setTimeout(()=> {
       notify("Downloaded successfully");
@@ -28,8 +28,14 @@ const DownloadModal: FC = () => {
   if(errMessage){
     warn(errMessage)
     setIsOpen(!isOpen)
+    setIsLoading(false)
   }
-  if (!isOpen) return;
+  if (!isOpen) {
+    if(isLoading){
+      setIsLoading(false)
+    }
+    return;
+  }
   return (
     <div className="fixed top-0 left-0 w-full h-full flex items-center justify-center bg-black bg-opacity-50 z-50">
       <div className="bg-[#fff] w-[90%] max-w-[500px] lg:max-w-[600px] mx-auto rounded-lg shadow-2xl p-10 flex flex-col items-start">

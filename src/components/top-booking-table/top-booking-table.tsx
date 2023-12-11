@@ -19,7 +19,7 @@ const TopBookingTable:React.FC<TableProps> = ({
   startIndex,
   endIndex,
 }) => {
-
+  
   return (
     <div className="overflow-x-auto">
       <table className="min-w-full bg-white border-spacing-y-2 border-separate">
