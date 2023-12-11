@@ -8,10 +8,10 @@ import { ToastContainer, toast } from "react-toastify";
 
 const Settings = () => {
   const [loading, setLoading] = useState(false);
-  const storedUserString = sessionStorage.getItem("user");
   const access_token = sessionStorage
   .getItem("access_token")
   ?.replace(/["']/g, "");
+  const storedUserString = sessionStorage.getItem("user");
   let access_tier;
   if (storedUserString !== null) {
     const storedUserObject = JSON.parse(storedUserString);
