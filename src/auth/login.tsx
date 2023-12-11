@@ -85,6 +85,8 @@ const Login = () => {
         if(sessionStorage.getItem('access_token')) sessionStorage.removeItem
         sessionStorage.setItem("access_token", response.data.data.access_token);
         notify("Login successful, you're being redirected.");
+        sessionStorage.setItem("user", JSON.stringify(response.data.data.admin));
+        
         setTimeout(() => {
           navigateTo("/dashboard");
         }, 2500);
