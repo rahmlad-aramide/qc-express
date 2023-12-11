@@ -21,7 +21,7 @@ export const ModalContext = createContext(initialValues);
 
 const ModalProvider = ({children}:React.PropsWithChildren) => {
     const [isOpen, setIsOpen] = useState(false)
-    const [isOpenFilter, setIsOpenFilter] = useState(!false)
+    const [isOpenFilter, setIsOpenFilter] = useState(false)
     const [_id, setId] = useState('')
    
     return (
