@@ -1,6 +1,9 @@
 import { Oval } from "react-loader-spinner";
-
-const Loader = ({h=30, w=30}) => {
+interface LoaderProps {
+  h?: number
+  w?: number
+}
+const Loader: React.FC<LoaderProps> = ({h=30, w=30}) => {
   return (
     <Oval
       height={h}

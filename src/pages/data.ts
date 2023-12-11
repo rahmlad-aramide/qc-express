@@ -210,7 +210,7 @@ export const dashboardData = {
                     }
                 ],
                 "description": "description goes here",
-                "number_items": 2,
+                "number_items": 1,
                 "delivery_info": [
                     {
                         "postalAddress": {

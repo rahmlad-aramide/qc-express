@@ -1,6 +1,6 @@
 import { BallTriangle } from "react-loader-spinner";
 
-const BallLoader = () => {
+const BallLoader: React.FC = () => {
   return (
     <BallTriangle
       height={100}

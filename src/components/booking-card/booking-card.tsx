@@ -11,7 +11,7 @@ const cardData = [
     { name: "Total Value", icon: totalValue },
   ];
   
-  const Card = ({ name, value = 0 }: TCard) => {
+  const Card:React.FC<TCard> = ({ name, value = 0 }) => {
   
     const cardInfo = cardData.find((card) => card.name === name);
   

@@ -9,14 +9,15 @@ const MoreTD = ({trackingId, _id}: {trackingId: string, _id: string}) => {
   );
 };
 
-const TopBookingTable = ({
-  data,
-  startIndex,
-  endIndex,
-}: {
+interface TableProps {
   data: TopBooking[];
   startIndex: number;
   endIndex: number;
+}
+const TopBookingTable:React.FC<TableProps> = ({
+  data,
+  startIndex,
+  endIndex,
 }) => {
 
   return (
@@ -28,25 +29,25 @@ const TopBookingTable = ({
               S/N
             </th>
             <th className="py-2 px-4 text-left text-grayish-400 text-sm font-medium">
-              Document
-            </th>
-            <th className="py-2 px-4 text-left text-grayish-400 text-sm font-medium">
               Description
             </th>
             <th className="py-2 px-4 text-left text-grayish-400 text-sm font-medium">
-              Tracking ID
+              Qty
             </th>
             <th className="py-2 px-4 text-left text-grayish-400 text-sm font-medium">
               Customer
             </th>
             <th className="py-2 px-4 text-left text-grayish-400 text-sm font-medium">
-              City
+              Email
+            </th>
+            <th className="py-2 px-4 text-left text-grayish-400 text-sm font-medium">
+              Source
             </th>
             <th className="py-2 px-4 text-left text-grayish-400 text-sm font-medium">
               Receiver
             </th>
             <th className="py-2 px-4 text-left text-grayish-400 text-sm font-medium">
-              City
+              Destination
             </th>
             <th className="py-2 px-4 text-grayish-400 text-sm font-medium"></th>
           </tr>
@@ -61,16 +62,16 @@ const TopBookingTable = ({
                 {index + startIndex + 1}
               </td>
               <td className="border-b py-4 px-4 text-sm font-medium text-grayish-600">
-                {item.document}
-              </td>
-              <td className="border-b py-4 px-4 text-sm font-medium text-grayish-600">
                 {item.description}
               </td>
-              <td className="border-b py-4 px-4 text-sm font-medium text-grayish-600">
-                {item.shipmentMeta.trackingId}
+              <td className="border-b py-4 px-4 text-sm text-center font-medium text-grayish-600">
+                {item.number_items}
               </td>
               <td className="border-b py-4 px-4 text-sm font-medium text-grayish-600">
                 {item.delivery_info[0].contactInformation.fullName}
+              </td>
+              <td className="border-b py-4 px-4 text-sm font-medium text-grayish-600 break-words max-w-[30ch] 2xl:max-w-none">
+                {item.delivery_info[0].contactInformation.email}
               </td>
               <td className="border-b py-4 px-4 text-sm font-medium text-grayish-600">
                 {item.delivery_info[0].postalAddress.cityName}
