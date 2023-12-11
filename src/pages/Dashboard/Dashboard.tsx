@@ -22,11 +22,11 @@ import { axiosCalls } from "../../utils/_api";
 import { warn } from "../../App";
 import { useData } from "../../contexts/DataContext";
 import { useModal } from "../../contexts/ModalContext";
-import { dashboardData } from "../data";
+// import { dashboardData } from "../data";
 
 const Dashboard = () => {
-  // const {resData, setResData} = useData();
-  const resData = dashboardData.data;
+  const {resData, setResData} = useData();
+  // const resData = dashboardData.data;
   const {isOpenFilter, setIsOpenFilter} = useModal();
   const [isLoading, setIsLoading] = useState(true);
   const [errMessage, setErrMessage] = useState("");
@@ -45,9 +45,9 @@ const Dashboard = () => {
   ];
 
   const fetchData = async () => {
-    // const response = await axiosCalls("/business_admin/kpis", "GET");
-    // setResData(response?.data);
-    // setErrMessage(response?.err);
+    const response = await axiosCalls("/business_admin/kpis", "GET");
+    setResData(response?.data);
+    setErrMessage(response?.err);
     setIsLoading(false)
   };
   useEffect(() => {
