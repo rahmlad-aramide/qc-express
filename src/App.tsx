@@ -52,11 +52,11 @@ const loadingParams: LoadingParams = {
 };
 
 //@ts-expect-error as progess is undefined
-export const notify = (val: string) => toast.success(`${val}`, toastParams);
+export const notify = (val: string) => toast.success(`${val}`, {...toastParams, toastId: 'success1'});
 //@ts-expect-error as progess is undefined
-export const warn = (val: string) => toast.error(`${val}`, toastParams);
+export const warn = (val: string) => toast.error(`${val}`, {...toastParams, toastId: 'error1'});
 //@ts-expect-error as progess is undefined
-export const inform = (val: string) => toast.info(`${val}`, toastParams);
+export const inform = (val: string) => toast.info(`${val}`, {...toastParams, toastId: 'info1'});
 export const loadingToast = (val: string) =>
   //@ts-expect-error as progess is undefined
   toast.info(`${val}`, loadingParams);

@@ -175,6 +175,7 @@ const ShipmentTracking = () => {
     const {trackingId} = useParams()
     const [isLoading, setIsLoading] = useState(true);
     const [errMessage, setErrMessage] = useState("");
+    const [successState, setSuccessState] = useState(false);
     const [shipmentData, setShipmentData] = useState<IShipment[] | null>(null);
     const backToDashboard = () => {
       navigate('/dashboard');
@@ -182,12 +183,13 @@ const ShipmentTracking = () => {
   // useEffect(() => {
   //   setShipmentData(sampleData.data.shipments);
   // }, []);
-
   const fetchData = async () => {
-    const response = await axiosCalls(`/tracking/single?id=${trackingId}`, 'GET', {'ClientID': '65639e7f3caa1b44c1b5bc81'})
-    setShipmentData(response?.data.shipments)
+    const response = await axiosCalls(`/tracking/single/dashboard?id=${trackingId}`, 'GET')
+    console.log(response)
+    if(response.success) setIsLoading(false)
+    setSuccessState(response?.success)
     setErrMessage(response?.err);
-    setIsLoading(false)
+    setShipmentData(response?.data?.shipments)
   }
   useEffect(() => {
     fetchData()
@@ -202,6 +204,16 @@ const ShipmentTracking = () => {
     </MainContainer>
   }
 
+  if (errMessage && successState) {
+    warn(errMessage)
+    return (
+      <MainContainer activeTab="">
+        <div className="flex justify-center items-center h-full w-full -mt-4 text-lg mx-2">
+          {errMessage}
+        </div>
+      </MainContainer>
+    );
+  }
   if (errMessage) {
     warn(errMessage)
     return (
@@ -212,7 +224,7 @@ const ShipmentTracking = () => {
       </MainContainer>
     );
   }
-  if (shipmentData === null || undefined) {
+  if (shipmentData === null || shipmentData === undefined) {
     return (
       <MainContainer activeTab="">
         <div className="flex justify-center items-center h-full w-full -mt-4 text-lg mx-2">
@@ -221,6 +233,7 @@ const ShipmentTracking = () => {
       </MainContainer>
     );
   }
+  console.log("err", errMessage, "succ", successState, "shipent", shipmentData)
 
   return (
     <MainContainer activeTab="">
