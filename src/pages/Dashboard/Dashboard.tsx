@@ -36,11 +36,11 @@ const Dashboard = () => {
   const endIndex = startIndex + pageSize;
 
   const cardData = [
-    { name: "Booking Count", value: resData?.bookingCount },
+    { name: "Bookings Count", value: resData?.bookingCount },
     { name: "States Count", value: resData?.stateCount.length },
     {
       name: "Total Value",
-      value: resData?.totalValue[0]?.declaredValue,
+      value: resData?.totalValue[0]?.declaredValue && resData?.totalValue[0]?.declaredValue/100,
     },
   ];
 
@@ -115,7 +115,7 @@ const Dashboard = () => {
       </div>
       <div className="mb-4">
         <div className="flex justify-between">
-          <h2 className="text-dark font-medium text-xl mb-3">Booking(s)</h2>
+          <h2 className="text-dark font-medium text-xl mb-3">Top Bookings</h2>
           <button onClick={()=>setIsOpenFilter(!isOpenFilter)}>Filter</button>
         </div>
         <TopBookingTable
