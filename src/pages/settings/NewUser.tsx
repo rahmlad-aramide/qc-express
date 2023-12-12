@@ -15,12 +15,12 @@ const NewUser = () => {
   };
 
   const access_token = sessionStorage
-  .getItem("access_token")
-  ?.replace(/["']/g, "");
+    .getItem("access_token")
+    ?.replace(/["']/g, "");
 
   const createUser = () => {
     fetch(
-      "https://qcbackendtest.onrender.com/api/v1/business_admin/user/create/",
+      "https://qcbackend.onrender.com/api/v1/business_admin/user/create",
       {
         method: "POST",
         headers: {
@@ -62,12 +62,12 @@ const NewUser = () => {
     <MainContainer activeTab="Settings">
       <ToastContainer />
       <button
-          onClick={backToSettings}
-          className="cursor-pointer flex items-center text-sm font-semibold"
-        >
-          <IoChevronBackOutline size={18} className="mr-1" />
-          Back
-        </button>
+        onClick={backToSettings}
+        className="cursor-pointer flex items-center text-sm font-semibold"
+      >
+        <IoChevronBackOutline size={18} className="mr-1" />
+        Back
+      </button>
 
       <h2 className="text-lg font-semibold mt-2">Create New User</h2>
       <div className="mt-10 w-[50%] space-y-8">
