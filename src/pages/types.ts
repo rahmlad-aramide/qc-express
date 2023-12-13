@@ -190,13 +190,13 @@ export interface DataFilter {
   docs: Doc[]
   totalDocs: number
   limit: number
-  totalPages: number
+  totalPages: number|null
   page: number
-  pagingCounter: number
+  pagingCounter: number|null
   hasPrevPage: boolean
   hasNextPage: boolean
-  prevPage: any
-  nextPage: any
+  prevPage: number|null
+  nextPage: number|null
 }
 
 export interface Doc {

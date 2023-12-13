@@ -1,9 +1,9 @@
 import { useEffect, useState } from "react";
 import {
-  BallLoader,
   Card,
-  // DownloadModal,
   MainContainer,
+  MoreBookingTable,
+  MorePagination,
   Pagination,
   TopBookingTable,
 } from "../../components";
@@ -22,15 +22,20 @@ import { axiosCalls } from "../../utils/_api";
 import { warn } from "../../App";
 import { useData } from "../../contexts/DataContext";
 import { useModal } from "../../contexts/ModalContext";
+import { MoreData } from "../more-types";
+import Skeleton from "react-loading-skeleton";
 // import { dashboardData } from "../data";
 
 const Dashboard = () => {
-  const {resData, setResData} = useData();
+  const { resData, setResData, moreData, setMoreData } = useData();
   // const resData = dashboardData.data;
-  const {isOpenFilter, setIsOpenFilter} = useModal();
+  const { isOpenFilter, setIsOpenFilter, filterValues } = useModal();
   const [isLoading, setIsLoading] = useState(true);
+  const [isMoreLoading, setIsMoreLoading] = useState(true);
+  const [errMoreMessage, setErrMoreMessage] = useState("");
   const [errMessage, setErrMessage] = useState("");
   const [currentPage, setCurrentPage] = useState(1);
+  const [currentMorePage, setCurrentMorePage] = useState(1);
   const pageSize = 10;
   const startIndex = (currentPage - 1) * pageSize;
   const endIndex = startIndex + pageSize;
@@ -40,7 +45,9 @@ const Dashboard = () => {
     { name: "States Count", value: resData?.stateCount.length },
     {
       name: "Total Value",
-      value: resData?.totalValue[0]?.declaredValue && resData?.totalValue[0]?.declaredValue/100,
+      value:
+        resData?.totalValue[0]?.declaredValue &&
+        resData?.totalValue[0]?.declaredValue / 100,
     },
   ];
 
@@ -48,25 +55,62 @@ const Dashboard = () => {
     const response = await axiosCalls("/business_admin/kpis", "GET");
     setResData(response?.data);
     setErrMessage(response?.err);
-    setIsLoading(false)
+    setIsLoading(false);
+  };
+  const fetchMoreData = async (page: number) => {
+    const response = await axiosCalls(
+      `/booking/developer/booking?limit=15&page=${page}`,
+      "POST", filterValues
+    );
+    setMoreData(response?.data);
+    setErrMoreMessage(response?.err);
+    setIsMoreLoading(false);
   };
   useEffect(() => {
     fetchData();
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
-  
+  useEffect(() => {
+    fetchMoreData(currentMorePage);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [currentMorePage]);
+  const handlePageChange = (page: number) => {
+    setCurrentMorePage(page);
+  };
+
   if (isLoading) {
+    const dummyItems = Array.from({ length: 3 }, (_, index) => index + 1);
     return (
       <MainContainer activeTab="Home">
-        <div className="flex justify-center items-center h-full w-full -mt-4">
-          <BallLoader />
+        {/* Card */}
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-10 pt-4 pb-8">
+          {dummyItems.map((index) => (
+            <div key={index}>
+              <Skeleton height={120} width="100%" />
+            </div>
+          ))}
         </div>
+        <div className="mb-4">
+          <h2 className="text-dark font-medium text-xl mb-3">States Data</h2>
+          <div className="h-[300px] bg-grayish-400/10 rounded-lg">
+            <Skeleton height={300} width="100%" />
+          </div>
+        </div>
+        <div className="flex justify-between mt-4">
+          <h2 className="text-dark font-medium text-xl mb-3">Top Bookings</h2>
+          {/* <button onClick={()=>setIsOpenFilter(!isOpenFilter)}>Filter</button> */}
+        </div>
+        <TopBookingTable
+          data={resData?.topBooking as TopBooking[]}
+          startIndex={startIndex}
+          endIndex={endIndex}
+        />
       </MainContainer>
     );
   }
 
   if (errMessage) {
-    warn(errMessage)
+    warn(errMessage);
     return (
       <MainContainer activeTab="Home">
         <div className="flex justify-center items-center h-full w-full -mt-4 text-lg mx-2">
@@ -75,11 +119,12 @@ const Dashboard = () => {
       </MainContainer>
     );
   }
-  if (resData=== null || undefined) {
+  if (resData === null || undefined) {
     return (
       <MainContainer activeTab="Home">
         <div className="flex justify-center items-center h-full w-full -mt-4 text-lg mx-2">
-          Something went wrong, try again later. If the error persists, kindly re-login.
+          Something went wrong, try again later. If the error persists, kindly
+          re-login.
         </div>
       </MainContainer>
     );
@@ -116,7 +161,7 @@ const Dashboard = () => {
       <div className="mb-4">
         <div className="flex justify-between">
           <h2 className="text-dark font-medium text-xl mb-3">Top Bookings</h2>
-          <button onClick={()=>setIsOpenFilter(!isOpenFilter)}>Filter</button>
+          {/* <button onClick={()=>setIsOpenFilter(!isOpenFilter)}>Filter</button> */}
         </div>
         <TopBookingTable
           data={resData?.topBooking as TopBooking[]}
@@ -129,6 +174,19 @@ const Dashboard = () => {
           )}
           currentPage={currentPage}
           onPageChange={setCurrentPage}
+        />
+      </div>
+      <div className="mb-4">
+        <div className="flex justify-between">
+          <h2 className="text-dark font-medium text-xl mb-3">More Bookings</h2>
+          <button onClick={() => setIsOpenFilter(!isOpenFilter)}>Filter</button>
+        </div>
+        <MoreBookingTable data={moreData as MoreData} isMoreLoading={isMoreLoading} errMoreMessage={errMoreMessage} />
+        <MorePagination
+          data={moreData as MoreData}
+          onPageChange={handlePageChange}
+          isMoreLoading={isMoreLoading} 
+          errMoreMessage={errMoreMessage}
         />
       </div>
     </MainContainer>

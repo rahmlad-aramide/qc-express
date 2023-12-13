@@ -8,7 +8,7 @@ export const axiosCalls = async (
   method: AxiosRequestConfig["method"],
   data: any = null,
 ): Promise<any> => {
-
+  console.log(data)
   const token: string | null = sessionStorage.getItem("access_token");
   try {
     const config: AxiosRequestConfig = {
@@ -19,6 +19,7 @@ export const axiosCalls = async (
         Authorization: `Bearer ${token}`,
         "Content-Type": "application/json",
       },
+      
     };
 
     const response: AxiosResponse = await axios(config);
