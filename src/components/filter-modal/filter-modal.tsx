@@ -40,12 +40,20 @@ type InitialValues = {
 };
 const initialValues: InitialValues = {
   count_value: 1,
-  count_sort: "$gte",
+  count_sort: "$lte",
   delivery_from: "",
   delivery_to: "",
   date: "",
   user_email: "",
 };
+// const clearValues: InitialValues = {
+//   count_value: '',
+//   count_sort: "$gte",
+//   delivery_from: "",
+//   delivery_to: "",
+//   date: "",
+//   user_email: "",
+// };
 function removeDuplicates(arr: string[]): string[] {
   return arr.filter((value, index, self) => {
     return self.indexOf(value) === index;
@@ -70,19 +78,17 @@ const FilterModal: FC = () => {
   const handleFilter = async () => {
     setIsLoading(true);
     const response = await axiosCalls(
-      `/booking/developer/booking`,
+      `/booking/developer/booking?limit=15&page=1`,
       "POST",
       mapBackendToFrontend(filterValues)
     );
     setErrMessage(response?.err);
-    // downloadPDF(response.data.base64String, 'document.pdf')
     setIsLoading(false);
-    console.log(response)
     setMoreData(response?.data)
-    setFilterValues(initialValues);
+    setIsOpenFilter(!isOpenFilter);
+    notify("Filtered successfully");
     setTimeout(() => {
-      notify("Filtered successfully");
-      setIsOpenFilter(!isOpenFilter);
+      setFilterValues(initialValues);
     }, 1000);
   };
   if (errMessage) {
@@ -119,15 +125,15 @@ const FilterModal: FC = () => {
     <div className="fixed top-0 left-0 w-full h-screen sm:h-full flex items-center justify-center bg-black bg-opacity-50 z-50">
       <div className="bg-[#fff] w-[90%] max-w-[500px] lg:max-w-[600px] mx-auto rounded-lg shadow-2xl p-4 sm:p-10 flex flex-col items-start h-full sm:h-fit">
         <div className="bg-[#fff] w-full flex flex-col items-start h-fit overflow-y-auto">
-          <h2 className="font-semibold text-2xl">Filter Booking</h2>
+          <h2 className="font-semibold text-2xl mb-4">Filter Booking</h2>
           <form className="space-y-4 w-[100%]">
             <div className="flex flex-col py-4 gap-y-4">
               <div className="flex flex-col justify-between items-center w-full">
-                <div className="grid grid-cols-1 md:grid-cols-2 w-full gap-4">
+                <div className="grid grid-cols-1 md:grid-cols-2 w-full gap-8">
                   <div className="flex flex-col space-y-2">
                     <label
                       htmlFor="quantity"
-                      className="font-semibold text-lg text-[#333]"
+                      className="font-semibold text-lg text-[#8f8391]"
                     >
                       Quantity Filter
                     </label>
@@ -139,18 +145,19 @@ const FilterModal: FC = () => {
                           count_sort: e.target.value,
                         })
                       }
-                      className="border border-[#333] outline-none py-2 px-4 h-[44px] w-[100%] rounded-lg"
+                      className="border border-[#8f8391] text-[#333] outline-none py-2 px-4 h-[44px] w-[100%] rounded-lg"
                     >
-                      <option value="$lte">Less than</option>
-                      <option value="$gte">Greater than</option>
+                      <option value="$lte">Less than/Equal to</option>
+                      <option value="$gte">Greater than/Equal to</option>
                     </select>
                   </div>
                   <InputField
                     type="number"
                     min={1}
                     label="Quantity Value"
+                    labelColor="#8f8391"
                     value={filterValues.count_value}
-                    style={{ height: 44 }}
+                    style={{ height: 44, borderColor: '#8f8391', color: '#333' }}
                     onChange={(e) =>
                       setFilterValues({
                         ...filterValues,
@@ -159,7 +166,7 @@ const FilterModal: FC = () => {
                     }
                   />
                   <div className="flex flex-col space-y-2">
-                    <label className="font-semibold text-lg text-[#333]">
+                    <label className="font-semibold text-lg text-[#8f8e91]">
                       Source
                     </label>
 
@@ -171,7 +178,7 @@ const FilterModal: FC = () => {
                           delivery_from: e.target.value,
                         })
                       }
-                      className="border border-[#333] outline-none py-2 px-4 h-[44px] w-[100%] rounded-lg"
+                      className="border border-[#8f8e91] text-[#333] outline-none py-2 px-4 h-[44px] w-[100%] rounded-lg"
                     >
                       {sourceLocations?.map((l, idx) => (
                         <option key={idx} value={l}>
@@ -181,7 +188,7 @@ const FilterModal: FC = () => {
                     </select>
                   </div>
                   <div className="flex flex-col space-y-2">
-                    <label className="font-semibold text-lg text-[#333]">
+                    <label className="font-semibold text-lg text-[#8f8e91]">
                       Destination
                     </label>
 
@@ -193,7 +200,7 @@ const FilterModal: FC = () => {
                           delivery_from: e.target.value,
                         })
                       }
-                      className="border border-[#333] outline-none py-2 px-4 h-[44px] w-[100%] rounded-lg"
+                      className="border border-[#8f8e91] text-[#333] outline-none py-2 px-4 h-[44px] w-[100%] rounded-lg"
                     >
                       {destinationLocations?.map((l, idx) => (
                         <option key={idx} value={l}>
@@ -205,8 +212,9 @@ const FilterModal: FC = () => {
                   <InputField
                     type="email"
                     label="Email"
+                    labelColor="#8f8391"
                     value={filterValues.user_email}
-                    style={{ height: 44 }}
+                    style={{ height: 44, borderColor: '#8f8391', color: '#333' }}
                     onChange={(e) =>
                       setFilterValues({
                         ...filterValues,
@@ -217,6 +225,8 @@ const FilterModal: FC = () => {
                   <InputField
                     type="date"
                     label="Date"
+                    labelColor="#8f8391"
+                    style={{ borderColor: '#8f8391', color: '#333'}}
                     value={filterValues.date}
                     onChange={(e) =>
                       setFilterValues({ ...filterValues, date: e.target.value })
@@ -225,13 +235,13 @@ const FilterModal: FC = () => {
                 </div>
               </div>
             </div>
-            <div className="flex justify-end items-center space-x-4">
+            <div className="flex justify-end items-center mt-4 space-x-4">
               <button
                 type="button"
                 onClick={() => {
                   setIsOpenFilter(!isOpenFilter);
                 }}
-                className="bg-[#ee3300] h-10 py-2 px-6 text-[#fff] font-semibold rounded-lg"
+                className="flex items-center bg-red-500 h-10 py-2 px-6 text-[#fff] font-semibold rounded-lg"
               >
                 Cancel
               </button>
@@ -239,7 +249,7 @@ const FilterModal: FC = () => {
                 type="submit"
                 disabled={isLoading}
                 onClick={handleFilter}
-                className="bg-[#4169e2] h-10 py-2 px-6 text-[#fff] font-semibold rounded-lg"
+                className="flex items-center bg-[#4169e2] h-10 py-2 px-6 text-[#fff] font-semibold rounded-lg"
               >
                 {isLoading ? <Loader h={20} w={20} /> : "Apply Filter"}
               </button>

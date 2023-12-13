@@ -8,7 +8,6 @@ export const axiosCalls = async (
   method: AxiosRequestConfig["method"],
   data: any = null,
 ): Promise<any> => {
-  console.log(data)
   const token: string | null = sessionStorage.getItem("access_token");
   try {
     const config: AxiosRequestConfig = {

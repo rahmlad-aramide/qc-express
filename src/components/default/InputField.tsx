@@ -13,6 +13,7 @@ interface InputProps extends InputHTMLAttributes<HTMLInputElement> {
   intentError?: string;
   passwordError?: string;
   confirmPasswordError?: string;
+  labelColor?: string;
 }
 
 const InputField: FC<InputProps> = ({
@@ -28,11 +29,12 @@ const InputField: FC<InputProps> = ({
   intentError,
   passwordError,
   confirmPasswordError,
+  labelColor,
   ...props
 }) => {
   return (
     <div className="space-y-2">
-      <h2 className="font-semibold text-lg text-[#333]">{label}</h2>
+      <h2 style={{color: labelColor}} className="font-semibold text-lg text-[#333]">{label}</h2>
       <input
         type={type}
         placeholder={props.placeholder? props.placeholder : `Enter ${label.toLowerCase()} here`}

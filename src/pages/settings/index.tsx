@@ -82,7 +82,7 @@ const Settings = () => {
           </div>
         ))}
         {access_tier === "1" && (
-          <div onClick={clearSandboxData} className="flex justify-between items-center text-[#ee3300] cursor-pointer px-4 py-3 hover:bg-[#f1f1f1]">
+          <div onClick={clearSandboxData} className="flex justify-between items-center text-red-500 cursor-pointer px-4 py-3 hover:bg-[#f1f1f1]">
             <p>Clear Sandbox Data</p>
             {loading && <Loader />}
           </div>

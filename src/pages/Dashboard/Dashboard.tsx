@@ -4,10 +4,8 @@ import {
   MainContainer,
   MoreBookingTable,
   MorePagination,
-  Pagination,
   TopBookingTable,
 } from "../../components";
-import { TopBooking, Data } from "../types";
 import {
   LineChart,
   Line,
@@ -34,11 +32,7 @@ const Dashboard = () => {
   const [isMoreLoading, setIsMoreLoading] = useState(true);
   const [errMoreMessage, setErrMoreMessage] = useState("");
   const [errMessage, setErrMessage] = useState("");
-  const [currentPage, setCurrentPage] = useState(1);
   const [currentMorePage, setCurrentMorePage] = useState(1);
-  const pageSize = 10;
-  const startIndex = (currentPage - 1) * pageSize;
-  const endIndex = startIndex + pageSize;
 
   const cardData = [
     { name: "Bookings Count", value: resData?.bookingCount },
@@ -97,14 +91,10 @@ const Dashboard = () => {
           </div>
         </div>
         <div className="flex justify-between mt-4">
-          <h2 className="text-dark font-medium text-xl mb-3">Top Bookings</h2>
+          <h2 className="text-dark font-medium text-xl mb-3">Bookings</h2>
           {/* <button onClick={()=>setIsOpenFilter(!isOpenFilter)}>Filter</button> */}
         </div>
-        <TopBookingTable
-          data={resData?.topBooking as TopBooking[]}
-          startIndex={startIndex}
-          endIndex={endIndex}
-        />
+        <TopBookingTable />
       </MainContainer>
     );
   }
@@ -158,10 +148,10 @@ const Dashboard = () => {
           </ResponsiveContainer>
         </div>
       </div>
-      <div className="mb-4">
+
+      {/* <div className="mb-4">
         <div className="flex justify-between">
           <h2 className="text-dark font-medium text-xl mb-3">Top Bookings</h2>
-          {/* <button onClick={()=>setIsOpenFilter(!isOpenFilter)}>Filter</button> */}
         </div>
         <TopBookingTable
           data={resData?.topBooking as TopBooking[]}
@@ -175,10 +165,11 @@ const Dashboard = () => {
           currentPage={currentPage}
           onPageChange={setCurrentPage}
         />
-      </div>
+      </div> */}
+
       <div className="mb-4">
         <div className="flex justify-between">
-          <h2 className="text-dark font-medium text-xl mb-3">More Bookings</h2>
+          <h2 className="text-dark font-medium text-xl mb-3">Bookings</h2>
           <button onClick={() => setIsOpenFilter(!isOpenFilter)}>Filter</button>
         </div>
         <MoreBookingTable data={moreData as MoreData} isMoreLoading={isMoreLoading} errMoreMessage={errMoreMessage} />

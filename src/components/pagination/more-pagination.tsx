@@ -79,7 +79,7 @@ const MorePagination: React.FC<MorePaginationProps> = ({ data, onPageChange, isM
           <button onClick={() => onPageChange(totalPages)}>{totalPages}</button>
         </div>
       ) : (
-        <div>
+        <div className="flex justify-center gap-x-2">
           {pages.map((pageNumber) => (
             <button key={pageNumber} onClick={() => onPageChange(pageNumber)}
             className={

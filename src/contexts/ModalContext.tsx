@@ -21,7 +21,7 @@ interface DownloadModalProps {
   };
   const initialFilterValues: InitialFilterValues = {
     count_value: 1,
-    count_sort: "$gte",
+    count_sort: "$lte",
     delivery_from: "",
     delivery_to: "",
     date: "",

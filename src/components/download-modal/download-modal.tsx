@@ -10,29 +10,29 @@ const DownloadModal: FC = () => {
   const [isLoading, setIsLoading] = useState(false);
   const [errMessage, setErrMessage] = useState("");
   const handleDownload = async () => {
-    inform("Downloading document...")
+    inform("Downloading document...");
     setIsLoading(true);
     const response = await axiosCalls(
       `/booking/download-docs?id=${_id}`,
       "GET"
     );
-    setErrMessage(response?.err)
-    downloadPDF(response.data[0].content, 'document.pdf')
+    setErrMessage(response?.err);
+    downloadPDF(response.data[0].content, "document.pdf");
     // downloadPDFFromBuffer(response.data.data, 'document.pdf')
     setIsLoading(false);
-    setTimeout(()=> {
+    setTimeout(() => {
       notify("Downloaded successfully");
       setIsOpen(!isOpen);
-    }, 1000)
+    }, 1000);
   };
-  if(errMessage){
-    warn(errMessage)
-    setIsOpen(!isOpen)
-    setIsLoading(false)
+  if (errMessage) {
+    warn(errMessage);
+    setIsOpen(!isOpen);
+    setIsLoading(false);
   }
   if (!isOpen) {
-    if(isLoading){
-      setIsLoading(false)
+    if (isLoading) {
+      setIsLoading(false);
     }
     return;
   }
@@ -73,7 +73,7 @@ const DownloadModal: FC = () => {
               onClick={() => {
                 setIsOpen(!isOpen);
               }}
-              className="bg-[#ee3300] h-10 py-2 px-6 text-[#fff] font-semibold rounded-lg"
+              className="bg-red-500 h-10 py-2 px-6 text-[#fff] font-semibold rounded-lg"
             >
               Cancel
             </button>

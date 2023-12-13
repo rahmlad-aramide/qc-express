@@ -72,9 +72,9 @@ const Modal: FC<ModalProps> = ({ closeModal }) => {
             />
           </div>
           <div className="flex justify-end items-center space-x-4">
-          <button
+            <button
               onClick={closeModal}
-              className="bg-[#ee3300] h-10 py-2 px-6 text-[#fff] font-semibold rounded-lg"
+              className="bg-red-500 h-10 py-2 px-6 text-[#fff] font-semibold rounded-lg"
             >
               Cancel
             </button>
