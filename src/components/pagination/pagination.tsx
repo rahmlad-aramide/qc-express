@@ -1,4 +1,4 @@
-/* eslint-disable react-refresh/only-export-components */
+
 import React from "react";
 import { usePagination, DOTS } from "../../custom-hooks/usePagination";
 import { IoIosArrowBack, IoIosArrowForward } from "react-icons/io";
