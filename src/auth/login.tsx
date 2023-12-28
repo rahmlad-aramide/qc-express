@@ -93,7 +93,7 @@ const Login = () => {
       })
       .catch((error) => {
         setLoading(false);
-        warn(capitalizeFirstLetter(error?.message || error?.response.data.message));
+        warn(capitalizeFirstLetter(error?.message && error?.response.data.message));
       });
   };
   return (
