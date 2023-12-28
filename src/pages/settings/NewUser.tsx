@@ -3,6 +3,8 @@ import MainContainer from "../../components/containers/MainContainer";
 import { toast, ToastContainer } from "react-toastify";
 import { IoChevronBackOutline } from "react-icons/io5";
 
+const url = String(import.meta.env.VITE_APP_API_URL);
+
 const NewUser = () => {
   const [user, setUser] = useState({
     firstname: "",
@@ -20,7 +22,7 @@ const NewUser = () => {
 
   const createUser = () => {
     fetch(
-      "https://qcbackend.onrender.com/api/v1/business_admin/user/create",
+      `${url}/business_admin/user/create`,
       {
         method: "POST",
         headers: {

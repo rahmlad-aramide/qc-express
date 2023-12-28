@@ -18,6 +18,9 @@ type Feedbacks = {
   updatedAt: string;
 };
 
+const url = String(import.meta.env.VITE_APP_API_URL);
+
+
 const Feedback = () => {
   const [feedbacks, setFeedbacks] = useState<Feedbacks[]>([]);
   const [showModal, setShowModal] = useState(false);
@@ -30,7 +33,7 @@ const Feedback = () => {
     ?.replace(/["']/g, "");
 
   const deleteFeedback = (id: string) => {
-    fetch(`https://qcbackend.onrender.com/api/v1/feedback/delete/?id=${id}`, {
+    fetch(`${url}/feedback/delete/?id=${id}`, {
       method: "DELETE",
       headers: {
         "Content-Type": "application/json",
@@ -68,7 +71,7 @@ const Feedback = () => {
 
   useEffect(() => {
     fetch(
-      "https://qcbackend.onrender.com/api/v1/feedback/fetch?limit=10&page=1",
+      `${url}/feedback/fetch?limit=10&page=1`,
       {
         method: "GET",
         headers: {

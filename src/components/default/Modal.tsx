@@ -6,6 +6,8 @@ interface ModalProps {
   closeModal: () => void;
 }
 
+const url = String(import.meta.env.VITE_APP_API_URL);
+
 const Modal: FC<ModalProps> = ({ closeModal }) => {
   const [message, setMessage] = useState("");
   const [loading, setLoading] = useState(false);
@@ -16,7 +18,7 @@ const Modal: FC<ModalProps> = ({ closeModal }) => {
 
   const sendFeedback = () => {
     setLoading(true);
-    fetch("https://qcbackend.onrender.com/api/v1/feedback/send", {
+    fetch(`${url}/feedback/send`, {
       method: "POST",
       headers: {
         "Content-Type": "application/json",

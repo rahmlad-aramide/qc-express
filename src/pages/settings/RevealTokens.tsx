@@ -7,6 +7,8 @@ import { IoChevronBackOutline } from "react-icons/io5";
 import { Loader } from "../../components";
 import Skeleton from "react-loading-skeleton";
 
+const url = String(import.meta.env.VITE_APP_API_URL);
+
 const RevealTokens = () => {
   const [loading, setLoading] = useState(false);
   const storedUserString = sessionStorage.getItem("user");
@@ -92,7 +94,7 @@ const RevealTokens = () => {
   const handleRefresh = () => {
     setLoading(true);
     fetch(
-      "https://qcbackend.onrender.com/api/v1/business_admin/tokens/refresh",
+      `${url}/business_admin/tokens/refresh`,
       {
         method: "GET",
         headers: {
@@ -126,7 +128,7 @@ const RevealTokens = () => {
   };
   useEffect(() => {
     fetch(
-      "https://qcbackend.onrender.com/api/v1/business_admin/tokens/expose",
+      `${url}/business_admin/tokens/expose`,
       {
         method: "GET",
         headers: {

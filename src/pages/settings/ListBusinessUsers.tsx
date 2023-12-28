@@ -19,6 +19,8 @@ type Users = {
   updatedAt: string;
 };
 
+const url = String(import.meta.env.VITE_APP_API_URL);
+
 const ListBusinessUsers = () => {
   const [users, setUsers] = useState<Users[]>([]);
   const [loading, setLoading] = useState(true);
@@ -29,7 +31,7 @@ const ListBusinessUsers = () => {
 
   const deleteUser = (id: string) => {
     fetch(
-      `https://qcbackend.onrender.com/api/v1/business_admin/user/delete/?id=${id}`,
+      `${url}/business_admin/user/delete/?id=${id}`,
       {
         method: "DELETE",
         headers: {
@@ -73,7 +75,7 @@ const ListBusinessUsers = () => {
 
   useEffect(() => {
     fetch(
-      "https://qcbackend.onrender.com/api/v1/business_admin/user/fetch?tier=2&page=1&limit=10",
+      `${url}/business_admin/user/fetch?tier=2&page=1&limit=10`,
       {
         method: "GET",
         headers: {

@@ -5,6 +5,7 @@ import { Loader } from "../../components";
 import { useState } from "react";
 import { ToastContainer, toast } from "react-toastify";
 
+const url = String(import.meta.env.VITE_APP_API_URL);
 
 const Settings = () => {
   const [loading, setLoading] = useState(false);
@@ -20,7 +21,7 @@ const Settings = () => {
 
   const clearSandboxData = () => {
     setLoading(true);
-    fetch(`https://qcbackend.onrender.com/api/v1/business_admin/sandbox/clear`, {
+    fetch(`${url}/business_admin/sandbox/clear`, {
       method: "DELETE",
       headers: {
         "Content-Type": "application/json",
