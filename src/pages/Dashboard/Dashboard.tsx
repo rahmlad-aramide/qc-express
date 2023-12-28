@@ -92,7 +92,6 @@ const Dashboard = () => {
         </div>
         <div className="flex justify-between mt-4">
           <h2 className="text-dark font-medium text-xl mb-3">Bookings</h2>
-          {/* <button onClick={()=>setIsOpenFilter(!isOpenFilter)}>Filter</button> */}
         </div>
         <TopBookingTable />
       </MainContainer>
@@ -149,28 +148,12 @@ const Dashboard = () => {
         </div>
       </div>
 
-      {/* <div className="mb-4">
-        <div className="flex justify-between">
-          <h2 className="text-dark font-medium text-xl mb-3">Top Bookings</h2>
-        </div>
-        <TopBookingTable
-          data={resData?.topBooking as TopBooking[]}
-          startIndex={startIndex}
-          endIndex={endIndex}
-        />
-        <Pagination
-          totalCount={Math.ceil(
-            (resData as Data)?.topBooking?.length / pageSize
-          )}
-          currentPage={currentPage}
-          onPageChange={setCurrentPage}
-        />
-      </div> */}
-
       <div className="mb-4">
         <div className="flex justify-between">
           <h2 className="text-dark font-medium text-xl mb-3">Bookings</h2>
-          <button onClick={() => setIsOpenFilter(!isOpenFilter)}>Filter</button>
+          <button 
+          className="flex items-center transparent border active:scale-90 transition duration-200 py-2 px-6 font-semibold rounded-lg"
+          onClick={() => setIsOpenFilter(!isOpenFilter)}>Filter</button>
         </div>
         <MoreBookingTable data={moreData as MoreData} isMoreLoading={isMoreLoading} errMoreMessage={errMoreMessage} />
         <MorePagination
