@@ -1,6 +1,12 @@
 import { createContext, useContext, useState } from "react";
 import { DownloadModal, FilterModal } from "../components";
 
+const environment = sessionStorage.getItem("environment");
+
+if (environment === null) {
+  sessionStorage.setItem("environment", "sandbox");
+}
+
 interface DownloadModalProps {
     isOpen: boolean;
     isOpenFilter: boolean;
@@ -27,7 +33,7 @@ interface DownloadModalProps {
     delivery_to: "",
     date: "",
     user_email: "",
-    environment: "",
+    environment: environment || "",
   };
   
 const initialValues:DownloadModalProps = {
