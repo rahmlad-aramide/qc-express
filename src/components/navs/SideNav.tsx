@@ -17,7 +17,7 @@ const SideNav: FC<SideNavProps> = ({ activeTab }) => {
     if (token) {
       sessionStorage.removeItem("accessToken");
     }
-    inform("Loging you out...")
+    inform("Logging out...")
     setTimeout(()=> {
       navigate('/login');
     }, 2500)

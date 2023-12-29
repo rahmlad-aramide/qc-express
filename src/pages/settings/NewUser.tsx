@@ -2,10 +2,12 @@ import { useState } from "react";
 import MainContainer from "../../components/containers/MainContainer";
 import { toast, ToastContainer } from "react-toastify";
 import { IoChevronBackOutline } from "react-icons/io5";
+import { Loader } from "../../components";
 
 const url = String(import.meta.env.VITE_APP_API_URL);
 
 const NewUser = () => {
+  const [loading, setLoading] = useState(false);
   const [user, setUser] = useState({
     firstname: "",
     lastname: "",
@@ -21,6 +23,7 @@ const NewUser = () => {
     ?.replace(/["']/g, "");
 
   const createUser = () => {
+    setLoading(true);
     fetch(
       `${url}/business_admin/user/create`,
       {
@@ -35,7 +38,7 @@ const NewUser = () => {
       .then((res) => res.json())
       .then((data) => {
         console.log(data);
-        if (data.status === "success") {
+        if (data.success) {
           toast.success("User created successfully", {
             position: "top-center",
             autoClose: 500,
@@ -45,7 +48,13 @@ const NewUser = () => {
             draggable: true,
             progress: undefined,
           });
-          window.location.reload();
+          setUser({
+            firstname: "",
+            lastname: "",
+            email: "",
+            password: "",
+          });
+          setLoading(false);
         } else {
           toast.error("Something went wrong", {
             position: "top-center",
@@ -56,6 +65,7 @@ const NewUser = () => {
             draggable: true,
             progress: undefined,
           });
+          setLoading(false);
         }
       });
   };
@@ -122,7 +132,7 @@ const NewUser = () => {
             onClick={createUser}
             className="bg-[#4169e2] py-2 px-4 text-[#fff] font-semibold rounded-lg"
           >
-            Submit
+            {loading ? <Loader /> : "Create User"}
           </button>
         </div>
       </div>
