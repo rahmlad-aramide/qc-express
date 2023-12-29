@@ -1,6 +1,6 @@
 /* eslint-disable react-refresh/only-export-components */
 import { Route, Routes } from "react-router-dom";
-import { AwaitingApproval, Login, ProtectedRoute, Signup } from "./auth";
+import { AwaitingApproval, ForgotPassword, Login, ProtectedRoute, Signup } from "./auth";
 import {
   Dashboard,
   Error,
@@ -19,6 +19,8 @@ import NewUser from "./pages/settings/NewUser";
 import ListBusinessUsers from "./pages/settings/ListBusinessUsers";
 import Feedback from "./pages/feedback";
 import { DataProvider, ModalProvider } from "./contexts";
+import ResetPassword from "./auth/reset";
+import SettingsResetPassword from "./pages/settings/ResetPassword";
 
 type ToastParams = {
   position: string;
@@ -69,8 +71,10 @@ function App() {
         <Routes>
           <Route path="*" element={<Error />} />
           <Route path="/" element={<Login />} />
+          <Route path="/reset" element={<ResetPassword />} />
           <Route path="/login" element={<Login />} />
           <Route path="/onboarding" element={<Signup />} />
+          <Route path="/forget-password" element={<ForgotPassword />} />
           <Route path="/request-success" element={<AwaitingApproval />} />
           <Route path="/home" element={<Home />} />
           <Route element={<ProtectedRoute />}>
@@ -80,6 +84,7 @@ function App() {
             <Route path="/settings" element={<Settings />} />
             <Route path="/settings/reveal-tokens" element={<RevealTokens />} />
             <Route path="/settings/new-user" element={<NewUser />} />
+            <Route path="/settings/reset-password" element={<SettingsResetPassword />} />
             <Route
               path="/settings/list-business-users"
               element={<ListBusinessUsers />}

@@ -12,7 +12,7 @@ const url = String(import.meta.env.VITE_APP_API_URL);
 const defaultState = {
   email: "",
   password: "",
-}
+};
 const Login = () => {
   const navigateTo = useNavigate();
   const [loading, setLoading] = useState(false);
@@ -21,7 +21,7 @@ const Login = () => {
     email: "",
   });
   const [errorPassword, setErrorPassword] = useState({
-    password: ""
+    password: "",
   });
   const validateField = (value: string) => {
     if (value === "") {
@@ -31,12 +31,12 @@ const Login = () => {
     }
   };
   const validatePassword = (value: string) => {
-    if(value === "" || value.length < 4){
+    if (value === "" || value.length < 4) {
       return false;
     } else {
       return true;
     }
-  }
+  };
 
   const capitalizeFirstLetter = (string: string) => {
     return string.charAt(0).toUpperCase() + string.slice(1);
@@ -53,25 +53,27 @@ const Login = () => {
       email: !isEmailValid ? "Email is required" : "",
     });
     setErrorPassword({
-      password: !isPasswordValid ? "Password is required and must be a minimum of 4 characters": ""
+      password: !isPasswordValid
+        ? "Password is required and must be a minimum of 4 characters"
+        : "",
     });
 
     setTimeout(() => {
-      if(!isEmailValid){
+      if (!isEmailValid) {
         setErrorEmail({
           email: "",
         });
       }
-      if(!isPasswordValid){
+      if (!isPasswordValid) {
         setErrorPassword({
           password: "",
         });
       }
     }, 2000);
 
-    if(!isEmailValid || !isPasswordValid) {
-      setLoading(false)
-      return
+    if (!isEmailValid || !isPasswordValid) {
+      setLoading(false);
+      return;
     }
     axios
       .post(`${url}/business_admin/login`, user, {
@@ -81,19 +83,24 @@ const Login = () => {
       })
       .then((response) => {
         setLoading(false);
-        setUser(defaultState)
-        if(sessionStorage.getItem('access_token')) sessionStorage.removeItem
+        setUser(defaultState);
+        if (sessionStorage.getItem("access_token")) sessionStorage.removeItem;
         sessionStorage.setItem("access_token", response.data.data.access_token);
         notify("Login successful, you're being redirected.");
-        sessionStorage.setItem("user", JSON.stringify(response.data.data.admin));
-        
+        sessionStorage.setItem(
+          "user",
+          JSON.stringify(response.data.data.admin)
+        );
+
         setTimeout(() => {
           navigateTo("/dashboard");
         }, 2500);
       })
       .catch((error) => {
         setLoading(false);
-        warn(capitalizeFirstLetter(error?.message && error?.response.data.message));
+        warn(
+          capitalizeFirstLetter(error?.message && error?.response.data.message)
+        );
       });
   };
   return (
@@ -131,15 +138,17 @@ const Login = () => {
           type="submit"
           className={
             loading
-              ? `py-1.5 mt-4 w-[100%] flex justify-center bg-[#000] cursor-not-allowed`
-              : "text-[#fff] py-3 mt-4 w-[100%] flex justify-center bg-[#000]"
+              ? `py-1.5 mt-4 w-[100%] flex justify-center bg-[#000] rounded-lg cursor-not-allowed`
+              : "text-[#fff] py-3 mt-4 w-[100%] flex justify-center bg-[#000] rounded-lg"
           }
         >
           {loading ? <Loader /> : "Continue"}
         </button>
-        <p className="text-[15px] text-[#4169e2] font-semibold my-4">
-          Forgot Password?
-        </p>
+        <Link to="/forget-password" className="flex w-fit my-4 ml-auto">
+          <p className="text-[15px] text-[#4169e2] font-semibold">
+            Forgot Password?
+          </p>
+        </Link>
         <hr />
         <p className="mt-4 text-center lg:text-[24px] text-[18px] text-[#333]">
           New to QC Express?
@@ -147,7 +156,7 @@ const Login = () => {
         <Link to="/onboarding">
           <button
             type="button"
-            className="text-[#fff] py-3 mt-4 w-[100%] flex justify-center bg-[#4169e2]"
+            className="text-[#fff] py-3 mt-4 w-[100%] flex justify-center bg-[#4169e2] rounded-lg"
           >
             Make an Onboarding Request
           </button>

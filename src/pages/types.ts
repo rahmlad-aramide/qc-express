@@ -152,7 +152,7 @@ export interface StateCount {
 
 export interface TotalValue {
   _id: any;
-  declaredValue: number;
+  bookingCost: number;
 }
 
 // Shipment tracking type

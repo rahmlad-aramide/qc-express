@@ -88,6 +88,7 @@ const Settings = () => {
   const items = [
     { id: 1, name: "Tokens", path: "/settings/reveal-tokens" },
     { id: 4, name: "Users", path: "/settings/list-business-users" },
+    { id: 5, name: "Reset Password", path: "/settings/reset-password" },
   ];
   return (
     <MainContainer activeTab="Settings">
@@ -110,7 +111,7 @@ const Settings = () => {
         ))}
 
         <div className="flex items-center justify-between px-4 py-3 border-b border-[#ccc] hover:bg-[#f1f1f1]">
-          <p>Change Environment?</p>
+          <p className="py-3">Change Environment?</p>
           <select
             className="bg-inherit outline-none border-none"
             value={environment}

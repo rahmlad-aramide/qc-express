@@ -46,11 +46,12 @@ const Dashboard = () => {
     {
       name: "Total Value",
       value:
-        resData?.totalValue[0]?.declaredValue &&
-        resData?.totalValue[0]?.declaredValue / 100,
+        resData?.totalValue[0]?.bookingCost ?
+        resData?.totalValue[0]?.bookingCost / 100: 0,
     },
   ];
 
+  console.log(resData)
   const fetchData = async () => {
     const response = await axiosCalls(`/business_admin/kpis?environment=${environment}`, "GET");
     setResData(response?.data);
