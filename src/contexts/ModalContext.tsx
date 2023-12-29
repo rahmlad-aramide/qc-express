@@ -18,6 +18,7 @@ interface DownloadModalProps {
     delivery_to: string;
     date: string;
     user_email: string;
+    environment: string;
   };
   const initialFilterValues: InitialFilterValues = {
     count_value: 1,
@@ -26,6 +27,7 @@ interface DownloadModalProps {
     delivery_to: "",
     date: "",
     user_email: "",
+    environment: "",
   };
   
 const initialValues:DownloadModalProps = {

@@ -16,6 +16,8 @@ const SideNav: FC<SideNavProps> = ({ activeTab }) => {
     const token = sessionStorage.getItem("accessToken");
     if (token) {
       sessionStorage.removeItem("accessToken");
+      sessionStorage.removeItem("user");
+      sessionStorage.removeItem("environment");
     }
     inform("Logging out...")
     setTimeout(()=> {

@@ -34,6 +34,12 @@ const Dashboard = () => {
   const [errMessage, setErrMessage] = useState("");
   const [currentMorePage, setCurrentMorePage] = useState(1);
 
+  const environment = sessionStorage.getItem("environment");
+
+  if (environment === null) {
+    sessionStorage.setItem("environment", "sandbox");
+  }
+
   const cardData = [
     { name: "Bookings Count", value: resData?.bookingCount },
     { name: "States Count", value: resData?.stateCount.length },
@@ -46,7 +52,7 @@ const Dashboard = () => {
   ];
 
   const fetchData = async () => {
-    const response = await axiosCalls("/business_admin/kpis", "GET");
+    const response = await axiosCalls(`/business_admin/kpis?environment=${environment}`, "GET");
     setResData(response?.data);
     setErrMessage(response?.err);
     setIsLoading(false);

@@ -10,14 +10,40 @@ const url = String(import.meta.env.VITE_APP_API_URL);
 const Settings = () => {
   const [loading, setLoading] = useState(false);
   const access_token = sessionStorage
-  .getItem("access_token")
-  ?.replace(/["']/g, "");
+    .getItem("access_token")
+    ?.replace(/["']/g, "");
   const storedUserString = sessionStorage.getItem("user");
   let access_tier;
+  let environment;
   if (storedUserString !== null) {
     const storedUserObject = JSON.parse(storedUserString);
     access_tier = storedUserObject.access_tier;
   }
+
+  const environmentString = sessionStorage.getItem("environment");
+
+  if (environmentString === null) {
+    sessionStorage.setItem("environment", "sandbox");
+  } else {
+    environment = environmentString;
+  }
+
+  const updateEnvironment = (value: string) => {
+    sessionStorage.setItem("environment", value);
+    environment = value;
+    toast.success("Environment changed!", {
+      position: "top-center",
+      autoClose: 500,
+      hideProgressBar: true,
+      closeOnClick: true,
+      pauseOnHover: false,
+      draggable: true,
+      progress: undefined,
+    });
+    setTimeout(() => {
+      window.location.reload();
+    }, 1000);
+  };
 
   const clearSandboxData = () => {
     setLoading(true);
@@ -32,7 +58,7 @@ const Settings = () => {
       .then((data) => {
         if (data.success) {
           setLoading(false);
-          toast.success("Sandbox cleared suucessfully!", {
+          toast.success("Sandbox cleared successfully!", {
             position: "top-center",
             autoClose: 500,
             hideProgressBar: true,
@@ -57,7 +83,7 @@ const Settings = () => {
           });
         }
       });
-  }
+  };
 
   const items = [
     { id: 1, name: "Tokens", path: "/settings/reveal-tokens" },
@@ -82,8 +108,24 @@ const Settings = () => {
             </NavLink>
           </div>
         ))}
+
+        <div className="flex items-center justify-between px-4 py-3 border-b border-[#ccc] hover:bg-[#f1f1f1]">
+          <p>Change Environment?</p>
+          <select
+            className="bg-inherit outline-none border-none"
+            value={environment}
+            onChange={(e) => updateEnvironment(e.target.value)}
+          >
+            <option value="sandbox">Sandbox</option>
+            <option value="production">Production</option>
+          </select>
+        </div>
+
         {access_tier === "1" && (
-          <div onClick={clearSandboxData} className="flex justify-between items-center text-red-500 cursor-pointer px-4 py-3 hover:bg-[#f1f1f1]">
+          <div
+            onClick={clearSandboxData}
+            className="flex justify-between items-center text-red-500 cursor-pointer px-4 py-3 hover:bg-[#f1f1f1]"
+          >
             <p>Clear Sandbox Data</p>
             {loading && <Loader />}
           </div>
