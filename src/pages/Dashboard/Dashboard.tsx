@@ -51,7 +51,6 @@ const Dashboard = () => {
     },
   ];
 
-  console.log(resData)
   const fetchData = async () => {
     const response = await axiosCalls(`/business_admin/kpis?environment=${environment}`, "GET");
     setResData(response?.data);

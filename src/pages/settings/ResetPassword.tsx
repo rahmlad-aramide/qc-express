@@ -111,12 +111,11 @@ const SettingsResetPassword = () => {
         <IoChevronBackOutline size={18} className="mr-1" />
         Back
       </button>
-      <form onSubmit={handleReset} className="lg:w-[90%] mt-2 lg:mx-auto sm:ml-0 lg:max-w-[400px]">
-        <h2 className="text-[#4169e2] font-bold lg:text-[34px] text-[20px]">Reset password</h2>
-        <p className="text-gray-900 font-medium lg:text-lg text-[14px]">
-          To reset your password, fill in the details below
-        </p>
-        <div className="space-y-6 lg:mt-10 mt-4">
+      <form onSubmit={handleReset} className="w-[90%] mt-2 mx-auto sm:ml-0 max-w-[400px]">
+        <h2 className="text-gray-900 font-semibold text-lg">
+        Fill in the details below to reset your password
+        </h2>
+        <div className="space-y-6 mt-10">
           
             <InputField
               type="password"
