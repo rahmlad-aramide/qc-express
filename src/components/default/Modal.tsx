@@ -61,8 +61,8 @@ const Modal: FC<ModalProps> = ({ closeModal }) => {
   return (
     <div className="fixed top-0 left-0 w-full h-full flex items-center justify-center bg-black bg-opacity-50 z-50">
       <ToastContainer />
-      <div className="bg-[#fff] w-[90%] max-w-[500px] lg:max-w-[600px] mx-auto rounded-lg shadow-2xl p-10 flex flex-col items-start">
-        <h2 className="font-semibold text-[18px]">Add new feedback</h2>
+      <div className="bg-[#fff] w-[90%] max-w-[500px] lg:max-w-[600px] mx-auto rounded-lg shadow-2xl lg:p-10 p-4 flex flex-col items-start">
+        <h2 className="font-semibold lg:text-[18px] text-[16px]">Add new feedback</h2>
         <div className="mt-6 space-y-4 w-[100%]">
           <div className="space-y-2 flex flex-col items-start">
             <textarea
@@ -76,13 +76,13 @@ const Modal: FC<ModalProps> = ({ closeModal }) => {
           <div className="flex justify-end items-center space-x-4">
             <button
               onClick={closeModal}
-              className="bg-red-500 h-10 py-2 px-6 text-[#fff] font-semibold rounded-lg"
+              className="bg-red-500 lg:py-2 py-1 lg:px-6 px-4 text-[#fff] lg:text-[16px] text-[14px] font-semibold rounded-lg"
             >
               Cancel
             </button>
             <button
               onClick={sendFeedback}
-              className="bg-[#4169e2] h-10 py-2 px-6 text-[#fff] font-semibold rounded-lg"
+              className="bg-[#4169e2]  lg:py-2 py-1 lg:px-6 px-4 text-[#fff] lg:text-[16px] text-[14px] font-semibold rounded-lg"
             >
               {loading ? <Loader h={20} w={20} /> : "Send"}
             </button>

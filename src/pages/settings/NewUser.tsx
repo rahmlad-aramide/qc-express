@@ -37,7 +37,6 @@ const NewUser = () => {
     )
       .then((res) => res.json())
       .then((data) => {
-        console.log(data);
         if (data.success) {
           toast.success("User created successfully", {
             position: "top-center",
@@ -82,7 +81,7 @@ const NewUser = () => {
       </button>
 
       <h2 className="text-lg font-semibold mt-2">Create New User</h2>
-      <div className="mt-10 w-[50%] space-y-8">
+      <div className="lg:mt-10 mt-6 lg:w-[50%] space-y-8">
         <div className="space-y-2">
           <label className="text-[#333] px-1 font-semibold">Firstname</label>
           <input

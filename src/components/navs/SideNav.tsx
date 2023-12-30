@@ -39,8 +39,8 @@ const SideNav: FC<SideNavProps> = ({ activeTab }) => {
            }
           `}
         >
-          <RiHome5Line size={25} className="mr-2" />
-          Dashboard
+          <RiHome5Line size={30} />
+          <span className="lg:block hidden">Dashboard</span>
         </NavLink>
       </li>
       <li>
@@ -55,8 +55,8 @@ const SideNav: FC<SideNavProps> = ({ activeTab }) => {
            }
           `}
         >
-          <RiFeedbackLine size={25} />
-          <span>Feedback</span>
+          <RiFeedbackLine size={30} />
+          <span className="lg:block hidden">Feedback</span>
         </NavLink>
       </li>
       <li>
@@ -71,19 +71,19 @@ const SideNav: FC<SideNavProps> = ({ activeTab }) => {
            }
           `}
         >
-          <IoSettingsOutline size={25} className="mr-2" />
-          Settings
+          <IoSettingsOutline size={30} />
+          <span className="lg:block hidden">Settings</span>
         </NavLink>
       </li>
       <li className="mt-auto">
         <button
           onClick={handleLogout}
           className={`
-          flex items-center font-semibold text-[18px] space-x-3 text-red-500 px-2 transition duration-300 hover:scale-105
+          flex items-center font-semibold text-[18px] lg:space-x-3 text-red-500 px-2 transition duration-300 hover:scale-105
           `}
         >
-          <MdOutlinePowerSettingsNew size={25} className="mr-2" />
-          Logout
+          <MdOutlinePowerSettingsNew size={25} />
+          <span className="lg:block hidden">Logout</span>
         </button>
       </li>
     </ul>

@@ -93,16 +93,16 @@ const Settings = () => {
   return (
     <MainContainer activeTab="Settings">
       <ToastContainer />
-      <h2 className="text-[36px] font-semibold">Settings</h2>
-      <div className="w-[60%] mt-8">
+      <h2 className="lg:text-[32px] text-[20px] pt-4 font-semibold">Settings</h2>
+      <div className="lg:w-[60%] lg:mt-8 mt-4">
         {items.map((item) => (
           <div
             key={item.id}
-            className="flex justify-between items-center px-4 py-3 border-b border-[#ccc] hover:bg-[#f1f1f1]"
+            className="flex justify-between items-center lg:px-4 px-1 py-3 border-b border-[#ccc] hover:bg-[#f1f1f1]"
           >
             <NavLink
               to={item.path}
-              className="flex justify-between items-center py-2 w-[100%]"
+              className="flex justify-between items-center lg:py-2 py-1 text-[14px] lg:text-[16px] w-[100%]"
             >
               <p>{item.name}</p>
               <FaChevronRight />
@@ -110,10 +110,10 @@ const Settings = () => {
           </div>
         ))}
 
-        <div className="flex items-center justify-between px-4 py-3 border-b border-[#ccc] hover:bg-[#f1f1f1]">
-          <p className="py-3">Change Environment?</p>
+        <div className="flex items-center justify-between lg:px-4 px-1 py-3 border-b border-[#ccc] hover:bg-[#f1f1f1]">
+          <p className="lg:py-2 py-1 lg:text-[16px] text-[14px]">Change Environment?</p>
           <select
-            className="bg-inherit outline-none border-none"
+            className="bg-inherit outline-none border-none lg:text-[16px] text-[13px]"
             value={environment}
             onChange={(e) => updateEnvironment(e.target.value)}
           >
@@ -125,7 +125,7 @@ const Settings = () => {
         {access_tier === "1" && (
           <div
             onClick={clearSandboxData}
-            className="flex justify-between items-center text-red-500 cursor-pointer px-4 py-3 hover:bg-[#f1f1f1]"
+            className="flex justify-between items-center text-red-500 cursor-pointer lg:px-4 px-1 lg:text-[16px] text-[14px] py-3 hover:bg-[#f1f1f1]"
           >
             <p>Clear Sandbox Data</p>
             {loading && <Loader />}

@@ -93,16 +93,13 @@ const RevealTokens = () => {
 
   const handleRefresh = () => {
     setLoading(true);
-    fetch(
-      `${url}/business_admin/tokens/refresh`,
-      {
-        method: "GET",
-        headers: {
-          "Content-Type": "application/json",
-          Authorization: `Bearer ${access_token}`,
-        },
-      }
-    )
+    fetch(`${url}/business_admin/tokens/refresh`, {
+      method: "GET",
+      headers: {
+        "Content-Type": "application/json",
+        Authorization: `Bearer ${access_token}`,
+      },
+    })
       .then((res) => res.json())
       .then((data) => {
         setLoading(false);
@@ -127,16 +124,13 @@ const RevealTokens = () => {
     window.history.back();
   };
   useEffect(() => {
-    fetch(
-      `${url}/business_admin/tokens/expose`,
-      {
-        method: "GET",
-        headers: {
-          "Content-Type": "application/json",
-          Authorization: `Bearer ${access_token}`,
-        },
-      }
-    )
+    fetch(`${url}/business_admin/tokens/expose`, {
+      method: "GET",
+      headers: {
+        "Content-Type": "application/json",
+        Authorization: `Bearer ${access_token}`,
+      },
+    })
       .then((res) => res.json())
       .then((data) => {
         setTokens({
@@ -158,17 +152,22 @@ const RevealTokens = () => {
           Back
         </button>
         <h2 className="text-lg font-semibold mt-2">Reveal Tokens</h2>
-        <div className="w-[70%] mt-8">
+        <div className="lg:w-[70%] mt-8">
           {tokens.production !== "" ? (
             <div className="space-y-8">
               <div className="flex flex-col space-y-2">
                 <h2 className="font-medium">Client ID</h2>
-                <div className="flex items-center justify-between cursor-pointer bg-[#f1f1f1] text-[#808080] py-2 px-4 rounded-lg">
-                  <p onClick={() => revealToken("clientId")} className="italic">
+                <div className="flex items-center justify-between cursor-pointer bg-[#f1f1f1] text-[#808080] py-2 lg:px-4 px-2 rounded-lg">
+                  <p
+                    onClick={() => revealToken("clientId")}
+                    className="italic text-[13px] lg:text-[16px] w-[92%] overflow-clip"
+                  >
                     {showToken.clientId ? clientId : "click to reveal"}
                   </p>
                   {copied.clientId ? (
-                    <p className="text-[#4169e2] text-[12px]">copied!</p>
+                    <p className="text-[#4169e2] lg:text-[12px] text-[10px]">
+                      copied!
+                    </p>
                   ) : (
                     <div onClick={() => copyToClipboard("clientId")}>
                       <FaClipboard />
@@ -179,17 +178,19 @@ const RevealTokens = () => {
 
               <div className="flex flex-col space-y-2">
                 <h2 className="font-medium">Production API Key</h2>
-                <div className="flex items-center justify-between cursor-pointer bg-[#f1f1f1] text-[#808080] py-2 px-4 rounded-lg">
+                <div className="flex items-center justify-between cursor-pointer w-[99%] bg-[#f1f1f1] text-[#808080] py-2 lg:px-4 px-2 rounded-lg">
                   <p
                     onClick={() => revealToken("production")}
-                    className="italic"
+                    className="italic text-[13px] lg:text-[16px] w-[92%] overflow-clip"
                   >
                     {showToken.production
                       ? tokens.production
                       : "click to reveal"}
                   </p>
                   {copied.production ? (
-                    <p className="text-[#4169e2] text-[12px]">copied!</p>
+                    <p className="text-[#4169e2] lg:text-[12px] text-[10px]">
+                      copied!
+                    </p>
                   ) : (
                     <div onClick={() => copyToClipboard("production")}>
                       <FaClipboard />
@@ -200,8 +201,11 @@ const RevealTokens = () => {
 
               <div className="flex flex-col space-y-2">
                 <h2 className="font-medium">Staging API Key</h2>
-                <div className="flex items-center justify-between cursor-pointer bg-[#f1f1f1] text-[#808080] py-2 px-4 rounded-lg">
-                  <p onClick={() => revealToken("staging")} className="italic">
+                <div className="flex items-center justify-between cursor-pointer bg-[#f1f1f1] text-[#808080] py-2 lg:px-4 px-2 rounded-lg">
+                  <p
+                    onClick={() => revealToken("staging")}
+                    className="italic text-[13px] lg:text-[16px] w-[92%] overflow-clip"
+                  >
                     {showToken.staging ? tokens.staging : "click to reveal"}
                   </p>
                   {copied.staging ? (
@@ -217,7 +221,7 @@ const RevealTokens = () => {
           ) : (
             <div className="space-y-8">
               <div className="flex flex-col space-y-2">
-                <div className="w-[15%]">
+                <div className="lg:w-[15%] w-[25%]">
                   <Skeleton />
                 </div>
                 <div className="w-[100%]">
@@ -226,7 +230,7 @@ const RevealTokens = () => {
               </div>
 
               <div className="flex flex-col space-y-2">
-                <div className="w-[15%]">
+                <div className="lg:w-[15%] w-[25%]">
                   <Skeleton />
                 </div>
                 <div className="w-[100%]">
@@ -235,7 +239,7 @@ const RevealTokens = () => {
               </div>
 
               <div className="flex flex-col space-y-2">
-                <div className="w-[15%]">
+                <div className="lg:w-[15%] w-[25%]">
                   <Skeleton />
                 </div>
                 <div className="w-[100%]">
@@ -246,7 +250,7 @@ const RevealTokens = () => {
           )}
           <div
             onClick={handleRefresh}
-            className="text-[#4169e2] text-[15px] cursor-pointer mt-8"
+            className="text-[#4169e2] lg:text-[15px] text-[14px] cursor-pointer mt-8"
           >
             {loading ? <Loader /> : "Refresh tokens"}
           </div>

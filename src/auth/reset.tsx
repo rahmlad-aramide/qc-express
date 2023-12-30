@@ -109,7 +109,7 @@ const ResetPassword = () => {
     <AuthContainer>
       <ToastContainer />
       <form onSubmit={handleReset}>
-        <h2 className="text-[#4169e2] font-bold text-[34px]">Reset password</h2>
+        <h2 className="text-[#4169e2] font-bold lg:text-[34px] text-[20px]">Reset password</h2>
         <p className="text-gray-900 font-medium text-lg">
           To reset your password, fill in the details below
         </p>
