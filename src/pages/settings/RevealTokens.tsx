@@ -12,7 +12,9 @@ const url = String(import.meta.env.VITE_APP_API_URL);
 const RevealTokens = () => {
   const [loading, setLoading] = useState(false);
   const storedUserString = sessionStorage.getItem("user");
-  const clientId = storedUserString ? JSON.parse(storedUserString).business : "";
+  const clientId = storedUserString
+    ? JSON.parse(storedUserString).business
+    : "";
   const [tokens, setTokens] = useState({
     production: "",
     staging: "",
@@ -31,6 +33,11 @@ const RevealTokens = () => {
   const access_token = sessionStorage
     .getItem("access_token")
     ?.replace(/["']/g, "");
+  let access_tier;
+  if (storedUserString !== null) {
+    const storedUserObject = JSON.parse(storedUserString);
+    access_tier = storedUserObject.access_tier;
+  }
 
   const revealToken = (token: string) => {
     if (token === "staging") {
@@ -248,12 +255,14 @@ const RevealTokens = () => {
               </div>
             </div>
           )}
-          <div
-            onClick={handleRefresh}
-            className="text-[#4169e2] lg:text-[15px] text-[14px] cursor-pointer mt-8"
-          >
-            {loading ? <Loader /> : "Refresh tokens"}
-          </div>
+          {access_tier === "1" && (
+            <div
+              onClick={handleRefresh}
+              className="text-[#4169e2] lg:text-[15px] text-[14px] cursor-pointer mt-8"
+            >
+              {loading ? <Loader /> : "Refresh tokens"}
+            </div>
+          )}
         </div>
       </div>
     </MainContainer>
