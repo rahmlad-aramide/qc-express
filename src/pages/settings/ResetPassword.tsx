@@ -89,7 +89,7 @@ const SettingsResetPassword = () => {
         <IoChevronBackOutline size={18} />
         Back
       </button>
-      {success ? (
+      {!success ? (
         <form
           onSubmit={handleReset}
           className="w-[90%] mt-4 mx-auto sm:ml-0 max-w-[400px]"
