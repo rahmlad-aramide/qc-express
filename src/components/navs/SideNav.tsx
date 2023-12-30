@@ -26,7 +26,7 @@ const SideNav: FC<SideNavProps> = ({ activeTab }) => {
     }, 2500);
   };
   return (
-    <ul className="flex flex-col pb-10 h-[100%] gap-8 px-2">
+    <ul className="flex flex-col pb-10 h-[100%] gap-8 px-2 sm:px-6 md:px-8 lg:px-2">
       <ToastContainer />
       <li>
         <NavLink

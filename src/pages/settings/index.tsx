@@ -96,7 +96,7 @@ const Settings = () => {
       <h2 className="lg:text-[32px] text-[20px] pt-4 font-semibold">
         Settings
       </h2>
-      <div className="lg:w-[60%] lg:mt-8 mt-4">
+      <div className="lg:w-[60%] w-full max-w-[400px] lg:mt-8 mt-4">
         {items.map((item) => (
           <div
             key={item.id}
