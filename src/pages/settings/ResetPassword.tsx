@@ -1,6 +1,5 @@
 import axios from "axios";
 import { useState } from "react";
-import { useNavigate } from "react-router-dom";
 import { notify, warn } from "../../App";
 import { Loader } from "../../components";
 import { ToastContainer } from "react-toastify";
@@ -8,20 +7,16 @@ import { InputField, MainContainer } from "../../components";
 import { IoChevronBackOutline } from "react-icons/io5";
 
 const defaultState = {
-  password: "",
-  confirmPassword: "",
+  email: "",
 };
 
 const SettingsResetPassword = () => {
-  const navigateTo = useNavigate();
-
   const url = String(import.meta.env.VITE_APP_API_URL);
-  const token = sessionStorage.getItem("access_token");
   const [loading, setLoading] = useState(false);
+  const [success, setSuccess] = useState(false);
   const [user, setUser] = useState(defaultState);
-  const [error, setError] = useState({
-    password: "",
-    confirmPassword: "",
+  const [errorEmail, setErrorEmail] = useState({
+    email: "",
   });
 
   const validateField = (value: string) => {
@@ -41,61 +36,35 @@ const SettingsResetPassword = () => {
   ) => Promise<void> = async (e) => {
     e.preventDefault();
     setLoading(true);
-    const ispasswordValid = validateField(user.password);
-    const isconfirmPasswordValid = validateField(user.confirmPassword);
+    const isEmailValid = validateField(user.email);
 
-    if (!ispasswordValid || !isconfirmPasswordValid) {
-      setError({
-        password: !ispasswordValid ? "password is required" : "",
-        confirmPassword: !isconfirmPasswordValid
-          ? "confirmPassword is required"
-          : "",
-      });
-    }
-
-    if (ispasswordValid || isconfirmPasswordValid) {
-      setError({
-        password:
-          user.password !== user.confirmPassword
-            ? "Password doesn't match"
-            : "",
-        confirmPassword:
-          user.password !== user.confirmPassword
-            ? "Password doesn't match"
-            : "",
-      });
-    }
+    setErrorEmail({
+      email: !isEmailValid ? "Email is required" : "",
+    });
 
     setTimeout(() => {
-      setError(defaultState);
-      setLoading(false);
-      return;
-    }, 2500);
-    if (!ispasswordValid || !isconfirmPasswordValid) {
-      setLoading(false);
-      return;
-    }
-    if (user.password !== user.confirmPassword) {
+      if (!isEmailValid) {
+        setErrorEmail({
+          email: "",
+        });
+      }
+    }, 2000);
+
+    if (!isEmailValid) {
       setLoading(false);
       return;
     }
     axios
-      .put(
-        `${url}/auth/business-user/reset-password`,
-        { token, password: user.password },
-        {
-          headers: {
-            "Content-Type": "application/json",
-          },
-        }
-      )
-      .then(() => {
-        notify("Reset success, redirecting you...");
+      .post(`${url}/auth/business-user/password-reset-link`, user, {
+        headers: {
+          "Content-Type": "application/json",
+        },
+      })
+      .then((response) => {
+        notify(capitalizeFirstLetter(response?.data.message));
         setLoading(false);
         setUser(defaultState);
-        setTimeout(() => {
-          navigateTo("/settings");
-        }, 2500);
+        setSuccess(true);
       })
       .catch((error) => {
         setLoading(false);
@@ -120,45 +89,48 @@ const SettingsResetPassword = () => {
         <IoChevronBackOutline size={18} />
         Back
       </button>
-      <form
-        onSubmit={handleReset}
-        className="w-[90%] mt-2 mx-auto sm:ml-0 max-w-[400px]"
-      >
-        <h2 className="text-gray-900 font-semibold lg:text-lg">
-          Fill in the details below to reset your password
-        </h2>
-        <div className="space-y-6 mt-10">
-          <InputField
-            type="password"
-            label="Password"
-            placeholder="Enter your new password"
-            value={user.password}
-            onChange={(e) => setUser({ ...user, password: e.target.value })}
-            passwordError={error.password}
-          />
-          <InputField
-            type="password"
-            label="Confirm Password"
-            placeholder="Confirm your new password"
-            value={user.confirmPassword}
-            onChange={(e) =>
-              setUser({ ...user, confirmPassword: e.target.value })
-            }
-            confirmPasswordError={error.confirmPassword}
-          />
-        </div>
-        <button
-          disabled={loading}
-          type="submit"
-          className={
-            loading
-              ? `py-1.5 mt-4 w-[100%] flex justify-center bg-[#000] rounded-lg cursor-not-allowed`
-              : "text-[#fff] py-3 mt-6 w-[100%] flex justify-center bg-[#000] rounded-lg"
-          }
+      {success ? (
+        <form
+          onSubmit={handleReset}
+          className="w-[90%] mt-4 mx-auto sm:ml-0 max-w-[400px]"
         >
-          {loading ? <Loader /> : "Submit"}
-        </button>
-      </form>
+          <h2 className="text-gray-900 font-semibold lg:text-lg">
+            Enter your email address to get a password reset link.
+          </h2>
+          <div className="space-y-6 mt-8">
+            <InputField
+              type="email"
+              label="Email Address"
+              placeholder="Enter your email address here"
+              value={user.email}
+              onChange={(e) => setUser({ ...user, email: e.target.value })}
+              emailError={errorEmail.email}
+            />
+          </div>
+          <button
+            disabled={loading}
+            type="submit"
+            className={
+              loading
+                ? `py-1.5 mt-4 w-[100%] flex justify-center bg-[#000] rounded-lg cursor-not-allowed`
+                : "text-[#fff] py-3 mt-6 w-[100%] flex justify-center bg-[#000] rounded-lg"
+            }
+          >
+            {loading ? <Loader /> : "Submit"}
+          </button>
+        </form>
+      ) : (
+        <div className="h-[calc(100%_-_20px)] flex justify-center items-center">
+          <div className="flex flex-col justify-start items-center space-y-5">
+            <h1 className="text-8xl mb-5">✅</h1>
+            <h2 className="text-[#4169e2] font-bold text-[34px]">Success</h2>
+            <p className="text-center">
+              Your password reset link has been sent to you, please check
+              your inbox and follow the prompt.
+            </p>
+          </div>
+        </div>
+      )}
     </MainContainer>
   );
 };

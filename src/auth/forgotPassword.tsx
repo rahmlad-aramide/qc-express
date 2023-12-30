@@ -82,7 +82,7 @@ const ForgotPassword = () => {
             <h1 className="text-8xl mb-5">✅</h1>
             <h2 className="text-[#4169e2] font-bold text-[34px]">Success</h2>
             <p className="text-center">
-              Your password reset link has been sent to you, <br /> please check
+              Your password reset link has been sent to you, please check
               your inbox and follow the prompt.
             </p>
           </div>
