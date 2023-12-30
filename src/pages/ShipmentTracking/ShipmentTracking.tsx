@@ -241,7 +241,7 @@ const ShipmentTracking = () => {
         onClick={backToDashboard}
         className="cursor-pointer flex items-center text-sm font-semibold"
       >
-        <IoChevronBackOutline size={18} className="mr-1" />
+        <IoChevronBackOutline size={18} />
         Back
       </button>
       <div>

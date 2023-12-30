@@ -67,8 +67,8 @@ const SideNav: FC<SideNavProps> = ({ activeTab }) => {
           flex items-center font-semibold text-[#333] active:text-primary px-2 text-[18px] space-x-3 transition duration-300 hover:scale-105
           `}
         >
-          <RxExternalLink size={25} />
-          <span>API Docs</span>
+          <RxExternalLink size={30} />
+          <span className="lg:block hidden">API Docs</span>
         </a>
       </li>
       <li>

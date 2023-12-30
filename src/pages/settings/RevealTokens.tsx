@@ -148,7 +148,7 @@ const RevealTokens = () => {
           onClick={backToSettings}
           className="cursor-pointer flex items-center text-sm font-semibold"
         >
-          <IoChevronBackOutline size={18} className="mr-1" />
+          <IoChevronBackOutline size={18} />
           Back
         </button>
         <h2 className="text-lg font-semibold mt-2">Reveal Tokens</h2>

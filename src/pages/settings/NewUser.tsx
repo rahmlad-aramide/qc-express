@@ -76,7 +76,7 @@ const NewUser = () => {
         onClick={backToSettings}
         className="cursor-pointer flex items-center text-sm font-semibold"
       >
-        <IoChevronBackOutline size={18} className="mr-1" />
+        <IoChevronBackOutline size={18} />
         Back
       </button>
 

@@ -73,7 +73,7 @@ const ShipmentDetails = () => {
         onClick={backToDashboard}
         className="cursor-pointer flex items-center text-sm font-semibold"
       >
-        <IoChevronBackOutline size={18} className="mr-1" />
+        <IoChevronBackOutline size={18} />
         Back
       </button>
       <div className="space-y-4 py-4">
