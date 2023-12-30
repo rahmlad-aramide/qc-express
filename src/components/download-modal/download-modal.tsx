@@ -39,6 +39,24 @@ const DownloadModal: FC = () => {
   return (
     <div className="fixed top-0 left-0 w-full h-full flex items-center justify-center bg-black bg-opacity-50 z-50">
       <div className="bg-[#fff] w-[90%] max-w-[500px] lg:max-w-[600px] mx-auto rounded-lg shadow-2xl p-10 flex flex-col items-start">
+        <div className="flex justify-end w-full">
+          <button
+            onClick={() => {
+              setIsOpen(!isOpen);
+            }}
+            className="text-[#ee2020]"
+          >
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              className="h-6 w-6 lg:h-8 lg:w-8"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke="currentColor"
+            >
+              <path d="M6 18L18 6M6 6l12 12" />
+            </svg>{" "}
+          </button>
+        </div>
         <div className="space-y-4 w-[100%]">
           <div className="flex flex-col py-12 px-8 gap-8">
             <div className="flex flex-col justify-between items-center w-full">
@@ -68,15 +86,7 @@ const DownloadModal: FC = () => {
               </div>
             </div>
           </div>
-          <div className="flex justify-end items-center space-x-4">
-            <button
-              onClick={() => {
-                setIsOpen(!isOpen);
-              }}
-              className="bg-red-500 h-10 py-2 px-6 text-[#fff] font-semibold rounded-lg"
-            >
-              Cancel
-            </button>
+          <div className="flex justify-end">
             <button
               disabled={isLoading}
               onClick={handleDownload}
