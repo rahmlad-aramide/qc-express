@@ -1,4 +1,3 @@
-
 import React from "react";
 import { usePagination, DOTS } from "../../custom-hooks/usePagination";
 import { IoIosArrowBack, IoIosArrowForward } from "react-icons/io";
@@ -24,7 +23,7 @@ const Pagination: React.FC<PaginationProps> = ({
     siblingCount,
   });
 
-  if (currentPage === 0 || paginationRange && paginationRange?.length < 2) {
+  if (currentPage === 0 || (paginationRange && paginationRange?.length < 2)) {
     return null;
   }
 
@@ -35,8 +34,9 @@ const Pagination: React.FC<PaginationProps> = ({
   const onPrevious = () => {
     onPageChange(currentPage - 1);
   };
-  
-  const lastPage = paginationRange && paginationRange[paginationRange?.length - 1];
+
+  const lastPage =
+    paginationRange && paginationRange[paginationRange?.length - 1];
 
   return (
     <div className="flex justify-center mt-2 mb-4 gap-x-2">

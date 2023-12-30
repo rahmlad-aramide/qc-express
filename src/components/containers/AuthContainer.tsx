@@ -12,11 +12,11 @@ const AuthContainer: FC<AuthContainerProps> = ({ children }) => {
         <img src="/assets/logo.png" alt="logo" className="w-[12rem]" />
       </Link>
       <div className="lg:flex hidden items-center justify-center h-[100vh]">
-          <img
-            src="/assets/auth_banner.jpeg"
-            alt="auth_banner"
-            className="h-[600px]"
-          />
+        <img
+          src="/assets/auth_banner.jpeg"
+          alt="auth_banner"
+          className="h-[600px]"
+        />
       </div>
       <div className="lg:w-[50%] w-[100%] h-[90vh] overflow-auto lg:px-10 lg:pt-[15vh] pt-[12vh]">
         {children}

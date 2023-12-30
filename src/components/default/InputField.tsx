@@ -34,12 +34,20 @@ const InputField: FC<InputProps> = ({
 }) => {
   return (
     <div className="space-y-2">
-      <h2 style={{color: labelColor}} className="font-semibold text-lg text-[#333]">{label}</h2>
+      <h2
+        style={{ color: labelColor }}
+        className="font-semibold text-lg text-[#333]"
+      >
+        {label}
+      </h2>
       <input
         type={type}
-        placeholder={props.placeholder? props.placeholder : `Enter ${label.toLowerCase()} here`}
-        className={
-          `
+        placeholder={
+          props.placeholder
+            ? props.placeholder
+            : `Enter ${label.toLowerCase()} here`
+        }
+        className={`
           ${emailError && "border border-red-500"}
           ${firstNameError && "border border-red-500"}
           ${lastNameError && "border border-red-500"}
@@ -51,8 +59,7 @@ const InputField: FC<InputProps> = ({
           ${passwordError && "border border-red-500"}
           ${confirmPasswordError && "border border-red-500"}
           border border-[#333] outline-none py-2 px-4 w-[100%] rounded-lg
-          `
-        }
+          `}
         {...props}
       />
       {firstNameError && (
@@ -66,8 +73,12 @@ const InputField: FC<InputProps> = ({
       )}
       {emailError && <p className="text-red-500 text-[12px]">{emailError}</p>}
       {phoneError && <p className="text-red-500 text-[12px]">{phoneError}</p>}
-      {companyNameError && <p className="text-red-500 text-[12px]">{companyNameError}</p>}
-      {companyDescriptionError && <p className="text-red-500 text-[12px]">{companyDescriptionError}</p>}
+      {companyNameError && (
+        <p className="text-red-500 text-[12px]">{companyNameError}</p>
+      )}
+      {companyDescriptionError && (
+        <p className="text-red-500 text-[12px]">{companyDescriptionError}</p>
+      )}
       {intentError && <p className="text-red-500 text-[12px]">{intentError}</p>}
       {passwordError && (
         <p className="text-red-500 text-[12px]">{passwordError}</p>

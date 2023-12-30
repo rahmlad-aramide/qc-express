@@ -93,7 +93,9 @@ const Settings = () => {
   return (
     <MainContainer activeTab="Settings">
       <ToastContainer />
-      <h2 className="lg:text-[32px] text-[20px] pt-4 font-semibold">Settings</h2>
+      <h2 className="lg:text-[32px] text-[20px] pt-4 font-semibold">
+        Settings
+      </h2>
       <div className="lg:w-[60%] lg:mt-8 mt-4">
         {items.map((item) => (
           <div
@@ -111,7 +113,9 @@ const Settings = () => {
         ))}
 
         <div className="flex items-center justify-between lg:px-4 px-1 py-3 border-b border-[#ccc] hover:bg-[#f1f1f1]">
-          <p className="lg:py-2 py-1 lg:text-[16px] text-[14px]">Change Environment?</p>
+          <p className="lg:py-2 py-1 lg:text-[16px] text-[14px]">
+            Change Environment?
+          </p>
           <select
             className="bg-inherit outline-none border-none lg:text-[16px] text-[13px]"
             value={environment}

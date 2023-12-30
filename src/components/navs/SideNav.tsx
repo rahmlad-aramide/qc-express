@@ -20,10 +20,10 @@ const SideNav: FC<SideNavProps> = ({ activeTab }) => {
       sessionStorage.removeItem("user");
       sessionStorage.removeItem("environment");
     }
-    inform("Logging out...")
-    setTimeout(()=> {
-      navigate('/login');
-    }, 2500)
+    inform("Logging out...");
+    setTimeout(() => {
+      navigate("/login");
+    }, 2500);
   };
   return (
     <ul className="flex flex-col pb-10 h-[100%] gap-8 px-2">
@@ -33,11 +33,7 @@ const SideNav: FC<SideNavProps> = ({ activeTab }) => {
           to="/dashboard"
           className={`
           flex items-center font-semibold text-[18px] space-x-3 transition duration-300 hover:scale-105
-           ${
-             activeTab === "Home"
-               ? "text-primary px-2"
-               : "text-[#333] px-2"
-           }
+           ${activeTab === "Home" ? "text-primary px-2" : "text-[#333] px-2"}
           `}
         >
           <RiHome5Line size={30} />
@@ -50,9 +46,7 @@ const SideNav: FC<SideNavProps> = ({ activeTab }) => {
           className={`
           flex items-center font-semibold text-[18px] space-x-3 transition duration-300 hover:scale-105
            ${
-             activeTab === "Feedback"
-               ? "text-primary px-2"
-               : "text-[#333] px-2"
+             activeTab === "Feedback" ? "text-primary px-2" : "text-[#333] px-2"
            }
           `}
         >
@@ -62,7 +56,8 @@ const SideNav: FC<SideNavProps> = ({ activeTab }) => {
       </li>
       <li>
         <a
-          href="https://documenter.getpostman.com/view/25448990/2s9YkjCjQT" target="_blank"
+          href="https://documenter.getpostman.com/view/25448990/2s9YkjCjQT"
+          target="_blank"
           className={`
           flex items-center font-semibold text-[#333] active:text-primary px-2 text-[18px] space-x-3 transition duration-300 hover:scale-105
           `}
@@ -77,9 +72,7 @@ const SideNav: FC<SideNavProps> = ({ activeTab }) => {
           className={`
           flex items-center font-semibold text-[18px] space-x-3 transition duration-300 hover:scale-105
            ${
-             activeTab === "Settings"
-               ? "text-primary px-2"
-               : "text-[#333] px-2"
+             activeTab === "Settings" ? "text-primary px-2" : "text-[#333] px-2"
            }
           `}
         >

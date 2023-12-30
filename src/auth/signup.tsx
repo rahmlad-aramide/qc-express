@@ -44,15 +44,15 @@ const mapBackendToFrontend = (frontendData: FrontendData) => {
 };
 
 const defaultState = {
-    email: "",
-    firstname: "",
-    lastname: "",
-    website: "",
-    phone: "",
-    companyDescription: "",
-    intent: "",
-    companyName: "",
-}
+  email: "",
+  firstname: "",
+  lastname: "",
+  website: "",
+  phone: "",
+  companyDescription: "",
+  intent: "",
+  companyName: "",
+};
 
 const Signup = () => {
   const navigateTo = useNavigate();
@@ -87,7 +87,7 @@ const Signup = () => {
     e: React.FormEvent<HTMLFormElement>
   ) => Promise<void> = async (e) => {
     e.preventDefault();
-    setLoading(true)
+    setLoading(true);
     const isFirstnameValid = validateField(user.firstname);
     const isLastnameValid = validateField(user.lastname);
     const iswebsiteValid = validateField(user.website);
@@ -112,11 +112,20 @@ const Signup = () => {
     setTimeout(() => {
       setError(defaultState);
       setLoading(false);
-      return
+      return;
     }, 2500);
-    if(!isFirstnameValid || !isLastnameValid || !isCompanyDescriptionValid || !isCompanyNameValid || !isEmailValid || !isIntentValid || !isPhoneValid || !iswebsiteValid){
+    if (
+      !isFirstnameValid ||
+      !isLastnameValid ||
+      !isCompanyDescriptionValid ||
+      !isCompanyNameValid ||
+      !isEmailValid ||
+      !isIntentValid ||
+      !isPhoneValid ||
+      !iswebsiteValid
+    ) {
       setLoading(false);
-      return
+      return;
     }
     axios
       .post(`${url}/onboarding-requests/create`, mapBackendToFrontend(user), {
@@ -124,10 +133,9 @@ const Signup = () => {
           "Content-Type": "application/json",
         },
       })
-      .then((response) => {
+      .then(() => {
         setLoading(false);
-        setUser(defaultState)
-        console.log(response)
+        setUser(defaultState);
         notify("Submitted successfully, redirecting you.");
         setTimeout(() => {
           navigateTo("/request-success");
@@ -135,7 +143,6 @@ const Signup = () => {
       })
       .catch((error) => {
         setLoading(false);
-        console.log(capitalizeFirstLetter(error.response.data.message));
         warn(capitalizeFirstLetter(error.response.data.message));
       });
   };
@@ -228,14 +235,14 @@ const Signup = () => {
           {loading ? <Loader /> : "Continue"}
         </button>
         <hr />
-      <p className="mt-4 text-center lg:text-[24px] text-[18px] text-[#333]">
-        Already Onboarded to QC Express?
-      </p>
-      <Link to="/login">
-      <button className="text-[#fff] py-3 mt-4 w-[100%] flex justify-center bg-[#4169e2]">
-        Login to your account
-      </button>
-      </Link>
+        <p className="mt-4 text-center lg:text-[24px] text-[18px] text-[#333]">
+          Already Onboarded to QC Express?
+        </p>
+        <Link to="/login">
+          <button className="text-[#fff] py-3 mt-4 w-[100%] flex justify-center bg-[#4169e2]">
+            Login to your account
+          </button>
+        </Link>
       </form>
     </AuthContainer>
   );

@@ -23,12 +23,12 @@ const CheckmarkIcon: React.FC = () => (
 );
 
 const ShipmentTracker: React.FC<{ events: Event[] }> = ({ events }) => {
-  if(events.length === 0){
+  if (events.length === 0) {
     return (
       <div className="w-full max-w-[800px] mx-auto my-10 flex justify-center items-center text-black/50">
         No activity has been recorded for this shipment yet.
       </div>
-    )
+    );
   }
   return (
     <div className="w-full max-w-[800px] mx-auto my-4">
@@ -41,7 +41,7 @@ const ShipmentTracker: React.FC<{ events: Event[] }> = ({ events }) => {
               } ${index === events.length - 1 && "bottom-4"}`}
             ></div>
             <div className="p-4 w-full flex items-center">
-              <div className={`${index === events.length - 1 && '-mt-6'}`}>
+              <div className={`${index === events.length - 1 && "-mt-6"}`}>
                 <CheckmarkIcon />
               </div>
               <div className="flex-1 border-2 border-gray-300 py-2 pl-4">
@@ -64,7 +64,12 @@ const ShipmentTracker: React.FC<{ events: Event[] }> = ({ events }) => {
                   </p>
                 )}
                 {event.signedBy && (
-                  <p className="text-gray-700 text-sm mt-1 bg-gray-200 px-2 rounded w-fit">Signed by: <span className="text-primary capitalize font-medium">{event.signedBy}</span></p>
+                  <p className="text-gray-700 text-sm mt-1 bg-gray-200 px-2 rounded w-fit">
+                    Signed by:{" "}
+                    <span className="text-primary capitalize font-medium">
+                      {event.signedBy}
+                    </span>
+                  </p>
                 )}
               </div>
             </div>

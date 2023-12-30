@@ -63,10 +63,7 @@ const Modal: FC<ModalProps> = ({ closeModal }) => {
       <ToastContainer />
       <div className="bg-[#fff] w-[90%] max-w-[500px] lg:max-w-[600px] mx-auto rounded-lg shadow-2xl lg:p-10 p-4 flex flex-col items-start">
         <div className="flex justify-end w-full">
-          <button
-            onClick={closeModal}
-            className="text-[#ee2020]"
-          >
+          <button onClick={closeModal} className="text-[#ee2020]">
             <svg
               xmlns="http://www.w3.org/2000/svg"
               className="h-6 w-6 lg:h-8 lg:w-8"

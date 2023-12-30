@@ -24,17 +24,14 @@ const NewUser = () => {
 
   const createUser = () => {
     setLoading(true);
-    fetch(
-      `${url}/business_admin/user/create`,
-      {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-          Authorization: `Bearer ${access_token}`,
-        },
-        body: JSON.stringify(user),
-      }
-    )
+    fetch(`${url}/business_admin/user/create`, {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+        Authorization: `Bearer ${access_token}`,
+      },
+      body: JSON.stringify(user),
+    })
       .then((res) => res.json())
       .then((data) => {
         if (data.success) {

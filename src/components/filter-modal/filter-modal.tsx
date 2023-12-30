@@ -5,7 +5,6 @@ import { axiosCalls } from "../../utils/_api";
 import { notify, warn } from "../../App";
 import { useData } from "../../contexts/DataContext";
 import Skeleton from "react-loading-skeleton";
-// import { dashboardData } from "../../pages/data";
 
 type BackendData = {
   count: {
@@ -46,14 +45,7 @@ const initialValues: InitialValues = {
   date: "",
   user_email: "",
 };
-// const clearValues: InitialValues = {
-//   count_value: '',
-//   count_sort: "$gte",
-//   delivery_from: "",
-//   delivery_to: "",
-//   date: "",
-//   user_email: "",
-// };
+
 function removeDuplicates(arr: string[]): string[] {
   return arr.filter((value, index, self) => {
     return self.indexOf(value) === index;
