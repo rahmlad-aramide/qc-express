@@ -46,7 +46,7 @@ const Feedback = () => {
       .then((data) => {
         setDeleteLoader(false);
         if (data.success) {
-          toast.success("Feedback deleted!", {
+          toast.success(data.message, {
             position: "top-center",
             autoClose: 500,
             hideProgressBar: true,
@@ -60,7 +60,7 @@ const Feedback = () => {
           }, 1000);
         } else {
           setDeleteLoader(false);
-          toast.error("Something went wrong", {
+          toast.error(data.message, {
             position: "top-center",
             autoClose: 500,
             hideProgressBar: true,
