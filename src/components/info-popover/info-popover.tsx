@@ -3,26 +3,31 @@ import { Link } from "react-router-dom";
 import { Popover, ArrowContainer } from "react-tiny-popover";
 import { useModal } from "../../contexts/ModalContext";
 
-type isPopoverOpen = boolean
+type isPopoverOpen = boolean;
 
 interface InfoPopverProps {
-    isPopoverOpen: isPopoverOpen
-    setIsPopoverOpen: (boolean: isPopoverOpen)=>void
-    trackingId: string
-    _id: string
+  isPopoverOpen: isPopoverOpen;
+  setIsPopoverOpen: (boolean: isPopoverOpen) => void;
+  trackingId: string;
+  _id: string;
 }
 
-const InfoPopver:React.FC<InfoPopverProps> = ({ isPopoverOpen=false, setIsPopoverOpen, trackingId, _id }) => {
-  const {setId, setIsOpen} = useModal();
-  const handleClick = ()=> {
-    setIsPopoverOpen(!isPopoverOpen); 
-    setId(_id)
-  }
-  // console.log("from popover", _id)
+const InfoPopver: React.FC<InfoPopverProps> = ({
+  isPopoverOpen = false,
+  setIsPopoverOpen,
+  trackingId,
+  _id,
+}) => {
+  const { setId, setIsOpen } = useModal();
+  const handleClick = () => {
+    setIsPopoverOpen(!isPopoverOpen);
+    setId(_id);
+  };
+
   return (
     <Popover
       isOpen={isPopoverOpen}
-      positions={["bottom", "top","right", "left"]}
+      positions={["bottom", "top", "right", "left"]}
       padding={5}
       onClickOutside={() => setIsPopoverOpen(false)}
       content={({ position, childRect, popoverRect }) => (
@@ -42,21 +47,17 @@ const InfoPopver:React.FC<InfoPopverProps> = ({ isPopoverOpen=false, setIsPopove
             onClick={() => setIsPopoverOpen(!isPopoverOpen)}
           >
             <Link to={`/shipment/${trackingId}`}>
-            <button
-              className="border text-[#49474D] bg-[#FFFFFF]/50 hover:bg-[#f5f5f6] rounded-lg w-full h-[48px] mb-4"
-            >
-              View Details
-            </button>
+              <button className="border text-[#49474D] bg-[#FFFFFF]/50 hover:bg-[#f5f5f6] rounded-lg w-full h-[48px] mb-4">
+                View Details
+              </button>
             </Link>
             <Link to={`/tracking/${trackingId}`}>
-                <button
-                className="border text-[#49474D] bg-[#FFFFFF]/50 hover:bg-[#f5f5f6] rounded-lg w-full h-[48px] mb-4"
-                >
+              <button className="border text-[#49474D] bg-[#FFFFFF]/50 hover:bg-[#f5f5f6] rounded-lg w-full h-[48px] mb-4">
                 Track Shipment
-                </button>
+              </button>
             </Link>
             <button
-              onClick={()=>setIsOpen(true)}
+              onClick={() => setIsOpen(true)}
               className="border text-[#49474D] bg-[#FFFFFF]/50 hover:bg-[#f5f5f6] rounded-lg w-full h-[48px]"
             >
               Download Document

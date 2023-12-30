@@ -22,11 +22,10 @@ import { useData } from "../../contexts/DataContext";
 import { useModal } from "../../contexts/ModalContext";
 import { MoreData } from "../more-types";
 import Skeleton from "react-loading-skeleton";
-// import { dashboardData } from "../data";
+import { TbFilter } from "react-icons/tb";
 
 const Dashboard = () => {
   const { resData, setResData, moreData, setMoreData } = useData();
-  // const resData = dashboardData.data;
   const { isOpenFilter, setIsOpenFilter, filterValues } = useModal();
   const [isLoading, setIsLoading] = useState(true);
   const [isMoreLoading, setIsMoreLoading] = useState(true);
@@ -45,14 +44,17 @@ const Dashboard = () => {
     { name: "States Count", value: resData?.stateCount.length },
     {
       name: "Total Value",
-      value:
-        resData?.totalValue[0]?.bookingCost ?
-        resData?.totalValue[0]?.bookingCost / 100: 0,
+      value: resData?.totalValue[0]?.bookingCost
+        ? resData?.totalValue[0]?.bookingCost / 100
+        : 0,
     },
   ];
 
   const fetchData = async () => {
-    const response = await axiosCalls(`/business_admin/kpis?environment=${environment}`, "GET");
+    const response = await axiosCalls(
+      `/business_admin/kpis?environment=${environment}`,
+      "GET"
+    );
     setResData(response?.data);
     setErrMessage(response?.err);
     setIsLoading(false);
@@ -60,7 +62,8 @@ const Dashboard = () => {
   const fetchMoreData = async (page: number) => {
     const response = await axiosCalls(
       `/booking/developer/booking?limit=15&page=${page}`,
-      "POST", filterValues
+      "POST",
+      filterValues
     );
     setMoreData(response?.data);
     setErrMoreMessage(response?.err);
@@ -155,17 +158,24 @@ const Dashboard = () => {
       </div>
 
       <div className="mb-4">
-        <div className="flex justify-between">
-          <h2 className="text-dark font-medium text-xl mb-3">Bookings</h2>
-          <button 
-          className="flex items-center transparent border active:scale-90 transition duration-200 py-2 px-6 font-semibold rounded-lg"
-          onClick={() => setIsOpenFilter(!isOpenFilter)}>Filter</button>
+        <div className="flex justify-between items-center mb-2 mt-6">
+          <h2 className="text-dark font-medium text-xl">Bookings</h2>
+          <button
+            className="flex items-center transparent border active:scale-90 transition duration-200 py-2 px-3 font-semibold rounded-lg"
+            onClick={() => setIsOpenFilter(!isOpenFilter)}
+          >
+            <TbFilter size={25} className="text-dark" />
+          </button>
         </div>
-        <MoreBookingTable data={moreData as MoreData} isMoreLoading={isMoreLoading} errMoreMessage={errMoreMessage} />
+        <MoreBookingTable
+          data={moreData as MoreData}
+          isMoreLoading={isMoreLoading}
+          errMoreMessage={errMoreMessage}
+        />
         <MorePagination
           data={moreData as MoreData}
           onPageChange={handlePageChange}
-          isMoreLoading={isMoreLoading} 
+          isMoreLoading={isMoreLoading}
           errMoreMessage={errMoreMessage}
         />
       </div>

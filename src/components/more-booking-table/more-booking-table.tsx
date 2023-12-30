@@ -116,11 +116,11 @@ const MoreBookingTable: React.FC<TableProps> = ({
           ))}
         </tbody>
       </table>
-        {data.docs.length === 0 &&
-          <div className="flex h-[200px] justify-center items-center">
-            <h2>No data available</h2>
-          </div>
-        }
+      {data.docs.length === 0 && (
+        <div className="flex h-[200px] justify-center items-center">
+          <h2>No data available</h2>
+        </div>
+      )}
     </div>
   );
 };

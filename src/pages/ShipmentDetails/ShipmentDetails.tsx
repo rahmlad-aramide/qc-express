@@ -36,27 +36,26 @@ function formatToLocalDateTime(dateTimeString: string): string {
 
 const ShipmentDetails = () => {
   const navigate = useNavigate();
-  const {resData} = useData();
+  const { resData } = useData();
   const [shipmentData, setShipmentData] = useState<ShipmentDetailsProps | null>(
     null
   );
   const { trackingId } = useParams();
 
   const backToDashboard = () => {
-    navigate('/dashboard');
+    navigate("/dashboard");
   };
 
-  const finalData = resData?.topBooking.filter(booking=> (
-    booking.shipmentMeta.trackingId === trackingId
-  ))
+  const finalData = resData?.topBooking.filter(
+    (booking) => booking.shipmentMeta.trackingId === trackingId
+  );
 
   useEffect(() => {
     finalData && setShipmentData(finalData[0]);
   }, [finalData]);
 
-
   if (resData === null || undefined) {
-    warn("An error has occurred, pls re-login")
+    warn("An error has occurred, pls re-login");
     return (
       <MainContainer activeTab="">
         <div className="flex justify-center items-center h-full w-full -mt-4 text-lg mx-2">
@@ -68,7 +67,6 @@ const ShipmentDetails = () => {
   }
   return (
     <MainContainer activeTab="">
-      
       <button
         onClick={backToDashboard}
         className="cursor-pointer flex items-center text-sm font-semibold"

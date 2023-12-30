@@ -18,7 +18,6 @@ const DownloadModal: FC = () => {
     );
     setErrMessage(response?.err);
     downloadPDF(response.data[0].content, "document.pdf");
-    // downloadPDFFromBuffer(response.data.data, 'document.pdf')
     setIsLoading(false);
     setTimeout(() => {
       notify("Downloaded successfully");

@@ -126,24 +126,16 @@ const ListBusinessUsers = () => {
                     <th className="font-semibold py-1 text-left px-4">
                       Firstname
                     </th>
-                    <th className="font-semibold text-left px-4">
-                      Lastname
-                    </th>
-                    <th className="font-semibold text-left px-4">
-                      Email
-                    </th>
-                    <th className="font-semibold text-left px-4">
-                      Org. Name
-                    </th>
+                    <th className="font-semibold text-left px-4">Lastname</th>
+                    <th className="font-semibold text-left px-4">Email</th>
+                    <th className="font-semibold text-left px-4">Org. Name</th>
                     <th className="font-semibold text-left px-4">
                       Access Tier
                     </th>
                     <th className="font-semibold text-center px-4">
                       Date Joined
                     </th>
-                    <th className="font-semibold text-right px-4">
-                      Action
-                    </th>
+                    <th className="font-semibold text-right px-4">Action</th>
                   </tr>
                 </thead>
                 <tbody className="text-[#333]">

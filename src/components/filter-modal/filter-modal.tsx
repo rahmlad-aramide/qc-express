@@ -5,7 +5,6 @@ import { axiosCalls } from "../../utils/_api";
 import { notify, warn } from "../../App";
 import { useData } from "../../contexts/DataContext";
 import Skeleton from "react-loading-skeleton";
-// import { dashboardData } from "../../pages/data";
 
 type BackendData = {
   count: {
@@ -46,14 +45,7 @@ const initialValues: InitialValues = {
   date: "",
   user_email: "",
 };
-// const clearValues: InitialValues = {
-//   count_value: '',
-//   count_sort: "$gte",
-//   delivery_from: "",
-//   delivery_to: "",
-//   date: "",
-//   user_email: "",
-// };
+
 function removeDuplicates(arr: string[]): string[] {
   return arr.filter((value, index, self) => {
     return self.indexOf(value) === index;
@@ -96,6 +88,7 @@ const FilterModal: FC = () => {
     warn(errMessage);
     setIsOpenFilter(!isOpenFilter);
   }
+
   if (!isOpenFilter) return;
   if (isOpenFilter && !moreData) {
     return (
@@ -236,6 +229,7 @@ const FilterModal: FC = () => {
                       }
                       className="border border-[#8f8e91] text-[#333] outline-none py-2 px-4 h-[44px] w-[100%] rounded-lg"
                     >
+                      <option value="" disabled={true}>Select source location</option>
                       {sourceLocations?.map((l, idx) => (
                         <option key={idx} value={l}>
                           {l}
@@ -258,6 +252,7 @@ const FilterModal: FC = () => {
                       }
                       className="border border-[#8f8e91] text-[#333] outline-none py-2 px-4 h-[44px] w-[100%] rounded-lg"
                     >
+                      <option value="" disabled={true}>Select destination location</option>
                       {destinationLocations?.map((l, idx) => (
                         <option key={idx} value={l}>
                           {l}
