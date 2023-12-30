@@ -12,7 +12,7 @@ const url = String(import.meta.env.VITE_APP_API_URL);
 const RevealTokens = () => {
   const [loading, setLoading] = useState(false);
   const storedUserString = sessionStorage.getItem("user");
-  const clientId = storedUserString ? JSON.parse(storedUserString)._id : "";
+  const clientId = storedUserString ? JSON.parse(storedUserString).business : "";
   const [tokens, setTokens] = useState({
     production: "",
     staging: "",
