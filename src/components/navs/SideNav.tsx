@@ -1,7 +1,7 @@
 import { FC } from "react";
 import { NavLink, useNavigate } from "react-router-dom";
 import { RiHome5Line, RiFeedbackLine } from "react-icons/ri";
-import { RxExternalLink } from "react-icons/rx";
+import { FiExternalLink } from "react-icons/fi";
 import { IoSettingsOutline } from "react-icons/io5";
 import { MdOutlinePowerSettingsNew } from "react-icons/md";
 import { inform } from "../../App";
@@ -62,7 +62,7 @@ const SideNav: FC<SideNavProps> = ({ activeTab }) => {
           flex items-center font-semibold text-[#333] active:text-primary px-2 text-[18px] space-x-3 transition duration-300 hover:scale-105
           `}
         >
-          <RxExternalLink size={30} />
+          <FiExternalLink size={30} />
           <span className="lg:block hidden">API Docs</span>
         </a>
       </li>

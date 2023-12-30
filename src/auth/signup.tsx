@@ -228,8 +228,8 @@ const Signup = () => {
           type="submit"
           className={
             loading
-              ? `py-1.5 mt-4 w-[100%] flex justify-center bg-[#000] cursor-not-allowed`
-              : "text-[#fff] py-3 mt-4 w-[100%] flex justify-center bg-[#000]"
+              ? `py-1.5 mt-4 w-[100%] flex justify-center bg-[#000] rounded-lg cursor-not-allowed`
+              : "text-[#fff] py-3 mt-4 w-[100%] flex justify-center bg-[#000] rounded-lg"
           }
         >
           {loading ? <Loader /> : "Continue"}
@@ -239,7 +239,7 @@ const Signup = () => {
           Already Onboarded to QC Express?
         </p>
         <Link to="/login">
-          <button className="text-[#fff] py-3 mt-4 w-[100%] flex justify-center bg-[#4169e2]">
+          <button className="text-[#fff] py-3 mt-4 w-[100%] flex justify-center bg-[#4169e2] rounded-lg">
             Login to your account
           </button>
         </Link>

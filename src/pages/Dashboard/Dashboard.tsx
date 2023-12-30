@@ -22,6 +22,7 @@ import { useData } from "../../contexts/DataContext";
 import { useModal } from "../../contexts/ModalContext";
 import { MoreData } from "../more-types";
 import Skeleton from "react-loading-skeleton";
+import { TbFilter } from "react-icons/tb";
 
 const Dashboard = () => {
   const { resData, setResData, moreData, setMoreData } = useData();
@@ -157,13 +158,13 @@ const Dashboard = () => {
       </div>
 
       <div className="mb-4">
-        <div className="flex justify-between">
-          <h2 className="text-dark font-medium text-xl mb-3">Bookings</h2>
+        <div className="flex justify-between items-center mb-2 mt-6">
+          <h2 className="text-dark font-medium text-xl">Bookings</h2>
           <button
-            className="flex items-center transparent border active:scale-90 transition duration-200 py-2 px-6 font-semibold rounded-lg"
+            className="flex items-center transparent border active:scale-90 transition duration-200 py-2 px-3 font-semibold rounded-lg"
             onClick={() => setIsOpenFilter(!isOpenFilter)}
           >
-            Filter
+            <TbFilter size={25} className="text-dark" />
           </button>
         </div>
         <MoreBookingTable

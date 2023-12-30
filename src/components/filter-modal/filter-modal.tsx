@@ -88,6 +88,7 @@ const FilterModal: FC = () => {
     warn(errMessage);
     setIsOpenFilter(!isOpenFilter);
   }
+
   if (!isOpenFilter) return;
   if (isOpenFilter && !moreData) {
     return (
@@ -228,6 +229,7 @@ const FilterModal: FC = () => {
                       }
                       className="border border-[#8f8e91] text-[#333] outline-none py-2 px-4 h-[44px] w-[100%] rounded-lg"
                     >
+                      <option value="" disabled={true}>Select source location</option>
                       {sourceLocations?.map((l, idx) => (
                         <option key={idx} value={l}>
                           {l}
@@ -250,6 +252,7 @@ const FilterModal: FC = () => {
                       }
                       className="border border-[#8f8e91] text-[#333] outline-none py-2 px-4 h-[44px] w-[100%] rounded-lg"
                     >
+                      <option value="" disabled={true}>Select destination location</option>
                       {destinationLocations?.map((l, idx) => (
                         <option key={idx} value={l}>
                           {l}
