@@ -185,7 +185,7 @@ const RevealTokens = () => {
 
               <div className="flex flex-col space-y-2">
                 <h2 className="font-medium">Production API Key</h2>
-                <div className="flex items-center justify-between cursor-pointer w-[99%] bg-[#f1f1f1] text-[#808080] py-2 lg:px-4 px-2 rounded-lg">
+                <div className="flex items-center justify-between cursor-pointer bg-[#f1f1f1] text-[#808080] py-2 lg:px-4 px-2 rounded-lg">
                   <p
                     onClick={() => revealToken("production")}
                     className="italic text-[13px] lg:text-[16px] w-[92%] overflow-clip"
